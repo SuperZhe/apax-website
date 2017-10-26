@@ -1,8 +1,8 @@
 <template>
     <div class="nav-view">
         <div class="nav">
-            <router-link to="/">HOME</router-link>
-            <router-link to="/ourwork">OURWORK</router-link>
+            <router-link to="/ourwork">HOME</router-link>
+            <router-link to="/ourwork?show=1">OURWORK</router-link>
             <router-link to="/clients">CLIENTS</router-link>
             <router-link to="/news">NEWS</router-link>
             <router-link to="/partners">PARTNERS</router-link>
@@ -19,9 +19,14 @@ export default {
         this.$bus.$emit('canvas-close');
     },
     mounted(){
+        //进入此页面爸蒙版去掉
+        $('.video>div').removeClass('mask');
         setTimeout(()=> $('.nav-view a').fadeIn(), 500);
 
         $('.nav-view a').on('click', () => this.$bus.$emit('change'))
+    },
+    destroyed(){
+        $('.video>div').addClass('mask');
     }
 }
 </script>
@@ -33,7 +38,7 @@ export default {
     display: table;
     width: 100%;
     height: 100vh;
-    
+
     .nav {
         display: table-cell;
         vertical-align:middle;

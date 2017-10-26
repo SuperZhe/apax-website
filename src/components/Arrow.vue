@@ -1,7 +1,7 @@
 <template>
     <div class="arrow">
-        <div class="left"><img src="../assets/img/icon/arrow-s.png" alt=""></div>
-        <div class="right"><img src="../assets/img/icon/arrow-n.png" alt=""></div>
+        <!--<div class="left"><img src="../assets/img/icon/arrow-s.png" alt=""></div>-->
+        <!--<div class="right"><img src="../assets/img/icon/arrow-n.png" alt=""></div>-->
     </div>
 </template>
 

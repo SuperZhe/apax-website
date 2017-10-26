@@ -5,8 +5,11 @@
             <br><br><br>
             <p>PAX LIVE unites entertainment, music & lifestyle concepts, and experiences through two unique platforms – Fashion Rocks & Shanghai International Fashion Showcase (SIFS).  </p>
             <br><br>
-            <router-link to="live/nav"><img src="../assets/img/main/more.png" alt=""></router-link>
-            
+            <router-link to="live/nav">
+                <!--<img src="../assets/img/main/more.png" alt="">-->
+                ——>
+            </router-link>
+
         </div>
     </div>
 </template>
@@ -18,7 +21,7 @@ export default {
         this.$bus.$emit('canvas-close');
     },
     mounted(){
-        setTimeout(()=> this.$('.live-info-view').fadeIn(), 500);        
+        setTimeout(()=> this.$('.live-info-view').fadeIn(), 500);
     }
 }
 </script>
@@ -38,7 +41,7 @@ export default {
 }
 
 @media screen and (max-width: @max-width) {
-.info-view {    
+.info-view {
 
     .live >img {
             width: 100%;

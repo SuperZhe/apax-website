@@ -10,7 +10,7 @@
                 <img alt="" :src="config.host + item.conver">
                 <div class="hover">
                     <div class="mask">
-                        <h2>{{ item.enTitle }}</h2>
+                        <h2 class="h2">{{ item.enTitle }}</h2>
                         <!-- <router-link :to="{ name: 'events-detail', params: { id: item.id }}"><img src="../assets/img/main/more.png" alt=""></router-link> -->
                     </div>
                 </div>
@@ -40,7 +40,7 @@ export default {
         this.$bus.$emit('canvas-open');
 
         this.items = [];
-        this.$axios.get('http://www.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
+        this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
             this.items = response.data.result.content;
         }, (error) => {
             console.log(error)
@@ -81,7 +81,7 @@ export default {
         .item {
             font-size: 0;
             position: relative;
-
+            padding: 0 5px 10px 0;
             >img {
                 width: 100%;
             }
@@ -89,7 +89,7 @@ export default {
             &:hover {
                 .hover {
                     opacity: 1;
-                    transition: all 0.3s ease-in-out; 
+                    transition: all 0.3s ease-in-out;
                 }
             }
         }
@@ -98,21 +98,29 @@ export default {
             position: absolute;
             height: 100%;
             width: 100%;
-            padding: 12px;
+            /*padding: 12px;*/
             top:0;
             left:0;
             opacity: 0;
-            transition: all 0.3s ease-in-out; 
-
+            transition: all 0.3s ease-in-out;
+            padding: 0 5px 10px 0;
             .mask {
                 background-color: rgba(0, 0, 0, 0.5);
-                transition: all 0.3s ease-in-out; 
+                transition: all 0.3s ease-in-out;
                 width: 100%;
                 height: 100%;
                 color: #fff;
                 font-size: 12px;
                 text-align: center;
-                padding-top: 20%;
+                /*padding-top: 20%;*/
+                /*padding: 0 5px 10px 0;*/
+                .h2{
+                    margin: 0;
+                    height: 100%;
+                    line-height: 100%;
+                    transform: translateY(50%);
+                    /*margin-top: -8px;*/
+                }
             }
 
             h2 {
@@ -124,7 +132,7 @@ export default {
 
 @media screen and (max-width: @max-width) {
 .events-list-view {
-    
+
     .list {
         margin-top: 4em;
     }

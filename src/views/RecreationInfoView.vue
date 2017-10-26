@@ -5,8 +5,11 @@
             <br><br><br>
             <p>Discovery Adventures Parks – As the exclusive Adventure Park Licensee in Greater China for the Discovery brand name, APAX RECREATION has created the World’s FIRST Discovery Adventures Park, located in Moganshan, Zhejiang province. The park is the perfect outdoor exploration and extreme sport destination; combining real geographic features, top level facilities, a complete system of courses, and an international coach team of trained professionals.  APAX Recreation brings to life the Discovery brand DNA of Curiosity, Adventure, Exploration and Experience, with a four-season opportunity for visitors to experience the freedom of the natural world, to share lifelong memories with family and friends, and to find inspiration on their own journey of Discovery.</p>
             <br><br>
-            <router-link to="recreation/detail"><img src="../assets/img/main/more.png" alt=""></router-link>
-            
+            <router-link to="recreation/detail">
+                <!--<img src="../assets/img/main/more.png" alt="">-->
+                ——>
+            </router-link>
+
         </div>
     </div>
 </template>
@@ -38,7 +41,7 @@ export default {
 }
 
 @media screen and (max-width: @max-width) {
-.info-view {    
+.info-view {
 
     .recreation >img {
             width: 100%;

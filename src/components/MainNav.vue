@@ -1,11 +1,12 @@
 <template>
     <div class="main-nav">
-        <div class="nav1"></div>
+        <div class="nav1" @click="goBack()"></div>
         <div class="nav2"></div>
         <div class="nav-toggle" @click="goNav" v-show="toggle"></div>
         <div class="nav-close" @click="goBack" v-show="close"></div>
         <div class="nav"></div>
-        <div class="language"><span>中文</span><span>EN</span></div>
+        <div class="language"><img src="/static/music/music_on.png" alt="" v-show=show @click="playMusic()"><img @click="playMusic()" src="/static/music/music_off.png" alt=""v-show=!show><span>中文</span><span>EN</span></div>
+        <audio src="/static/bg.mp3" hidden="true" autoplay="autoplay" loop="loop" id="audio" ></audio>
     </div>
 </template>
 
@@ -16,10 +17,12 @@ export default {
     data (){
         return {
             toggle : true,
-            close : false
+            close : false,
+            show:true,
         }
     },
     mounted(){
+        var music = document.getElementById('audio')
         this.$bus.$on('change',()=> {
             this.toggle = true;
             this.close = false;
@@ -35,6 +38,11 @@ export default {
             this.$router.go(-1);
             this.toggle = !this.toggle;
             this.close = !this.close;
+        },
+        playMusic:function () {
+            var music = document.getElementById('audio')
+            this.show = !this.show;
+            !this.show?music.pause():music.play();
         }
     }
 }
@@ -43,7 +51,10 @@ export default {
 <style lang="less">
 
 @import '../assets/style/common.less';
-
+@keyframes music {
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
 .main-nav {
     @padding-height : 40px;
     @padding-width: 20px;
@@ -112,7 +123,15 @@ export default {
         position: fixed;
         bottom: @padding-height;
         right: @padding-width;
-
+    img{
+        height: 22px;
+        cursor: pointer;
+        margin-bottom: -8px;
+        /*transform: translateY(-8px);*/
+    }
+        img:nth-child(1){
+            animation: music 2s infinite linear;
+        }
         span {
             margin-left: 10px;
             cursor: pointer;

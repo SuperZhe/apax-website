@@ -7,8 +7,11 @@
             <p>Our offices in Asia and business network covers throughout the world. </p>
             <p>We develop and deliver a wide range of services covering fashion and premium events, art exhibitions, retail design, as well as <br> official fashion organization management such as Shanghai Fashion Week and Shanghai International Fashion Showcase. </p>
 
-            <router-link to="/ourwork/events/list"><img src="../assets/img/main/more.png" alt=""></router-link>
-            
+            <router-link to="/ourwork/events/iconic">
+                <!--<img src="../assets/img/main/more.png" alt="">-->
+                ——>
+            </router-link>
+
         </div>
     </div>
 </template>
@@ -32,7 +35,7 @@ export default {
     display: none;
 }
 
-.info-view {    
+.info-view {
 
     .events {
         padding-top: 5vh;
@@ -40,7 +43,7 @@ export default {
 }
 
 @media screen and (max-width: @max-width) {
-.info-view {    
+.info-view {
 
     .events >img {
             width: 100%;

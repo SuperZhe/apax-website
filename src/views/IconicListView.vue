@@ -89,7 +89,7 @@ export default {
                 id : 1,
                 url : 'iconic/detail-a',
                 title : 'Fendi on the Wall',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/101.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/101.jpg',
                 date : 'The Great Wall, Beijing, China - Oct. 19, 2007',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             });
@@ -98,7 +98,7 @@ export default {
                 id : 2,
                 url : 'iconic/detail-b',
                 title : 'Exhibition - Audemars Piguet',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/102.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/102.jpg',
                 date : 'Shanghai, China - Oct.29, 2016',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -107,7 +107,7 @@ export default {
                 id : 3,
                 url : 'iconic/detail-c',
                 title : 'Hennessy XO Exclusive Collection VI Worldwide Launch',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/103.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/103.jpg',
                 date : 'The Great Wall, Beijing, China - Oct. 19, 2007',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -116,7 +116,7 @@ export default {
                 id : 4,
                 url : 'iconic/detail-d',
                 title : 'DIOR',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/104.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/104.jpg',
                 date : 'Beijing, China - Dec. 15, 2011',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -125,7 +125,7 @@ export default {
                 id : 5,
                 url : 'iconic/detail-e',
                 title : 'HUAWEI Global product launch Barcelona',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/105.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/105.jpg',
                 date : 'GreaBarcelona, Spain - Feb. 26, 2017',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -134,7 +134,7 @@ export default {
                 id : 6,
                 url : 'iconic/detail-f',
                 title : 'Tiffany',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/106.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/106.jpg',
                 date : 'Beijing, China - Oct.23, 2010',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -143,7 +143,7 @@ export default {
                 id : 7,
                 url : 'iconic/detail-g',
                 title : 'Fendi on the Wall',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/107.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/107.jpg',
                 date : 'Plaza 66, Shanghai, China September. 8, 2017',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -152,7 +152,7 @@ export default {
                 id : 8,
                 url : 'iconic/detail-h',
                 title : 'STAR WARS',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/108.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/108.jpg',
                 date : 'Oct. 20, 2015 - Great wall, Beijing',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -161,7 +161,7 @@ export default {
                 id : 9,
                 url : 'iconic/detail-i',
                 title : 'MAX MARA MONOPOLIS!',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/109.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/109.jpg',
                 date : 'Shanghai, China - Dec. 15, 2016',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -170,7 +170,7 @@ export default {
                 id : 10,
                 url : 'iconic/detail-j',
                 title : 'UNDER ARMOUR Stephen Curry Asian Tour',
-                imgSrc : 'http://www.tron-m.com/frog/apax/static/iconic/110.jpg',
+                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/110.jpg',
                 date : 'Taimiao, Beijing, China - July 22, 2017',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -210,7 +210,7 @@ export default {
             &:hover {
                 .hover {
                     opacity: 1;
-                    transition: all 0.3s ease-in-out; 
+                    transition: all 0.3s ease-in-out;
                 }
             }
         }
@@ -219,15 +219,15 @@ export default {
             position: absolute;
             height: 100%;
             width: 100%;
-            padding: 12px;
+            /*padding: 12px;*/
             top:0;
             left:0;
             opacity: 0;
-            transition: all 0.3s ease-in-out; 
+            transition: all 0.3s ease-in-out;
 
             .mask {
                 background-color: rgba(0, 0, 0, 0.5);
-                transition: all 0.3s ease-in-out; 
+                transition: all 0.3s ease-in-out;
                 width: 100%;
                 height: 100%;
                 color: #fff;

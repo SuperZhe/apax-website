@@ -10,7 +10,7 @@
                     <router-view></router-view>
                 <!-- </keep-alive>
             </transition> -->
-        </div>        
+        </div>
         <div class="footer clearfix">沪公网安备31010602001763号</div>
         <div class="bg" id="a" v-show="canvas">
             <div id="b">
@@ -18,13 +18,16 @@
             </div>
         </div>
         <div class="video" v-show="video">
-            <video :src="videoSrc" x-webkit-airplay="true"
-               webkit-playsinline="true"
-               playsinline="true"
-               autoplay="autoplay"
-               x5-video-player-type="h5"
-               x5-video-player-fullscreen="true"
-               preload="auto" loop="true"></video>
+            <div class="mask">
+                <video :src="videoSrc" x-webkit-airplay="true"
+                       webkit-playsinline="true"
+                       playsinline="true"
+                       autoplay="autoplay"
+                       x5-video-player-type="h5"
+                       x5-video-player-fullscreen="true"
+                       preload="auto" loop="true"></video>
+            </div>
+
 
         </div>
     </div>
@@ -83,7 +86,6 @@ export default {
     },
     mounted(){
 
-
         $('#app').on('touchstart', function(){
             $('.video>video')[0].play();
         })
@@ -113,12 +115,12 @@ export default {
             var w = c.width = window.innerWidth,
                 h = c.height = window.innerHeight,
                 ctx = c.getContext('2d'),
-            
+
             count = (w*h/6000)|0,
             speed = 4,
             range = 80,
             lineAlpha = .05,
-            
+
             particles = [],
             huePart = 360/count;
 
@@ -130,13 +132,13 @@ export default {
             this.y = Math.random()*h;
             this.vx = (Math.random()-.5)*speed;
             this.vy = (Math.random()-.5)*speed;
-            
+
             this.hue = hue;
             }
             Particle.prototype.update = function(){
             this.x += this.vx;
             this.y += this.vy;
-            
+
             if(this.x < 0 || this.x > w) this.vx *= -1;
             if(this.y < 0 || this.y > h) this.vy *= -1;
             }
@@ -144,20 +146,20 @@ export default {
             function checkDist(a, b, dist){
             var x = a.x - b.x,
                 y = a.y - b.y;
-            
+
             return x*x + y*y <= dist*dist;
             }
 
             function anim(){
             window.requestAnimationFrame(anim);
-            
+
             ctx.fillStyle = 'rgba(0, 0, 0, .05)';
             ctx.fillRect(0, 0, w, h);
-            
+
             for(var i = 0; i < particles.length; ++i){
                 var p1 = particles[i];
                 p1.update();
-                
+
                 for(var j = i+1; j < particles.length; ++j){
                 var p2 = particles[j];
                 if(checkDist(p1, p2, range)){
@@ -298,7 +300,7 @@ export default {
         },
 
         canvas3(){
-            var self = this;        
+            var self = this;
             self.$(function () {
                 if (!window.ActiveXObject && !!document.createElement("canvas").getContext) {
                     self.$.getScript("http://im-img.qq.com/pcqq/js/200/cav.js?_=1428576021379",
@@ -657,5 +659,8 @@ html, body {
         }
     }
 }
-
+.mask{
+    background-color: #000;
+    opacity: 0.7;
+}
 </style>

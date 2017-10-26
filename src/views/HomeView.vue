@@ -4,7 +4,10 @@
             <h2>WE CREATE THE NEXT WAVE</h2>
             <p>Leading Experiential Marketing company in Asia Pacific. We focus on interpreting the brand’s DNA, providing innovative and valuable commercial solutions, through multi channels and marketing platforms. </p>
             <p>APAX Group presents you with multi cultural platform: EVENTS / LIVE / RECREATION With partnerships throughout the world and outstanding strength of global resources bringing you unique experiences and cooperation opportunities.We are committed to translate the best local cultures and original contents onto the international stage. We nurture, We bring forth.</p>
-            <router-link to="/ourwork" class="more"><img src="../assets/img/main/more.png" alt=""></router-link>
+            <router-link to="/ourwork" class="more">
+                <!--<img src="../assets/img/main/more.png" alt="">-->
+                ——>
+            </router-link>
             <!-- <video src="http://tronm.oss-cn-shanghai.aliyuncs.com/apax/pc-bg.mp4"></video> -->
         </div>
     </div>
@@ -33,7 +36,7 @@ export default {
 @media screen and (min-width: @max-width) {
 .home-view {
     padding-top: 30vh;
-}    
+}
 }
 
 </style>
