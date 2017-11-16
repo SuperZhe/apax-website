@@ -5,13 +5,14 @@
         <div class="nav-toggle" @click="goNav" v-show="toggle"></div>
         <div class="nav-close" @click="goBack" v-show="close"></div>
         <div class="nav"></div>
-        <div class="language"><img src="/static/music/music_on.png" alt="" v-show=show @click="playMusic()"><img @click="playMusic()" src="/static/music/music_off.png" alt=""v-show=!show><span>中文</span><span>EN</span></div>
-        <audio src="/static/bg.mp3" hidden="true" autoplay="autoplay" loop="loop" id="audio" ></audio>
+        <div class="language"><img src="../../static/music/music_on.png" alt="" v-show=show @click="playMusic()"><img @click="playMusic()" src="../../static/music/music_off.png" alt=""v-show=!show><span>中文</span><span>EN</span></div>
+        <audio :src="music"  hidden="true" autoplay="autoplay" loop="loop" id="audio" ></audio>
     </div>
 </template>
 
 
 <script>
+    import music from '../../static/bg.mp3'
 export default {
     name : 'main-nav',
     data (){
@@ -19,10 +20,32 @@ export default {
             toggle : true,
             close : false,
             show:true,
+            music
         }
     },
     mounted(){
-        var music = document.getElementById('audio')
+//        var music = $('#audio');
+//        music.plya();
+        //--创建页面监听，等待微信端页面加载完毕 触发音频播放
+        document.addEventListener('DOMContentLoaded', function () {
+            function audioAutoPlay() {
+                var audio = document.getElementById('audio');
+                console.log(audio)
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+        });
+//--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+        document.addEventListener('touchstart', function () {
+            function audioAutoPlay() {
+                var audio = document.getElementById('audio');
+                audio.play();
+            }
+            audioAutoPlay();
+        });
         this.$bus.$on('change',()=> {
             this.toggle = true;
             this.close = false;
@@ -40,7 +63,8 @@ export default {
             this.close = !this.close;
         },
         playMusic:function () {
-            var music = document.getElementById('audio')
+            var music = document.getElementById('audio');
+            console.log(music)
             this.show = !this.show;
             !this.show?music.pause():music.play();
         }
@@ -126,7 +150,7 @@ export default {
     img{
         height: 22px;
         cursor: pointer;
-        margin-bottom: -8px;
+        margin-bottom: -7px;
         /*transform: translateY(-8px);*/
     }
         img:nth-child(1){

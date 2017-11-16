@@ -7,7 +7,7 @@
             <br><br>
             <router-link to="live/nav">
                 <!--<img src="../assets/img/main/more.png" alt="">-->
-                ——>
+                CURIOUS TO SEE MORE
             </router-link>
 
         </div>

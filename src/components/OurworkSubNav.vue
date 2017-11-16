@@ -1,10 +1,13 @@
 <template>
     <div class="ourwork-sub-nav col-xs-offset-1 col-xs-10 clearfix">
         <div class="left">
-            <router-link to="/ourwork/events/list" v-if="l1"><img src="../assets/img/main/events-subnav.png" alt="" class="events"></router-link>
+            <router-link to="/ourwork/events" v-if="l1"><img src="../assets/img/main/events-subnav.png" alt="" class="events"></router-link>
             <router-link to="/ourwork/live" v-if="l2"><img src="../assets/img/main/live-subnav.png" alt="" class="live"></router-link>
             <router-link to="/ourwork/recreation" v-if="l3"><img src="../assets/img/main/recreation-subnav.png" alt="" class="recreation"></router-link>
-            <router-link to="/ourwork/events/iconic" v-if="l4"><img src="../assets/img/main/iconic-subnav.png" alt="" class="iconic"></router-link>
+            <router-link to="/ourwork/events/iconic" v-if="l4" ><span :class="{pitch:showO == 1}">iconic</span></router-link>
+            <router-link to="/ourwork/events/list" v-if="l4" ><span :class="{pitch:showO == 2}">project</span></router-link>
+            <!--新的页面展示视频-->
+            <router-link to="/ourwork/events/list" v-if="l4" ><span :class="{pitch:showO == 3}">video</span></router-link>
             <router-link to="/ourwork/live/sifs" v-if="l5"><img src="../assets/img/main/sifs-subnav.png" alt="" class="sifs"></router-link>
             <router-link to="/ourwork/live/rocks" v-if="l6"><img src="../assets/img/main/rocks-subnav.png" alt="" class="rocks"></router-link>
         </div>
@@ -18,6 +21,7 @@
 
 
 <script>
+    import {bus} from  '@/assets/js/app/public'
 export default {
     name : 'ourwork-sub-nav',
     data (){
@@ -30,7 +34,8 @@ export default {
             l6 : false,
             r1 : false,
             r2 : false,
-            r3 : false
+            r3 : false,
+            showO:''
         }
     },
     props : ['links'],
@@ -52,6 +57,11 @@ export default {
                 this.l2 = true, this.l6 = true, this.r1 = true, this.r3 = true;
                 break;
         }
+//        console.log(bus)
+        bus.$on('change',(val) => {this.showO = val} )
+    },
+    mounted() {
+
     }
 }
 </script>
@@ -75,11 +85,23 @@ export default {
     height: 11px;
 }
 
+.StateSelected{
+    font-size: 16px;
+    color: #fff;
+}
+.pitch{
+    font-size: 16px;
+    color: #fff;
+}
 .ourwork-sub-nav {
     .left {
         float: left;
 
-        a { margin-right: 22px; }
+        a { margin-right: 22px;
+            font-size: 12px;
+            color: #8d8d8d;
+        }
+
     }
 
     .right {

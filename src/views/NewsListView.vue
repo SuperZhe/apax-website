@@ -1,6 +1,6 @@
 <template>
     <div class="news-list-view clearfix">
-        
+
         <div class="list col-xs-offset-1 col-xs-10">
             <div class="item col-sm-6 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
                 <img alt="" :src="item.conver">
@@ -38,8 +38,8 @@ export default {
         // });
         this.$bus.$emit('canvas-open');
         this.items = [];
-        this.$axios.get('http://www.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
-            
+        this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
+
             this.items = response.data.result.content;
         }, (error) => {
             console.log(error)
@@ -84,7 +84,7 @@ export default {
             &:hover {
                 .hover {
                     opacity: 1;
-                    transition: all 0.3s ease-in-out; 
+                    transition: all 0.3s ease-in-out;
                 }
             }
         }
@@ -97,11 +97,11 @@ export default {
             top:0;
             left:0;
             opacity: 0;
-            transition: all 0.3s ease-in-out; 
+            transition: all 0.3s ease-in-out;
 
             .mask {
                 background-color: rgba(0, 0, 0, 0.5);
-                transition: all 0.3s ease-in-out; 
+                transition: all 0.3s ease-in-out;
                 width: 100%;
                 height: 100%;
                 color: #fff;
@@ -119,7 +119,7 @@ export default {
 
 @media screen and (max-width: @max-width) {
 .news-list-view {
-    
+
     .list {
         margin-top: 4em;
     }

@@ -7,7 +7,7 @@
             <br><br>
             <router-link to="recreation/detail">
                 <!--<img src="../assets/img/main/more.png" alt="">-->
-                ——>
+                DISCOVER MORE
             </router-link>
 
         </div>

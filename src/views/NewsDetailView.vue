@@ -51,9 +51,9 @@ export default {
         this.$bus.$emit('canvas-open');
     },
     mounted(){
-        
 
-        this.$axios.get('http://www.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
+
+        this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
             //console.log(response.data.result);
             this.info.title = response.data.result.enTitle;
             this.info.content = response.data.result.enHtml;

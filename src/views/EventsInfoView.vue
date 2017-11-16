@@ -9,7 +9,7 @@
 
             <router-link to="/ourwork/events/iconic">
                 <!--<img src="../assets/img/main/more.png" alt="">-->
-                ——>
+                <div>READY FOR THE JOURNEY</div>
             </router-link>
 
         </div>

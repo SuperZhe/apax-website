@@ -10,8 +10,8 @@
         </div>
         <div class="info row col-xs-offset-1 col-xs-10">
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-4">
-                <h4>APAX GROUP</h4>
-                <h4>SHANGHAI</h4>
+                <h4>APAX <span class="purple">GROUP</span></h4>
+                <h4 class="magnify">SHANGHAI</h4>
 
                 <p>
                     <!--Block 1, 1088 Wu Ding Road, Jing An District<br>-->
@@ -20,8 +20,8 @@
                 Fax: +86 21 6248 8377 </p>
             </div>
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4">
-                <h4>APAX GROUP</h4>
-                <h4>BEIJING</h4>
+                <h4>APAX <span class="purple">GROUP</span></h4>
+                <h4 class="magnify">BEIJING</h4>
 
                 <p>
                     <!--Unit 902, Ruichen International Center Parking Lot,<br>-->
@@ -33,8 +33,8 @@
         </div>
         <div class="info row col-xs-offset-1 col-xs-10">
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-4">
-                <h4>APAX GROUP</h4>
-                <h4>HONG KONG</h4>
+                <h4>APAX <span class="purple">GROUP</span></h4>
+                <h4 class="magnify">HONG KONG</h4>
 
                 <p>
                     <!--Unit 4&5, 52-56 King's Road,<br> -->
@@ -43,8 +43,8 @@
                     Fax: +852 2504 4487</p>
             </div>
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4">
-                <h4>APAX GROUP</h4>
-                <h4>MOGANSHAN</h4>
+                <h4>APAX <span class="purple">GROUP</span></h4>
+                <h4 class="magnify">MOGANSHAN</h4>
 
                 <p>
                     <!--Discovery Adventures Moganshan Park, Zhuyuan Road,<br>-->
@@ -54,8 +54,8 @@
         </div>
         <div class="info row col-xs-offset-1 col-xs-10">
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-4">
-                <h4>APAX GROUP</h4>
-                <h4>XIAMEN</h4>
+                <h4>APAX <span class="purple">GROUP</span></h4>
+                <h4 class="magnify">XIAMEN</h4>
 
                 <p>
                     <!--A1 No.132 HuaChang Road, Huli District, XiaMen<br>-->
@@ -63,8 +63,8 @@
                 Tel: +86592-5806868</p>
             </div>
             <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4">
-                <h4>APAX GROUP</h4>
-                <h4>XIAMEN</h4>
+                <h4>APAX <span class="purple">GROUP</span></h4>
+                <h4 class="magnify">XIAMEN</h4>
 
                 <p>
                     <!--A1 No.132 HuaChang Road, Huli District, XiaMen<br>-->
@@ -94,4 +94,10 @@ export default {
 .about-view {
     display: none;
 }
+    .purple{
+        color: purple;
+    }
+    .magnify{
+        font-size: 1.8em!important;
+    }
 </style>

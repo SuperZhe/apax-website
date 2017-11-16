@@ -6,6 +6,7 @@
             <router-link to="/clients">CLIENTS</router-link>
             <router-link to="/news">NEWS</router-link>
             <router-link to="/partners">PARTNERS</router-link>
+            <router-link to="">ASSOCIATION</router-link>
             <router-link to="/about">ABOUT</router-link>
             <router-link to="/career">CAREER</router-link>
         </div>

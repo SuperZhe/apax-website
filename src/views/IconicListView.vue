@@ -39,15 +39,19 @@ The show was capped off with giant double-F logos projected onto neighboring mou
 <script>
 import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import Arrow from '@/components/Arrow.vue';
-
+import {bus} from  '../assets/js/app/public'
 export default {
     name : 'iconic-list-view',
     components : { OurworkSubNav, Arrow },
     data(){
         return {
             link : 'events',
-            items : this.getData()
+            items : this.getData(),
+            showO:1
         }
+    },
+    mounted(){
+        bus.$emit('change',this.showO);
     },
     created() {
         // this.$axios.get('http://jsonplaceholder.typicode.com/photos?albumId=1').then((response) => {
@@ -94,14 +98,14 @@ export default {
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             });
 
-            result.push({
-                id : 2,
-                url : 'iconic/detail-b',
-                title : 'Exhibition - Audemars Piguet',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/102.jpg',
-                date : 'Shanghai, China - Oct.29, 2016',
-                brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
-            })
+//            result.push({
+//                id : 2,
+//                url : 'iconic/detail-b',
+//                title : 'Exhibition - Audemars Piguet',
+//                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/102.jpg',
+//                date : 'Shanghai, China - Oct.29, 2016',
+//                brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
+//            })
 
             result.push({
                 id : 3,
