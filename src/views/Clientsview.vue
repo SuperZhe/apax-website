@@ -37,6 +37,12 @@
             <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1032.png" alt=""></div>
             <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1033.png" alt=""></div>
             <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1034.png" alt=""></div>
+            <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1035.png" alt=""></div>
+            <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1036.png" alt=""></div>
+            <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1037.png" alt=""></div>
+            <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1038.png" alt=""></div>
+            <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1039.png" alt=""></div>
+            <div class="col-sm-2 col-xs-6"><img src="../assets/img/clients/1040.png" alt=""></div>
         </div>
     </div>
 </template>
@@ -49,7 +55,7 @@ export default {
     },
     mounted(){
         setTimeout(()=> this.$('.clients-list-view').fadeIn(), 500);
-        
+
     }
 }
 </script>

@@ -3,24 +3,26 @@
         <div class="nav col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
 
             <div class="rocks clearfix col-sm-6">
-                <div class="col-xs-offset-4 col-xs-4 logo"><img src="../assets/img/main/rocks.png" alt=""></div>
-                <div class="col-xs-12">
+                <!--<div class="col-xs-offset-4 col-xs-4 logo"><img src="../assets/img/main/rocks.png" alt=""></div>-->
+                <div class="logo"><img src="../assets/img/main/rocks.png" alt=""></div>
+                <div class="col-xs-6 col-xs-offset-3">
                     <p>As the exclusive licensee of Fashion Rocks Asia, APAX LIVE introduces an integrated experience extravaganza of music & fashion to the Chinese audience.</p>
+                    <router-link to="rocks" class="more more-1">
+                        <!--<img src="../assets/img/main/more.png" alt="">-->
+                        <img src="../assets/img/main/jiantou.png" alt="">
+                    </router-link>
                 </div>
-                <router-link to="rocks" class="more more-1">
-                    <!--<img src="../assets/img/main/more.png" alt="">-->
-                    ——>
-                </router-link>
             </div>
             <div class="sifs clearfix col-sm-6">
-                <div class="col-xs-offset-4 col-xs-4 logo"><img src="../assets/img/main/sifs.png" alt=""></div>
-                <div class="col-xs-12">
+                <!--<div class="col-xs-offset-4 col-xs-5 logo"><img src="../assets/img/main/sifs.png" alt=""></div>-->
+                <div class="logo"><img src="../assets/img/main/sifs.png" alt=""></div>
+                <div class="col-xs-6 col-xs-offset-3">
                     <p>As the strategic partner of Shanghai Fashion Week, Shanghai International Fashion Showcase (SIFS) provides the ultimate business solution to emerging international designers and luxury/fashion brands by utilizing its platform to bring the Chinese market to the world.</p>
+                    <router-link to="sifs" class="more">
+                        <img src="../assets/img/main/jiantou.png" alt="">
+                    </router-link>
                 </div>
-                <router-link to="sifs" class="more">
-                    <!--<img src="../assets/img/main/more.png" alt="">-->
-                    ——>
-                </router-link>
+
             </div>
 
         </div>
@@ -41,7 +43,11 @@ export default {
 
 <style lang="less">
 @import '../assets/style/common.less';
-
+.more{
+    img{
+        width: 50px;
+    }
+}
 .live-nav-view {
     display: none;
     padding-top: 25vh;
@@ -64,9 +70,12 @@ export default {
 
 
     .more {
-        position: absolute;
-        bottom:-1em;
-        right:5em;
+        display: block;
+        width:100%;
+        text-align: center;
+        /*position: absolute;*/
+        /*bottom:-1em;*/
+        /*right:5em;*/
     }
     .more-1{
         bottom: -2em;

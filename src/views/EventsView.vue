@@ -5,6 +5,12 @@
 <script>
 
 export default {
-    name : 'events-view'
+    name : 'events-view',
+    data(){
+        return {
+            showO:1
+        }
+    },
+
 }
 </script>

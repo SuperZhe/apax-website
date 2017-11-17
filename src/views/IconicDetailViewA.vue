@@ -27,7 +27,7 @@
                 <div class="space clearfix"></div>
                 <div class=" col-xs-12">
                     <img src="../../static/iconic-detail-1/3.jpg" alt="">
-                    <p>With a section of the awe-inspiring, 4,000-mile-long structure snaking up the mountain behind them, 88 models walked a runway 88 meters long in an expanded version of Fendi's spring-summer collection. Hundreds of journalists and TV crews were invited to document the event, 
+                    <p>With a section of the awe-inspiring, 4,000-mile-long structure snaking up the mountain behind them, 88 models walked a runway 88 meters long in an expanded version of Fendi's spring-summer collection. Hundreds of journalists and TV crews were invited to document the event,
                     	along with some of its best customers from Asia. Flanking the show were a series of dinners and cocktails.</p>
                 </div>
                 <div class="space clearfix"></div>
@@ -58,20 +58,22 @@ import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import AContent from '@/components/AContent.vue';
 import Share from '@/components/Share.vue';
 import Arrow from '@/components/Arrow.vue';
-
+import {bus} from  '../assets/js/app/public'
 export default {
     name : 'iconic-detail-view',
     components : { OurworkSubNav, AContent, Arrow, Share },
     data(){
         return {
             link : 'events',
-            info : {}
+            info : {},
+            showO:1
         }
     },
     created(){
         this.$bus.$emit('canvas-open');
     },
     mounted(){
+        bus.$emit('change',this.showO);
         window.scrollTo(0, 0);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });

@@ -32,7 +32,7 @@ import AContent from '@/components/AContent.vue';
 import Share from '@/components/Share.vue';
 import Arrow from '@/components/Arrow.vue';
 import config from '@js-app/config';
-
+import {bus} from  '../assets/js/app/public'
 export default {
     name : 'events-detail-view',
     components : { OurworkSubNav, AContent, Arrow, Share },
@@ -47,7 +47,8 @@ export default {
                 content : '2'
             },
             prevId : 0,
-            nextId : 0
+            nextId : 0,
+            showO:2
         }
     },
     beforeRouteUpdate (to, from, next) {
@@ -62,6 +63,7 @@ export default {
 
     },
     mounted(){
+        bus.$emit('change',this.showO);
         this.loadDetail();
     },
     methods : {

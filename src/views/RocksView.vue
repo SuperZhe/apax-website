@@ -14,83 +14,10 @@
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="col-xs-12"><img src="../../static/rocks-detail/2.jpg" alt=""></div>
-                <p>Across the globe, Fashion Rocks offers an exclusive experience combining fashion by top fashion brands and live music performances by world renowned musicians. As the exclusive licensee and organizer in Asia, APAX LIVE presented the first Fashion Rocks in Asia on October 14th, 2016 in Shanghai and the show was live streamed to over 50 million viewers online via Tencent Video.</p>
-
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-8"><img src="../../static/rocks-detail/3.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="s11 col-xs-6"><img src="../../static/rocks-detail/4.jpg" alt=""></div>
-                <div class="s12 col-xs-6"><img src="../../static/rocks-detail/5.jpg" alt=""></div>
-                <div class="s13 col-xs-offset-6 col-xs-6"><img src="../../static/rocks-detail/6.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="s21 col-xs-6">
-                    <img src="../../static/rocks-detail/7.jpg" alt="">
-                    <br><br>
-                    <p>cross the globe, Fashion Rocks offers an exclusive experience combining fashion by top fashion brands and </p>
-                </div>
-                <div class="s22 col-xs-6"><img src="../../static/rocks-detail/8.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="s31 col-xs-offset-5 col-xs-6"><img src="../../static/rocks-detail/9.jpg" alt=""></div>
-                <div class="s32 col-xs-6"><img src="../../static/rocks-detail/10.jpg" alt=""></div>
-                <div class="s33 col-xs-6"><img src="../../static/rocks-detail/11.jpg" alt=""></div>
-
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="s41 col-xs-6"><img src="../../static/rocks-detail/12.jpg" alt=""></div>
-                <div class="s42 col-xs-6"><img src="../../static/rocks-detail/13.jpg" alt=""></div>
-
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/14.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="s51 col-sm-3 col-xs-12">Fashion Rocks<br>China 2016 </div>
                 <div class="s52 col-sm-9 col-xs-12"><p>Fashion Rocks China 2016 made breaking entertainment news headlines by creating a super stylish splash in Shanghai, right in the smack of the Shanghai Fashion Week’s schedule. Professionally produced by exclusive license and organizer APAX LIVE, a star-studded night of fancy fashion, flawless footwork and fantabulous entertainment kept the nearly 10,000 capacity crowd constantly on their feet.</p></div>
+                <div class="s22 col-xs-6"><img src="../../static/rocks-detail/8.jpg" alt=""></div>
+                <div class="s41 col-xs-6"><img src="../../static/rocks-detail/12.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
@@ -148,6 +75,139 @@
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <p>Across the globe, Fashion Rocks offers an exclusive experience combining fashion by top fashion brands and live music performances by world renowned musicians. As the exclusive licensee and organizer in Asia, APAX LIVE presented the first Fashion Rocks in Asia on October 14th, 2016 in Shanghai and the show was live streamed to over 50 million viewers online via Tencent Video.</p>
+
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="col-xs-8"><img src="../../static/rocks-detail/3.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="s11 col-xs-6"><img src="../../static/rocks-detail/4.jpg" alt=""></div>
+                <div class="s12 col-xs-6"><img src="../../static/rocks-detail/5.jpg" alt=""></div>
+                <div class="s13 col-xs-offset-6 col-xs-6"><img src="../../static/rocks-detail/6.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="s21 col-xs-6">
+                    <img src="../../static/rocks-detail/7.jpg" alt="">
+                    <br><br>
+                    <p>cross the globe, Fashion Rocks offers an exclusive experience combining fashion by top fashion brands and </p>
+                </div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="space clearfix hidden-xs"></div>
+                <div class="s31 col-xs-offset-5 col-xs-6"><img src="../../static/rocks-detail/9.jpg" alt=""></div>
+                <div class="s32 col-xs-6"><img src="../../static/rocks-detail/10.jpg" alt=""></div>
+                <div class="s33 col-xs-6"><img src="../../static/rocks-detail/11.jpg" alt=""></div>
+
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <!--<div class="s41 col-xs-6"><img src="../../static/rocks-detail/12.jpg" alt=""></div>-->
+                <div class="s42 col-xs-6"><img src="../../static/rocks-detail/13.jpg" alt=""></div>
+
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="col-xs-12"><img src="../../static/rocks-detail/14.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <!--<div class="s51 col-sm-3 col-xs-12">Fashion Rocks<br>China 2016 </div>-->
+                <!--<div class="s52 col-sm-9 col-xs-12"><p>Fashion Rocks China 2016 made breaking entertainment news headlines by creating a super stylish splash in Shanghai, right in the smack of the Shanghai Fashion Week’s schedule. Professionally produced by exclusive license and organizer APAX LIVE, a star-studded night of fancy fashion, flawless footwork and fantabulous entertainment kept the nearly 10,000 capacity crowd constantly on their feet.</p></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/15.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/16.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/17.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/18.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<p>British pop singer Charli XCX, Asia’s pop icon CoCo Lee and American Superstar Usher gave sensational performances on the stage of this exclusive one night only fashion and music event.  Also showcasing their collection on stage was China fashion designer SANKUANZ, international fashion designer Giambattista Valli thru his Giamba line, and international luxury crystal brand Swarovski. </p>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/19.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/20.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<p>With their amazing live performance and co-operation with three different fashion brands, Charli XCX, CoCo Lee, and Usher ignited the night in the name of fashion and music.</p>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/21.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<p>Fashion Rocks 2016 was Coco Lee’s first time as a live show hostess, the multi-talented CoCo took the stage alongside hip-hop artist and DJ personality Jeff Kung. SWIN-S from Super Idol also performed as the opening act.</p>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/22.jpg" alt=""></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
                 <div class="s51 col-sm-3 col-xs-12">About<br>Fashion Rocks</div>
                 <div class="s52 col-sm-9 col-xs-12">
                     <p>Established in 2003 and founded by Prince’s Trust, Fashion Rocks was previously held in London, New York, Monaco and Rio de Janeiro. With astounding live fashion and music showcases lasting for 2.5 hours, bringing the best out of the two worlds – Music and Fashion, Fashion Rocks features A-List singers and artists including Beyoncé, Grace Jones, Robbie Williams, David Bowie, Justin Bieber and the likes together with Alexander McQueen, Burberry, Christian Dior, Gucci, Giorgio Armani and other world-class fashion brands.</p>
@@ -171,14 +231,15 @@
 <script>
 import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import Arrow from '@/components/Arrow.vue';
-
+import {bus} from  '../assets/js/app/public'
 export default {
     name : 'rocks-view',
     components : { OurworkSubNav, Arrow },
     data(){
         return {
             link : 'rocks',
-            info : {}
+            info : {},
+            showO:5
         }
     },
     created(){
@@ -196,6 +257,7 @@ export default {
         this.$bus.$emit('canvas-open');
     },
     mounted(){
+        bus.$emit('change', this.showO);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
     },

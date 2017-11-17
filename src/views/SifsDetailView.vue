@@ -27,7 +27,7 @@ import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import AContent from '@/components/AContent.vue';
 import Share from '@/components/Share.vue';
 import Arrow from '@/components/Arrow.vue';
-
+import {bus} from  '../assets/js/app/public'
 export default {
     name : 'sifs-detail-view',
     components : { OurworkSubNav, AContent, Arrow, Share },
@@ -37,7 +37,8 @@ export default {
             info : {
                 title : '1',
                 date : null,
-                content : '2'
+                content : '2',
+                showO:4,
             }
         }
     },
@@ -57,7 +58,7 @@ export default {
         this.$bus.$emit('canvas-open');
     },
     mounted(){
-        
+        bus.$emit('change', this.showO);
         this.$axios.get('http://www.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
             //console.log(response.data.result);
             this.info.title = response.data.result.enTitle;

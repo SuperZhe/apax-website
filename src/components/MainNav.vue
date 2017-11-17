@@ -13,6 +13,7 @@
 
 <script>
     import music from '../../static/bg.mp3'
+    import {bus} from  '../assets/js/app/public'
 export default {
     name : 'main-nav',
     data (){
@@ -20,8 +21,11 @@ export default {
             toggle : true,
             close : false,
             show:true,
-            music
+            music,
         }
+    },
+    created(){
+        bus.$on('pause',(val) => {this.show = val})
     },
     mounted(){
 //        var music = $('#audio');
@@ -30,7 +34,6 @@ export default {
         document.addEventListener('DOMContentLoaded', function () {
             function audioAutoPlay() {
                 var audio = document.getElementById('audio');
-                console.log(audio)
                 audio.play();
                 document.addEventListener("WeixinJSBridgeReady", function () {
                     audio.play();
@@ -64,10 +67,9 @@ export default {
         },
         playMusic:function () {
             var music = document.getElementById('audio');
-            console.log(music)
             this.show = !this.show;
             !this.show?music.pause():music.play();
-        }
+        },
     }
 }
 </script>

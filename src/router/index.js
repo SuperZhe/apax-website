@@ -38,7 +38,8 @@ import SifsDetailView from '@/views/SifsDetailView';
 import RecreationView from '@/views/RecreationView';
 import RecreationInfoView from '@/views/RecreationInfoView';
 import RecreationDetailView from '@/views/RecreationDetailView';
-
+import eventsVideo from '@/views/EventsVideo'
+import liveVideo from '@/views/liveVideo'
 Vue.use(Router);
 
 export default new Router({
@@ -77,6 +78,11 @@ export default new Router({
                             path: 'list',
                             name: 'events-list',
                             component: EventsListView
+                        },
+                        {
+                            path: 'video',
+                            name: 'Events-vide',
+                            component: eventsVideo
                         },
                         {
                             path: 'detail/:id',
@@ -169,6 +175,11 @@ export default new Router({
                             path: 'rocks',
                             name: 'live-rocks',
                             component: RocksView
+                        },
+                        {
+                            path: 'video',
+                            name: 'live-video',
+                            component: liveVideo
                         },
                         {
                             path: 'sifs',

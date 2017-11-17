@@ -4,12 +4,15 @@
             <router-link to="/ourwork/events" v-if="l1"><img src="../assets/img/main/events-subnav.png" alt="" class="events"></router-link>
             <router-link to="/ourwork/live" v-if="l2"><img src="../assets/img/main/live-subnav.png" alt="" class="live"></router-link>
             <router-link to="/ourwork/recreation" v-if="l3"><img src="../assets/img/main/recreation-subnav.png" alt="" class="recreation"></router-link>
-            <router-link to="/ourwork/events/iconic" v-if="l4" ><span :class="{pitch:showO == 1}">iconic</span></router-link>
-            <router-link to="/ourwork/events/list" v-if="l4" ><span :class="{pitch:showO == 2}">project</span></router-link>
+            <router-link to="/ourwork/events/iconic" v-if="l4" ><span :class="{pitch:showO == 1}" class="hover" >iconic</span></router-link>
+            <router-link to="/ourwork/events/list" v-if="l4" ><span :class="{pitch:showO == 2}" class="hover">project</span></router-link>
             <!--新的页面展示视频-->
-            <router-link to="/ourwork/events/list" v-if="l4" ><span :class="{pitch:showO == 3}">video</span></router-link>
-            <router-link to="/ourwork/live/sifs" v-if="l5"><img src="../assets/img/main/sifs-subnav.png" alt="" class="sifs"></router-link>
-            <router-link to="/ourwork/live/rocks" v-if="l6"><img src="../assets/img/main/rocks-subnav.png" alt="" class="rocks"></router-link>
+            <router-link to="/ourwork/events/video" v-if="l4" ><span :class="{pitch:showO == 3}" class="hover">video</span></router-link>
+            <!--<router-link to="/ourwork/live/sifs" v-if="l5"><img src="../assets/img/main/sifs-subnav.png" alt="" class="sifs"></router-link>-->
+            <router-link to="/ourwork/live/sifs" v-if="l5"><span :class="{pitch:showO == 5}" class="hover">sifs</span></router-link>
+            <!--<router-link to="/ourwork/live/rocks" v-if="l6"><img src="../assets/img/main/rocks-subnav.png" alt="" class="rocks"></router-link>-->
+            <router-link to="/ourwork/live/rocks" v-if="l6"><span :class="{pitch:showO == 4}" >FASHTON ROCKS</span></router-link>
+            <router-link to="/ourwork/live/video" v-if="l5"><span :class="{pitch:showO == 4}" class="hover">video</span></router-link>
         </div>
         <div class="right">
             <router-link to="/ourwork/events" v-if="r1"><img src="../assets/img/main/events-subnav.png" alt="" class="events events-1"></router-link>
@@ -35,7 +38,7 @@ export default {
             r1 : false,
             r2 : false,
             r3 : false,
-            showO:''
+            showO:'',
         }
     },
     props : ['links'],
@@ -58,10 +61,17 @@ export default {
                 break;
         }
 //        console.log(bus)
-        bus.$on('change',(val) => {this.showO = val} )
+        bus.$on('change',(val) => {this.showO = val;
+            console.log(val);} )
     },
     mounted() {
 
+    },
+    methods:{
+        mous:function () {
+//           this.$refs.oneT.css({color:'#fff'});
+
+        }
     }
 }
 </script>
@@ -72,7 +82,10 @@ export default {
 .events{
     height: 14px;
 }
-.live-1,.recreation-1{
+.hover:hover{
+    color: #fff;
+}
+.live-1,.recreation-1,.events-1{
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
@@ -81,10 +94,18 @@ export default {
 
     filter:gray;
 }
-.live,.events-1{
+.live-1:hover,.recreation-1:hover,.events-1:hover{
+    filter:none;
+}
+.events-1{
     height: 11px;
 }
-
+.live{
+    height:16px;
+}
+.live-1{
+    height: 11px;
+}
 .StateSelected{
     font-size: 16px;
     color: #fff;

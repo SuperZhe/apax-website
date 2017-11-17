@@ -88,14 +88,15 @@ import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import AContent from '@/components/AContent.vue';
 import Share from '@/components/Share.vue';
 import Arrow from '@/components/Arrow.vue';
-
+import {bus} from  '../assets/js/app/public'
 export default {
     name : 'iconic-detail-view',
     components : { OurworkSubNav, AContent, Arrow, Share },
     data(){
         return {
             link : 'events',
-            info : {}
+            info : {},
+            showO:1
         }
     },
     created(){
@@ -114,6 +115,7 @@ export default {
         });
     },
     mounted(){
+        bus.$emit('change',this.showO);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
     },

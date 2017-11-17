@@ -24,7 +24,7 @@
 import config from '@js-app/config';
 import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import Arrow from '@/components/Arrow.vue';
-
+import {bus} from  '../assets/js/app/public'
 
 export default {
     name : 'events-list-view',
@@ -33,7 +33,8 @@ export default {
         return {
             link : 'events',
             config,
-            items : []
+            items : [],
+            showO:2
         }
     },
     created() {
@@ -50,6 +51,9 @@ export default {
     updated(){
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.item', { duration: 1000 });
+    },
+    mounted(){
+        bus.$emit('change',this.showO);
     },
     methods: {
         replaceImgSrc(){
@@ -81,7 +85,7 @@ export default {
         .item {
             font-size: 0;
             position: relative;
-            padding: 0 5px 10px 0;
+            padding: 0 5px 5px 0;
             >img {
                 width: 100%;
             }
@@ -103,7 +107,7 @@ export default {
             left:0;
             opacity: 0;
             transition: all 0.3s ease-in-out;
-            padding: 0 5px 10px 0;
+            padding: 0 5px 5px 0;
             .mask {
                 background-color: rgba(0, 0, 0, 0.5);
                 transition: all 0.3s ease-in-out;

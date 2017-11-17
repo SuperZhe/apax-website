@@ -47,20 +47,23 @@ import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import AContent from '@/components/AContent.vue';
 import Share from '@/components/Share.vue';
 import Arrow from '@/components/Arrow.vue';
-
+import {bus} from  '../assets/js/app/public'
 export default {
     name : 'iconic-detail-view',
     components : { OurworkSubNav, AContent, Arrow, Share },
     data(){
         return {
             link : 'events',
-            info : {}
+            info : {},
+            showO:1,
+
         }
     },
     created(){
         this.$bus.$emit('canvas-open');
     },
     mounted(){
+        bus.$emit('change',this.showO);
         window.scrollTo(0, 0);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
