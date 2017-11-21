@@ -19,13 +19,14 @@
 <script>
 
 import Arrow from '../components/Arrow.vue';
-
+import {config} from  '../assets/js/app/config'
 export default {
     name : 'news-list-view',
     components : { Arrow },
     data(){
         return {
-            items : []
+            items : [],
+            config:config
         }
     },
     created() {
@@ -39,7 +40,6 @@ export default {
         this.$bus.$emit('canvas-open');
         this.items = [];
         this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
-
             this.items = response.data.result.content;
         }, (error) => {
             console.log(error)

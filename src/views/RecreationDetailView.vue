@@ -2,14 +2,14 @@
     <div class="recreation-detail-view clearfix">
         <div class="subnav">
             <OurworkSubNav :links="link"></OurworkSubNav>
-        </div>        
+        </div>
 
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="title col-xs-12" >
                 <img src="../assets/img/main/recreation-title.png" alt="">
-                <p>The world's leading fashion brand DIESEL landed in Shanghai Exhibition Center, bringing DIESEL official opening party for shanghai international fashion showcase(SIFS). Its design inspiration was derived 
+                <p>The world's leading fashion brand DIESEL landed in Shanghai Exhibition Center, bringing DIESEL official opening party for shanghai international fashion showcase(SIFS). Its design inspiration was derived
 from the daily life, along with the trends, justified The brand's features of always being young and cutting edge.</p>
             </div>
             <div class="content col-xs-12">
@@ -111,7 +111,7 @@ export default {
         &:hover {
             .hover {
                 opacity: 1;
-                transition: all 0.3s ease-in-out; 
+                transition: all 0.3s ease-in-out;
             }
         }
 
@@ -119,7 +119,7 @@ export default {
             position: absolute;
             height: 100%;
             width: 100%;
-            padding: 12px;
+            /*padding: 12px;*/
             top:0;
             left:0;
             opacity: 0;
@@ -127,14 +127,14 @@ export default {
 
             .mask {
                 background-color: rgba(0, 0, 0, 0.5);
-                transition: all 0.3s ease-in-out; 
+                transition: all 0.3s ease-in-out;
                 width: 100%;
                 height: 100%;
                 color: #fff;
                 font-size: 12px;
                 padding: 2em;
                 position: relative;
-                
+
                 display: table;
             }
 
