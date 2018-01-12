@@ -9,14 +9,67 @@
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="title col-xs-12" >
                 <img src="../assets/img/main/recreation-title.png" alt="">
-                <p>The world's leading fashion brand DIESEL landed in Shanghai Exhibition Center, bringing DIESEL official opening party for shanghai international fashion showcase(SIFS). Its design inspiration was derived
-from the daily life, along with the trends, justified The brand's features of always being young and cutting edge.</p>
             </div>
             <div class="content col-xs-12">
-                <!-- <img src="../assets/img/main/video-bg.jpg" alt=""> -->
-                <img src="../../static/video-bg.jpg" alt="11">
-                <div class="hover">
-                    <div class="mask"><div class="middle"><img class="play" src="../assets/img/icon/play.png" alt=""></div></div>
+                <div class=" col-xs-12">
+                    <img src="../../static/recreation/1.jpg" alt="">
+                    <!--<div class="text">-->
+                        <!--<div><span class="title">TRAVEL</span><span>Upgrade of the Chinese tourism industry through new initiatives.</span></div>-->
+                        <!--<div><span class="title">ECO - TOURISM</span><span>Integrate and celebrate the unique features &<br> beauty of greater China’s Iconic natural</span></div>-->
+                        <!--<div><span class="title">SPORTS</span><span>Opportunity to embrace challenge through exhilarating adventure experiences.</span></div>-->
+                        <!--<div><span class="title">EDUCATION</span><span>Inspiring curiosity through a variety of exclusive locations and explorative programs.</span></div>-->
+                    <!--</div>-->
+                </div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12 discovery">
+                    <img src="../../static/recreation/discovery.png" alt="">
+                </div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12">
+                    <img src="../../static/recreation/3.jpeg" alt="">
+                </div>
+                <div class="space clearfix"></div>
+                <div class="col-xs-12 recreationText">
+                    <p class="">
+                        OPENS YOUR EYES<br/>
+                        FEED YOUR MIND<br/>
+                        BEYOND LIMITS<br/>
+                        INSPIRE YOUR HEART<br/>
+                    </p>
+                    <p>
+                        World-class adventure brand – Discovery Adventures Park.<br/>
+                        We created the first discovery adventures park in Moganshan<br>
+                        that takes you onto a unique journey. <br/>
+                        Open your eyes, feed your mind and inspires your heart<br/>
+                    </p>
+                </div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <!--<div class="space clearfix"></div>-->
+                <div class="col-xs-12">
+                    <img src="../../static/recreation/2.jpg" alt="" class="gray">
+                    <!--<div class= "text1">-->
+                        <!--<div><span class="title">TRAVEL</span><span>Upgrade of the Chinese tourism industry through new initiatives.</span></div>-->
+                        <!--<div><span class="title">ECO - TOURISM</span><span>Integrate and celebrate the unique features &<br> beauty of greater China’s Iconic natural</span></div>-->
+                        <!--<div><span class="title">SPORTS</span><span>Opportunity to embrace challenge through exhilarating adventure experiences.</span></div>-->
+                        <!--<div><span class="title">EDUCATION</span><span>Inspiring curiosity through a variety of exclusive locations and explorative programs.</span></div>-->
+                    <!--</div>-->
+                </div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div  class="col-xs-12 linkFrame">
+                    <div class="set_6_btn in blue">
+                        <a href="http://www.apaxgroup.com/" class="link" target="_blank">
+                            <span>GO TO OUR WEBSITE</span>
+                        </a>
+                        <div class="corners top"></div>
+                        <div class="corners bottom"></div>
+                    </div>
                 </div>
             </div>
             <div class="back col-xs-1">
@@ -26,43 +79,53 @@ from the daily life, along with the trends, justified The brand's features of al
                 <Share></Share>
             </div>
         </div>
-
-        <!-- 播放器 -->
-        <div class="player-box">
-            <div>
-                <div id="object">
-                    <video src="../../static/recreation.mp4" controls="controls"></video>
-                </div>
-                <div class="close"><img src="../assets/img/icon/close.png" alt="关闭" /></div>
-                <div class="tips"></div>
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
-import OurworkSubNav from '@/components/OurworkSubNav.vue';
-import Arrow from '@/components/Arrow.vue';
-import Share from '@/components/Share.vue';
-
+    import OurworkSubNav from '@/components/OurworkSubNav.vue';
+    import AContent from '@/components/AContent.vue';
+    import Share from '@/components/Share.vue';
+    import Arrow from '@/components/Arrow.vue';
+    import {bus} from  '../assets/js/app/public'
 export default {
     name : 'recreation-detail-view',
     components : { OurworkSubNav, Arrow, Share },
     data (){
         return {
-            link : 'recreation'
+            link : 'recreation',
+            isMobile:false
         }
     },
     created(){
         this.$bus.$emit('canvas-open');
     },
     mounted(){
-        $('.recreation-detail-view .play').on('click', () => $('.player-box').show().find('video')[0].play());
-        $('.player-box .close').on('click', () => $('.player-box').hide());
+//        $('.recreation-detail-view .play').on('click', () => $('.player-box').show().find('video')[0].play());
+//        $('.player-box .close').on('click', () => $('.player-box').hide());
+        let sr = this.$sr({reset: true, delay: 0});
+        sr.reveal('.content div', {duration: 1000});
+        if(this.IsPC()){
+            this.isMobile = true
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -70,7 +133,7 @@ export default {
 
 <style lang="less">
 @import '../assets/style/common.less';
-
+@import '../assets/style/but';
 .recreation-detail-view {
     padding-bottom: 150px;
 
@@ -79,7 +142,7 @@ export default {
     }
 
     .info {
-        padding-top: 8em;
+        padding-top: 9vh;
     }
 
     .title {
@@ -87,7 +150,7 @@ export default {
         padding: 0 5em;
 
         p {
-            line-height: 2em;
+            line-height: 1.8em;
         }
     }
 
@@ -103,18 +166,112 @@ export default {
     .content {
         margin: 5em 0;
         position: relative;
+        .linkFrame{
+            text-align: center;
+        }
+        .gray{
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
 
-        >img {
+            filter: grayscale(100%);
+
+            filter: gray;
+        }
+         .space {
+            padding: 10px 0;
+        }
+        img {
             width: 100%;
         }
+        .discovery{
+            margin: 2vh 0;
+            text-align: center;
+            img{
+                width:auto;
+            }
+        }
+        .text{
+            position: absolute;
+            top:1vh;
+            left: 0;
+            /*top: 30px;*/
+            /*left: 20px;*/
+            width:100%;
+            color: #fff;
+            div{
+                margin: 20px 0 20px 20px ;
+                display: flex;
+                align-items: center;
+                .title{
 
+                    /*display: block;*/
+                    /*height: 30px;*/
+                    padding: 5px 20px;
+                    background-color: #00b3ee;
+                    border-top-left-radius: 10px ;
+                    border-bottom-right-radius: 10px;
+                    font-size: 1.8em;
+                    float: left;
+                }
+                span:nth-last-child(1){
+                    font-size: 1.2em;
+                    margin-left: 20px;
+                    width:60%;
+                    float: left;
+                }
+            }
+            div:after{
+                clear: both;
+                display: block;
+                visibility: hidden;
+                content: '';
+            }
+        }
+        .text1{
+            position: absolute;
+            bottom:10vh;
+            left: 0;
+            /*top: 30px;*/
+            /*left: 20px;*/
+            width:100%;
+            color: #fff;
+            div{
+                margin: 20px 0 20px 20px ;
+                display: flex;
+                align-items: center;
+                .title{
+
+                    /*display: block;*/
+                    /*height: 30px;*/
+                    padding: 5px 20px;
+                    background-color: #00b3ee;
+                    border-top-left-radius: 10px ;
+                    border-bottom-right-radius: 10px;
+                    font-size: 1.8em;
+                    float: left;
+                }
+                span:nth-last-child(1){
+                    font-size: 1.2em;
+                    margin-left: 20px;
+                    width:60%;
+                    float: left;
+                }
+            }
+            div:after{
+                clear: both;
+                display: block;
+                visibility: hidden;
+                content: '';
+            }
+        }
         &:hover {
             .hover {
                 opacity: 1;
                 transition: all 0.3s ease-in-out;
             }
         }
-
         .hover {
             position: absolute;
             height: 100%;
@@ -146,6 +303,15 @@ export default {
                 img {
                     cursor: pointer;
                 }
+            }
+        }
+        .recreationText{
+            text-align: center;
+            p{
+                text-align: center;
+            }
+            p:nth-child(1){
+                font-size: 1.2em;
             }
         }
     }

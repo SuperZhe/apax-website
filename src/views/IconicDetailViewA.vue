@@ -7,48 +7,64 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >Fendi on the Wall</div>
-            <div class="date col-sm-3 col-xs-12"><span> The Great Wall, Beijing, China - Oct. 19, 2007</span></div>
+            <div class="div1 col-xs-12" >
+                <span class="title col-sm-8 col-md-8 col-xs-12">Fendi on the Wall</span>
+            <!--</div>-->
+            <!--<div class="date col-sm-3 col-xs-12">-->
+                <span class="date col-sm-4 col-md-4 col-xs-12"> The Great Wall, Beijing, China</span>
+            </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-1/1.jpg" alt="">
-                    <p>Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.</p>
+                    <!--<p>A monumental event in fashion history was when Fendi literally had 88 models parade their spring summer collection along 88 meters of the Great Wall of china against a double-f projection onto the neighboring mountains.</p>-->
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class=" col-xs-10">
-                    <img src="../../static/iconic-detail-1/2.jpg" alt="">
-                    <p>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke. </p>
+                <div class="col-xs-12">
+                    <!--<img src="../../static/iconic-detail-1/1.jpg" alt="">-->
+                    <p>A monumental event in fashion history was when Fendi literally had 88 models parade their spring summer collection along 88 meters of the Great Wall of china against a double-f projection onto the neighboring mountains.</p>
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12">
+                    <img src="../../static/iconic-detail-1/2.png" alt="">
+                    <!--<p>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke. </p>-->
+                </div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class=" col-xs-12">
                     <img src="../../static/iconic-detail-1/3.jpg" alt="">
-                    <p>With a section of the awe-inspiring, 4,000-mile-long structure snaking up the mountain behind them, 88 models walked a runway 88 meters long in an expanded version of Fendi's spring-summer collection. Hundreds of journalists and TV crews were invited to document the event,
-                    	along with some of its best customers from Asia. Flanking the show were a series of dinners and cocktails.</p>
+                    <!--<p>With a section of the awe-inspiring, 4,000-mile-long structure snaking up the mountain behind them, 88 models walked a runway 88 meters long in an expanded version of Fendi's spring-summer collection. Hundreds of journalists and TV crews were invited to document the event,-->
+                    	<!--along with some of its best customers from Asia. Flanking the show were a series of dinners and cocktails.</p>-->
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="s41 center col-xs-9"><img src="../../static/iconic-detail-1/4.jpg" alt=""></div>
-                <div class=" col-xs-12">
-                <div class="s43 col-xs-5">For both Fendi and Karl Lagerfeld, “Fendi on the Wall” was recorded as an epic masterpiece in history.</div>
-                <div class="s42  col-xs-7"><img src="../../static/iconic-detail-1/5.jpg" alt=""></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="s41 center col-xs-9"><img src="../../static/iconic-detail-1/4.jpg" alt=""></div>-->
+                <div class="col-xs-12">
+                <!--<div class="s43 col-xs-5">For both Fendi and Karl Lagerfeld, “Fendi on the Wall” was recorded as an epic masterpiece in history.</div>-->
+                <div class="col-xs-12"><img src="../../static/iconic-detail-1/4.jpg" alt=""></div>
 				</div>
-                <div class="center col-xs-12"><img src="../../static/iconic-detail-1/6.jpg" alt=""></div>
+                <!--<div class="center col-xs-12"><img src="../../static/iconic-detail-1/6.jpg" alt=""></div>-->
             </div>
-            <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+            <div class="col-xs-12">
+                <div class="back col-xs-1">
+                    <a href="#" @click="goback">BACK</a>
+                </div>
+                <div class="share col-xs-offset-1 col-xs-8">
+                    <Share></Share>
+                </div>
+                <div class="col-xs-2 pagingOne">
+                    <router-link to="detail-c"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
+                </div>
             </div>
-            <div class="share col-xs-offset-1 col-xs-8">
-                <Share></Share>
-            </div>
+
         </div>
     </div>
 </template>
@@ -66,7 +82,8 @@ export default {
         return {
             link : 'events',
             info : {},
-            showO:1
+            showO:1,
+            isMobile:false
         }
     },
     created(){
@@ -77,10 +94,28 @@ export default {
         window.scrollTo(0, 0);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
+
+        if(this.IsPC()){
+            this.isMobile = true
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -95,9 +130,18 @@ export default {
     .subnav {
         padding-top: 80px;
     }
-
+    .pagingOne{
+        text-align: right;
+    }
     .info {
-        padding-top: 8em;
+        padding-top: 7vh;
+        .div1{
+            display: flex;
+            align-items: flex-end;
+            span:nth-last-child(1){
+                padding-bottom: 6px;
+            }
+        }
     }
 
     .title {
@@ -106,7 +150,6 @@ export default {
 
     .date {
         text-align: right;
-
         span {
             position: relative;
             top:2em;
@@ -114,8 +157,8 @@ export default {
     }
 
     .content {
-        margin: 5em 0;
-
+        margin-top: 5vh;
+        margin-bottom: 5em;
         .space {
             padding: 10px 0;
         }
@@ -173,6 +216,16 @@ export default {
 .iconic-detail-view {
     .info {
         padding-top: 4em;
+        .div1{
+            display: block;
+            span{
+                display: block;
+            }
+            span:nth-last-child(1){
+                margin-top: 1em;
+                padding-bottom: 2px;
+            }
+        }
     }
 
     .title {
@@ -181,6 +234,7 @@ export default {
 
     .date {
         text-align: left;
+
     }
 
     .s11 {

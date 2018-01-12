@@ -7,37 +7,61 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >Hennessy XO Exclusive Collection VI Worldwide Launch</div>
-            <div class="date  col-xs-12"><span>Reed Flute Cave, Guilin, China - Dec, 2012</span></div>
+            <div class="div1 col-xs-12" >
+            <span class="title col-sm-8 col-md-8 col-xs-12">Hennessy XO Exclusive Collection VI Worldwide Launch</span>
+            <!--</div>-->
+            <!--<div class="date col-sm-3 col-xs-12">-->
+            <span class="date col-sm-4 col-md-4 col-xs-12">Reed Flute Cave, Guilin, China</span>
+        </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-2/1.jpg" alt="">
-                    <p>Themed “the power of nature”, Hennessy presented the 6th edition of the Hennessy Exclusive Collection by demonstrating the power of nature in the Reed Flute Cave in Guilin</p>
+                    <!--<p>-->
+                        <!--Hennessy presented the 6th edition of the Hennessy Exclusive Collection; showcasing “The Power of Nature” in the Reed Flute Cave in Guilin. The stones interior of the cave became the natural setting, incorporated with specially designed projection effects to highlight the magnificent and dazzling essence of the new collector’s.-->
+                    <!--</p>-->
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="col-xs-12">
+                    <!--<img src="../../static/iconic-detail-2/1.jpg" alt="">-->
+                    <p>
+                        Hennessy presented the 6th edition of the Hennessy Exclusive Collection; showcasing “The Power of Nature” in the Reed Flute Cave in Guilin. The stones interior of the cave became the natural setting, incorporated with specially designed projection effects to highlight the magnificent and dazzling essence of the new collector’s.
+                    </p>
+                </div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class=" col-xs-12">
                     <img src="../../static/iconic-detail-2/2.jpg" alt="">
-                    <p>The stones and interior of the cave became the natural backdrop with specially-designed projection effects to highlight the magnificent and dazzling essence of the new collector's bottle, together with the natural wonders of the cave. </p>
+                    <!--<p>The stones and interior of the cave became the natural backdrop with specially-designed projection effects to highlight the magnificent and dazzling essence of the new collector's bottle, together with the natural wonders of the cave. </p>-->
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12"><img src="../../static/iconic-detail-2/3.jpg" alt=""></div>
                 <div class="space clearfix"></div>
-                <div class="s41 center col-xs-9"><img src="../../static/iconic-detail-2/3.jpg" alt=""></div>
-                <div class="s42 col-xs-offset-3  col-xs-9"><img src="../../static/iconic-detail-2/4.jpg" alt="">
-                	<p>The gala dinner was a true "luxurious" experience along with the long outstanding quality of the Hennessy XO Exclusive Collection VI with its innovative approach - forming a new brand spirit of praise.</p>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12"><img src="../../static/iconic-detail-2/4.jpg" alt="">
+                	<!--<p>The gala dinner was a true "luxurious" experience along with the long outstanding quality of the Hennessy XO Exclusive Collection VI with its innovative approach - forming a new brand spirit of praise.</p>-->
                 </div>
                 <!--<div class="s43 col-xs-9">The gala dinner was a true "luxurious" experience along with the long outstanding quality of the Hennessy XO Exclusive Collection VI with its innovative approach - forming a new brand spirit of praise.</div>-->
-                <div class="center col-xs-12"><img src="../../static/iconic-detail-2/5.jpg" alt=""></div>
+                <!--<div class="center col-xs-12"><img src="../../static/iconic-detail-2/5.jpg" alt=""></div>-->
             </div>
-            <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+            <div class="col-xs-12">
+                <div class="back col-xs-1">
+                    <a href="#" @click="goback">BACK</a>
+                </div>
+                <div class="share col-xs-offset-1 col-xs-8">
+                    <Share></Share>
+                </div>
+                <div class="col-xs-2 pagingOne">
+                    <router-link to="detail-a"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
+                    <router-link to="detail-d"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
+                </div>
             </div>
-            <div class="share col-xs-offset-1 col-xs-8">
-                <Share></Share>
-            </div>
+
         </div>
     </div>
 </template>
@@ -56,7 +80,7 @@ export default {
             link : 'events',
             info : {},
             showO:1,
-
+            isMobile:false
         }
     },
     created(){
@@ -67,10 +91,28 @@ export default {
         window.scrollTo(0, 0);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
+
+        if(this.IsPC()){
+            this.isMobile = true
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -81,13 +123,22 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
-
+    .pagingOne{
+        text-align: right;
+    }
     .subnav {
         padding-top: 80px;
     }
 
     .info {
-        padding-top: 8em;
+        padding-top: 7vh;
+        .div1{
+            display: flex;
+            align-items: flex-end;
+            span:nth-last-child(1){
+                padding-bottom: 6px;
+            }
+        }
     }
 
     .title {
@@ -105,7 +156,7 @@ export default {
 
     .content {
         margin: 5em 0;
-
+        margin-top: 5vh;
         .space {
             padding: 10px 0;
         }
@@ -151,7 +202,7 @@ export default {
 
     .s42 {
     	z-index: 2;
-        top: -100px;
+        /*top: -100px;*/
     }
 
     .s43 {
@@ -164,6 +215,15 @@ export default {
 .iconic-detail-view {
     .info {
         padding-top: 4em;
+        .div1{
+            display: block;
+            span{
+                display: block;
+            }
+            span:nth-last-child(1){
+                margin-top: 1em;
+            }
+        }
     }
 
     .title {

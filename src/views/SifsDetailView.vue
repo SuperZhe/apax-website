@@ -8,7 +8,7 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="title col-sm-10 col-xs-12" >{{ info.title }}</div>
-            <div class="date col-sm-2 col-xs-12"><span>{{ info.date }}</span></div>
+            <div class="date col-sm-2 col-xs-12"></div>
             <div class="content col-xs-12">
                 <AContent :content="info.content"></AContent>
             </div>
@@ -58,8 +58,7 @@ export default {
         this.$bus.$emit('canvas-open');
     },
     mounted(){
-        bus.$emit('change', this.showO);
-        this.$axios.get('http://www.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
+        this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
             //console.log(response.data.result);
             this.info.title = response.data.result.enTitle;
             this.info.content = response.data.result.enHtml;
@@ -71,6 +70,8 @@ export default {
         }, (error) => {
             console.log(error)
         });
+
+        bus.$emit('change', 4);
     },
     methods : {
         goback(){
@@ -85,7 +86,6 @@ export default {
 
 .sifs-detail-view {
     padding-bottom: 150px;
-
     .subnav {
         padding-top: 80px;
     }

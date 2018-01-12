@@ -12,7 +12,7 @@
                 <div class="hover">
                     <div class="mask">
                         <h2>{{ item.title }}</h2>
-                        <div class="date">{{ item.date }}</div>
+                        <!--<div class="date">{{ item.date }}</div>-->
                         <!-- <div class="brief" v-html="item.brief">{{ item.brief }}</div> -->
                         <!-- <router-link :to="{ name: 'iconic-detail', params: { id: item.id }}" class="more"><img src="../assets/img/main/more.png" alt=""></router-link> -->
                     </div>
@@ -93,7 +93,7 @@ export default {
                 id : 1,
                 url : 'iconic/detail-a',
                 title : 'Fendi on the Wall',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/101.jpg',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/101.jpg',
                 date : 'The Great Wall, Beijing, China - Oct. 19, 2007',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             });
@@ -111,25 +111,32 @@ export default {
                 id : 3,
                 url : 'iconic/detail-c',
                 title : 'Hennessy XO Exclusive Collection VI Worldwide Launch',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/103.jpg',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/103.jpg',
                 date : 'The Great Wall, Beijing, China - Oct. 19, 2007',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
 
+//            result.push({
+//                id : 4,
+//                url : 'iconic/detail-d',
+//                title : 'DIOR',
+//                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/104.jpg',
+//                date : 'Beijing, China - Dec. 15, 2011',
+//                brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
+//            })
             result.push({
                 id : 4,
                 url : 'iconic/detail-d',
-                title : 'DIOR',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/104.jpg',
+                title : 'Burberry Hologram Fashion Show',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/111.jpg',
                 date : 'Beijing, China - Dec. 15, 2011',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
-
             result.push({
                 id : 5,
                 url : 'iconic/detail-e',
                 title : 'HUAWEI Global product launch Barcelona',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/105.jpg',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/105.jpg',
                 date : 'GreaBarcelona, Spain - Feb. 26, 2017',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -138,7 +145,7 @@ export default {
                 id : 6,
                 url : 'iconic/detail-f',
                 title : 'Tiffany',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/106.jpg',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/106.jpg',
                 date : 'Beijing, China - Oct.23, 2010',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -146,8 +153,8 @@ export default {
             result.push({
                 id : 7,
                 url : 'iconic/detail-g',
-                title : 'Fendi on the Wall',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/107.jpg',
+                title : 'Plaza 66 Home To Luxury Celebration Party',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/107.jpg',
                 date : 'Plaza 66, Shanghai, China September. 8, 2017',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -156,7 +163,7 @@ export default {
                 id : 8,
                 url : 'iconic/detail-h',
                 title : 'STAR WARS',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/108.jpg',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/108.jpg',
                 date : 'Oct. 20, 2015 - Great wall, Beijing',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -165,7 +172,7 @@ export default {
                 id : 9,
                 url : 'iconic/detail-i',
                 title : 'MAX MARA MONOPOLIS!',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/109.jpg',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/109.jpg',
                 date : 'Shanghai, China - Dec. 15, 2016',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
@@ -174,12 +181,21 @@ export default {
                 id : 10,
                 url : 'iconic/detail-j',
                 title : 'UNDER ARMOUR Stephen Curry Asian Tour',
-                imgSrc : 'http://test.tron-m.com/frog/apax/static/iconic/110.jpg',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/110.jpg',
                 date : 'Taimiao, Beijing, China - July 22, 2017',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             })
+            result.push({
+                id : 11,
+                url : 'iconic/detail-b',
+                title : 'Starbucks Reserve Roastery Grand Opening\n',
+                imgSrc : 'http://test.tron-m.com/webapax/static/iconic/new1.png',
+                date : 'Shanghai, China - Oct.29, 2016',
+                brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
+            })
 
-            return result;
+
+                return result;
         },
 
         goDetail(id){
@@ -192,6 +208,7 @@ export default {
 
 
 <style lang="less">
+    @import '../assets/style/common.less';
 .iconic-list-view {
     padding-bottom: 150px;
 
@@ -260,4 +277,11 @@ export default {
         }
     }
 }
+    @media screen and (max-width: @max-width) {
+        .iconic-list-view {
+            .list {
+                margin-top: 2em;
+            }
+        }
+    }
 </style>

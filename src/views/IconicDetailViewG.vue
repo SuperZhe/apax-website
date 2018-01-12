@@ -7,77 +7,42 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >HOME TO LUXURY</div>
-            <div class="date col-sm-3 col-xs-12"><span>Plaza 66, Shanghai, China  September. 8, 2017</span></div>
+            <div class="title col-sm-9 col-xs-12" >Plaza 66 Home to Luxury Celebration Party</div>
+            <div class="date col-sm-3 col-xs-12"><span>Plaza 66, Shanghai,China</span></div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
-                    <img src="../../static/iconic-detail/1.jpg" alt="">
-                    <p>Hang Lung Properties was set to mark a milestone in the history of its flagship Shanghai, Plaza 66, to celebrate the completion of a transformation that looks to redefine luxury retail in China. </p>
+                    <img src="../../static/iconic-detail/new1.jpg" alt="">
+                    <!--<p>Hang Lung Properties was set to mark a milestone in its history with the transformation of its flagship Shanghai Plaza Plaza 66 on September 8, 2017 with a grand celebration - Home to Luxury. The star-studded celebration highlighted 66 Showcases, which showed numerous luxury brands unveiling their special or limited collections. The Grammy Award winning Singer - Alicia Keys performed her greatest hits during the splendid evening. </p>-->
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-offset-1 col-xs-10">
-                    <img src="../../static/iconic-detail/2.jpg" alt="">
-                    <p>Thousands of guests, including business partners, and investors, as well as local and overseas media attended the star-studded celebration. </p>
+                <div class="col-xs-12">
+                    <!--<img src="../../static/iconic-detail/new1.jpg" alt="">-->
+                    <p>Hang Lung Properties was set to mark a milestone in its history with the transformation of its flagship Shanghai Plaza Plaza 66 on September 8, 2017 with a grand celebration - Home to Luxury. The star-studded celebration highlighted 66 Showcases, which showed numerous luxury brands unveiling their special or limited collections. The Grammy Award winning Singer - Alicia Keys performed her greatest hits during the splendid evening. </p>
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-offset-1 col-xs-10">
-                    <img src="../../static/iconic-detail/3.jpg" alt="">
-                    <p>The grand celebration - Home To Luxury was to mark the transformation of Plaza 66 in Shanghai on September 8.</p>
-                </div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class=" col-xs-12"><img src="../../static/iconic-detail/new2.png" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class=" col-xs-12"><img src="../../static/iconic-detail/new3.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-offset-1 col-xs-7"><img src="../../static/iconic-detail/4.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-offset-5 col-xs-7 clearfix"><img src="../../static/iconic-detail/5.jpg" alt=""></div>
-                <div class="s11 col-xs-7 clearfix"><img src="../../static/iconic-detail/6.jpg" alt=""></div>
-                <div class="s12 col-xs-offset-5 col-xs-7 clearfix"><img src="../../static/iconic-detail/7.jpg" alt=""></div>
-
-
-                <div class="col-xs-offset-1 col-xs-7"><img src="../../static/iconic-detail/8.jpg" alt=""></div>
-                <div class="s11 col-xs-offset-5 col-xs-7"><img src="../../static/iconic-detail/9.jpg" alt=""></div>
-                <div class="s12 col-xs-7"><img src="../../static/iconic-detail/10.jpg" alt=""></div>
-
-                <div class="col-xs-offset-1 col-xs-7"><img src="../../static/iconic-detail/11.jpg" alt=""></div>
-                <div class="s21 col-xs-offset-3 col-xs-7"><img src="../../static/iconic-detail/12.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="s31 col-xs-offset-4 col-xs-7"><img src="../../static/iconic-detail/13.jpg" alt=""></div>
-                <div class="s32 col-xs-7"><img src="../../static/iconic-detail/14.jpg" alt=""></div>
-                <div class="s33 col-xs-offset-4 col-xs-7">
-                    <img src="../../static/iconic-detail/15.jpg" alt="">
-                    <p>he highlight of the soiree was not only star-studded celebration but the 66 Showcases, which showed numerous luxury brands unveil their autumn/winter 2017 collections along with exclusive lines.</p>
-                </div>
-
-                <div class="col-xs-11"><img src="../../static/iconic-detail/16.jpg" alt=""></div>
-                <div class="s11 col-xs-offset-1 col-xs-11">
-                    <img src="../../static/iconic-detail/17.jpg" alt="">
-                    <p>The 3D mapping kicked off the grand ceremony by highlighting the beauty of the plaza 66 atrium and the shopping levels. </p>
-                </div>
-
-                <div class="s41 center col-xs-5"><img src="../../static/iconic-detail/18.jpg" alt=""><br><br>Alicia Keys</div>
-                <div class="s43 col-xs-7">nternational superstar, the Grammy© Award winning Singer - Alicia Keys performed her greatest hits in the splendid evening to mark the mega-scale transformation of Plaza 66.</div>
-                <div class="s42 col-xs-offset-4 col-xs-8"><img src="../../static/iconic-detail/19.jpg" alt=""></div>
-
-                <div class="center col-xs-12"><img src="../../static/iconic-detail/20.jpg" alt=""><br><br>The Rooftop Party</div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class=" col-xs-12"><img src="../../static/iconic-detail/new4.jpg" alt=""></div>
             </div>
             <div class="back col-xs-1">
                 <a href="#" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
+            </div>
+            <div class="col-xs-2 pagingOne">
+                <router-link to="detail-f"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
+                <router-link to="detail-h"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
             </div>
         </div>
     </div>
@@ -96,7 +61,8 @@ export default {
         return {
             link : 'events',
             info : {},
-            showO:1
+            showO:1,
+            isMobile:false
         }
     },
     created(){
@@ -107,10 +73,27 @@ export default {
         bus.$emit('change',this.showO);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
+        if(this.IsPC()){
+            this.isMobile = true
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -121,13 +104,15 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
-
+    .pagingOne{
+        text-align: right;
+    }
     .subnav {
         padding-top: 80px;
     }
 
     .info {
-        padding-top: 8em;
+        padding-top: 7vh;
     }
 
     .title {
@@ -145,7 +130,7 @@ export default {
 
     .content {
         margin: 5em 0;
-
+        margin-top: 5vh;
         .space {
             padding: 10px 0;
         }
@@ -211,6 +196,7 @@ export default {
 
     .date {
         text-align: left;
+        margin-bottom: 1.5em;
     }
 
     .s11 {

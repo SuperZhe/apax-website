@@ -6,7 +6,7 @@
 
         <Arrow></Arrow>
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="item col-sm-6 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
+            <div class="item col-sm-3 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
                 <img alt="" :src="config.host + item.conver">
                 <div class="hover">
                     <div class="mask">
@@ -34,14 +34,14 @@ export default {
             link : 'events',
             config,
             items : [],
-            showO:2
+            showO:2,
         }
     },
     created() {
         this.$bus.$emit('canvas-open');
 
         this.items = [];
-        this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
+        this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:asc').then((response) => {
             this.items = response.data.result.content;
         }, (error) => {
             console.log(error)
@@ -85,7 +85,8 @@ export default {
         .item {
             font-size: 0;
             position: relative;
-            padding: 0 5px 5px 0;
+            padding: 0 5px 0px 0;
+            margin-bottom: 30px;
             >img {
                 width: 100%;
             }
@@ -107,7 +108,7 @@ export default {
             left:0;
             opacity: 0;
             transition: all 0.3s ease-in-out;
-            padding: 0 5px 5px 0;
+            /*padding: 0 5px 5px 0;*/
             .mask {
                 background-color: rgba(0, 0, 0, 0.5);
                 transition: all 0.3s ease-in-out;
@@ -121,9 +122,11 @@ export default {
                 .h2{
                     margin: 0;
                     height: 100%;
+                    font-size: 12px;
                     line-height: 100%;
                     transform: translateY(50%);
                     /*margin-top: -8px;*/
+                    font-weight: normal;
                 }
             }
 

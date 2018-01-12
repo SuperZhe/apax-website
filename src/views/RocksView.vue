@@ -7,208 +7,74 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-10 col-xs-12" >Fashion Rocks First Time in Asia</div>
-            <div class="sub-title col-xs-12" >The Biggest Name in Music, The Hottest Trends in Fashion</div>
+            <div class="title col-sm-10 col-xs-12" >BLEND FASHION WITH MUSIC</div>
+            <div class="sub-title col-xs-12" >
+                <p>By marketing the unification of entertainment and trends, Fashion Rocks offers China & Asia a 360-degree concept with infinite opportunities through fashion and music.
+                    <br>
+                    An established IP weaving e-commerce, online & offline engagement and international broadcast distribution into a global platform reaching out to a multitude of consumers.
+                </p>
+            </div>
             <div class="content col-xs-12">
-                <div class="col-xs-12"><img src="../../static/rocks-detail/1.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/2.jpg" alt=""></div>
-                <div class="s51 col-sm-3 col-xs-12">Fashion Rocks<br>China 2016 </div>
-                <div class="s52 col-sm-9 col-xs-12"><p>Fashion Rocks China 2016 made breaking entertainment news headlines by creating a super stylish splash in Shanghai, right in the smack of the Shanghai Fashion Week’s schedule. Professionally produced by exclusive license and organizer APAX LIVE, a star-studded night of fancy fashion, flawless footwork and fantabulous entertainment kept the nearly 10,000 capacity crowd constantly on their feet.</p></div>
-                <div class="s22 col-xs-6"><img src="../../static/rocks-detail/8.jpg" alt=""></div>
-                <div class="s41 col-xs-6"><img src="../../static/rocks-detail/12.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/15.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/16.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/17.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/18.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <p>British pop singer Charli XCX, Asia’s pop icon CoCo Lee and American Superstar Usher gave sensational performances on the stage of this exclusive one night only fashion and music event.  Also showcasing their collection on stage was China fashion designer SANKUANZ, international fashion designer Giambattista Valli thru his Giamba line, and international luxury crystal brand Swarovski. </p>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/19.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/20.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <p>With their amazing live performance and co-operation with three different fashion brands, Charli XCX, CoCo Lee, and Usher ignited the night in the name of fashion and music.</p>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/21.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <p>Fashion Rocks 2016 was Coco Lee’s first time as a live show hostess, the multi-talented CoCo took the stage alongside hip-hop artist and DJ personality Jeff Kung. SWIN-S from Super Idol also performed as the opening act.</p>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/22.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <p>Across the globe, Fashion Rocks offers an exclusive experience combining fashion by top fashion brands and live music performances by world renowned musicians. As the exclusive licensee and organizer in Asia, APAX LIVE presented the first Fashion Rocks in Asia on October 14th, 2016 in Shanghai and the show was live streamed to over 50 million viewers online via Tencent Video.</p>
-
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-8"><img src="../../static/rocks-detail/3.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="s11 col-xs-6"><img src="../../static/rocks-detail/4.jpg" alt=""></div>
-                <div class="s12 col-xs-6"><img src="../../static/rocks-detail/5.jpg" alt=""></div>
-                <div class="s13 col-xs-offset-6 col-xs-6"><img src="../../static/rocks-detail/6.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="s21 col-xs-6">
-                    <img src="../../static/rocks-detail/7.jpg" alt="">
-                    <br><br>
-                    <p>cross the globe, Fashion Rocks offers an exclusive experience combining fashion by top fashion brands and </p>
+                <div class="col-xs-12">
+                    <img src="../../static/rocks-detail/1.png" alt="">
                 </div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class="space clearfix"></div>
+                <div class="col-xs-12"><img src="../../static/rocks-detail/2.jpeg" alt=""></div>
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/1.jpg" alt=""></div>-->
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="space clearfix hidden-xs"></div>
-                <div class="s31 col-xs-offset-5 col-xs-6"><img src="../../static/rocks-detail/9.jpg" alt=""></div>
-                <div class="s32 col-xs-6"><img src="../../static/rocks-detail/10.jpg" alt=""></div>
-                <div class="s33 col-xs-6"><img src="../../static/rocks-detail/11.jpg" alt=""></div>
+                <div class="space clearfix" v-if="!isMobile"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/2.jpg" alt=""></div>-->
+                <div class="s51 col-sm-12 col-xs-12 title">SUPERSTARS x SUPERBRANDS x SUPERMODELS</div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="s52 col-sm-12 col-xs-12">
+                    <p>
+                        Fashion Rocks showcases super A-listers with world-renowned fashion brands in a winning formula presented on stage and online throughout the world!
+                    </p>
+                </div>
 
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="space clearfix"></div>-->
+                <div class="col-xs-12"><img src="../../static/rocks-detail/3.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="space clearfix"></div>-->
+                <div class="col-xs-12"><img src="../../static/rocks-detail/4.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <p>Across the globe, Fashion Rocks offers an exclusive experience combining fashion by top fashion brands and live music performances by world renowned musicians. As the exclusive licensee and organizer in Asia, APAX LIVE presented the first Fashion Rocks in Asia on October 14th, 2016 in Shanghai and the show was live streamed to over 50 million viewers online via Tencent Video.
+                </p>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <div class="s22 col-xs-12 col-sm-6"><img src="../../static/rocks-detail/5.jpg" alt=""></div>
+                <div class="s41 col-xs-12 col-sm-6"><img src="../../static/rocks-detail/6.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <div class="col-xs-12"><img src="../../static/rocks-detail/7.jpg" alt=""></div>
+                <!--<div class="space clearfix"></div>-->
                 <div class="space clearfix"></div>
-                <!--<div class="s41 col-xs-6"><img src="../../static/rocks-detail/12.jpg" alt=""></div>-->
-                <div class="s42 col-xs-6"><img src="../../static/rocks-detail/13.jpg" alt=""></div>
-
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/rocks-detail/14.jpg" alt=""></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <!--<div class="s51 col-sm-3 col-xs-12">Fashion Rocks<br>China 2016 </div>-->
-                <!--<div class="s52 col-sm-9 col-xs-12"><p>Fashion Rocks China 2016 made breaking entertainment news headlines by creating a super stylish splash in Shanghai, right in the smack of the Shanghai Fashion Week’s schedule. Professionally produced by exclusive license and organizer APAX LIVE, a star-studded night of fancy fashion, flawless footwork and fantabulous entertainment kept the nearly 10,000 capacity crowd constantly on their feet.</p></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/15.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/16.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/17.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/18.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<p>British pop singer Charli XCX, Asia’s pop icon CoCo Lee and American Superstar Usher gave sensational performances on the stage of this exclusive one night only fashion and music event.  Also showcasing their collection on stage was China fashion designer SANKUANZ, international fashion designer Giambattista Valli thru his Giamba line, and international luxury crystal brand Swarovski. </p>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/19.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/20.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<p>With their amazing live performance and co-operation with three different fashion brands, Charli XCX, CoCo Lee, and Usher ignited the night in the name of fashion and music.</p>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/21.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<p>Fashion Rocks 2016 was Coco Lee’s first time as a live show hostess, the multi-talented CoCo took the stage alongside hip-hop artist and DJ personality Jeff Kung. SWIN-S from Super Idol also performed as the opening act.</p>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="col-xs-12"><img src="../../static/rocks-detail/22.jpg" alt=""></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <!--<div class="space clearfix"></div>-->
-                <div class="s51 col-sm-3 col-xs-12">About<br>Fashion Rocks</div>
+                <p class="rocks-text">
+                    THE INAUGURAL FASHION ROCKS 2016 IN ASIA<br/>
+                    <span>10 THOUSAND</span> LIVE AUDIENCE<br/>
+                    <span>400 MILLION</span> GLOBAL AUDIENCE<br/>
+                    OUTDOOR/APP/SOCIAL MEDIA VIEWERSHIP <span>45 MILLION</span><br/>
+                    <span>RMB 900 MILLION </span>MEDIA VALUE<br/>
+                    LIVE STREAM ON TENCENT <span>60 MILLION</span> VIEWS</p>
+          <!--      <div class="s51 col-sm-3 col-xs-12">About<br>Fashion Rocks</div>
                 <div class="s52 col-sm-9 col-xs-12">
                     <p>Established in 2003 and founded by Prince’s Trust, Fashion Rocks was previously held in London, New York, Monaco and Rio de Janeiro. With astounding live fashion and music showcases lasting for 2.5 hours, bringing the best out of the two worlds – Music and Fashion, Fashion Rocks features A-List singers and artists including Beyoncé, Grace Jones, Robbie Williams, David Bowie, Justin Bieber and the likes together with Alexander McQueen, Burberry, Christian Dior, Gucci, Giorgio Armani and other world-class fashion brands.</p>
                     <h2>Fashion Rocks 2016 Artist Line</h2>
@@ -218,8 +84,7 @@
                     <p>As the only Chinese singer to ever perform at the Oscars, Coco Lee is one of Asia’s music icons and the most well-known Asian singers. Coco also won the “I Am A Singer” competition in 2016, one of the most watched TV shows in Chinese television history.</p>
                     <h3>Usher</h3>
                     <p>Famous American superstar, musician, dancer and actor Usher, the 8 Grammies and 6 AMAs winner who has more than 1 RIAA diamond album, is one of the best selling artists in the music history, and also be called the most successful artist in the US by Billboard Magazine. Usher performed on Fashion Rocks New York in 2014 as the opening guest, he performed his new single named No Limit from his new album Hard II Love for the first time in Asia on Fashion Rocks 2016.</p>
-                </div>
-
+                </div>-->
             </div>
             <div class="back col-xs-1">
                 <a href="#" @click="goback">BACK</a>
@@ -239,7 +104,7 @@ export default {
         return {
             link : 'rocks',
             info : {},
-            showO:5
+            isMobile:false
         }
     },
     created(){
@@ -260,10 +125,28 @@ export default {
         bus.$emit('change', this.showO);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
+        if(this.IsPC()){
+            this.isMobile = true
+        }
+
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -280,7 +163,8 @@ export default {
     }
 
     .info {
-        padding-top: 8em;
+        /*padding-top:6em;*/
+        padding-top: 7vh;
     }
 
     .title {
@@ -289,6 +173,9 @@ export default {
 
     .sub-title {
         padding-top: 10px;
+        p{
+            /*line-height: 30px;*/
+        }
     }
 
     .date {
@@ -299,9 +186,14 @@ export default {
             top:2em;
         }
     }
-
+    .rocks-text{
+        text-align: center;
+        span{
+            color: #6D227B;
+        }
+    }
     .content {
-        margin: 5em 0;
+        margin: 2em 0;
 
         p {
             line-height: 2em;
@@ -328,12 +220,12 @@ export default {
 
     .s12 {
         text-align: right;
-        top:-200px;
+        /*top:-200px;*/
     }
 
     .s13 {
         text-align: right;
-        top:-100px;
+        /*top:-100px;*/
     }
 
     .s21, .s22 {
@@ -343,8 +235,9 @@ export default {
     }
 
     .s22 {
-        text-align: right;
-        top: 250px;
+        text-align: left;
+        /*padding-right: 10px;*/
+        /*top: 250px;*/
     }
 
     .s32, .s33 {
@@ -363,6 +256,7 @@ export default {
     }
 
     .s41, .s42 {
+        text-align: right;
         img {
             width: 95%;
         }
@@ -394,10 +288,22 @@ export default {
     }
 }
 
+.s14{
+    img{
+        width:95%;
+        margin-right: 50px;
+    }
+    p{
+        margin-right: 50px;
+    }
+}
 @media screen and (max-width: @max-width) {
 .rocks-view {
+    .rocks-text{
+        margin-top: 1.6em;
+    }
     .info {
-        padding-top: 4em;
+        padding-top: 2em;
     }
 
     .title {
@@ -421,18 +327,18 @@ export default {
 
     .s13 {
         text-align: right;
-        top:-50px;
+        /*top:-50px;*/
     }
 
     .s21, .s22 {
         img {
-            width: 95%;
+            width: 100% !important;
         }
     }
 
     .s22 {
-        text-align: right;
-        top: 50px;
+        text-align: center;
+        /*top: 50px;*/
     }
 
     .s32, .s33 {
@@ -451,22 +357,26 @@ export default {
     }
 
     .s41, .s42 {
+        margin-top: 2em !important;
         img {
-            width: 95%;
+            width: 100% !important;
         }
     }
 
     .s42 {
-        text-align: right;
+        margin-top: 2em !important;
+        text-align: center;
     }
 
     .s51 {
-        font-size: 2.5em;
+        /*font-size: 2.5em;*/
+        margin-bottom: 1em;
     }
 
     .s52 {
-        top: -1em;
+        /*top: -1em;*/
         line-height: 2em;
+        /*margin-bottom: 2em;*/
 
         h2 {
             font-size: 2.5em;

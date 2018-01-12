@@ -7,39 +7,52 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >MAX MARA MONOPOLIS!</div>
-            <div class="date col-sm-3 col-xs-12"><span> Shanghai, China - Dec. 15, 2016</span></div>
+            <div class="title col-sm-9 col-xs-12" >Max Mara MONOPOLIS!</div>
+            <div class="date col-sm-3 col-xs-12"><span>Shanghai Exhibition Center, Shanghai, China</span></div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
-                    <img src="../../static/iconic-detail-8/1.jpg" alt="">
-                    <p>Luxury brand Max Mara unveiled its pre-fall 2017 collection series as well as an exclusive, see-now-buy-now Capsule Collection in collaboration with Chinese artist Liu Wei at Shanghai Exhibition Center.</p>
+                    <img src="../../static/iconic-detail-8/new1.jpg" alt="">
+                    <!--<p>Luxury brand Max Mara unveiled its pre-fall 2017 collection series as well as an exclusive, see-now-buy-now Capsule Collection in collaboration with Chinese artist Liu Wei at Shanghai Exhibition Center. Liu Wei’s sculptures and paintings became the installation background, interpreting the modernization of this future city - MONOPOLIS - an “Interesting”, “brutal” and “unsettling” space.</p>-->
+                </div>
+                <div class="space clearfix"></div>
+                <div class="col-xs-12">
+                    <!--<img src="../../static/iconic-detail-8/new1.jpg" alt="">-->
+                    <p>Luxury brand Max Mara unveiled its pre-fall 2017 collection series as well as an exclusive, see-now-buy-now Capsule Collection in collaboration with Chinese artist Liu Wei at Shanghai Exhibition Center. Liu Wei’s sculptures and paintings became the installation background, interpreting the modernization of this future city - MONOPOLIS - an “Interesting”, “brutal” and “unsettling” space.</p>
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class=" col-xs-10">
-                    <img src="../../static/iconic-detail-8/2.jpg" alt="">
-                </div>
-                <div class=" s43 col-xs-6 ">
-                	<p>the MONOPOLIS, an “Interesting”, “brutal” and “unsettling” space. With Liu Wei's sculptures and paintings as the installation background, this future city perfectly interpreted the idea of modernization and contrasts. </p>
-                </div>
-                <div class="s42  col-xs-6">
-                    <img src="../../static/iconic-detail-8/3.jpg" alt="">
-                </div>
-                <div class=" col-xs-offset-3 center col-xs-9"><img src="../../static/iconic-detail-8/4.jpg" alt=""></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class=" col-xs-12">
-                <div class="s42  col-xs-7"><img src="../../static/iconic-detail-8/5.jpg" alt=""></div>
-                <div class="s43 col-xs-5">More than a thousand of regional media and international guests gathered together to witness this Fashion Miracle.</div>
-				</div>
-                <div class="s-one col-xs-5"><img src="../../static/iconic-detail-8/6.jpg" alt=""></div>
-                <div class="s-two col-xs-offset-2 col-xs-5"><img src="../../static/iconic-detail-8/7.jpg" alt=""></div>
+                    <img src="../../static/iconic-detail-8/new2.jpg" alt="">
+                </div>
+                <!--<div class=" s43 col-xs-6 ">-->
+                	<!--<p>the MONOPOLIS, an “Interesting”, “brutal” and “unsettling” space. With Liu Wei's sculptures and paintings as the installation background, this future city perfectly interpreted the idea of modernization and contrasts. </p>-->
+                <!--</div>-->
+                <!--<div class="s42  col-xs-6">-->
+                    <!--<img src="../../static/iconic-detail-8/3.jpg" alt="">-->
+                <!--</div>-->
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class=" center col-xs-12"><img src="../../static/iconic-detail-8/new3.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12"><img src="../../static/iconic-detail-8/new4.jpg" alt=""></div>
+                <!--<div class="s43 col-xs-5">More than a thousand of regional media and international guests gathered together to witness this Fashion Miracle.</div>-->
+                <!--<div class="s-one col-xs-5"><img src="../../static/iconic-detail-8/6.jpg" alt=""></div>-->
+                <!--<div class="s-two col-xs-offset-2 col-xs-5"><img src="../../static/iconic-detail-8/7.jpg" alt=""></div>-->
             </div>
             <div class="back col-xs-1">
                 <a href="#" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
+            </div>
+            <div class="col-xs-2 pagingOne">
+                <router-link to="detail-h"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
+                <router-link to="detail-j"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
             </div>
         </div>
     </div>
@@ -58,7 +71,8 @@ export default {
         return {
             link : 'events',
             info : {},
-            showO:1
+            showO:1,
+            isMobile:false
         }
     },
     created(){
@@ -69,10 +83,27 @@ export default {
         window.scrollTo(0, 0);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
+        if(this.IsPC()){
+            this.isMobile = true
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -83,13 +114,15 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
-
+.pagingOne{
+    text-align: right;
+}
     .subnav {
         padding-top: 80px;
     }
 
     .info {
-        padding-top: 8em;
+        padding-top: 7vh;
     }
 
     .title {
@@ -107,7 +140,7 @@ export default {
 
     .content {
         margin: 5em 0;
-
+        margin-top: 5vh;
         .space {
             padding: 10px 0;
         }
@@ -173,6 +206,7 @@ export default {
 
     .date {
         text-align: left;
+        margin-bottom: 1.5em;
     }
 
     .s11 {

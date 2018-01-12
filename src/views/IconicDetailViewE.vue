@@ -7,38 +7,54 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >HUAWEI Global product launch Barcelona</div>
-            <div class="date col-sm-3 col-xs-12"><span> GreaBarcelona, Spain - Feb. 26, 2017</span></div>
+            <div class="div1 col-xs-12" >
+                <span class="title col-sm-8 col-md-8 col-xs-12">Huawei Global Product Launch Barcelona</span>
+                <!--</div>-->
+                <!--<div class="date col-sm-3 col-xs-12">-->
+                <span class="date col-sm-4 col-md-4 col-xs-12">Barcelona, Spain,China</span>
+            </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
-                    <img src="../../static/iconic-detail-4/1.jpg" alt="">
-                    <p>Huawei launched their new products to a worldwide audience - the W Product 2017 world Press Conference in Barcelona for their new Huawei P10 and smart watch.</p>
+                    <img src="../../static/iconic-detail-4/new1.jpg" alt="">
+                    <!--<p>-->
+                        <!--Huawei dominated the news during the World Mobile Congress 2017 in Barcelona when they launched their new products (the P10 and smart watch) to a worldwide audience - the W Product 2017 at world Press Conference. The semi-circular door was a diamond cutting surface that formed as a natural crack for a metaphor of the breakthrough in innovation and the modern art attraction. Social media was a buzz with tens of thousands of articles and reviews that helped drive sales to an all-time high.-->
+                    <!--</p>-->
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="col-xs-12">
+                    <!--<img src="../../static/iconic-detail-4/new1.jpg" alt="">-->
+                    <p>
+                        Huawei dominated the news during the World Mobile Congress 2017 in Barcelona when they launched their new products (the P10 and smart watch) to a worldwide audience - the W Product 2017 at world Press Conference. The semi-circular door was a diamond cutting surface that formed as a natural crack for a metaphor of the breakthrough in innovation and the modern art attraction. Social media was a buzz with tens of thousands of articles and reviews that helped drive sales to an all-time high.
+                    </p>
+                </div>
                 <div class="space clearfix"></div>
-                <div class="s41 center col-xs-9"><img src="../../static/iconic-detail-4/2.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <!--<div class="s41 center col-xs-9"><img src="../../static/iconic-detail-4/2.jpg" alt=""></div>-->
                 <div class=" col-xs-12">
-                <div class="s43 col-xs-5">The semi-circle door as the Façade showed a diamond cutting surface that formed as a natural crack to metaphor the breakthrough in innovation and the modern and art attraction. The special dress sculpture at the entrance reception featured the color of Huawei P10 cases that shine under the sky.</div>
-                <div class="s42  col-xs-7"><img src="../../static/iconic-detail-4/3.jpg" alt=""></div>
+                <!--<div class="s43 col-xs-5">The semi-circle door as the Façade showed a diamond cutting surface that formed as a natural crack to metaphor the breakthrough in innovation and the modern and art attraction. The special dress sculpture at the entrance reception featured the color of Huawei P10 cases that shine under the sky.</div>-->
+                <div class="col-xs-12"><img src="../../static/iconic-detail-4/new2.jpg" alt=""></div>
 				</div>
-                <div class="center col-xs-12"><img src="../../static/iconic-detail-4/4.jpg" alt="">
-                	<p>The lighting show and animation effects welcomed Speakers at the launch moment. Instead of making them walk from backstage to the front, we put them on the blind area by playing around the light and shades. Speakers appeared when the sunbeam penetrated the dark spot.</p>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="center col-xs-12"><img src="../../static/iconic-detail-4/new3.jpg" alt="">
+                	<!--<p>The lighting show and animation effects welcomed Speakers at the launch moment. Instead of making them walk from backstage to the front, we put them on the blind area by playing around the light and shades. Speakers appeared when the sunbeam penetrated the dark spot.</p>-->
                 </div>
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-offset-1 col-xs-10">-->
+                    <!--<img src="../../static/iconic-detail-4/5.jpg" alt="">-->
+                    <!--<p>The demo area presented a strong fashion approach with art gallery. Leica Studio was special designed for providing an immediate experience with P10 camera. Guests shared the real time experience on social media.</p>-->
+                <!--</div>-->
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-offset-1 col-xs-10">
-                    <img src="../../static/iconic-detail-4/5.jpg" alt="">
-                    <p>The demo area presented a strong fashion approach with art gallery. Leica Studio was special designed for providing an immediate experience with P10 camera. Guests shared the real time experience on social media.</p>
-                </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class=" col-xs-12">
-                    <img src="../../static/iconic-detail-4/6.jpg" alt="">
-                    <p>The event received high reputation, the buzz was well created via social media. Tens of thousands of articles and reviews that helped drive sales to an all-time high.</p>
+                    <img src="../../static/iconic-detail-4/new4.jpg" alt="">
+                    <!--<p>The event received high reputation, the buzz was well created via social media. Tens of thousands of articles and reviews that helped drive sales to an all-time high.</p>-->
                 </div>
             </div>
             <div class="back col-xs-1">
@@ -46,6 +62,10 @@
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
+            </div>
+            <div class="col-xs-2 pagingOne">
+                <router-link to="detail-d"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
+                <router-link to="detail-f"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
             </div>
         </div>
     </div>
@@ -64,7 +84,8 @@ export default {
         return {
             link : 'events',
             info : {},
-            showO:1
+            showO:1,
+            isMobile:false
         }
     },
     created(){
@@ -75,10 +96,28 @@ export default {
         window.scrollTo(0, 0);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
+
+        if(this.IsPC()){
+            this.isMobile = true
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -89,13 +128,22 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
-
+.pagingOne{
+    text-align: right;
+}
     .subnav {
         padding-top: 80px;
     }
 
     .info {
-        padding-top: 8em;
+        padding-top: 7vh;
+        .div1{
+            display: flex;
+            align-items: flex-end;
+            span:nth-last-child(1){
+                padding-bottom: 6px;
+            }
+        }
     }
 
     .title {
@@ -113,7 +161,7 @@ export default {
 
     .content {
         margin: 5em 0;
-
+        margin-top: 5vh;
         .space {
             padding: 10px 0;
         }
@@ -158,7 +206,7 @@ export default {
     }
 
     .s42 {
-        top: -100px;
+        /*top: -100px;*/
     }
 
     .s43 {
@@ -171,6 +219,15 @@ export default {
 .iconic-detail-view {
     .info {
         padding-top: 4em;
+        .div1{
+            display: block;
+            span{
+                display: block;
+            }
+            span:nth-last-child(1){
+                margin-top: 1em;
+            }
+        }
     }
 
     .title {

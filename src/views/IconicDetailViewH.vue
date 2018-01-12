@@ -7,34 +7,40 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >STAR WARS</div>
-            <div class="date col-sm-3 col-xs-12"><span> Oct. 20, 2015 - Great wall, Beijin</span></div>
+            <div class="title col-sm-9 col-xs-12" >STAR WARS: The Force Awakens</div>
+            <div class="date col-sm-3 col-xs-12"><span>The Great Wall, Beijing, China</span></div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
-                    <img src="../../static/iconic-detail-7/1.jpg" alt="">
-                    <p>When the third and final trailer for Star Wars: The Force Awakens was released into the world, advance ticket sales crashed website. But nothing can match Disney’s latest frankly terrifying stunt – flying an army of storm troopers in to line up on the Great Wall of China, a landmark that was once believed to be visible from space itself</p>
+                    <img src="../../static/iconic-detail-7/new1.jpg" alt="">
+                    <!--<p>Nothing could match Disney’s bold and starkly eye-popping stunt – flying an army of storm troopers in, to line up on the Great Wall of China when Star Wars: “The Force Awakens” was released into the world. The 500 figures stood menacingly motionless in formation on the steps below one of the famous guard towers at night, as giant billboards flashed with the message “The Force Awakens”.</p>-->
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
+                <div class="col-xs-12">
+                    <!--<img src="../../static/iconic-detail-7/new1.jpg" alt="">-->
+                    <p>Nothing could match Disney’s bold and starkly eye-popping stunt – flying an army of storm troopers in, to line up on the Great Wall of China when Star Wars: “The Force Awakens” was released into the world. The 500 figures stood menacingly motionless in formation on the steps below one of the famous guard towers at night, as giant billboards flashed with the message “The Force Awakens”.</p>
+                </div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class=" col-xs-12">
-                    <img src="../../static/iconic-detail-7/2.jpg" alt="">
+                    <img src="../../static/iconic-detail-7/new2.jpg" alt="">
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-offset-2 col-xs-10">
-                    <img src="../../static/iconic-detail-7/3.jpg" alt="">
-                    <p>With a section of the awe-inspiring, 4,000-mile-long structure snaking up the mountain behind them, 88 models walked a runway 88 meters long in an expanded version of Fendi's spring-summer collection. Hundreds of journalists and TV crews were invited to document the event,
-                    	along with some of its best customers from Asia. Flanking the show were a series of dinners and cocktails.</p>
-                </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class=" col-xs-12">
-                    <img src="../../static/iconic-detail-7/4.jpg" alt="">
-                </div>
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="col-xs-offset-2 col-xs-10">-->
+                    <!--<img src="../../static/iconic-detail-7/3.jpg" alt="">-->
+                    <!--<p>With a section of the awe-inspiring, 4,000-mile-long structure snaking up the mountain behind them, 88 models walked a runway 88 meters long in an expanded version of Fendi's spring-summer collection. Hundreds of journalists and TV crews were invited to document the event,-->
+                    	<!--along with some of its best customers from Asia. Flanking the show were a series of dinners and cocktails.</p>-->
+                <!--</div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class=" col-xs-12">-->
+                    <!--<img src="../../static/iconic-detail-7/4.jpg" alt="">-->
+                <!--</div>-->
                 <!--<div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
@@ -50,6 +56,10 @@
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
+            </div>
+            <div class="col-xs-2 pagingOne">
+                <router-link to="detail-g"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
+                <router-link to="detail-i"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
             </div>
         </div>
     </div>
@@ -68,7 +78,8 @@ export default {
         return {
             link : 'events',
             info : {},
-            showO:1
+            showO:1,
+            isMobile:false
         }
     },
     created(){
@@ -79,10 +90,28 @@ export default {
         window.scrollTo(0, 0);
         let sr = this.$sr({ reset: true, delay: 0 });
         sr.reveal('.content div', { duration: 1000 });
+
+        if(this.IsPC()){
+            this.isMobile = true
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        IsPC:function() {
+            let userAgentInfo = navigator.userAgent;
+            let Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            let flag = true;
+            for (let v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
         }
     }
 }
@@ -93,13 +122,15 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
-
+.pagingOne{
+    text-align: right;
+}
     .subnav {
         padding-top: 80px;
     }
 
     .info {
-        padding-top: 8em;
+        padding-top:7vh;
     }
 
     .title {
@@ -117,7 +148,7 @@ export default {
 
     .content {
         margin: 5em 0;
-
+        margin-top: 5vh;
         .space {
             padding: 10px 0;
         }

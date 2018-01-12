@@ -40,6 +40,8 @@ import RecreationInfoView from '@/views/RecreationInfoView';
 import RecreationDetailView from '@/views/RecreationDetailView';
 import eventsVideo from '@/views/EventsVideo'
 import liveVideo from '@/views/liveVideo'
+import association from '@/views/association.vue'
+import fashionWeek from '@/views/FashionWeek.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -182,6 +184,11 @@ export default new Router({
                             component: liveVideo
                         },
                         {
+                            path: 'week',
+                            name: 'fashoinWeek-list-view',
+                            component: fashionWeek
+                        },
+                        {
                             path: 'sifs',
                             component: SifsView,
                             children : [
@@ -221,6 +228,11 @@ export default new Router({
             path: '/partners',
             name: 'partners-view',
             component: PartnersView
+        },
+        {
+            path: '/association',
+            name: 'association-view',
+            component: association
         },
         {
             path: '/news',

@@ -156,6 +156,7 @@ export default {
 
     .content {
         margin: 5em 0;
+        margin-top: 4vh;
 
         .space {
             padding: 10px 0;

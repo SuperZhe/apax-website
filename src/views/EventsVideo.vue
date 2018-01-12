@@ -1,21 +1,22 @@
+<!--
 <template>
     <div id="video">
         <div class="subnav">
             <OurworkSubNav :links=link></OurworkSubNav>
         </div>
-        <!--<video class="col-xs-offset-1 col-xs-10" :src=video  controls-->
-               <!--x-webkit-airplay="true"-->
-               <!--webkit-playsinline="true"-->
-               <!--playsinline="true"-->
-               <!--autoplay="autoplay"-->
-               <!--x5-video-player-type="h5"-->
-               <!--x5-video-player-fullscreen="true"-->
-               <!--preload="auto" loop="true">-->
+        &lt;!&ndash;<video class="col-xs-offset-1 col-xs-10" :src=video  controls&ndash;&gt;
+               &lt;!&ndash;x-webkit-airplay="true"&ndash;&gt;
+               &lt;!&ndash;webkit-playsinline="true"&ndash;&gt;
+               &lt;!&ndash;playsinline="true"&ndash;&gt;
+               &lt;!&ndash;autoplay="autoplay"&ndash;&gt;
+               &lt;!&ndash;x5-video-player-type="h5"&ndash;&gt;
+               &lt;!&ndash;x5-video-player-fullscreen="true"&ndash;&gt;
+               &lt;!&ndash;preload="auto" loop="true">&ndash;&gt;
 
-        <!--</video>-->
-        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
+        &lt;!&ndash;</video>&ndash;&gt;
+        <div class="col-xs-offset-1 col-xs-10">
             <div class="content col-xs-12 col-sm-12" >
-                <!-- <img src="../assets/img/main/video-bg.jpg" alt=""> -->
+                &lt;!&ndash; <img src="../assets/img/main/video-bg.jpg" alt=""> &ndash;&gt;
                 <img src="../../static/video-bg.jpg" alt="11">
                 <div class="hover">
                     <div class="mask"><div class="middle"><img class="play" src="../assets/img/icon/play.png" alt=""></div></div>
@@ -23,7 +24,7 @@
             </div>
         </div>
 
-        <!--播放器-->
+        &lt;!&ndash;播放器&ndash;&gt;
         <div class="player-box ">
             <div>
                 <div id="object">
@@ -72,8 +73,9 @@
         /*height: 80vh;*/
     /*}*/
     .content {
-        margin-top: 5em;
+        margin-top: 4em;
         position: relative;
+       margin-bottom: 4em;
         > img {
             width: 100%;
         }
@@ -174,3 +176,4 @@
             }
         }
 </style>
+-->

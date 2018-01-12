@@ -1,20 +1,20 @@
 <template>
     <div id="app">
         <div class="header">
-            <router-link to="/"><img src="./assets/img/main/logo.png" alt="APAX"></router-link>
+            <router-link to="/"><img src="./assets/img/main/logo.png" alt="APAX" class="rootLogo"></router-link>
         </div>
         <main-nav></main-nav>
         <div class="wrapper clearfix">
             <!-- <transition name="fade">
                 <keep-alive> -->
-                    <router-view></router-view>
-                <!-- </keep-alive>
-            </transition> -->
+            <router-view></router-view>
+            <!-- </keep-alive>
+        </transition> -->
         </div>
         <div class="footer clearfix">沪公网安备31010602001763号</div>
         <div class="bg" id="a" v-show="canvas">
             <div id="b">
-            <canvas id="c"></canvas>
+                <canvas id="c"></canvas>
             </div>
         </div>
         <div class="video" v-show="video">
@@ -34,276 +34,277 @@
 </template>
 
 <script>
-import MainNav from '@/components/MainNav'
-import Bus from '@js-lib/helper/bus';
-import '@js-lib/bootstrap/less-3.3.7/bootstrap.less'
-import '@js-lib/jquery/jquery.browser'
-import videoSrc from '../static/bg.mp4'
-import videoMobileSrc from '../static/bg-mobile.mp4'
+    import MainNav from '@/components/MainNav'
+    import Bus from '@js-lib/helper/bus';
+    import '@js-lib/bootstrap/less-3.3.7/bootstrap.less'
+    import '@js-lib/jquery/jquery.browser'
+    import videoSrc from '../static/bg.mp4'
+    import videoMobileSrc from '../static/bg-mobile.mp4'
 
-export default {
-    name: 'app',
-    components : { MainNav },
-    data(){
-        return {
-            canvas : false,
-            video : true,
-            loading : true,
-            videoSrc
-        }
-    },
-    created(){
+    export default {
+        name: 'app',
+        components: {MainNav},
+        data() {
+            return {
+                canvas: false,
+                video: true,
+                loading: true,
+                videoSrc
+            }
+        },
+        created() {
 
-        //console.log(preloadjs);
+            //console.log(preloadjs);
 
-        Bus.$on('canvas-open',()=> {
-            this.canvas = true;
-            this.video = false;
+            Bus.$on('canvas-open', () => {
+                this.canvas = true;
+                this.video = false;
 
-            if(!$.browser.mobile) {
+                if (!$.browser.mobile) {
+                    this.canvas3();
+                }
+            });
+
+            Bus.$on('canvas-close', () => {
+                this.canvas = false;
+                this.video = true;
+            });
+
+            //console.log(createjs);
+
+            $(window).on('resize', () => {
+                let w = $(window).width();
+                let h = $(window).height();
+
+                if (w / h > 16 / 9) {
+                    $('.video video').removeClass('state1 state2').addClass('state1')
+                }
+                else {
+                    $('.video video').removeClass('state1 state2').addClass('state2')
+                }
+            })
+        },
+        mounted() {
+
+            $('#app').on('touchstart', function () {
+                $('.video>video')[0].play();
+            })
+
+            if (this.canvas && !$.browser.mobile) {
                 this.canvas3();
             }
-        });
 
-        Bus.$on('canvas-close',()=> {
-            this.canvas = false;
-            this.video = true;
-        });
+            if ($.browser.mobile) {
+                $('.bg b').remove();
+                $('.video video').addClass('state-mobile');
 
-        //console.log(createjs);
-
-        $(window).on('resize', () => {
-            let w = $(window).width();
-            let h = $(window).height();
-
-            if ( w/h > 16/9) {
-                $('.video video').removeClass('state1 state2').addClass('state1')
+                this.videoSrc = videoMobileSrc;
             }
             else {
-                $('.video video').removeClass('state1 state2').addClass('state2')
-            }
-        })
-    },
-    mounted(){
-
-        $('#app').on('touchstart', function(){
-            $('.video>video')[0].play();
-        })
-
-        if (this.canvas && !$.browser.mobile) {
-            this.canvas3();
-        }
-
-        if($.browser.mobile) {
-            $('.bg b').remove();
-            $('.video video').addClass('state-mobile');
-
-            this.videoSrc = videoMobileSrc;
-        }
-        else {
-            this.loading = false;
-        }
-
-        if($.browser.android) {
-            $('.video video, .bg b').remove();
-        }
-
-    },
-    methods : {
-        canvas1() {
-            var c=document.getElementById("c");
-            var w = c.width = window.innerWidth,
-                h = c.height = window.innerHeight,
-                ctx = c.getContext('2d'),
-
-            count = (w*h/6000)|0,
-            speed = 4,
-            range = 80,
-            lineAlpha = .05,
-
-            particles = [],
-            huePart = 360/count;
-
-            for(var i = 0; i < count; ++i)
-            particles.push(new Particle((huePart*i)|0));
-
-            function Particle(hue){
-            this.x = Math.random()*w;
-            this.y = Math.random()*h;
-            this.vx = (Math.random()-.5)*speed;
-            this.vy = (Math.random()-.5)*speed;
-
-            this.hue = hue;
-            }
-            Particle.prototype.update = function(){
-            this.x += this.vx;
-            this.y += this.vy;
-
-            if(this.x < 0 || this.x > w) this.vx *= -1;
-            if(this.y < 0 || this.y > h) this.vy *= -1;
+                this.loading = false;
             }
 
-            function checkDist(a, b, dist){
-            var x = a.x - b.x,
-                y = a.y - b.y;
-
-            return x*x + y*y <= dist*dist;
+            if ($.browser.android) {
+                $('.video video, .bg b').remove();
             }
 
-            function anim(){
-            window.requestAnimationFrame(anim);
-
-            ctx.fillStyle = 'rgba(0, 0, 0, .05)';
-            ctx.fillRect(0, 0, w, h);
-
-            for(var i = 0; i < particles.length; ++i){
-                var p1 = particles[i];
-                p1.update();
-
-                for(var j = i+1; j < particles.length; ++j){
-                var p2 = particles[j];
-                if(checkDist(p1, p2, range)){
-                    ctx.strokeStyle = 'hsla(hue, 80%, 50%, alp)'
-                    .replace('hue', ((p1.hue  + p2.hue + 3)/2) % 360)
-                    .replace('alp', lineAlpha);
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
-                }
-                }
-            }
-            }
-
-            anim();
         },
+        methods: {
+            canvas1() {
+                var c = document.getElementById("c");
+                var w = c.width = window.innerWidth,
+                    h = c.height = window.innerHeight,
+                    ctx = c.getContext('2d'),
 
-        canvas2(){
+                    count = (w * h / 6000) | 0,
+                    speed = 4,
+                    range = 80,
+                    lineAlpha = .05,
 
-            var canvas = document.getElementById("c");
-            var ctx = canvas.getContext("2d");
+                    particles = [],
+                    huePart = 360 / count;
 
-            resize();
-            window.onresize = resize;
+                for (var i = 0; i < count; ++i)
+                    particles.push(new Particle((huePart * i) | 0));
 
-            function resize() {
-                canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-            }
+                function Particle(hue) {
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.vx = (Math.random() - .5) * speed;
+                    this.vy = (Math.random() - .5) * speed;
 
-            var RAF = (function() {
-                return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-                    window.setTimeout(callback, 1000 / 60);
+                    this.hue = hue;
+                }
+
+                Particle.prototype.update = function () {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0 || this.x > w) this.vx *= -1;
+                    if (this.y < 0 || this.y > h) this.vy *= -1;
+                }
+
+                function checkDist(a, b, dist) {
+                    var x = a.x - b.x,
+                        y = a.y - b.y;
+
+                    return x * x + y * y <= dist * dist;
+                }
+
+                function anim() {
+                    window.requestAnimationFrame(anim);
+
+                    ctx.fillStyle = 'rgba(0, 0, 0, .05)';
+                    ctx.fillRect(0, 0, w, h);
+
+                    for (var i = 0; i < particles.length; ++i) {
+                        var p1 = particles[i];
+                        p1.update();
+
+                        for (var j = i + 1; j < particles.length; ++j) {
+                            var p2 = particles[j];
+                            if (checkDist(p1, p2, range)) {
+                                ctx.strokeStyle = 'hsla(hue, 80%, 50%, alp)'
+                                    .replace('hue', ((p1.hue + p2.hue + 3) / 2) % 360)
+                                    .replace('alp', lineAlpha);
+                                ctx.beginPath();
+                                ctx.moveTo(p1.x, p1.y);
+                                ctx.lineTo(p2.x, p2.y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+
+                anim();
+            },
+
+            canvas2() {
+
+                var canvas = document.getElementById("c");
+                var ctx = canvas.getContext("2d");
+
+                resize();
+                window.onresize = resize;
+
+                function resize() {
+                    canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                    canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                }
+
+                var RAF = (function () {
+                    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+                        window.setTimeout(callback, 1000 / 60);
                     };
-            })();
+                })();
 
-            // 鼠标活动时，获取鼠标坐标
-            var warea = {x: null, y: null, max: 20000};
-            window.onmousemove = function(e) {
-                e = e || window.event;
+                // 鼠标活动时，获取鼠标坐标
+                var warea = {x: null, y: null, max: 20000};
+                window.onmousemove = function (e) {
+                    e = e || window.event;
 
-                warea.x = e.clientX;
-                warea.y = e.clientY;
-            };
-            window.onmouseout = function(e) {
-                warea.x = null;
-                warea.y = null;
-            };
+                    warea.x = e.clientX;
+                    warea.y = e.clientY;
+                };
+                window.onmouseout = function (e) {
+                    warea.x = null;
+                    warea.y = null;
+                };
 
-            // 添加粒子
-            // x，y为粒子坐标，xa, ya为粒子xy轴加速度，max为连线的最大距离
-            var dots = [];
-            for (var i = 0; i < 300; i++) {
-                var x = Math.random() * canvas.width;
-                var y = Math.random() * canvas.height;
-                var xa = Math.random() * 2 - 1;
-                var ya = Math.random() * 2 - 1;
+                // 添加粒子
+                // x，y为粒子坐标，xa, ya为粒子xy轴加速度，max为连线的最大距离
+                var dots = [];
+                for (var i = 0; i < 300; i++) {
+                    var x = Math.random() * canvas.width;
+                    var y = Math.random() * canvas.height;
+                    var xa = Math.random() * 2 - 1;
+                    var ya = Math.random() * 2 - 1;
 
-                dots.push({
-                x: x,
-                y: y,
-                xa: xa,
-                ya: ya,
-                max: 6000
-                })
-            }
-
-            // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
-            setTimeout(function() {
-                animate();
-            }, 100);
-
-            // 每一帧循环的逻辑
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                // 将鼠标坐标添加进去，产生一个用于比对距离的点数组
-                var ndots = [warea].concat(dots);
-
-                dots.forEach(function(dot) {
-
-                // 粒子位移
-                dot.x += dot.xa;
-                dot.y += dot.ya;
-
-                // 遇到边界将加速度反向
-                dot.xa *= (dot.x > canvas.width || dot.x < 0) ? -1 : 1;
-                dot.ya *= (dot.y > canvas.height || dot.y < 0) ? -1 : 1;
-
-                // 绘制点
-                ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
-
-                // 循环比对粒子间的距离
-                for (var i = 0; i < ndots.length; i++) {
-                    var d2 = ndots[i];
-
-                    if (dot === d2 || d2.x === null || d2.y === null) continue;
-
-                    var xc = dot.x - d2.x;
-                    var yc = dot.y - d2.y;
-
-                    // 两个粒子之间的距离
-                    var dis = xc * xc + yc * yc;
-
-                    // 距离比
-                    var ratio;
-
-                    // 如果两个粒子之间的距离小于粒子对象的max值，则在两个粒子间画线
-                    if (dis < d2.max) {
-
-                    // 如果是鼠标，则让粒子向鼠标的位置移动
-                    if (d2 === warea && dis > (d2.max / 2)) {
-                        dot.x -= xc * 0.03;
-                        dot.y -= yc * 0.03;
-                    }
-
-                    // 计算距离比
-                    ratio = (d2.max - dis) / d2.max;
-
-                    // 画线
-                    ctx.beginPath();
-                    ctx.lineWidth = ratio / 2;
-                    ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
-                    ctx.moveTo(dot.x, dot.y);
-                    ctx.lineTo(d2.x, d2.y);
-                    ctx.stroke();
-                    }
+                    dots.push({
+                        x: x,
+                        y: y,
+                        xa: xa,
+                        ya: ya,
+                        max: 6000
+                    })
                 }
 
-                // 将已经计算过的粒子从数组中删除
-                ndots.splice(ndots.indexOf(dot), 1);
-                });
+                // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
+                setTimeout(function () {
+                    animate();
+                }, 100);
 
-                RAF(animate);
-            }
+                // 每一帧循环的逻辑
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        },
+                    // 将鼠标坐标添加进去，产生一个用于比对距离的点数组
+                    var ndots = [warea].concat(dots);
 
-        canvas3(){
-            var self = this;
-            self.$(function () {
-                if (!window.ActiveXObject && !!document.createElement("canvas").getContext) {
-                    self.$.getScript("http://im-img.qq.com/pcqq/js/200/cav.js?_=1428576021379",
+                    dots.forEach(function (dot) {
+
+                        // 粒子位移
+                        dot.x += dot.xa;
+                        dot.y += dot.ya;
+
+                        // 遇到边界将加速度反向
+                        dot.xa *= (dot.x > canvas.width || dot.x < 0) ? -1 : 1;
+                        dot.ya *= (dot.y > canvas.height || dot.y < 0) ? -1 : 1;
+
+                        // 绘制点
+                        ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
+
+                        // 循环比对粒子间的距离
+                        for (var i = 0; i < ndots.length; i++) {
+                            var d2 = ndots[i];
+
+                            if (dot === d2 || d2.x === null || d2.y === null) continue;
+
+                            var xc = dot.x - d2.x;
+                            var yc = dot.y - d2.y;
+
+                            // 两个粒子之间的距离
+                            var dis = xc * xc + yc * yc;
+
+                            // 距离比
+                            var ratio;
+
+                            // 如果两个粒子之间的距离小于粒子对象的max值，则在两个粒子间画线
+                            if (dis < d2.max) {
+
+                                // 如果是鼠标，则让粒子向鼠标的位置移动
+                                if (d2 === warea && dis > (d2.max / 2)) {
+                                    dot.x -= xc * 0.03;
+                                    dot.y -= yc * 0.03;
+                                }
+
+                                // 计算距离比
+                                ratio = (d2.max - dis) / d2.max;
+
+                                // 画线
+                                ctx.beginPath();
+                                ctx.lineWidth = ratio / 2;
+                                ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
+                                ctx.moveTo(dot.x, dot.y);
+                                ctx.lineTo(d2.x, d2.y);
+                                ctx.stroke();
+                            }
+                        }
+
+                        // 将已经计算过的粒子从数组中删除
+                        ndots.splice(ndots.indexOf(dot), 1);
+                    });
+
+                    RAF(animate);
+                }
+
+            },
+
+            canvas3() {
+                var self = this;
+                self.$(function () {
+                    if (!window.ActiveXObject && !!document.createElement("canvas").getContext) {
+                        self.$.getScript("http://im-img.qq.com/pcqq/js/200/cav.js?_=1428576021379",
                             function () {
                                 var t = {
                                     width: 1.5,
@@ -505,162 +506,184 @@ export default {
 
                                 C();
                             })
-                } else {
-                    alert('调用cav.js失败');
-                }
-            });
+                    } else {
+                        alert('调用cav.js失败');
+                    }
+                });
 
+            }
         }
     }
-}
 </script>
 
 <style lang="less">
-@import './assets/style/apax.less';
-
-* { box-sizing:border-box; }
-img { border:0;}
-a { text-decoration:none;}
-
-html, body {
-    width: 100%;
-    height: 100%;
-
-    padding: 0;
-    margin: 0;
-
-    //font-family: 'Miscrosoft Yahei', '微软雅黑';
-    //font-family: HurmeGeometricSans3, Futura, Din, Helvetica Neue, Helvetica, Arial, '思源黑体', Hiragino Sans GB, '华文细黑', STXihei, '微软雅黑', Microsoft yahei, Sans-serif;
-    font-family: "Fort-Light",'NotoSansSC-Light',"Arial",sans-serif;
-    font-size:12px;
-
-    color: @main-color;
-    //background-color:#000;
-    //overflow:hidden;
-}
-
-#app {
-    height: 100%;
-}
-
-.header {
-    text-align: center;
-    position: absolute;
-    width: 100%;
-
-    img { margin-top: 40px; }
-}
-
-.wrapper {
-    min-height: 100%;
-}
-
-.footer {
-    text-align: center;
-    margin-top: -54px;
-    font-size: 0.5em;
-    color: #444;
-    //margin-top: -30px;
-    //display: none;
-}
-
-.bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-
-    canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-
-
-    video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-
-    .state-mobile {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: initial;
-    }
-
-    .state1 {
-        width: 100%;
-        height: auto;
-    }
-
-    .state2 {
-        width: auto;
-        height: 100%;
-    }
-}
-
-
-// ------------------------------------loading-----------------------------------------
-.loading {
-    width: 100vw;
-    height: 100vh;
-
-    position:absolute;
-    text-align:center;
-    color:#fff;
-    top:0;
-    left:0;
-    //line-height:90vh;
-    z-index:99;
-    background-color:#000;
-
-    .arrow {
-        margin-top: 40vh;
-    }
-
-    .progress {
-        border-radius: 1.5px;
-        width: 30vw;
-        max-width: 500px;
-        min-width: 280px;
-        //width: 500px;
-        height: 2px;
-        background-color: #fff;
-        margin: 20px auto;
-        line-height: 0;
-        font-size: 0;
-        box-shadow: 0px 0px 25px #fff;
-
-        div {
-            background-color: @over-color;
-            height: 2px;
-            border-radius: 1.5px;
-            margin: 0 auto;
-            width: 0;
+    @import './assets/style/apax.less';
+    .back{
+        a{
+            border: 1px solid;
+            padding: 4px 12px;
         }
     }
-}
-.mask{
-    background-color: #000;
-    opacity: 0.7;
-}
+    p{
+        line-height: 1.8em;
+    }
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        border: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+
+        padding: 0;
+        margin: 0;
+
+        //font-family: 'Miscrosoft Yahei', '微软雅黑';
+        //font-family: HurmeGeometricSans3, Futura, Din, Helvetica Neue, Helvetica, Arial, '思源黑体', Hiragino Sans GB, '华文细黑', STXihei, '微软雅黑', Microsoft yahei, Sans-serif;
+        font-family: "Fort-Light", 'NotoSansSC-Light', "Arial", sans-serif;
+        font-size: 16px;
+
+        color: @main-color;
+        //background-color:#000;
+        //overflow:hidden;
+    }
+
+    #app {
+        height: 100%;
+    }
+
+    .header {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+
+        img {
+            margin-top: 40px;
+        }
+    }
+
+    .wrapper {
+        min-height: 100%;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: -54px;
+        font-size: 0.5em;
+        color: #444;
+        position: absolute;
+        width:100%;
+        //margin-top: -30px;
+        //display: none;
+    }
+
+    .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -46%);
+        }
+
+        .state-mobile {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: initial;
+        }
+
+        .state1 {
+            width: 100%;
+            height: auto;
+        }
+
+        .state2 {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    // ------------------------------------loading-----------------------------------------
+    .loading {
+        width: 100vw;
+        height: 100vh;
+
+        position: absolute;
+        text-align: center;
+        color: #fff;
+        top: 0;
+        left: 0;
+        //line-height:90vh;
+        z-index: 99;
+        background-color: #000;
+
+        .arrow {
+            margin-top: 40vh;
+        }
+
+        .progress {
+            border-radius: 1.5px;
+            width: 30vw;
+            max-width: 500px;
+            min-width: 280px;
+            //width: 500px;
+            height: 2px;
+            background-color: #fff;
+            margin: 20px auto;
+            line-height: 0;
+            font-size: 0;
+            box-shadow: 0px 0px 25px #fff;
+
+            div {
+                background-color: @over-color;
+                height: 2px;
+                border-radius: 1.5px;
+                margin: 0 auto;
+                width: 0;
+            }
+        }
+    }
+
+    .mask {
+        background-color: #000;
+        opacity: 0.7;
+    }
+    .rootLogo{
+        height: 50px;
+    }
 </style>
