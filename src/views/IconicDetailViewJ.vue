@@ -7,8 +7,12 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12">Under Armour Stephen Curry Asian Tour</div>
-            <div class="date col-sm-3 col-xs-12"><span>Taimiao, Beijing, China</span></div>
+            <div class="div1 col-xs-12" >
+                <span class="title col-sm-8 col-md-8 col-xs-12">Under Armour Stephen Curry Asian Tour</span>
+                <!--</div>-->
+                <!--<div class="date col-sm-3 col-xs-12">-->
+                <span class="date col-sm-4 col-md-4 col-xs-12">Taimiao, Beijing, China</span>
+            </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
@@ -16,8 +20,6 @@
                     <!--<p>-->
                         <!--For the third straight year, Stephen Curry went on the 2017 Asian tour powered by Under Armour beginning from the Imperial Ancestral Temple of Beijing. Within this beautiful landmark building, Under Armour kicked off the evening with a musical fashion show that combined modern chic with urban sensibility, bringing the audience a brand-new style and sports experience.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-9/new1.jpg" alt="">-->
                     <p>
@@ -49,7 +51,7 @@
                 <div class="center col-xs-12"><img src="../../static/iconic-detail-9/new4.jpg" alt=""></div>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -94,7 +96,7 @@
         },
         methods: {
             goback() {
-                this.$router.go(-1);
+                this.$router.push({ path: '/ourwork/events/iconic' })
             },
             IsPC:function() {
                 let userAgentInfo = navigator.userAgent;
@@ -119,6 +121,13 @@
 
     .iconic-detail-view {
         padding-bottom: 150px;
+        .div1{
+            display: flex;
+            align-items: flex-end;
+            span:nth-last-child(1){
+                padding-bottom: 6px;
+            }
+        }
 .pagingOne{text-align: right}
         .subnav {
             padding-top: 80px;
@@ -129,7 +138,7 @@
         }
 
         .title {
-            font-size: 3em;
+            font-size: 2.2em;
         }
 
         .date {
@@ -201,6 +210,15 @@
         .iconic-detail-view {
             .info {
                 padding-top: 4em;
+                .div1{
+                    display: block;
+                    span{
+                        display: block;
+                    }
+                    span:nth-last-child(1){
+                        margin-top: 1em;
+                    }
+                }
             }
 
             .title {

@@ -8,7 +8,7 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12">
-                <span class="title col-sm-8 col-md-8 col-xs-12">APAX Group won two trophies for Campaign Greater China Agency Of the Year !</span>
+                <span class="title col-sm-12 col-md-12 col-xs-12">APAX Group won two trophies for Campaign Greater China Agency Of the Year !</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
                 <!--<span class="date col-sm-4 col-md-4 col-xs-12"> The Great Wall, Beijing, China</span>-->
@@ -19,6 +19,7 @@
                     <img src="../../static/news/1.png" alt="">
                 </div>
                 <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class="col-xs-12">
                     <p>
                         Campaign Asia-Pacific provides insights and intelligence into the ideas, work and personalities shaping the region's marketing-communications industry. Campaign Asia-Pacific dives deeper into important subjects and presents the most compelling information that matters to businesses in the fastest-growing and most exciting communications market in the world. Campaign Asia-Pacific's portfolio includes Awards, Conferences, Data System, Training Programs.
@@ -57,7 +58,7 @@
                     </p>
                 </div>
                 <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
                 <!--<div class="space clearfix"></div>-->
                 <!--<div class="space clearfix"></div>-->
@@ -92,7 +93,7 @@
                 <!--<div class="center col-xs-12"><img src="../../static/iconic-detail-1/6.jpg" alt=""></div>-->
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -123,6 +124,7 @@
             this.$bus.$emit('canvas-open');
         },
         mounted() {
+
             bus.$emit('change', this.showO);
             window.scrollTo(0, 0);
             let sr = this.$sr({reset: true, delay: 0});
@@ -133,7 +135,9 @@
         },
         methods: {
             goback() {
+                this.$router.push(-1);
                 this.$router.go(-1);
+
             },
             IsPC: function () {
                 let userAgentInfo = navigator.userAgent;
@@ -161,6 +165,7 @@
         .differentText {
             font-size: 18px;
             text-align: center;
+            margin: 0;
             span:nth-child(1) {
                 color: #6D227B;
             }

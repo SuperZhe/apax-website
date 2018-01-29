@@ -1,12 +1,12 @@
 <template>
     <div class="info-view home-view clearfix">
         <div class="info col-xs-offset-2 col-xs-8">
-            <h2 :class="{light:light,titleHome:!light}">WE CREATE THE NEXT WAVE</h2>
+            <h2 :class="{shine:light,titleHome:!light}">WE CREATE THE NEXT WAVE</h2>
             <div class="contentHome" :class="{text:judgeText}">
                 <p>
-                    Leading Experiential Marketing company in Asia Pacific. We focus on interpreting the brand’s DNA, providing innovative and valuable commercial solutions, through multi channels and marketing platforms. </p>
+                    Leading Experiential Marketing company in Asia Pacific.<br> We focus on interpreting the brand’s DNA, providing innovative and valuable commercial solutions, through multi channels and marketing platforms. </p>
                 <p>
-                    APAX Group presents you with multi cultural platform: EVENTS / LIVE / RECREATION With partnerships throughout the world and outstanding strength of global resources bringing you unique experiences and cooperation opportunities.We are committed to translate the best local cultures and original contents onto the international stage. We nurture, We bring forth.</p>
+                    APAX Group presents you with multi cultural platform: EVENTS / LIVE / RECREATION with partnerships throughout the world and outstanding strength of global resources bringing you unique experiences and cooperation opportunities.<br>We are committed to translate the best local cultures and original contents onto the international stage. We nurture, We bring forth.</p>
 
                 <div class="set_6_btn in blue">
                     <router-link to="/ourwork" class="more">
@@ -39,6 +39,7 @@
             setTimeout(() => this.judgeText = true, 900);
             setTimeout(() => this.light = true, 700);
 
+
             //setTimeout(()=> this.$('.home-view').fadeOut(() => this.$router.push('/ourwork')), 3000);
         },
         methods: {
@@ -66,7 +67,37 @@
             width: 50px;
         }
     }
-
+    //闪光动画
+    .shine {
+        line-height: normal !important;
+        background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1,#fff)) 0 0 no-repeat;
+        background: #222 -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1,#fff)) 0 0 no-repeat;
+        background: #222 -o-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1,#fff)) 0 0 no-repeat;
+        -webkit-background-size: 100px;
+        color: rgba(141, 141, 141, 0.5);
+        -webkit-background-clip: text;
+        width: 75%;
+        /*margin: 0 auto;*/
+        margin-left: auto;
+        margin-right: auto;
+        /*font-size:60px;*/
+        /*font-weight:bold !important;*/
+        /*display:block;*/
+        -webkit-animation-name: shine;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+    }
+    @-webkit-keyframes shine
+    {
+        0%
+        {
+            background-position: top left;
+        }
+        100%
+        {
+            background-position: top right;
+        }
+    }
     @media screen and (min-width: @max-width) {
         .home-view {
             padding-top: 30vh;
@@ -159,6 +190,9 @@
             margin-top:3em;
             h2{
                 font-size: 1.6em;
+            }
+            .shine{
+                width:100%;
             }
         }
     }

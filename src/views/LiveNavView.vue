@@ -10,39 +10,40 @@
                         The only place where we bring together the world’s top fashion brands and world’s leading music artists for a union of catwalk and concert.<br>
                         Founded in 2003, in association with the Prince’s trust by Prince Charles, APAX Live is the exclusive licensee for Asia and will continue to stage the most exciting show this side of the globe.
                     </p>
-                    <div class="btnCenter">
-                        <div class="set_6_btn in blue">
-                            <router-link to="rocks" class="more more-1">
+                </div>
+            </div>
+            <div class="btnCenter col-sm-4">
+                <div class="set_6_btn in blue">
+                    <router-link to="rocks" class="more more-1">
                             <span class="btn">
                             VIEW DETAILS
                         </span>
-                            </router-link>
-                            <div class="corners top"></div>
-                            <div class="corners bottom"></div>
-                        </div>
-                    </div>
+                    </router-link>
+                    <div class="corners top"></div>
+                    <div class="corners bottom"></div>
                 </div>
             </div>
-            <div class="rocks clearfix col-sm-4">
+            <div class="rocks clearfix col-sm-4 ">
                 <!--<div class="col-xs-offset-4 col-xs-4 logo"><img src="../assets/img/main/rocks.png" alt=""></div>-->
-                <div class="logo"><img src="../assets/img/main/fashion.png" alt=""></div>
+                <div class="logo fashionWeekdiv">
+                    <img src="../assets/img/main/fashion.png" alt="" class="fashionWeek">
+                </div>
                 <div class="col-sm-8 col-sm-offset-2 col-xs-offset-1 col-xs-10">
                     <p>
-                        As the strategic partner and leading events agency of Shanghai Fashion Week, APAX Group continuously assisted in enhancing the credibility and standards of Shanghai Fashion Week,<br>
+                        As the strategic partner and leading events agency of Shanghai Fashion Week, APAX Group continuously assisted in enhancing the credibility and standards of Shanghai Fashion Week,
                         including consultancy, the management of the event and building the best truss-less tentage.
                     </p>
-
-                    <div class="btnCenter">
-                        <div class="set_6_btn in blue">
-                            <router-link to="week" class="more more-1">
+                </div>
+            </div>
+            <div class="btnCenter col-sm-4 col-sm-offset-4">
+                <div class="set_6_btn in blue">
+                    <router-link to="week" class="more more-1">
                                 <span class="btn">
                                     VIEW DETAILS
                                 </span>
-                            </router-link>
-                            <div class="corners top"></div>
-                            <div class="corners bottom"></div>
-                        </div>
-                    </div>
+                    </router-link>
+                    <div class="corners top"></div>
+                    <div class="corners bottom"></div>
                 </div>
             </div>
             <div class="sifs clearfix col-sm-4">
@@ -56,21 +57,21 @@
                         <br>
                         we started catering an alternative program by introducing world-renowned fashion brands to the China market and marrying brands on crossover collections.
                     </p>
-                    <div class="btnCenter">
-                        <div class="set_6_btn in blue">
-                            <router-link to="sifs" class="more">
-                                <span class="btn">
-                                    VIEW DETAILS
-                                </span>
-                            </router-link>
-                            <div class="corners top"></div>
-                            <div class="corners bottom"></div>
-                        </div>
-                    </div>
+
                 </div>
 
             </div>
-
+            <div class="btnCenter col-sm-4 col-sm-offset-8">
+                <div class="set_6_btn in blue">
+                    <router-link to="sifs" class="more">
+                                <span class="btn">
+                                    VIEW DETAILS
+                                </span>
+                    </router-link>
+                    <div class="corners top"></div>
+                    <div class="corners bottom"></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -99,11 +100,20 @@
     }
 
     .live-nav-view {
-        display: none;
-        height: 100vh;
-        padding-top: 95px;
-        align-items: center;
-        padding-bottom: 95px;
+        /*display: none;*/
+        /*height: 100vh;*/
+        /*padding-top: 95px;*/
+        /*align-items: center;*/
+        /*padding-bottom: 95px;*/
+        padding-top: 26vh;
+        padding-bottom: 10vh;
+        .fashionWeekdiv{
+            height: 92px;
+            .fashionWeek{
+                width: 96px;
+                margin-top: 26px;
+            }
+        }
 
         .nav {
             //margin: 0 auto;
@@ -111,6 +121,8 @@
         }
         .btnCenter {
             text-align: center;
+            position: absolute;
+            bottom:-5em;
         }
         .logo {
             text-align: center;
@@ -120,9 +132,9 @@
             }
         }
 
-        .nav > div {
+        .nav {position: relative}> div {
             /*padding: 5em 5em;*/
-            position: relative;
+            /*position: relative;*/
         }
 
         .more {
@@ -150,6 +162,19 @@
             padding-bottom: 15vh;
             height: auto;
             display: block !important;
+
+            .btnCenter {
+                text-align: center;
+                position: absolute;
+                bottom:1em;
+            }
+            .fashionWeekdiv{
+                height: auto;
+                .fashionWeek{
+                    width: 96px;
+                    /*margin-top: 20px;*/
+                }
+            }
             .nav {
                 padding: 0;
             }
@@ -181,9 +206,9 @@
             }
 
             .more {
-                position: absolute;
-                bottom: -2em;
-                right: 1em;
+                /*position: absolute;*/
+                /*bottom: -2em;*/
+                /*right: 1em;*/
             }
         }
     }

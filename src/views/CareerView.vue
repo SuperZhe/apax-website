@@ -10,6 +10,13 @@
                 Our team members grow with our clients and our business partners.</p>
             <p>We are always looking for creative people of any discipline to join our teams. <br>Find our current vacancies below or feel free to submit a General Application.
             </p>
+            <div class="sendmail">
+                <div class="set_6_btn in blue">
+                    <a href="mailto:hr@apaxgroup.com" class="email">CONTACT US</a>
+                    <div class="corners top"></div>
+                    <div class="corners bottom"></div>
+                </div>
+            </div>
         </div>
         <div class="pc">
             <div class="info row col-xs-offset-1 col-xs-10 col-sm-10 col-sm-offset-2">
@@ -69,13 +76,6 @@
                         -3 years + working experience. 2 years + outdoor recreational activities background;<br>
                         -Very good English skill；<br>-Passionate, sincere, honest, character, cheerful, love youth education;<br>-Active, active working attitude, careful earnest, have high sense of responsibility, <br>-good team spirit, by perseverance and patience.<br>
                     </div>
-                    <div class="sendmail">
-                        <div class="set_6_btn in blue">
-                            <a href="mailto:hr@apaxgroup.com" class="email">CONTACT US</a>
-                            <div class="corners top"></div>
-                            <div class="corners bottom"></div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-5 position">
                     <h4><img src="../assets/img/main/recreation-title.png" alt="" class="logoThis"></h4>
@@ -96,13 +96,6 @@
                         -Passionate, sincere, honest, character, cheerful, love youth education;<br/>
                         -Active working attitude, careful earnest, have high sense of responsibility,<br>
                         good team spirit, by perseverance and patience.<br/>
-                    </div>
-                    <div class="sendmail">
-                        <div class="set_6_btn in blue">
-                            <a href="mailto:hr@apaxgroup.com" class="email">CONTACT US</a>
-                            <div class="corners top"></div>
-                            <div class="corners bottom"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -222,60 +215,63 @@
 <style lang="less">
     @import '../assets/style/common.less';
     @import '../assets/style/but';
-    .info {
-        .position {
-            margin-bottom: 5em;
+    .career-view{
+        .info {
+            .position {
+                margin-bottom: 5em;
+            }
+        }
+
+        .car {
+            margin-top: 0 !important;
+            font-size: 12px;
+            line-height: 2em;
+        }
+
+        .Hfive {
+            margin-top: 0px;
+        }
+
+        .career-view {
+            display: none;
+        }
+
+        .sendmail {
+            cursor: pointer;
+            margin-bottom: 2em;
+        }
+
+        .purple {
+            color: purple;
+        }
+
+        .magnify {
+            font-size: 1.5em !important;
+            /*color: #fff;*/
+        }
+
+        h5 {
+            /*color: #d1d1d1;*/
+            margin: 0;
+            margin-top: 1em;
+        }
+
+        .email {
+            /*display: inline-block;*/
+            /*border: 1px solid;*/
+            /*padding: 1px 20px;*/
+            /*margin-top: 2em;*/
+        }
+
+        .logoThis {
+            height: 24px;
+        }
+
+        .mobile {
+            display: none;
         }
     }
 
-    .car {
-        margin-top: 0 !important;
-        font-size: 12px;
-        line-height: 2em;
-    }
-
-    .Hfive {
-        margin-top: 0px;
-    }
-
-    .career-view {
-        display: none;
-    }
-
-    .sendmail {
-        cursor: pointer;
-        margin-bottom: 2em;
-    }
-
-    .purple {
-        color: purple;
-    }
-
-    .magnify {
-        font-size: 1.5em !important;
-        color: #fff;
-    }
-
-    h5 {
-        color: #d1d1d1;
-        margin: 0;
-        margin-top: 1em;
-    }
-
-    .email {
-        /*display: inline-block;*/
-        /*border: 1px solid;*/
-        /*padding: 1px 20px;*/
-        /*margin-top: 2em;*/
-    }
-
-    .logoThis {
-        height: 24px;
-    }
-
-    .mobile {
-        display: none;
-    }
 
     @media screen and (max-width: @max-width) {
         .info-view {

@@ -7,13 +7,13 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-10 col-xs-12">{{ info.title }}</div>
-            <div class="date col-sm-2 col-xs-12"><span>{{ info.date }}</span></div>
+            <div class="title col-sm-12 col-xs-12">{{ info.title }}</div>
+            <!--<div class="date col-sm-2 col-xs-12"><span>{{ info.date }}</span></div>-->
             <div class="content col-xs-12">
                 <AContent :content="info.content"></AContent>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -45,9 +45,9 @@
                 title: '',
                 config,
                 info: {
-                    title: '1',
+                    title: '',
                     date: null,
-                    content: '2'
+                    content: ''
                 },
                 prevId: 0,
                 nextId: 0,
@@ -77,6 +77,7 @@
         },
         methods: {
             goback() {
+                this.$router.push(-1);
                 this.$router.go(-1);
             },
 
@@ -103,7 +104,6 @@
             },
 
             loadDetail(id) {
-                console.log(id);
                 this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + (id?id:this.$route.params.id)).then((response) => {
                     //console.log(response.data.result);
                     this.info.title = response.data.result.enTitle;

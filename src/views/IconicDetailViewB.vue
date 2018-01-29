@@ -7,8 +7,12 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12">Starbucks Reserve Roastery Shanghai Grand Opening</div>
-            <div class="date col-sm-3 col-xs-12"><span>Taikoo Hui, Shanghai, China</span></div>
+            <div class="div1 col-xs-12" >
+                <span class="title col-sm-8 col-md-8 col-xs-12">Starbucks Reserve Roastery Shanghai Grand Opening</span>
+                <!--</div>-->
+                <!--<div class="date col-sm-3 col-xs-12">-->
+                <span class="date col-sm-4 col-md-4 col-xs-12">Taikoo Hui, Shanghai, China</span>
+            </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
@@ -16,8 +20,6 @@
                     <!--<p>-->
                         <!--Starbucks Coffee Company opened its very first international Starbucks Reserve Roastery (outside of Seattle) in Shanghai with a global live streaming on 9 platforms and incorporating Tmall Super Brand Day during its grand opening and unveiling event. An Immersive coffee experience was part of the journey celebration for the excited guests to explore and discover what they never knew about coffee.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-6/new1.png" alt="">-->
                     <p>
@@ -60,7 +62,7 @@
                 <!--<div class="center col-xs-12"><img src="../../static/iconic-detail-6/6.jpg" alt=""></div>-->
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback()">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -103,8 +105,9 @@
             }
         },
         methods: {
-            goback() {
-                this.$router.go(-1);
+            goback:function (){
+//                this.$router.go('/ourwork/events/iconic');
+                this.$router.push({ path: '/ourwork/events/iconic' })
             },
             IsPC:function() {
                 let userAgentInfo = navigator.userAgent;
@@ -129,6 +132,13 @@
 
     .iconic-detail-view {
         padding-bottom: 150px;
+        .div1{
+            display: flex;
+            align-items: flex-end;
+            span:nth-last-child(1){
+                padding-bottom: 6px;
+            }
+        }
 .pagingOne{text-align: right}
         .subnav {
             padding-top: 80px;
@@ -139,7 +149,7 @@
         }
 
         .title {
-            font-size: 3em;
+            font-size: 2.2em;
         }
 
         .date {
@@ -212,6 +222,15 @@
         .iconic-detail-view {
             .info {
                 padding-top: 4em;
+                .div1{
+                    display: block;
+                    span{
+                        display: block;
+                    }
+                    span:nth-last-child(1){
+                        margin-top: 1em;
+                    }
+                }
             }
 
             .title {

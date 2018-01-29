@@ -209,6 +209,9 @@ export default {
 
 <style lang="less">
     @import '../assets/style/common.less';
+
+    //更改导航的样式
+
 .iconic-list-view {
     padding-bottom: 150px;
 
@@ -217,7 +220,7 @@ export default {
     }
 
     .list {
-        margin-top: 5em;
+        margin-top: 8em;
 
         .item {
             font-size: 0;
@@ -255,6 +258,9 @@ export default {
                 font-size: 12px;
                 padding: 2em;
                 position: relative;
+                h2{
+                    margin-top: -0.5em;
+                }
             }
 
             .more {

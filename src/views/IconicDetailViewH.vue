@@ -7,16 +7,18 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >STAR WARS: The Force Awakens</div>
-            <div class="date col-sm-3 col-xs-12"><span>The Great Wall, Beijing, China</span></div>
+            <div class="div1 col-xs-12" >
+                <span class="title col-sm-8 col-md-8 col-xs-12">STAR WARS: The Force Awakens</span>
+                <!--</div>-->
+                <!--<div class="date col-sm-3 col-xs-12">-->
+                <span class="date col-sm-4 col-md-4 col-xs-12">The Great Wall, Beijing, China</span>
+            </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-7/new1.jpg" alt="">
                     <!--<p>Nothing could match Disney’s bold and starkly eye-popping stunt – flying an army of storm troopers in, to line up on the Great Wall of China when Star Wars: “The Force Awakens” was released into the world. The 500 figures stood menacingly motionless in formation on the steps below one of the famous guard towers at night, as giant billboards flashed with the message “The Force Awakens”.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-7/new1.jpg" alt="">-->
                     <p>Nothing could match Disney’s bold and starkly eye-popping stunt – flying an army of storm troopers in, to line up on the Great Wall of China when Star Wars: “The Force Awakens” was released into the world. The 500 figures stood menacingly motionless in formation on the steps below one of the famous guard towers at night, as giant billboards flashed with the message “The Force Awakens”.</p>
@@ -52,7 +54,7 @@
                 <div class="center col-xs-12"><img src="../../static/iconic-detail-1/6.jpg" alt=""></div>-->
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -97,7 +99,7 @@ export default {
     },
     methods : {
         goback(){
-            this.$router.go(-1);
+            this.$router.push({ path: '/ourwork/events/iconic' })
         },
         IsPC:function() {
             let userAgentInfo = navigator.userAgent;
@@ -122,6 +124,13 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
+      .div1{
+        display: flex;
+        align-items: flex-end;
+        span:nth-last-child(1){
+            padding-bottom: 6px;
+        }
+    }
 .pagingOne{
     text-align: right;
 }
@@ -134,7 +143,7 @@ export default {
     }
 
     .title {
-        font-size: 3em;
+        font-size: 2.2em;
     }
 
     .date {
@@ -206,6 +215,15 @@ export default {
 .iconic-detail-view {
     .info {
         padding-top: 4em;
+        .div1{
+            display: block;
+            span{
+                display: block;
+            }
+            span:nth-last-child(1){
+                margin-top: 1em;
+            }
+        }
     }
 
     .title {

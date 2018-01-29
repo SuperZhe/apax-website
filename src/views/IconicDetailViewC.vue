@@ -21,8 +21,6 @@
                         <!--Hennessy presented the 6th edition of the Hennessy Exclusive Collection; showcasing “The Power of Nature” in the Reed Flute Cave in Guilin. The stones interior of the cave became the natural setting, incorporated with specially designed projection effects to highlight the magnificent and dazzling essence of the new collector’s.-->
                     <!--</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-2/1.jpg" alt="">-->
                     <p>
@@ -51,7 +49,7 @@
             </div>
             <div class="col-xs-12">
                 <div class="back col-xs-1">
-                    <a href="#" @click="goback">BACK</a>
+                    <a href="javascript:;" @click="goback">BACK</a>
                 </div>
                 <div class="share col-xs-offset-1 col-xs-8">
                     <Share></Share>
@@ -98,7 +96,7 @@ export default {
     },
     methods : {
         goback(){
-            this.$router.go(-1);
+            this.$router.push({ path: '/ourwork/events/iconic' })
         },
         IsPC:function() {
             let userAgentInfo = navigator.userAgent;
@@ -142,7 +140,7 @@ export default {
     }
 
     .title {
-        font-size: 3em;
+        font-size: 2.2em;
     }
 
     .date {

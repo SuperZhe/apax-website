@@ -1,21 +1,21 @@
 <template>
     <div class="share hidden-xs">
-        <a @click="shareFB" @mouseover="hover(1)"
-           @mouseout="mouseout(1)">
-            <img src="../assets/img/icon/facebook_off.png" alt="" v-show="!off1">
-            <img src="../assets/img/icon/facebook_on.png" alt="" v-show="off1">
-        </a>
-        <a @click="shareWB" @mouseover="hover(2)"
-           @mouseout="mouseout(2)">
-            <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!off2">
-            <img src="../assets/img/icon/weibo_on.png" alt="" v-show="off2">
-        </a>
-        <a @click="shareWX" class="weixin" @mouseover="hover(3)"
-           @mouseout="mouseout(3)">
-            <img src="../assets/img/icon/weixin_off.png" alt="" v-show="!off3">
-            <img src="../assets/img/icon/weixin_on.png" alt="" v-show="off3">
-            <div><img :src="qr"></div>
-        </a>
+        <!--<a @click="shareFB" @mouseover="hover(1)"-->
+           <!--@mouseout="mouseout(1)">-->
+            <!--<img src="../assets/img/icon/facebook_off.png" alt="" v-show="!off1">-->
+            <!--<img src="../assets/img/icon/facebook_on.png" alt="" v-show="off1">-->
+        <!--</a>-->
+        <!--<a @click="shareWB" @mouseover="hover(2)"-->
+           <!--@mouseout="mouseout(2)">-->
+            <!--<img src="../assets/img/icon/weibo_off.png" alt="" v-show="!off2">-->
+            <!--<img src="../assets/img/icon/weibo_on.png" alt="" v-show="off2">-->
+        <!--</a>-->
+        <!--<a @click="shareWX" class="weixin" @mouseover="hover(3)"-->
+           <!--@mouseout="mouseout(3)">-->
+            <!--<img src="../assets/img/icon/weixin_off.png" alt="" v-show="!off3">-->
+            <!--<img src="../assets/img/icon/weixin_on.png" alt="" v-show="off3">-->
+            <!--<div><img :src="qr"></div>-->
+        <!--</a>-->
     </div>
 </template>
 

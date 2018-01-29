@@ -19,9 +19,8 @@
                     <img src="../../static/iconic-detail-1/1.jpg" alt="">
                     <!--<p>A monumental event in fashion history was when Fendi literally had 88 models parade their spring summer collection along 88 meters of the Great Wall of china against a double-f projection onto the neighboring mountains.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12">
+                <!--<div class="space clearfix"></div>-->
+                <div class="col-xs-12 contentText">
                     <!--<img src="../../static/iconic-detail-1/1.jpg" alt="">-->
                     <p>A monumental event in fashion history was when Fendi literally had 88 models parade their spring summer collection along 88 meters of the Great Wall of china against a double-f projection onto the neighboring mountains.</p>
                 </div>
@@ -54,8 +53,8 @@
                 <!--<div class="center col-xs-12"><img src="../../static/iconic-detail-1/6.jpg" alt=""></div>-->
             </div>
             <div class="col-xs-12">
-                <div class="back col-xs-1">
-                    <a href="#" @click="goback">BACK</a>
+                <div class="back col-xs-1" @click="goBack()">
+                    <a href="javascript:;">BACK</a>
                 </div>
                 <div class="share col-xs-offset-1 col-xs-8">
                     <Share></Share>
@@ -100,8 +99,9 @@ export default {
         }
     },
     methods : {
-        goback(){
-            this.$router.go(-1);
+        goBack:function(){
+//            this.$router.back(-1);
+            this.$router.push({ path: '/ourwork/events/iconic' })
         },
         IsPC:function() {
             let userAgentInfo = navigator.userAgent;
@@ -126,7 +126,6 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
-
     .subnav {
         padding-top: 80px;
     }
@@ -145,7 +144,7 @@ export default {
     }
 
     .title {
-        font-size: 3em;
+        font-size: 2.2em;
     }
 
     .date {

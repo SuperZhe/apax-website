@@ -4,8 +4,8 @@
 
             <!--<h2>PARTNERS</h2>-->
             <br />
-            <h4>51Chaohun</h4>
-            <p>51 Chaohun has been a major breakthrough in “celebrity weddings". Upholding it's "life planning concept",<br>the agency retains "planning" expertise to help people prepare for life's most important four stages.<br> From single to fall in love; from the wedding day, to the marriage life.</p>
+            <h4>CHAO GROUPS</h4>
+            <p>CHAO GROUPS has been a major breakthrough in “celebrity weddings". Upholding it's "life planning concept",<br>the agency retains "planning" expertise to help people prepare for life's most important four stages.<br> From single to fall in love; from the wedding day, to the marriage life.</p>
             <br />
             <h4>Campaign China</h4>
             <p>Campaign China creates intelligent retail solutions that push the boundaries of the consumer experience and<br> transformative personalized brand spaces that define the retail landscape.</p>

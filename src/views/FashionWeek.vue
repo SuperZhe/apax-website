@@ -11,12 +11,12 @@
             <div class="sub-title col-xs-12">
                 <p>As the strategic partner and leading agency of
                     Shanghai Fashion Week organizing committee,
-                    APAX Group work closely together at raising the benchmark of Shanghai Fashion Week year after year.<br>
+                    APAX Group work closely together at raising the benchmark of Shanghai Fashion Week year after year.
                     Assisting Shanghai Fashion Week in developing into the world’s 5th top fashion week.
                 </p>
             </div>
             <div class="content col-xs-12">
-                <div class="col-xs-offset-3 col-xs-6"><img src="../../static/week/1.jpeg" alt=""></div>
+                <div class="col-xs-12"><img src="../../static/week/1.jpg" alt=""></div>
                 <!--<div class="col-xs-12"><img src="../../static/rocks-detail/1.jpg" alt=""></div>-->
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
@@ -42,7 +42,7 @@
                 <div class="col-xs-12"><img src="../../static/week/6.jpeg" alt=""></div>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>

@@ -7,16 +7,22 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-10 col-xs-12" >{{ info.title }}</div>
-            <div class="date col-sm-2 col-xs-12"></div>
+            <div class="title col-sm-12 col-xs-12" >{{ info.title }}</div>
+            <!--<div class="date col-sm-2 col-xs-12"></div>-->
             <div class="content col-xs-12">
                 <AContent :content="info.content"></AContent>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
+            </div>
+            <div class="col-xs-2 pagingOne">
+                <router-link :to="{ name : 'sifs-detail', params : { id : prevId } }" v-if="!prevId==0"><img
+                    src="../assets/img/icon/page-prev.png" alt="" @click="RefreshOnce"></router-link>
+                <router-link :to="{ name : 'sifs-detail', params : { id : nextId } }" v-if="!nextId==0"><img
+                    src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce"></router-link>
             </div>
         </div>
     </div>
@@ -27,6 +33,7 @@ import OurworkSubNav from '@/components/OurworkSubNav.vue';
 import AContent from '@/components/AContent.vue';
 import Share from '@/components/Share.vue';
 import Arrow from '@/components/Arrow.vue';
+import config from '@js-app/config';
 import {bus} from  '../assets/js/app/public'
 export default {
     name : 'sifs-detail-view',
@@ -38,8 +45,10 @@ export default {
                 title : '1',
                 date : null,
                 content : '2',
-                showO:4,
-            }
+            },
+            showO:4,
+            prevId: 0,
+            nextId: 0,
         }
     },
     created(){
@@ -55,6 +64,7 @@ export default {
         // }, (error) => {
         //     console.log(error)
         // });
+        this.setPage();
         this.$bus.$emit('canvas-open');
     },
     mounted(){
@@ -71,11 +81,52 @@ export default {
             console.log(error)
         });
 
-        bus.$emit('change', 4);
+        bus.$emit('change', this.showO);
+    },
+    watch:{
+        '$route' (to) {
+            this.loadDetail(this.$route.params.id);
+            this.setPage(this.$route.params.id);
+        }
     },
     methods : {
         goback(){
             this.$router.go(-1);
+        },
+        setPage(id) {
+            this.$axios.get('http://test.tron-m.com/apax/news/navigation.do?id=' + (id?id:this.$route.params.id) + '&category=sifs').then((response) => {
+                console.log(response);
+                var data = response.data.result;
+                if (data.prev) {
+                    this.prevId = data.prev.id;
+                }else{
+                    this.prevId = 0
+                }
+
+                if (data.next) {
+                    this.nextId = data.next.id;
+                }else{
+                    this.nextId = 0
+                }
+
+            }, (error) => {
+                console.log(error)
+            });
+        },
+        loadDetail(id) {
+            this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + (id?id:this.$route.params.id)).then((response) => {
+                console.log(response.data.result);
+                this.info.title = response.data.result.enTitle;
+                this.info.content = response.data.result.enHtml;
+//                this.info.date = response.data.result.enAddr;
+//                        new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
+                window.scrollTo(0, 0);
+            }, (error) => {
+                console.log(error)
+            });
+        },
+        RefreshOnce() {
+//                this.$router.go(0)
         }
     }
 }

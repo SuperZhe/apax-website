@@ -21,8 +21,6 @@
                         <!--Huawei dominated the news during the World Mobile Congress 2017 in Barcelona when they launched their new products (the P10 and smart watch) to a worldwide audience - the W Product 2017 at world Press Conference. The semi-circular door was a diamond cutting surface that formed as a natural crack for a metaphor of the breakthrough in innovation and the modern art attraction. Social media was a buzz with tens of thousands of articles and reviews that helped drive sales to an all-time high.-->
                     <!--</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-4/new1.jpg" alt="">-->
                     <p>
@@ -58,7 +56,7 @@
                 </div>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -103,7 +101,7 @@ export default {
     },
     methods : {
         goback(){
-            this.$router.go(-1);
+            this.$router.push({ path: '/ourwork/events/iconic' })
         },
         IsPC:function() {
             let userAgentInfo = navigator.userAgent;
@@ -147,7 +145,7 @@ export default {
     }
 
     .title {
-        font-size: 3em;
+        font-size: 2.2em;
     }
 
     .date {

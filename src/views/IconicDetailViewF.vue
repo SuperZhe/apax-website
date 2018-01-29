@@ -20,8 +20,6 @@
                     <!--<p>-->
                         <!--“This is Tiffany” brand cultural exhibition took place in Phoenix International Media Center Beijing. The “This is Tiffany” brand cultural exhibition recalled the legendary history of Tiffany & Co. by recreating the journey through the five display areas.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-5/new1.jpg" alt="">-->
                     <p>
@@ -141,7 +139,7 @@
                 </div>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -187,7 +185,7 @@
         },
         methods: {
             goback() {
-                this.$router.go(-1);
+                this.$router.push({ path: '/ourwork/events/iconic' })
             },
             IsPC:function() {
                 let userAgentInfo = navigator.userAgent;
@@ -227,7 +225,7 @@
         }
 
         .title {
-            font-size: 3em;
+            font-size: 2.2em;
         }
 
         .date {
@@ -301,6 +299,15 @@
         .iconic-detail-view {
             .info {
                 padding-top: 4em;
+                .div1{
+                    display: block;
+                    span{
+                        display: block;
+                    }
+                    span:nth-last-child(1){
+                        margin-top: 1em;
+                    }
+                }
             }
 
             .title {

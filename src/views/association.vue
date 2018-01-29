@@ -5,7 +5,7 @@
             <div>
                 <br />
                 <h4>Axis Mundi</h4>
-                <p>Two of Asia’s creative innovators, Film Director Wong Kar Wai and APAX Group have come together with their respective expertise in art,<br> culture, entertainment and fashion to transform the idea of luxury events</p>
+                <p>Two of Asia’s creative innovators, Film Director Wong Kar Wai and APAX Group have come together with their respective expertise in art,<br> culture, entertainment and fashion to transform the idea of luxury events.</p>
             </div>
         </div>
     </div>

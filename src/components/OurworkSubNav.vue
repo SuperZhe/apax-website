@@ -2,9 +2,12 @@
     <div class="ourwork-sub-nav col-xs-offset-1 col-xs-10 clearfix">
         <div class="left">
             <div>
-                <router-link to="/ourwork/live"><img src="../assets/img/main/live-title.png" alt="" class="live" :class="{present:subnav1}"></router-link>
-                <router-link to="/ourwork/events"><img src="../assets/img/main/events-title.png" alt="" :class="{present:subnav}"></router-link>
-                <router-link to="/ourwork/recreation"><img src="../assets/img/main/recreation-title.png" alt="" :class="{present:subnav2}"></router-link>
+                <router-link to="/ourwork/live"><img src="../assets/img/main/live-title.png" alt="" class="live"
+                                                     :class="{present:subnav1}"></router-link>
+                <router-link to="/ourwork/events"><img src="../assets/img/main/events-title.png" alt=""
+                                                       :class="{present:subnav}"></router-link>
+                <router-link to="/ourwork/recreation"><img src="../assets/img/main/recreation-title.png" alt=""
+                                                           :class="{present:subnav2}"></router-link>
             </div>
             <!--<router-link to="/ourwork/events/iconic" v-if="l4" ><span :class="{pitch:showO == 1}" class="hover" >iconic</span></router-link>-->
             <!--<router-link to="/ourwork/events/list" v-if="l4" ><span :class="{pitch:showO == 2}" class="hover">project</span></router-link>-->
@@ -15,17 +18,22 @@
             <!--&lt;!&ndash;<router-link to="/ourwork/live/rocks" v-if="l6"><img src="../assets/img/main/rocks-subnav.png" alt="" class="rocks"></router-link>&ndash;&gt;-->
             <!--<router-link to="/ourwork/live/rocks" v-if="l6"><span :class="{pitch:showO == 4}" >FASHTON ROCKS</span></router-link>-->
         </div>
-        <div class="right">
+        <div class="right" :class="{navWidth:showO == 1 || showO  == 2}">
             <div>
-                <router-link to="/ourwork/events/list" v-if="r1">
-                    <span :class="{pitch:showO == 2}"class="hover">more events</span>
-                </router-link>
                 <router-link to="/ourwork/events/iconic" v-if="r1">
-                    <span :class="{pitch:showO == 1}"class="hover">signature events</span>
+                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1}" class="hover">signature events</span>
                 </router-link>
-                <router-link to="/ourwork/live/sifs" v-if="r2"><span :class="{pitch:showO == 4}" >sifs</span></router-link>
-                <router-link to="/ourwork/live/week" v-if="r2"><span :class="{pitch:showO == 6,fashionNav:showO == 6}" class="hover">Shanghai International Fashion Week</span></router-link>
-                <router-link to="/ourwork/live/rocks" v-if="r2"><span :class="{pitch:showO == 5}" class="hover">Fashion Rocks</span></router-link>
+                <router-link to="/ourwork/events/list" v-if="r1">
+                    <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover">more events</span>
+                </router-link>
+                <router-link to="/ourwork/live/rocks" v-if="r2"><span :class="{pitch:showO == 5,bottomAlignment:showO == 5}" class="hover">Fashion Rocks</span>
+                </router-link>
+
+                <router-link to="/ourwork/live/week" v-if="r2"><span :class="{pitch:showO == 6,fashionNav:showO == 6}"
+                                                                     class="hover">Shanghai Week</span></router-link>
+                <router-link to="/ourwork/live/sifs" v-if="r2"><span :class="{pitch:showO == 4,bottomAlignment:showO == 4}">sifs</span>
+                </router-link>
+
             </div>
         </div>
     </div>
@@ -71,7 +79,10 @@
                     break;
             }
 //        console.log(bus)
-            bus.$on('change', (val) => {this.showO = val;console.log(val)});
+            bus.$on('change', (val) => {
+                this.showO = val;
+                console.log(val);
+            });
         },
         mounted() {
 
@@ -88,10 +99,11 @@
 
 <style lang="less">
     @import '../assets/style/common.less';
+
     .ourwork-sub-nav {
 
         .hover:hover {
-            color: #fff;
+            color: #6D227B;
         }
 
         .present {
@@ -105,7 +117,6 @@
             -ms-filter: grayscale(100%);
             -o-filter: grayscale(100%);
             filter: grayscale(100%);
-
             filter: gray;
         }
 
@@ -123,17 +134,24 @@
 
         .StateSelected {
             font-size: 16px;
-            color: #fff;
+            color: #6D227B;
         }
 
         .pitch {
-            font-size: 18px !important;
-            color: #fff;
+            font-size: 16px !important;
+            color: #6D227B;
+            margin-top: 2px !important;
         }
     }
+
     .ourwork-sub-nav {
         .left {
             float: left;
+            position: relative;
+            > div {
+                margin-top: -2px;
+                height: 20px;
+            }
             img {
                 height: 11px;
                 opacity: 0.5;
@@ -141,8 +159,8 @@
                 -o-transition: all 0.3s ease-in-out;
                 transition: all 0.3s ease-in-out;
             }
-            img:hover{
-                opacity:1;
+            img:hover {
+                opacity: 1;
                 height: 16px;
                 -moz-transition: height 0.3s ease-in-out; /* for Firefox */
                 -o-transition: height 0.3s ease-in-out;
@@ -153,29 +171,42 @@
                 font-size: 12px;
                 color: #8d8d8d;
                 display: inline-block;
+                margin-top: 3px;
                 /*width: 120px;*/
             }
 
         }
         .right {
             float: right;
-            line-height: 21px;
-            a {
-                margin-left: 22px;
-                span {
-                    float: right;
-                    font-size: 14px;
-                    max-width: 142px;
-                    text-align: left;
-                    margin-right: 35px;
-                }
+            font-size: 0;
+            width: 270px;
+            > div {
+                height: 20px;
+                display: flex;
+
+                justify-content: space-between;
+                align-items: flex-end;
             }
-            a:nth-child(1) span{
+            a {
+                /*margin-left: 22px;*/
+                span {
+                    font-size: 12px;
+                }
+
+            }
+            a:nth-child(1) span {
                 margin: 0;
             }
-            a:hover{
-                color: #fff;
+            a:hover {
+                color: #6D227B;
             }
+            .bottomAlignment {
+                display: block;
+                margin-bottom: -3px;
+            }
+        }
+        .navWidth{
+            width: 210px;
         }
 
         .recreation {
@@ -192,17 +223,19 @@
         -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     }
-    .fashionNav{
+
+    .fashionNav {
         max-width: 181px !important;
     }
+
     @media screen and (max-width: @max-width) {
         .ourwork-sub-nav {
             padding-top: 8vh;
 
             .left {
                 float: initial;
-                div{
-                    a{
+                div {
+                    a {
                         display: block;
                         margin: 0;
                         text-align: center;
@@ -215,11 +248,11 @@
                 margin-top: 2em;
                 /*text-align: right;*/
                 float: initial;
-                .hover{
+                .hover {
                     margin: 0;
                 }
-                div{
-                    a{
+                div {
+                    a {
                         display: block;
                         margin: 0;
                         text-align: center;
@@ -227,14 +260,14 @@
                     }
                 }
             }
-            .right,.left{
+            .right, .left {
                 float: none;
                 text-align: center;
             }
-            .right a span{
+            .right a span {
                 float: none;
             }
-            .title{
+            .title {
                 font-size: 2em;
             }
         }

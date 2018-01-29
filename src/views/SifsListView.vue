@@ -10,8 +10,8 @@
             <div class="title col-sm-10 col-xs-12">A GLOBAL BRIDGE</div>
             <div class="sub-title col-xs-12">
                 <p>
-                    APAX Live successfully enhanced the global influence of Shanghai Fashion Week by introducing events and shows of top international fashion brands through Shanghai International Fashion Showcase or SIFS in short.<br>
-                    SIFS also serves as bridge between global designers & brands with China’s fast growing fashion industry; marrying brands and crossover collaborations and delivering unique events exclusive to China including the recent Ports flash mob fashion catwalk, 3.1 Phillip Lim’s floral installation as well as a thought provoking forum featuring CFDA’s president,
+                    APAX Live successfully enhanced the global influence of Shanghai Fashion Week by introducing events and shows of top international fashion brands through Shanghai International Fashion Showcase or SIFS in short.
+                    SIFS also serves as bridge between global designers & brands with China’s fast growing fashion industry; marrying brands and crossover collaborations and delivering unique events exclusive to China including the recent Ports flash mob fashion catwalk, 3.1 Phillip Lim’s floral installation as well as a thought provoking forum featuring CFDA’s president,Steven Kolb.
                 </p>
             </div>
             <div class="item col-sm-4 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
@@ -90,7 +90,7 @@
     .sifs-list-view {
         padding-bottom: 150px;
         .title {
-            font-size: 3em;
+            font-size: 2.2em;
         }
 
         .sub-title {

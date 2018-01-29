@@ -80,7 +80,7 @@ export default {
     }
 
     .list {
-        margin-top: 5em;
+        margin-top: 8em;
 
         .item {
             font-size: 0;

@@ -1,37 +1,51 @@
 <template>
     <div class="main-nav">
         <div class="nav1" @click="goBack()"></div>
-        <div class="nav2"></div>
+        <router-link to="/ourwork" class="nav2"></router-link>
         <div class="pc">
             <div class="nav3">
                 <div>
-                    <a href="http://www.facebook.com/APAXGROUP" target="_blank"  @mouseover="hover(1)"
-                       @mouseout="mouseout(1)" >
+                    <a href="http://www.facebook.com/APAXGROUP" target="_blank" @mouseover="hover(1)"
+                       @mouseout="mouseout(1)">
                         <img src="../assets/img/icon/facebook_off.png" alt="" v-show="!on1">
                         <img src="../assets/img/icon/facebook_on.png" alt="" v-show="on1">
                     </a>
                 </div>
                 <div>
-                    <a href="https://weibo.com/apaxgroupsh?refer_flag=1001030103" target="_blank"  @mouseover="hover(2)"
+                    <a href="https://weibo.com/apaxgroupsh?refer_flag=1001030103" target="_blank" @mouseover="hover(2)"
                        @mouseout="mouseout(2)">
                         <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!on2">
                         <img src="../assets/img/icon/weibo_on.png" alt="" v-show="on2">
                     </a>
                 </div>
                 <div class="weixin1">
-                    <p @click="shareWX1"  @mouseover="hover(3)"
+                    <p @click="shareWX1" @mouseover="hover(3)"
                        @mouseout="mouseout(3)">
                         <img src="../assets/img/icon/weixin_off.png" alt="" v-show="!on3">
                         <img src="../assets/img/icon/weixin_on.png" alt="" v-show="on3">
                     </p>
                     <div><img src="../assets/img/icon/erweima.jpg" class="erweima"></div>
                 </div>
+                <div>
+                    <a href="https://www.instagram.com/apaxgroup/" target="_blank" @mouseover="hover(4)"
+                       @mouseout="mouseout(4)">
+                        <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!on4">
+                        <img src="../assets/img/icon/weibo_on.png" alt="" v-show="on4">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/company/apax-group---shanghai/" target="_blank" @mouseover="hover(5)"
+                       @mouseout="mouseout(5)">
+                        <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!on5">
+                        <img src="../assets/img/icon/weibo_on.png" alt="" v-show="on5">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="mobile">
             <div class="nav3">
                 <div>
-                    <a href="http://www.facebook.com/APAXGROUP" target="_blank"  >
+                    <a href="http://www.facebook.com/APAXGROUP" target="_blank">
                         <img src="../assets/img/icon/facebook_off.png" alt="">
                     </a>
                 </div>
@@ -53,7 +67,7 @@
         <div class="nav"></div>
         <div class="language"><img src="../../static/music/music_on.png" alt="" v-show=show @click="playMusic()"><img
             @click="playMusic()" src="../../static/music/music_off.png" alt=""
-            v-show=!show><span>中文</span><span>EN</span></div>
+            v-show=!show><span><router-link to="/video">video</router-link></span><span>中文</span><span>EN</span></div>
         <audio :src="music" hidden="true" autoplay="autoplay" loop="loop" id="audio"></audio>
     </div>
 </template>
@@ -70,9 +84,11 @@
                 show: true,
                 music,
                 qr: '',
-                on1:false,
-                on2:false,
-                on3:false,
+                on1: false,
+                on2: false,
+                on3: false,
+                on4: false,
+                on5: false,
 
             };
         },
@@ -116,8 +132,11 @@
             },
             goBack() {
                 this.$router.go(-1);
-                this.toggle = !this.toggle;
-                this.close = !this.close;
+                if (!this.toggle) {
+                    this.toggle = !this.toggle;
+                    this.close = !this.close;
+                }
+
             },
             playMusic: function () {
                 var music = document.getElementById('audio');
@@ -145,21 +164,27 @@
             shareFB() {
                 window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(location.href) + '&amp;t=' + encodeURIComponent(document.title), 'newWindow', 'width=450, height=400', 'center');
             },
-            hover:function (v) {
-                switch(v){
+            hover: function (v) {
+                switch (v) {
                     case 1:
                         this.on1 = true;
-                    break;
+                        break;
                     case 2:
                         this.on2 = true;
                         break;
                     case 3:
-                    this.on3 = true;
-                    break;
+                        this.on3 = true;
+                        break;
+                    case 4:
+                        this.on4 = true;
+                        break;
+                    case 5:
+                        this.on5 = true;
+                        break;
                 }
             },
-            mouseout:function(v){
-                switch(v){
+            mouseout: function (v) {
+                switch (v) {
                     case 1:
                         this.on1 = false;
                         break;
@@ -169,8 +194,14 @@
                     case 3:
                         this.on3 = false;
                         break;
+                    case 4:
+                        this.on4 = false;
+                        break;
+                    case 5:
+                        this.on5 = false;
+                        break;
                 }
-            }
+            },
         },
     };
 </script>
@@ -226,13 +257,13 @@
         .nav3 {
             height: 14px;
             position: fixed;
-            bottom: 39px;
-            left: 52px;
+            bottom: 41px;
+            left: 48px;
             cursor: pointer;
             font-weight: 100;
             display: flex;
             align-items: flex-start;
-            z-index:999;
+            z-index: 999;
             div {
                 margin-right: 12px;
                 margin-top: 2px;
@@ -261,7 +292,7 @@
                 }
             }
         }
-        .mobile{
+        .mobile {
             display: none;
         }
         .nav-toggle {
@@ -331,6 +362,7 @@
         /*color: #fff;*/
         /*}*/
     }
+
     @media screen and (max-width: @max-width) {
         .main-nav {
             .pc {
@@ -338,9 +370,9 @@
             }
             .mobile {
                 display: block;
-                .nav3{
-                    z-index:999;
-                    height:0;
+                .nav3 {
+                    z-index: 999;
+                    height: 0;
                     bottom: 55px;
                 }
             }

@@ -13,8 +13,6 @@
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-3/new1.jpg" alt="">
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
             	<div class="col-xs-12">
                     <p>To commemorate the opening of their flagship Beijing store, Burberry held a unique runway show that incorporated live music from Keane and featured a multi-senatorial virtual experience enhanced by holographic technology. The event was broadcast live all around the world at burberry.com and many other international fashion sites.</p></div>
                 <div class="space clearfix"></div>
@@ -41,7 +39,7 @@
                 </div>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -86,7 +84,7 @@ export default {
     },
     methods : {
         goback(){
-            this.$router.go(-1);
+            this.$router.push({ path: '/ourwork/events/iconic' })
         },
         IsPC:function() {
             let userAgentInfo = navigator.userAgent;
@@ -122,7 +120,7 @@ export default {
     }
 
     .title {
-        font-size: 3em;
+        font-size: 2.2em;
     }
 	.sec-title{
 		font-size: 1em;
@@ -212,6 +210,15 @@ export default {
 .iconic-detail-view {
     .info {
         padding-top: 4em;
+        .div1{
+            display: block;
+            span{
+                display: block;
+            }
+            span:nth-last-child(1){
+                margin-top: 1em;
+            }
+        }
     }
 
     .title {

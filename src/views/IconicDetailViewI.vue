@@ -7,15 +7,20 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >Max Mara MONOPOLIS!</div>
-            <div class="date col-sm-3 col-xs-12"><span>Shanghai Exhibition Center, Shanghai, China</span></div>
+            <!--<div class="title col-sm-7 col-xs-12" >Max Mara MONOPOLIS!</div>-->
+            <!--<div class="date col-sm-5 col-xs-12"><span>Shanghai Exhibition Center, Shanghai, China</span></div>-->
+            <div class="div1 col-xs-12" >
+                <span class="title col-sm-7 col-md-8 col-xs-12">Max Mara MONOPOLIS!</span>
+                <!--</div>-->
+                <!--<div class="date col-sm-3 col-xs-12">-->
+                <span class="date col-sm-5 col-md-4 col-xs-12">Shanghai Exhibition Center, Shanghai, China</span>
+            </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-8/new1.jpg" alt="">
                     <!--<p>Luxury brand Max Mara unveiled its pre-fall 2017 collection series as well as an exclusive, see-now-buy-now Capsule Collection in collaboration with Chinese artist Liu Wei at Shanghai Exhibition Center. Liu Wei’s sculptures and paintings became the installation background, interpreting the modernization of this future city - MONOPOLIS - an “Interesting”, “brutal” and “unsettling” space.</p>-->
                 </div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-8/new1.jpg" alt="">-->
                     <p>Luxury brand Max Mara unveiled its pre-fall 2017 collection series as well as an exclusive, see-now-buy-now Capsule Collection in collaboration with Chinese artist Liu Wei at Shanghai Exhibition Center. Liu Wei’s sculptures and paintings became the installation background, interpreting the modernization of this future city - MONOPOLIS - an “Interesting”, “brutal” and “unsettling” space.</p>
@@ -45,7 +50,7 @@
                 <!--<div class="s-two col-xs-offset-2 col-xs-5"><img src="../../static/iconic-detail-8/7.jpg" alt=""></div>-->
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -89,7 +94,7 @@ export default {
     },
     methods : {
         goback(){
-            this.$router.go(-1);
+            this.$router.push({ path: '/ourwork/events/iconic' })
         },
         IsPC:function() {
             let userAgentInfo = navigator.userAgent;
@@ -114,6 +119,13 @@ export default {
 
 .iconic-detail-view {
     padding-bottom: 150px;
+    .div1{
+        display: flex;
+        align-items: flex-end;
+        span:nth-last-child(1){
+            padding-bottom: 6px;
+        }
+    }
 .pagingOne{
     text-align: right;
 }
@@ -126,7 +138,7 @@ export default {
     }
 
     .title {
-        font-size: 3em;
+        font-size: 2.2em;
     }
 
     .date {
@@ -198,6 +210,15 @@ export default {
 .iconic-detail-view {
     .info {
         padding-top: 4em;
+        .div1{
+            display: block;
+            span{
+                display: block;
+            }
+            span:nth-last-child(1){
+                margin-top: 1em;
+            }
+        }
     }
 
     .title {

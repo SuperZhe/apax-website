@@ -1,21 +1,24 @@
 <template>
     <div class="info-view recreation-info-view clearfix">
         <div class="info recreation col-xs-offset-2 col-xs-8">
-            <img src="../assets/img/main/recreation-title.png" alt="">
-            <h3>WE BRING A NEW VISION</h3>
-            <!--<br><br><br>-->
-            <p>
-                APAX Recreation is committed to building international tourism destinations providing in-depth experience on<br>
-                “culture promotion”, “environmental responsible tourism”, “outdoor activities” and “interactive education”.
-            </p>
-            <br>
-            <div class="set_6_btn in blue">
-                <router-link to="recreation/detail" class="link">
-                    <span>DISCOVER MORE</span>
-                </router-link>
-                <div class="corners top"></div>
-                <div class="corners bottom"></div>
+            <img src="../assets/img/main/recreation-title.png" alt="" class="recreationInfoImg">
+            <div class="recreationContent" :class="{text:isrecreation}">
+                <h3 class="shine">WE BRING A NEW VISION</h3>
+                <!--<br><br><br>-->
+                <p>
+                    APAX Recreation is committed to building international tourism destinations providing in-depth experience on<br>
+                    “culture promotion”, “environmental responsible tourism”, “outdoor activities” and “interactive education”.
+                </p>
+                <br>
+                <div class="set_6_btn in blue">
+                    <router-link to="recreation/detail" class="link">
+                        <span>DISCOVER MORE</span>
+                    </router-link>
+                    <div class="corners top"></div>
+                    <div class="corners bottom"></div>
+                </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -23,11 +26,16 @@
 <script>
     export default {
         name: 'recreation-info-view',
+        data(){
+            return{
+                isrecreation:false
+            }
+        },
         created() {
             this.$bus.$emit('canvas-close');
         },
         mounted() {
-            setTimeout(() => this.$('.recreation-info-view').fadeIn(), 500);
+            setTimeout(() => this.isrecreation = true, 700);
             setTimeout(() => this.$('.recreation-info-view').css({'display': 'flex'}), 500);
         },
     };
@@ -42,6 +50,102 @@
         padding-top: 95px;
         align-items: center;
         padding-bottom: 95px;
+        .set_6_btn.blue:hover a{
+            color: #36bbfc;
+            font-size: 16px;
+            text-shadow: 0 0 2px #36bbfc,
+            /*0 0 4px #36bbfc,*/
+            /*0 0 10px #36bbfc,*/
+            /*0 0 20px #fff,*/
+            /*0 0 30px #fff,*/
+            0 0 10px #fff;
+        }
+        //初始化动画
+        @keyframes initAn {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(1.8);
+                -moz-transform: scale(1.8);
+                -o-transform: scale(1.8);
+                transform: scale(1.8);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+        .text{
+            -webkit-animation: textUp 0.8s linear	 forwards;
+            -moz-animation: textUp 0.8s linear	 forwards;
+            -o-animation: textUp 0.8s linear	 forwards;
+            animation: textUp 0.8s linear	 forwards;
+            animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s;
+            -webkit-animation-delay: 0.7s;
+        }
+        @keyframes textUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(50px);
+                -moz-transform:translateY(50px);
+                -o-transform:translateY(50px);
+                transform:translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0px);
+                -moz-transform:translateY(0px);
+                -o-transform:translateY(0px);
+                transform:translateY(0px);
+            }
+        }
+
+        .recreationInfoImg{
+            -webkit-animation: initAn 0.6s linear  alternate;
+            -moz-animation: initAn 0.6s linear  alternate;
+            -o-animation: initAn 0.6s linear  alternate;
+            animation: initAn 0.6s linear  alternate;
+        }
+        .recreationContent{
+            opacity: 0;
+        }
+        //闪光动画
+        .shine {
+            line-height: normal !important;
+            background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1,#fff)) 0 0 no-repeat;
+            background: #222 -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1,#fff)) 0 0 no-repeat;
+            background: #222 -o-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1,#fff)) 0 0 no-repeat;
+            -webkit-background-size: 100px;
+            color: rgba(141, 141, 141, 0.5);
+            -webkit-background-clip: text;
+            width: 75%;
+            /*margin: 0 auto;*/
+            margin-left: auto;
+            margin-right: auto;
+            /*font-size:60px;*/
+            /*font-weight:bold !important;*/
+            /*display:block;*/
+            -webkit-animation-name: shine;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes shine
+        {
+            0%
+            {
+                background-position: top left;
+            }
+            100%
+            {
+                background-position: top right;
+            }
+        }
+
     }
 
     @media screen and (max-width: @max-width) {

@@ -74,7 +74,7 @@
                 <div class="center col-xs-12"><img src="../../static/iconic-detail/20.jpg" alt=""><br><br>The Rooftop Party</div>
             </div>
             <div class="back col-xs-1">
-                <a href="#" @click="goback">BACK</a>
+                <a href="javascript:;" @click="goback">BACK</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>

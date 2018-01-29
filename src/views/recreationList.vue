@@ -1,38 +1,48 @@
 <template>
     <div class="recreation-detail-view clearfix">
-        <div class="subnav">
-            <OurworkSubNav :links="link"></OurworkSubNav>
-        </div>
 
-        <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-xs-12">
-                <img src="../assets/img/main/recreation-title.png" alt="">
-            </div>
             <div class="content col-xs-12">
-                <div class="col-xs-12 recreationOneImg">
-                    <img src="../../static/recreation/3.jpeg" alt="">
-                    <div class="eyes">
-                        <span>OPEN YOUR EYES</span>
-                        <span>FEED YOUR MIND</span>
-                        <span>GO BEYOND LIMITS</span>
-                        <span>INSPIRE YOUR HEART</span>
+                <div class="col-xs-12 navImg">
+                    <img src="../../static/recreation/KV.jpg" alt="">
+                    <div class="navText">
+                        <div>
+                            <p>WHERE NATURE AWAITS<br>WHERE THE TRUE YOU AWAKES</p>
+                            <P>探索自然，发现自我</P>
+                        </div>
+                        <ul class="secondaryNav">
+                            <li>
+                                <router-link to="list/dna-1">
+                                <div class="line"></div>
+                                <div><p>Outdoor Sports</p>
+                                    <P>户外运动</P></div>
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="list/dna-2">
+                                <div class="line"></div>
+                                <div><p>Ecotourism</p>
+                                    <P>生态旅游</P></div>
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="list/dna-3">
+                                <div class="line"></div>
+                                <div><p>Science Education</p>
+                                    <P>科普教育</P></div>
+                                </router-link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="space clearfix"></div>
-                <div class="col-xs-12 recreationText">
-                    <h4 class="title1">The World’s First Discovery Adventures Park</h4>
-                    <p>
-                        APAX Recreation introduced an international premium IP to China. Creating the world's first Discovery Adventures Park and giving Discovery a new Comes to Life. The first park location is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an outand three main ambition - ecotourism, outdoor sports, and education all in one. And from there, continue to launch more theme parks worldwide
-                    </p>
-                </div>
+
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
                 <div class="col-xs-12 linkFrame">
                     <div class="set_6_btn in blue">
-                        <router-link to="list" class="link">
+                        <router-link to="/safety" class="link">
                             <span>CURIOUS TO SEE MORE</span>
                         </router-link>
                         <div class="corners top"></div>
@@ -58,7 +68,7 @@
     import { bus } from '../assets/js/app/public';
 
     export default {
-        name: 'recreation-detail-view',
+        name: 'recreation-list-view',
         components: {OurworkSubNav, Arrow, Share},
         data() {
             return {
@@ -103,22 +113,7 @@
 
     .recreation-detail-view {
         padding-bottom: 150px;
-.recreationOneImg{
-    position: relative;
-    .eyes{
-        position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        span{
-            text-align: center;
-            color: #fff;
-            font-size: 2.8em;
-            display: block;
-            line-height: 55px;
-        }
-    }
-}
+
         .subnav {
             padding-top: 80px;
         }
@@ -148,10 +143,63 @@
         .content {
             margin: 5em 0;
             position: relative;
+            .navImg {
+                position: relative;
+            }
+            //二级导航
+            .navText {
+                position: absolute;
+                top: 50%;
+                left: 120px;
+                transform: translateY(-50%);
+                color: #fff;
+                div:nth-child(1) {
+                    p {
+                        font-size: 2.2em;
+                    }
+                    p:nth-child(1) {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+                    p:nth-last-child(1) {
+                        margin-top: 0;
+                    }
+                }
+                .secondaryNav {
+                    margin: 0;
+                    padding: 0;
+                    li:nth-child(1) {
+                        margin: 0;
+                    }
+                    li {
+                        float: left;
+                        list-style: none;
+                        a{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            color: #fff;
+                        }
+
+                        margin-left: 60px;
+                        .line {
+                            height: 46px;
+                            border: 1px solid #bd5720;
+                        }
+                        div:nth-last-child(1) {
+                            margin-left: 10px;
+                            p {
+                                letter-spacing: 2px;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
             .linkFrame {
                 text-align: center;
             }
-
             .space {
                 padding: 10px 0;
             }
@@ -296,13 +344,13 @@
                 }
             }
         }
-        .linkUs{
+        .linkUs {
             text-align: right;
-            a{
+            a {
                 padding: 15px 20px;
                 border: 1px solid;
             }
-            a:hover{
+            a:hover {
                 color: #6D227B;
             }
         }

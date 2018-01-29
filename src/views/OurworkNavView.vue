@@ -1,19 +1,22 @@
 <template>
     <div class="ourwork-nav-view">
         <div class="nav">
-            <div>
+            <div class="ourworkLive">
                 <router-link to="/ourwork/live">
-                    <img src="../assets/img/main/live-title.png" alt="" :class="{leave:over1}" @mouseover="liveOver()"  @mouseout="liveLeave()">
+                    <img src="../assets/img/main/live-title.png" alt="" :class="{leave:over1,end:isEnd}" @mouseover="liveOver()"
+                         @mouseout="liveLeave()">
                 </router-link>
             </div>
-            <div>
+            <div class="ourworEvents" >
                 <router-link to="/ourwork/events">
-                    <img src="../assets/img/main/events-title.png" alt="" :class="{leave:over1}" @mouseover="liveOver()"  @mouseout="liveLeave()">
+                    <img src="../assets/img/main/events-title.png" alt="" :class="{leave:over1,end:isEnd1}" @mouseover="liveOver()"
+                         @mouseout="liveLeave()" >
                 </router-link>
             </div>
-            <div>
+            <div class="ourworkRecreation">
                 <router-link to="/ourwork/recreation">
-                    <img src="../assets/img/main/recreation-title.png" alt="" :class="{leave:over1}" @mouseover="liveOver()"  @mouseout="liveLeave()">
+                    <img src="../assets/img/main/recreation-title.png" alt="" :class="{leave:over1,end:isEnd}"
+                         @mouseover="liveOver()" @mouseout="liveLeave()" >
                 </router-link>
             </div>
             <!--<div v-show=We>-->
@@ -30,35 +33,85 @@
         data() {
             return {
                 We: true,
-                over1:false,
-            };},
+                over1: false,
+                isEnd:false,
+                isEnd1:false
+            };
+        },
         created() {
             this.$bus.$emit('canvas-close');
         },
         mounted() {
             var _url = window.location.hash.split('?')[1];
             _url ? this.We = false : this.We = true;
-            setTimeout(() => this.$('.ourwork-nav-view a').fadeIn(), 500);
+            setTimeout(() => this.isEnd = true, 1200);
+            setTimeout(() => this.isEnd1 = true, 500);
         },
         methods: {
-            liveOver:function(){
-                this.over1 = true
+            liveOver: function () {
+                this.over1 = true;
             },
-            liveLeave:function () {
+            liveLeave: function () {
                 this.over1 = false;
-            }
+            },
         },
     };
 </script>
 
 <style lang="less">
     @import '../assets/style/common.less';
+    //动画
+
 
     .ourwork-nav-view {
         display: table;
         width: 100%;
         height: 100vh;
+        @keyframes initAn {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(1.8);
+                -moz-transform: scale(1.8);
+                -o-transform: scale(1.8);
+                transform: scale(1.8);
+            }
 
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        .ourworEvents img {
+            -webkit-animation: initAn 0.6s linear  alternate;
+            -moz-animation: initAn 0.6s linear  alternate;
+            -o-animation: initAn 0.6s linear  alternate;
+            animation: initAn 0.6s linear  alternate;
+            /*animation-fill-mode:forwards;*/
+        }
+
+        .ourworkLive img {
+            -webkit-animation: initAn 0.6s linear  alternate;
+            -moz-animation: initAn 0.6s linear  alternate;
+            -o-animation: initAn 0.6s linear  alternate;
+            animation: initAn 0.6s linear  alternate;
+            animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s;
+            -webkit-animation-delay: 0.7s;
+        }
+
+        .ourworkRecreation img {
+            -webkit-animation: initAn 0.6s linear  alternate;
+            -moz-animation: initAn 0.6s linear  alternate;
+            -o-animation: initAn 0.6s linear  alternate;
+            animation: initAn 0.6s linear  alternate;
+            animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s ;
+            -webkit-animation-delay: 0.7s;
+        }
         .nav {
             display: table-cell;
             vertical-align: middle;
@@ -69,13 +122,13 @@
                 margin: 0 50px;
                 img {
                     height: 24px;
-                    -moz-transition:all 0.3s ease-in-out; /* for Firefox */
+                    -moz-transition: all 0.3s ease-in-out; /* for Firefox */
                     -o-transition: all 0.3s ease-in-out;
                     transition: all 0.3s ease-in-out;
                 }
                 img:hover {
                     opacity: 1;
-                    height: 26px;
+                    height: 34px;
                     transition: height 0.3s ease-in-out;
                 }
             }
@@ -90,16 +143,25 @@
             }
 
             a {
-                display: none;
+
+                img{
+                    opacity: 0;
+                }
+                .end{
+                    opacity: 1;
+                }
+                .leave {
+                    opacity: 0.3;
+                    -moz-transition: all 0.3s ease-in-out ; /* for Firefox */
+                    -o-transition: all 0.3s ease-in-out ;
+                    transition: all 0.3s ease-in-out;
+                }
+                /*display: none;*/
             }
         }
     }
-    .leave {
-        opacity: 0.4;
-        -moz-transition:all 0.3s ease-in-out; /* for Firefox */
-        -o-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-    }
+
+
 
     @media screen and (max-width: @max-width) {
         .ourwork-nav-view {

@@ -2,7 +2,7 @@
     <div class="info-view clients-list-view clearfix">
         <div class="info col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10">
 
-            <h2>OUR CLIENTS</h2>
+            <h4>OUR CLIENTS</h4>
             <!--<div>-->
 
             <!--</div>-->
@@ -164,7 +164,8 @@
     .clients-list-view {
         display: none;
         .info {
-            > h2 {
+            margin-top: 2em;
+            > h4 {
                 /*margin-bottom: 3em;*/
             }
             > div {
@@ -201,7 +202,7 @@
         .clients-list-view {
             .info {
                 margin-top: 3em;
-                > h2 {
+                > h4 {
                     /*margin-bottom: 3em;*/
                     margin-bottom: -5vh;
                     font-size: 1.4em;
