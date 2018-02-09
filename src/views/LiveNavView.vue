@@ -49,7 +49,7 @@
             <div class="sifs clearfix col-sm-4">
                 <!--<div class="col-xs-offset-4 col-xs-5 logo"><img src="../assets/img/main/sifs.png" alt=""></div>-->
                 <div class="logo">
-                    <img src="../assets/img/main/sifs.png" alt="" class="sifslogo">
+                    <img src="../assets/img/main/sife.png" alt="" class="sifslogo">
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 col-xs-offset-1 col-xs-10">
                     <p>
@@ -123,12 +123,26 @@
             text-align: center;
             position: absolute;
             bottom:-5em;
+            .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
+                border-color:#e5369e !important ;
+            }
+            .set_6_btn.blue:hover a{
+                color: #e5369e;
+                font-size: 16px;
+                text-shadow: 0 0 2px #e5369e,
+                0 0 10px #fff;
+            }
         }
         .logo {
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 92px;
             .sifslogo {
                 display: block;
                 margin: 0 auto;
+                width: 170px;
             }
         }
 
@@ -136,7 +150,6 @@
             /*padding: 5em 5em;*/
             /*position: relative;*/
         }
-
         .more {
             display: block;
             width: 100%;

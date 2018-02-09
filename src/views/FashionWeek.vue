@@ -111,7 +111,7 @@
             text-align: center;
         }
         .title {
-            font-size: 3em;
+            font-size: 2.2em;
         }
 
         .sub-title {

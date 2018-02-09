@@ -30,8 +30,8 @@
                 </router-link>
 
                 <router-link to="/ourwork/live/week" v-if="r2"><span :class="{pitch:showO == 6,fashionNav:showO == 6}"
-                                                                     class="hover">Shanghai Week</span></router-link>
-                <router-link to="/ourwork/live/sifs" v-if="r2"><span :class="{pitch:showO == 4,bottomAlignment:showO == 4}">sifs</span>
+                                                                     class="hover">Shanghai Fashion Week</span></router-link>
+                <router-link to="/ourwork/live/sifs" v-if="r2"><span :class="{pitch:showO == 4,bottomAlignment:showO == 4}">SIFS</span>
                 </router-link>
 
             </div>
@@ -81,7 +81,6 @@
 //        console.log(bus)
             bus.$on('change', (val) => {
                 this.showO = val;
-                console.log(val);
             });
         },
         mounted() {
@@ -138,7 +137,7 @@
         }
 
         .pitch {
-            font-size: 16px !important;
+            font-size: 15px !important;
             color: #6D227B;
             margin-top: 2px !important;
         }
@@ -179,7 +178,7 @@
         .right {
             float: right;
             font-size: 0;
-            width: 270px;
+            width: 320px;
             > div {
                 height: 20px;
                 display: flex;
@@ -235,6 +234,7 @@
             .left {
                 float: initial;
                 div {
+                    height:auto;
                     a {
                         display: block;
                         margin: 0;
@@ -248,6 +248,11 @@
                 margin-top: 2em;
                 /*text-align: right;*/
                 float: initial;
+                width:auto;
+                div{
+                    display: block;
+                    height:auto;
+                }
                 .hover {
                     margin: 0;
                 }

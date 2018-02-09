@@ -14,12 +14,14 @@
                     SIFS also serves as bridge between global designers & brands with China’s fast growing fashion industry; marrying brands and crossover collaborations and delivering unique events exclusive to China including the recent Ports flash mob fashion catwalk, 3.1 Phillip Lim’s floral installation as well as a thought provoking forum featuring CFDA’s president,Steven Kolb.
                 </p>
             </div>
-            <div class="item col-sm-4 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
-                <img alt="" :src="config.host + item.conver">
-                <div class="hover">
-                    <div class="mask">
-                        <h2>{{ item.enTitle }}</h2>
-                        <!-- <router-link :to="{ name: 'sifs-detail', params: { id: item.id }}"><img src="../assets/img/main/more.png" alt=""></router-link> -->
+            <div class="listItems">
+                <div class="item col-sm-4 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
+                    <img alt="" :src="config.host + item.conver">
+                    <div class="hover">
+                        <div class="mask">
+                            <h2>{{ item.enTitle }}</h2>
+                            <!-- <router-link :to="{ name: 'sifs-detail', params: { id: item.id }}"><img src="../assets/img/main/more.png" alt=""></router-link> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,7 +59,6 @@
             this.items = [];
             this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=sifs&orderBy=id:asc').then((response) => {
                 this.items = response.data.result.content;
-                console.log(response);
             }, (error) => {
                 console.log(error);
             });
@@ -67,7 +68,6 @@
             sr.reveal('.item', {duration: 1000});
         },
         mounted() {
-            console.log(this.showO)
             bus.$emit('change', this.showO);
         },
         methods: {
@@ -106,12 +106,14 @@
 
         .list {
             margin-top: 7vh;
-
+            .listItems {
+                margin-left: -15px;
+            }
             .item {
                 font-size: 0;
                 position: relative;
                 margin-bottom: 30px;
-                padding-right: 30px;
+                padding: 0 15px;
 
                 > img {
                     width: 100%;

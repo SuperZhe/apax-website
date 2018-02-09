@@ -29,15 +29,16 @@
                 <div>
                     <a href="https://www.instagram.com/apaxgroup/" target="_blank" @mouseover="hover(4)"
                        @mouseout="mouseout(4)">
-                        <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!on4">
-                        <img src="../assets/img/icon/weibo_on.png" alt="" v-show="on4">
+                        <img src="../assets/img/icon/instagram_off.png" alt="" v-show="!on4">
+                        <img src="../assets/img/icon/instagram_on.png" alt="" v-show="on4">
                     </a>
                 </div>
                 <div>
-                    <a href="https://www.linkedin.com/company/apax-group---shanghai/" target="_blank" @mouseover="hover(5)"
+                    <a href="https://www.linkedin.com/company/apax-group---shanghai/" target="_blank"
+                       @mouseover="hover(5)"
                        @mouseout="mouseout(5)">
-                        <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!on5">
-                        <img src="../assets/img/icon/weibo_on.png" alt="" v-show="on5">
+                        <img src="../assets/img/icon/linked_off.png" alt="" v-show="!on5">
+                        <img src="../assets/img/icon/linked_on.png" alt="" v-show="on5">
                     </a>
                 </div>
             </div>
@@ -55,10 +56,20 @@
                     </a>
                 </div>
                 <div class="weixin1">
-                    <p @click="shareWX1">
+                    <p @click="shareWX1()">
                         <img src="../assets/img/icon/weixin_off.png" alt="">
                     </p>
                     <div><img src="../assets/img/icon/erweima.jpg" class="erweima"></div>
+                </div>
+                <div>
+                    <a href="http://www.facebook.com/APAXGROUP" target="_blank">
+                        <img src="../assets/img/icon/instagram_off.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="http://www.facebook.com/APAXGROUP" target="_blank">
+                        <img src="../assets/img/icon/linked_off.png" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -67,7 +78,8 @@
         <div class="nav"></div>
         <div class="language"><img src="../../static/music/music_on.png" alt="" v-show=show @click="playMusic()"><img
             @click="playMusic()" src="../../static/music/music_off.png" alt=""
-            v-show=!show><span><router-link to="/video">video</router-link></span><span>中文</span><span>EN</span></div>
+            v-show=!show><span class="moreVideo"><router-link
+            to="/video">SHOWREELS</router-link></span><span>EN</span><span>中文</span></div>
         <audio :src="music" hidden="true" autoplay="autoplay" loop="loop" id="audio"></audio>
     </div>
 </template>
@@ -83,17 +95,24 @@
                 close: false,
                 show: true,
                 music,
-                qr: '',
+                qr: false,
                 on1: false,
                 on2: false,
                 on3: false,
                 on4: false,
                 on5: false,
+                qrTwo:false
 
             };
         },
         created() {
             bus.$on('pause', (val) => {this.show = val;});
+        },
+        updated: function () {
+            this.$nextTick(function () {
+                var music = document.getElementById('audio');
+                !this.show ? music.pause() : music.play();
+            });
         },
         mounted() {
 //        var music = $('#audio');
@@ -124,6 +143,15 @@
                 this.close = false;
             });
         },
+        watch:{
+            '$route' (to) {
+                if(this.qrTwo){
+                    $('.weixin1 div').fadeOut();
+                    this.qr = false;
+                }
+
+            }
+        },
         methods: {
             goNav() {
                 this.$router.push('/nav');
@@ -144,16 +172,13 @@
                 !this.show ? music.pause() : music.play();
             },
             shareWX1() {
-                if (this.qr === '') {
-//                this.$axios.get('http://test.tron-m.com/api/qr/json.do?text=' + encodeURIComponent(location.href)).then((response) => {
-//                    this.qr = 'data:img/png;base64,' + response.data.msg;
-                    $('.weixin1 div').toggle();
-//                }, (error) => {
-//                    console.log(error)
-//                });
+                this.qr = !this.qr;
+                if (this.qr) {
+                    $('.weixin1 div').fadeIn();
+                    this.qrTwo = true
                 }
                 else {
-                    $('.weixin1 div').toggle();
+                    $('.weixin1 div').fadeOut();
                 }
             },
 
@@ -222,7 +247,9 @@
     .main-nav {
         @padding-height: 34px;
         @padding-width: 20px;
-
+        .moreVideo:hover a {
+            color: #6D227B;
+        }
         > div {
             z-index: 10;
         }
@@ -265,7 +292,7 @@
             align-items: flex-start;
             z-index: 999;
             div {
-                margin-right: 12px;
+                margin-right: 14px;
                 margin-top: 2px;
                 font-size: 0;
                 img {

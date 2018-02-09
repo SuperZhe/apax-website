@@ -49,6 +49,7 @@ import liveVideo from '@/views/liveVideo';
 import association from '@/views/association.vue';
 import fashionWeek from '@/views/FashionWeek.vue';
 import safety from '@/views/safetyViews.vue';
+import recreationMap from '@/views/recreationMap.vue';
 
 Vue.use(Router);
 
@@ -76,7 +77,11 @@ export default new Router({
             name: 'safety-views',
             component: safety,
         },
-
+        {
+            path: '/recreationMap',
+            name: 'recreationMap',
+            component: recreationMap,
+        },
 
 
         {

@@ -24,7 +24,9 @@
                 <div class="col-xs-12 recreationText">
                     <h4 class="title1">The World’s First Discovery Adventures Park</h4>
                     <p>
-                        APAX Recreation introduced an international premium IP to China. Creating the world's first Discovery Adventures Park and giving Discovery a new Comes to Life. The first park location is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an outand three main ambition - ecotourism, outdoor sports, and education all in one. And from there, continue to launch more theme parks worldwide
+                        APAX Recreation introduced an international premium IP to China. Creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery
+                        Comes to Life. The first park location is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an outdoor lifestyle approach
+                        and three main ambition - ecotourism, outdoor sports, and education all in one. And from there, continue to launch more theme parks worldwide!
                     </p>
                 </div>
                 <div class="space clearfix"></div>
@@ -40,8 +42,8 @@
                     </div>
                 </div>
             </div>
-            <div class="linkUs col-xs-offset-8 col-xs-4">
-                <a href="javascript:;">Are you ready to take the adventure with us?</a>
+            <div class="linkUs col-xs-12">
+                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -77,6 +79,7 @@
             if (this.IsPC()) {
                 this.isMobile = true;
             }
+            setTimeout(() => $('.recreation-detail-view').fadeIn(), 500);
         },
         methods: {
             IsPC: function () {
@@ -102,23 +105,33 @@
     @import '../assets/style/but';
 
     .recreation-detail-view {
+        display: none;
         padding-bottom: 150px;
-.recreationOneImg{
-    position: relative;
-    .eyes{
-        position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        span{
-            text-align: center;
-            color: #fff;
-            font-size: 2.8em;
-            display: block;
-            line-height: 55px;
+        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
+            border-color:#36bbfc !important ;
         }
-    }
-}
+        .set_6_btn.blue:hover a{
+            color: #36bbfc;
+            font-size: 16px;
+            text-shadow: 0 0 2px #36bbfc,
+            0 0 10px #fff;
+        }
+        .recreationOneImg {
+            position: relative;
+            .eyes {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                span {
+                    text-align: center;
+                    color: #fff;
+                    font-size: 2.8em;
+                    display: block;
+                    line-height: 50px;
+                }
+            }
+        }
         .subnav {
             padding-top: 80px;
         }
@@ -282,8 +295,8 @@
                 /*text-align: center;*/
                 .title1 {
                     margin: 15px 0;
-                    font-size: 3em;
-                    letter-spacing: 5px;
+                    font-size: 2em;
+                    font-weight: normal;
                     /*text-align: justify;*/
                     /*text-justify: distribute-all-lines;*/
                     /*text-align-last: justify;*/
@@ -296,14 +309,14 @@
                 }
             }
         }
-        .linkUs{
+        .linkUs {
             text-align: right;
-            a{
+            a {
                 padding: 15px 20px;
                 border: 1px solid;
             }
-            a:hover{
-                color: #6D227B;
+            a:hover {
+                color: #00b3ee;
             }
         }
         .share {
@@ -365,7 +378,36 @@
         .recreation-detail-view {
 
             .info {
-                padding-top: 5em;
+                padding-top: 2em;
+                .title {
+                    font-size: 2em !important;
+                    margin-bottom: 2vh;
+                }
+                .title2 {
+                    font-size: 1.8em !important;
+                }
+                .title3 {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
+                .list {
+                    margin-top: 20vh;
+                }
+                .text {
+                    margin-top: 4vh;
+                }
+                .awardsImg p {
+                    margin: 0;
+                }
+                .linkUs {
+                    a {
+                        font-size: 0.8em;
+                        display: block;
+                        padding: 10px 0;
+                        text-align: center;
+                    }
+
+                }
             }
 
             .title {
@@ -378,6 +420,17 @@
 
             .content {
                 margin: 3em 0;
+                .eyes {
+                    span{
+                        font-size: 0.6em;
+                        line-height: 2em;
+                    }
+                }
+                .recreationText{
+                    .title1{
+                        font-size: 1.6em;
+                    }
+                }
 
                 .hover {
                     padding: 5px;

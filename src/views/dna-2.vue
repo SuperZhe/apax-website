@@ -2,7 +2,7 @@
     <div class="dna-2 clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title">Eco-tourism </div>
+            <div class="title">DNA 2<br>Eco-tourism </div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/recreation/shengtai2.jpg" alt="">
@@ -17,17 +17,25 @@
                     The concept of Discovery Adventures Park and style of Moganshan have come together in a harmonious way, every program completely reflects “Eco-Tourism” mission. Guests
                     can explore a better experience as well as taking programs outside of the park, which brightening up Moganhan’s long lasting title as “Hot Holiday Spot” even more remarkable.
                 </p>
-                <div class="recreationBack col-sm-2 col-sm-offset-5" @click="goBack()">BACK</div>
+                <div class="col-xs-12 recreationBack" @click="goBack()">
+                    <div class="set_6_btn in blue">
+                        <a href="javascript:;" class="link">
+                            <span>BACK</span>
+                        </a>
+                        <div class="corners top"></div>
+                        <div class="corners bottom"></div>
+                    </div>
+                </div>
             </div>
-            <div class="linkUs col-xs-offset-8 col-xs-4">
-                <a href="javascript:;">Are you ready to take the adventure with us?</a>
+            <div class="linkUs  col-xs-12">
+                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
             </div>
         </div>
     </div>
 </template>
 <script>
     import Arrow from '../components/Arrow.vue';
-    import { config } from '../assets/js/app/config';
+//    import { config } from '../assets/js/app/config';
 
     export default {
         name: 'dna-2',
@@ -35,7 +43,7 @@
         data() {
             return {
                 items: [],
-                config: config,
+//                config: config,
             };
         },
         created() {
@@ -63,6 +71,15 @@
         .blue {
             margin-left: -20px;
         }
+        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
+            border-color: #36bbfc !important;
+        }
+        .set_6_btn.blue:hover a {
+            color: #36bbfc;
+            font-size: 18px;
+            text-shadow: 0 0 2px #36bbfc,
+            0 0 10px #fff;
+        }
         .list {
             margin-top: 7vh;
             .linkUs {
@@ -72,7 +89,7 @@
                     border: 1px solid;
                 }
                 a:hover {
-                    color: #6D227B;
+                    color: #36bbfc;
                 }
             }
             .awardsImg {
@@ -81,10 +98,11 @@
                     width: 100%;
                 }
                 p {
-                    margin: 3em 0;
+                    /*margin: 3em 0;*/
+                    margin-bottom: 4em;
                 }
                 .recreationBack{
-                    font-size: 1.4em;
+                    font-size: 16px;
                     margin-top: 3em;
                     text-align: center;
                     cursor: pointer;
@@ -95,30 +113,43 @@
             }
             .title {
                 font-size: 2.2em;
-                margin-bottom: 2vh;
+                margin-bottom: 2.6em;
             }
         }
 
     }
 
     @media screen and (max-width: @max-width) {
-        .news-list-view {
-            .title {
-                font-size: 2em !important;
-                margin-bottom: 2vh;
-            }
-            .title2 {
-                font-size: 1.8em !important;
-            }
-            .title3 {
-                font-size: 1.2em;
-                font-weight: bold;
-            }
-            .list {
-                margin-top: 20vh;
-            }
-            .text {
-                margin-top: 4vh;
+        .dna-2 {
+            .list{
+
+                .title {
+                    font-size: 2em !important;
+                    margin-bottom: 2vh;
+                }
+                .title2 {
+                    font-size: 1.8em !important;
+                }
+                .title3 {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
+                .list {
+                    margin-top: 20vh;
+                }
+                .text {
+                    margin-top: 4vh;
+                }
+                .awardsImg p{margin: 0;}
+                .linkUs {
+                    a {
+                        font-size: 0.8em;
+                        display: block;
+                        padding:10px 0;
+                        text-align: center;
+                    }
+
+                }
             }
         }
     }

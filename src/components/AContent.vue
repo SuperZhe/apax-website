@@ -76,7 +76,7 @@ export default {
 
         // Customizing a reveal set
         //sr.reveal('.foo', { duration: 200 });
-        sr.reveal('.acontent>p', { duration: 1000 });
+        sr.reveal('.acontent>p img', { duration: 1000 });
     }
 }
 </script>
@@ -86,7 +86,8 @@ export default {
 .acontent {
     img {
         width: 100%;
-        margin-bottom: 55px;
+        margin-bottom: 0px;
+        margin-top: 55px;
     }
     div,p {
         margin: 10px 0;

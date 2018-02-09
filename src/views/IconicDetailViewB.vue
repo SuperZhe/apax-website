@@ -67,8 +67,13 @@
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
             </div>
-            <div class="col-xs-2 pagingOne">
-                <router-link to="detail-j"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
+            <div class="col-xs-2 pagingOne" >
+                <router-link to="detail-j">
+                    <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
+                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev">
+                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev">
+                    </div>
+                </router-link>
             </div>
         </div>
     </div>
@@ -89,7 +94,8 @@
                 link: 'events',
                 info: {},
                 showO: 1,
-                isMobile:false
+                isMobile:false,
+                pagePrev:true
             };
         },
         created() {
@@ -105,6 +111,12 @@
             }
         },
         methods: {
+            pagePrevOver:function () {
+                this.pagePrev = false;
+            },
+            pagePrevOut:function () {
+                this.pagePrev = true;
+            },
             goback:function (){
 //                this.$router.go('/ourwork/events/iconic');
                 this.$router.push({ path: '/ourwork/events/iconic' })
@@ -163,7 +175,7 @@
 
         .content {
             margin: 5em 0;
-            margin-top: 5vh;
+            margin-top: 5em;
             .space {
                 padding: 10px 0;
             }

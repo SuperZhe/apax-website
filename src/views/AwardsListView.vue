@@ -6,28 +6,27 @@
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/news/0.jpg" alt="">
-                <p>Independent Agency of the Year - Experiential Marketing Agency of the Year - Best Creativity Event - Best Product Launch - Best Use of Venue - Entertainment IP Marketing - Best Vacation Product - Travel Destination - Business Model Innovation
+                <p>Independent Agency of the Year <br> Experiential Marketing Agency of the Year <br> Best Creativity Event <br> Best Product Launch <br> Best Use of Venue <br> Entertainment IP Marketing <br> Best Vacation Product <br> Travel Destination <br> Business Model Innovation
                 </p>
             </div>
-            <div class="content">
-                <div class="col-sm-4 contentNews col-xs-12" >
-                    <img src="../../static/news/4.png" alt="">
-                </div>
-                <div class="col-sm-8 col-xs-12">
-                    <div class="col-xs-offset-1 col-xs-8 newstext">
-                        <div class="title3">APAX Group won two trophies for Campaign Greater China Agency Of the Year !</div>
-                        <p>Campaign Agency of the Year awards has recognized inspired leadership, management excellence,<br> outstanding business performance and overall achievements in advertising and communications industries. </p>
-                        <p>APAX Group is honored to announce that we have won two trophies - one gold and one silver for Campaign Greater China Agency Of the Year.</p>
+            <!--<div class="content">-->
+                <!--<div class="col-sm-5 contentNews col-xs-12" >-->
+                    <!--<img src="../../static/news/4.png" alt="">-->
+                <!--</div>-->
+                <!--<div class="col-sm-7 col-xs-12">-->
+                    <!--<div class="col-xs-offset-1 col-xs-9 newstext">-->
+                        <!--<div class="title3">APAX Group Won Two Trophies For Campaign Greater China Agency Of the Year !</div>-->
+                        <!--<p>Campaign Agency of the Year awards has recognized inspired leadership, management excellence,<br> outstanding business performance and overall achievements in advertising and communications industries. </p>-->
+                        <!--<p>APAX Group is honored to announce that we have won two trophies - one gold and one silver for Campaign Greater China Agency Of the Year.</p>-->
 
-                        <div class="set_6_btn in blue">
-                            <router-link to="awards/detail/1"><span>View Article</span></router-link>
-                            <div class="corners top"></div>
-                            <div class="corners bottom"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                        <!--<div class="set_6_btn in blue">-->
+                            <!--<router-link to="awards/detail/1"><span>View Article</span></router-link>-->
+                            <!--<div class="corners top"></div>-->
+                            <!--<div class="corners bottom"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             <!--<div class="item col-sm-6 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">-->
                 <!--<img alt="" :src="'http://test.tron-m.com/'+item.conver">-->
                 <!--<div class="hover">-->
@@ -105,9 +104,13 @@ export default {
     .list {
         margin-top: 7vh;
         .awardsImg{
-            margin-bottom: 5em;
+            margin-bottom: 2em;
             img{
                 width:100%;
+            }
+            p{
+                text-align: center;
+                font-size: 1.4em;
             }
         }
         .title{

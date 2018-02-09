@@ -37,7 +37,7 @@ export default {
     mounted(){
 
 //        setTimeout(()=> this.$('.live-info-view').fadeIn(), 500);
-        setTimeout(()=> this.isText2 = true, 900);
+        setTimeout(()=> this.isText2 = true, 200);
         setTimeout(()=> this.$('.live-info-view').css({'display':'flex'}), 500);
 
     }
@@ -75,9 +75,9 @@ export default {
         -moz-animation: textUp 0.6s linear	 forwards;
         -o-animation: textUp 0.6s linear	 forwards;
         animation: textUp 0.6s linear	 forwards;
-        animation-delay: 0.7s;
-        -moz-animation-delay: 0.7s;
-        -webkit-animation-delay: 0.7s;
+        animation-delay: 0.6s;
+        -moz-animation-delay: 0.6s;
+        -webkit-animation-delay: 0.6s;
     }
    @keyframes textUp {
         0% {
@@ -106,14 +106,13 @@ export default {
     .liveContent{
        opacity: 0;
     }
+    .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
+        border-color:#e5369e !important ;
+    }
     .set_6_btn.blue:hover a{
         color: #e5369e;
         font-size: 16px;
         text-shadow: 0 0 2px #e5369e,
-        /*0 0 4px #e5369e,*/
-        /*0 0 10px #e5369e,*/
-        /*0 0 20px #fff,*/
-        /*0 0 30px #fff,*/
         0 0 10px #fff;
     }
     //闪光动画
@@ -125,7 +124,7 @@ export default {
         -webkit-background-size: 100px;
         color: rgba(141, 141, 141, 0.5);
         -webkit-background-clip: text;
-        width: 75%;
+        /*width:55%;*/
         /*margin: 0 auto;*/
         margin-left: auto;
         margin-right: auto;
@@ -133,7 +132,7 @@ export default {
         /*font-weight:bold !important;*/
         /*display:block;*/
         -webkit-animation-name: shine;
-        -webkit-animation-duration: 2s;
+        -webkit-animation-duration: 3s;
         -webkit-animation-iteration-count: infinite;
     }
     @-webkit-keyframes shine

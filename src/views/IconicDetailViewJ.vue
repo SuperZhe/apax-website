@@ -7,7 +7,7 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="div1 col-xs-12" >
+            <div class="div1 col-xs-12">
                 <span class="title col-sm-8 col-md-8 col-xs-12">Under Armour Stephen Curry Asian Tour</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
@@ -18,7 +18,7 @@
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-9/new1.jpg" alt="">
                     <!--<p>-->
-                        <!--For the third straight year, Stephen Curry went on the 2017 Asian tour powered by Under Armour beginning from the Imperial Ancestral Temple of Beijing. Within this beautiful landmark building, Under Armour kicked off the evening with a musical fashion show that combined modern chic with urban sensibility, bringing the audience a brand-new style and sports experience.</p>-->
+                    <!--For the third straight year, Stephen Curry went on the 2017 Asian tour powered by Under Armour beginning from the Imperial Ancestral Temple of Beijing. Within this beautiful landmark building, Under Armour kicked off the evening with a musical fashion show that combined modern chic with urban sensibility, bringing the audience a brand-new style and sports experience.</p>-->
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-9/new1.jpg" alt="">-->
@@ -41,7 +41,7 @@
                         <!--<p>he new 3ZERO unveiled via the lion dance, which was hidden in the ball that the lion dangled to the stage. Stephen expressed his story and love toward the new 3ZERO. The 3rd UA Asian tour was an opportunity for Stephen to grow both on-and-off the court, as he continues to "Stare Down Destiny" and further strengthen himself mentally, physically and spiritually throughout this summer journey.</p>-->
                     </div>
                 </div>
-                <div class="space clearfix" ></div>
+                <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
                 <div class="center col-xs-12"><img src="../../static/iconic-detail-9/new3.jpg" alt=""></div>
@@ -53,12 +53,22 @@
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback">BACK</a>
             </div>
-            <div class="share col-xs-offset-1 col-xs-8">
+            <div class="share col-xs-offset-1 col-xs-7">
                 <Share></Share>
             </div>
-            <div class="col-xs-2 pagingOne">
-                <router-link to="detail-i"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
-                <router-link to="detail-b"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
+            <div class="col-xs-3 pagingOne">
+                <router-link to="detail-i">
+                    <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
+                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev">
+                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev">
+                    </div>
+                </router-link>
+                <router-link to="detail-b">
+                    <div @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pageNext">
+                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pageNext">
+                    </div>
+                </router-link>
             </div>
         </div>
     </div>
@@ -79,7 +89,9 @@
                 link: 'events',
                 info: {},
                 showO: 1,
-                isMobile:false
+                isMobile: false,
+                pageNext: true,
+                pagePrev: true,
             };
         },
         created() {
@@ -90,28 +102,40 @@
             window.scrollTo(0, 0);
             let sr = this.$sr({reset: true, delay: 0});
             sr.reveal('.content div', {duration: 1000});
-            if(this.IsPC()){
-                this.isMobile = true
+            if (this.IsPC()) {
+                this.isMobile = true;
             }
         },
         methods: {
-            goback() {
-                this.$router.push({ path: '/ourwork/events/iconic' })
+            pagePrevOver: function () {
+                this.pagePrev = false;
             },
-            IsPC:function() {
+            pagePrevOut: function () {
+                this.pagePrev = true;
+            },
+            pageNextOver: function () {
+                this.pageNext = false;
+            },
+            pageNextOut: function () {
+                this.pageNext = true;
+            },
+            goback() {
+                this.$router.push({path: '/ourwork/events/iconic'});
+            },
+            IsPC: function () {
                 let userAgentInfo = navigator.userAgent;
-                let Agents = ["Android", "iPhone",
-                    "SymbianOS", "Windows Phone",
-                    "iPad", "iPod"];
+                let Agents = ['Android', 'iPhone',
+                    'SymbianOS', 'Windows Phone',
+                    'iPad', 'iPod'];
                 let flag = true;
-                for (let v = 0; v < Agents.length; v++) {
+                for ( let v = 0; v < Agents.length; v++ ) {
                     if (userAgentInfo.indexOf(Agents[v]) > 0) {
                         flag = false;
                         break;
                     }
                 }
                 return flag;
-            }
+            },
         },
     };
 </script>
@@ -121,14 +145,22 @@
 
     .iconic-detail-view {
         padding-bottom: 150px;
-        .div1{
+        .div1 {
             display: flex;
             align-items: flex-end;
-            span:nth-last-child(1){
+            span:nth-last-child(1) {
                 padding-bottom: 6px;
             }
         }
-.pagingOne{text-align: right}
+        .pagingOne {
+            text-align: right;
+            /*display: flex;*/
+            /*justify-content: space-around;*/
+            /*align-items: center;*/
+            div{
+                display: inline-block;
+            }
+        }
         .subnav {
             padding-top: 80px;
         }
@@ -152,7 +184,7 @@
 
         .content {
             margin: 5em 0;
-            margin-top: 5vh;
+            /*margin-top: 5vh;*/
             .space {
                 padding: 10px 0;
             }
@@ -210,12 +242,12 @@
         .iconic-detail-view {
             .info {
                 padding-top: 4em;
-                .div1{
+                .div1 {
                     display: block;
-                    span{
+                    span {
                         display: block;
                     }
-                    span:nth-last-child(1){
+                    span:nth-last-child(1) {
                         margin-top: 1em;
                     }
                 }

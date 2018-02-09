@@ -141,12 +141,18 @@
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback">BACK</a>
             </div>
-            <div class="share col-xs-offset-1 col-xs-8">
+            <div class="share col-xs-offset-1 col-xs-7">
                 <Share></Share>
             </div>
-            <div class="col-xs-2 pagingOne">
-                <router-link to="detail-e"><img src="../assets/img/icon/page-prev.png" alt=""></router-link>
-                <router-link to="detail-g"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
+            <div class="col-xs-3 pagingOne">
+                <router-link to="detail-e"><div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
+                    <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev">
+                    <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev">
+                </div></router-link>
+                <router-link to="detail-g"> <div  @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                    <img src="../assets/img/icon/page-next.png" alt="" v-show="pageNext">
+                    <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pageNext">
+                </div></router-link>
             </div>
         </div>
     </div>
@@ -167,7 +173,9 @@
                 link: 'events',
                 info: {},
                 showO: 1,
-                isMobile:false
+                isMobile:false,
+                pageNext:true,
+                pagePrev:true
             };
         },
         created() {
@@ -184,6 +192,18 @@
             }
         },
         methods: {
+            pagePrevOver:function () {
+                this.pagePrev = false;
+            },
+            pagePrevOut:function () {
+                this.pagePrev = true;
+            },
+            pageNextOver:function () {
+                this.pageNext = false;
+            },
+            pageNextOut:function () {
+                this.pageNext = true;
+            },
             goback() {
                 this.$router.push({ path: '/ourwork/events/iconic' })
             },
@@ -215,6 +235,13 @@
         }
         .pagingOne{
             text-align: right;
+            text-align: right;
+            /*display: flex;*/
+            /*justify-content: space-around;*/
+            /*align-items: center;*/
+            div{
+                display: inline-block;
+            }
         }
         .subnav {
             padding-top: 80px;
@@ -239,7 +266,7 @@
 
         .content {
             margin: 5em 0;
-            margin-top: 5vh;
+            /*margin-top: 5vh;*/
             .space {
                 padding: 10px 0;
             }

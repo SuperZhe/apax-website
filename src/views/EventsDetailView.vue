@@ -15,14 +15,25 @@
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback">BACK</a>
             </div>
-            <div class="share col-xs-offset-1 col-xs-8">
+            <div class="share col-xs-offset-1 col-xs-7">
                 <Share></Share>
             </div>
-            <div class="col-xs-2 pagingOne">
-                <router-link :to="{ name : 'events-detail', params : { id : prevId } }" v-if="!prevId==0"><img
-                    src="../assets/img/icon/page-prev.png" alt="" @click="RefreshOnce"></router-link>
-                <router-link :to="{ name : 'events-detail', params : { id : nextId } }" v-if="!nextId==0"><img
-                    src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce"></router-link>
+            <div class="col-xs-3 pagingOne">
+                <router-link :to="{ name : 'events-detail', params : { id : nextId } }" v-if="!nextId==0">
+                    <div  @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pageNext" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pageNext" @click="RefreshOnce">
+                    </div>
+                    <!--<img src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce">-->
+                </router-link>
+                <router-link :to="{ name : 'events-detail', params : { id : prevId } }" v-if="!prevId==0">
+                    <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
+                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pagePrev" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pagePrev" @click="RefreshOnce">
+                    </div>
+                    <!--<img src="../assets/img/icon/page-prev.png" alt="" >-->
+                </router-link>
+
             </div>
         </div>
     </div>
@@ -52,6 +63,8 @@
                 prevId: 0,
                 nextId: 0,
                 showO: 2,
+                pageNext:true,
+                pagePrev:true
             }
         },
         beforeRouteUpdate (to, from, next) {
@@ -76,25 +89,36 @@
             this.loadDetail();
         },
         methods: {
+            pagePrevOver:function () {
+                this.pagePrev = false;
+            },
+            pagePrevOut:function () {
+                this.pagePrev = true;
+            },
+            pageNextOver:function () {
+                this.pageNext = false;
+            },
+            pageNextOut:function () {
+                this.pageNext = true;
+            },
             goback() {
                 this.$router.push(-1);
                 this.$router.go(-1);
             },
-
             setBg() {
                 this.$bus.$emit('canvas-open');
             },
-
             setPage(id) {
-
                 this.$axios.get('http://test.tron-m.com/apax/news/navigation.do?id=' + (id?id:this.$route.params.id) + '&category=ourwork').then((response) => {
                     //console.log(response);
                     var data = response.data.result;
                     if (data.prev) {
+
                         this.prevId = data.prev.id;
                     }
 
                     if (data.next) {
+
                         this.nextId = data.next.id;
                     }
 
@@ -107,7 +131,7 @@
                 this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + (id?id:this.$route.params.id)).then((response) => {
                     //console.log(response.data.result);
                     this.info.title = response.data.result.enTitle;
-                    this.info.content = response.data.result.enHtml;
+                    this.info.content = response.data.result.html;
                     this.info.date = response.data.result.enAddr;
 //                        new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
                     window.scrollTo(0, 0);
@@ -137,7 +161,7 @@
         }
 
         .title {
-            font-size: 3em;
+            font-size: 2.2em;
         }
 
         .date {
@@ -151,6 +175,7 @@
 
         .content {
             margin: 5em 0;
+            margin-top: 1em;
         }
 
         .share {
@@ -158,6 +183,9 @@
         }
         .pagingOne {
             text-align: right;
+            div{
+                display: inline-block;
+            }
         }
     }
 

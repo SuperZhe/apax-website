@@ -91,6 +91,9 @@
             };
         },
         components: {OurworkSubNav},
+        created() {
+            this.$bus.$emit('canvas-open');
+        },
         mounted() {
             bus.$emit('change', this.showO);
             bus.$emit('pause', this.pauseO);
@@ -98,7 +101,7 @@
                 $('.videoAPAX').attr('src', video);
                 $('.player-box').show().find('video')[0].play();
             });
-            $('.player-box .close').on('click', () => $('.player-box').hide());
+            $('.player-box .close').on('click', () => {$('.player-box').hide(); $('.player-box').find('video')[0].pause()});
         },
         destroyed() {
             this.pauseO = true;

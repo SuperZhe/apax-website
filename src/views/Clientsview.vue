@@ -2,7 +2,7 @@
     <div class="info-view clients-list-view clearfix">
         <div class="info col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10">
 
-            <h4>OUR CLIENTS</h4>
+            <h4>CLIENTS</h4>
             <!--<div>-->
 
             <!--</div>-->
@@ -112,34 +112,45 @@
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/69.png" alt="" class="img3"></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/70.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/71.png" alt=""></div>
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/72.png" alt=""></div>
+                <!--<div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/72.png" alt=""></div>-->
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/73.png" alt=""></div>
             </div>
             <div class="col-xs-6 col-sm-6">
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/73.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/74.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/75.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/76.png" alt="" class="img3"></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/77.png" alt=""></div>
             </div>
             <div class="col-xs-6 col-sm-6">
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/77.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/78.png" alt="" class="img1"></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/79.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/80.png" alt=""></div>
-            </div>
-            <div class="col-xs-6 col-sm-6">
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/81.png" alt=""  class="img2"></div>
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/82.png" alt=""></div>
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/83.png" alt=""></div>
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/84.png" alt=""></div>
             </div>
             <div class="col-xs-6 col-sm-6">
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/82.png" alt=""></div>
+                <!--<div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/83.png" alt=""></div>-->
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/84.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/85.png" alt="" class="img3"></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/86.png" alt=""></div>
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/87.png" alt="" class="img3"></div>
-                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/88.png" alt="" class="img2"></div>
             </div>
             <div class="col-xs-6 col-sm-6">
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/87.png" alt="" class="img3"></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/99.png" alt=""></div>
                 <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/89.png" alt="" class="img2"></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/90.png" alt="" class=""></div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/91.png" alt="" class=""></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/92.png" alt="" class=""></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/93.png" alt="" class=""></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/94.png" alt="" class=""></div>
+            </div>
+            <div class="col-xs-6 col-sm-6">
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/95.png" alt="" class=""></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/96.png" alt="" class=""></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/97.png" alt="" class=""></div>
+                <div class="col-sm-3 col-xs-12"><img src="../assets/img/clients/98.png" alt="" class=""></div>
             </div>
         </div>
     </div>

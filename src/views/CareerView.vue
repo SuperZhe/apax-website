@@ -159,13 +159,6 @@
                     -Active, active working attitude, careful earnest, have high sense of responsibility,
                     -good team spirit, by perseverance and patience.
                 </div>
-                <div class="sendmail">
-                    <div class="set_6_btn in blue">
-                        <a href="mailto:hr@apaxgroup.com" class="email">CONTACT US</a>
-                        <div class="corners top"></div>
-                        <div class="corners bottom"></div>
-                    </div>
-                </div>
             </div>
             <div class="col-xs-offset-2 col-xs-8">
                 <h4><img src="../assets/img/main/recreation-title.png" alt="" class="logoThis"></h4>
@@ -187,13 +180,6 @@
                     -Passionate, sincere, honest, character, cheerful, love youth education;
                     -Active working attitude, careful earnest, have high sense of responsibility,
                     good team spirit, by perseverance and patience.
-                </div>
-                <div class="sendmail">
-                    <div class="set_6_btn in blue">
-                        <a href="mailto:hr@apaxgroup.com" class="email">CONTACT US</a>
-                        <div class="corners top"></div>
-                        <div class="corners bottom"></div>
-                    </div>
                 </div>
             </div>
         </div>

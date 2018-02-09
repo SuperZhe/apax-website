@@ -85,7 +85,6 @@
             })
         },
         mounted() {
-
             $('#app').on('touchstart', function () {
                 $('.video>video')[0].play();
             })
@@ -523,6 +522,10 @@
             border: 1px solid;
             padding: 4px 12px;
         }
+    }
+    .back:hover a{
+        border-color: #722182;
+        color: #722182;
     }
     p{
         line-height: 1.8em;

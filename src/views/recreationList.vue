@@ -1,5 +1,5 @@
 <template>
-    <div class="recreation-detail-view clearfix">
+    <div class="recreation-list-view clearfix">
 
 
         <div class="info col-xs-offset-1 col-xs-10">
@@ -7,30 +7,20 @@
                 <div class="col-xs-12 navImg">
                     <img src="../../static/recreation/KV.jpg" alt="">
                     <div class="navText">
-                        <div>
-                            <p>WHERE NATURE AWAITS<br>WHERE THE TRUE YOU AWAKES</p>
-                            <P>探索自然，发现自我</P>
-                        </div>
                         <ul class="secondaryNav">
                             <li>
                                 <router-link to="list/dna-1">
-                                <div class="line"></div>
-                                <div><p>Outdoor Sports</p>
-                                    <P>户外运动</P></div>
+                                    <img src="../../static/recreation/btn-1.png" alt="" class="dnaImg">
                                 </router-link>
                             </li>
                             <li>
                                 <router-link to="list/dna-2">
-                                <div class="line"></div>
-                                <div><p>Ecotourism</p>
-                                    <P>生态旅游</P></div>
+                                    <img src="../../static/recreation/btn-3.png" alt="" class="dnaImg">
                                 </router-link>
                             </li>
                             <li>
                                 <router-link to="list/dna-3">
-                                <div class="line"></div>
-                                <div><p>Science Education</p>
-                                    <P>科普教育</P></div>
+                                    <img src="../../static/recreation/btn-2.png" alt="" class="dnaImg">
                                 </router-link>
                             </li>
                         </ul>
@@ -50,8 +40,8 @@
                     </div>
                 </div>
             </div>
-            <div class="linkUs col-xs-offset-8 col-xs-4">
-                <a href="javascript:;">Are you ready to take the adventure with us?</a>
+            <div class="linkUs col-xs-12">
+                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -80,6 +70,7 @@
             this.$bus.$emit('canvas-open');
         },
         mounted() {
+            setTimeout(() => $('.recreation-list-view').fadeIn(), 500);
 //        $('.recreation-detail-view .play').on('click', () => $('.player-box').show().find('video')[0].play());
 //        $('.player-box .close').on('click', () => $('.player-box').hide());
 //            let sr = this.$sr({reset: true, delay: 0});
@@ -111,15 +102,33 @@
     @import '../assets/style/common.less';
     @import '../assets/style/but';
 
-    .recreation-detail-view {
+    .recreation-list-view {
         padding-bottom: 150px;
+        display: none;
+        .dnaImg:hover{
+            transform: scale(1.2);
+            transition: all 0.4s ease-in-out;
 
+        }
+        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
+            border-color:#36bbfc !important ;
+        }
+        .set_6_btn.blue:hover a{
+            color: #36bbfc;
+            font-size: 16px;
+            text-shadow: 0 0 2px #36bbfc,
+                /*0 0 4px #36bbfc,*/
+                /*0 0 10px #36bbfc,*/
+                /*0 0 20px #fff,*/
+                /*0 0 30px #fff,*/
+            0 0 10px #fff;
+        }
         .subnav {
             padding-top: 80px;
         }
 
         .info {
-            padding-top: 9vh;
+            margin-top: 9vh;
         }
 
         .title {
@@ -145,52 +154,31 @@
             position: relative;
             .navImg {
                 position: relative;
+                >img {
+                    width: 100%;
+                }
             }
             //二级导航
             .navText {
                 position: absolute;
-                top: 50%;
-                left: 120px;
+                top: 65%;
+                left: 10%;
                 transform: translateY(-50%);
                 color: #fff;
-                div:nth-child(1) {
-                    p {
-                        font-size: 2.2em;
-                    }
-                    p:nth-child(1) {
-                        margin-top: 0;
-                        margin-bottom: 0;
-                    }
-                    p:nth-last-child(1) {
-                        margin-top: 0;
-                    }
-                }
                 .secondaryNav {
                     margin: 0;
                     padding: 0;
-                    li:nth-child(1) {
-                        margin: 0;
-                    }
-                    li {
-                        float: left;
-                        list-style: none;
+                    list-style: none;
+                    display: flex;
+                    justify-content:space-around;
+                    align-items: center;
+                    width:55%;
+                    li{
                         a{
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            color: #fff;
-                        }
-
-                        margin-left: 60px;
-                        .line {
-                            height: 46px;
-                            border: 1px solid #bd5720;
-                        }
-                        div:nth-last-child(1) {
-                            margin-left: 10px;
-                            p {
-                                letter-spacing: 2px;
-                                margin: 0;
+                            display: block;
+                            width:80%;
+                            img{
+                                width:100%;
                             }
                         }
                     }
@@ -202,9 +190,6 @@
             }
             .space {
                 padding: 10px 0;
-            }
-            img {
-                width: 100%;
             }
             .discovery {
                 margin: 2vh 0;
@@ -351,7 +336,7 @@
                 border: 1px solid;
             }
             a:hover {
-                color: #6D227B;
+                color: #00b3ee;
             }
         }
         .share {
@@ -410,10 +395,39 @@
     }
 
     @media screen and (max-width: @max-width) {
-        .recreation-detail-view {
-
+        .recreation-list-view {
             .info {
                 padding-top: 5em;
+
+                .title {
+                    font-size: 2em !important;
+                    margin-bottom: 2vh;
+                }
+                .title2 {
+                    font-size: 1.8em !important;
+                }
+                .title3 {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
+                .list {
+                    margin-top: 20vh;
+                }
+                .text {
+                    margin-top: 4vh;
+                }
+                .awardsImg p {
+                    margin: 0;
+                }
+                .linkUs {
+                    a {
+                        font-size: 0.8em;
+                        display: block;
+                        padding: 10px 0;
+                        text-align: center;
+                    }
+
+                }
             }
 
             .title {

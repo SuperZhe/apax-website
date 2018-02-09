@@ -35,7 +35,7 @@
             this.$bus.$emit('canvas-close');
         },
         mounted() {
-            setTimeout(() => this.isrecreation = true, 700);
+            setTimeout(() => this.isrecreation = true, 200);
             setTimeout(() => this.$('.recreation-info-view').css({'display': 'flex'}), 500);
         },
     };
@@ -50,6 +50,9 @@
         padding-top: 95px;
         align-items: center;
         padding-bottom: 95px;
+        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
+            border-color:#36bbfc !important ;
+        }
         .set_6_btn.blue:hover a{
             color: #36bbfc;
             font-size: 16px;
@@ -123,7 +126,7 @@
             -webkit-background-size: 100px;
             color: rgba(141, 141, 141, 0.5);
             -webkit-background-clip: text;
-            width: 75%;
+            /*width: 55%;*/
             /*margin: 0 auto;*/
             margin-left: auto;
             margin-right: auto;
@@ -131,7 +134,7 @@
             /*font-weight:bold !important;*/
             /*display:block;*/
             -webkit-animation-name: shine;
-            -webkit-animation-duration: 2s;
+            -webkit-animation-duration: 3s;
             -webkit-animation-iteration-count: infinite;
         }
         @-webkit-keyframes shine

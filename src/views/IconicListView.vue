@@ -287,6 +287,11 @@ export default {
         .iconic-list-view {
             .list {
                 margin-top: 2em;
+                .mask{
+                    h2{
+                        font-size: 1em;
+                    }
+                }
             }
         }
     }

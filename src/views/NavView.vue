@@ -1,13 +1,13 @@
 <template>
     <div class="nav-view">
         <div class="nav">
-            <router-link to="/ourwork">HOME</router-link>
+            <router-link to="/">HOME</router-link>
             <router-link to="/about">ABOUT US</router-link>
             <router-link to="/news">NEWS</router-link>
             <router-link to="/awards">AWARDS</router-link>
             <router-link to="/clients">CLIENTS</router-link>
             <router-link to="/partners">PARTNERS</router-link>
-            <router-link to="/association">ASSOCIATION</router-link>
+            <router-link to="/association">ASSOCIATES</router-link>
             <router-link to="/career">CAREER</router-link>
         </div>
     </div>

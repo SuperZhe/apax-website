@@ -56,11 +56,16 @@
                 <div class="back col-xs-1" @click="goBack()">
                     <a href="javascript:;">BACK</a>
                 </div>
-                <div class="share col-xs-offset-1 col-xs-8">
+                <div class="share col-xs-offset-1 col-xs-7">
                     <Share></Share>
                 </div>
-                <div class="col-xs-2 pagingOne">
-                    <router-link to="detail-c"><img src="../assets/img/icon/page-next.png" alt=""></router-link>
+                <div class="col-xs-3 pagingOne">
+                    <router-link to="detail-c">
+                        <div  @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                            <img src="../assets/img/icon/page-next.png" alt="" v-show="pageNext">
+                            <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pageNext">
+                        </div>
+                    </router-link>
                 </div>
             </div>
 
@@ -82,7 +87,8 @@ export default {
             link : 'events',
             info : {},
             showO:1,
-            isMobile:false
+            isMobile:false,
+            pageNext:true
         }
     },
     created(){
@@ -99,6 +105,12 @@ export default {
         }
     },
     methods : {
+        pageNextOver:function () {
+            this.pageNext = false;
+        },
+        pageNextOut:function () {
+            this.pageNext = true;
+        },
         goBack:function(){
 //            this.$router.back(-1);
             this.$router.push({ path: '/ourwork/events/iconic' })
@@ -131,6 +143,9 @@ export default {
     }
     .pagingOne{
         text-align: right;
+        a{
+            display: inline-block;
+        }
     }
     .info {
         padding-top: 7vh;
@@ -156,7 +171,7 @@ export default {
     }
 
     .content {
-        margin-top: 5vh;
+        margin-top: 5em;
         margin-bottom: 5em;
         .space {
             padding: 10px 0;
