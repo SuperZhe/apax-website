@@ -76,7 +76,6 @@
                     this.items[i].thumbnailUrl = this.items[i].thumbnailUrl.replace('150', '640X360');
                 }
             },
-
             goDetail(id) {
                 this.$router.push({name: 'sifs-detail', params: {id: id}});
             },
