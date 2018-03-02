@@ -19,9 +19,9 @@
             </div>
         </div>
         <div class="pc">
-            <div class="info row col-xs-offset-1 col-xs-10 col-sm-10 col-sm-offset-2">
-                <div class="newJob">
-                    <div class="col-xs-offset-1 col-xs-10 col-sm-4 col-sm-offset-0 position">
+            <div class="info row col-xs-offset-1 col-xs-10 col-sm-10 col-sm-offset-1">
+                <div class="newJob col-xs-10 col-xs-offset-1">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-6 col-sm-offset-0 position">
                         <h4><img src="../assets/img/main/events-title.png" alt="" class="logoThis"></h4>
                         <h4 class="magnify">3D Designer</h4>
                         <h5>Job responsibilities:</h5>
@@ -40,13 +40,13 @@
                             Relevant working experience in interior design or related experience, familiar with construction technology and size；<br>
                             Proficient in 3D design, to design the proper 3D scene according to the creative concept；<br>
                             Basic operation ability for PHOTOSHOP and illustrator software；<br>
-                            Be familiar with the site construction, guide and supervise project progress, organize construction, be familiar with material and process structure is preferred;<br>
+                            Be familiar with the site construction, guide and supervise project progress,<br> organize construction, be familiar with material and process structure is preferred;<br>
                             Independent design for international brand activities or booth is preferred；<br>
                             Relevant experience in 4A company or event PR company is preferred.<br>
 
                         </div>
                     </div>
-                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-5 position">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 position">
                         <h4><img src="../assets/img/main/events-title.png" alt="" class="logoThis"></h4>
                         <h4 class="magnify">Senior Project Executive</h4>
                         <h5>Job responsibilities:</h5>
@@ -72,82 +72,86 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-offset-1 col-xs-10 col-sm-4 col-sm-offset-0 position">
-                    <h4><img src="../assets/img/main/events-title.png" alt="" class="logoThis"></h4>
-                    <h4 class="magnify">Event Planner</h4>
-                    <h5>Job responsibilities:</h5>
-                    <div class="car">
-                        Understand and be able to manage the pitch process - working<br>
-                        with creative teams for the events concepts；<br>
-                        -  Write, illustrate and assemble pitch proposals；<br>
-                        -  Script writing skills in creative and video proposal；
+                <div class="newJob col-xs-10 col-xs-offset-1">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-6 col-sm-offset-0 position">
+                        <h4><img src="../assets/img/main/events-title.png" alt="" class="logoThis"></h4>
+                        <h4 class="magnify">Event Planner</h4>
+                        <h5>Job responsibilities:</h5>
+                        <div class="car">
+                            Understand and be able to manage the pitch process - working<br>
+                            with creative teams for the events concepts；<br>
+                            -  Write, illustrate and assemble pitch proposals；<br>
+                            -  Script writing skills in creative and video proposal；
+                        </div>
+                        <h5 class="Hfive">Job requirements:</h5>
+                        <div class="car">
+                            -2+ years’ relevant planning experience in event marketing or advertising agencies;<br>
+                            -Proactive and creative；<br>
+                            -Strong research skills and deliver the accurate messages;<br>
+                            -Strong ability to effectively prioritize and meet deadlines；<br>
+                            -Team-player, critical thinking.<br>
+                        </div>
                     </div>
-                    <h5 class="Hfive">Job requirements:</h5>
-                    <div class="car">
-                        -2+ years’ relevant planning experience in event marketing or advertising agencies;<br>
-                        -Proactive and creative；<br>
-                        -Strong research skills and deliver the accurate messages;<br>
-                        -Strong ability to effectively prioritize and meet deadlines；<br>
-                        -Team-player, critical thinking.<br>
-                    </div>
-                </div>
-                <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-5 position">
-                    <h4><img src="../assets/img/main/live-title.png" alt="" class="logoThis"></h4>
-                    <h4 class="magnify">Marketing Manager</h4>
-                    <h5>Job responsibilities:</h5>
-                    <div class="car">
-                        -  Achieve Yearly Department Expectations;<br>
-                        -  Figure out market demands and look for new business opportunities and growth;<br>
-                        -  Responsible for marketing strategy design and arrange marketing activities;<br>
-                        -  Lead proposal planning, design and production for different clients;<br>
-                        -  Develop and maintain key media clients;<br>
-                        -  Department operation, team management and development;<br>
-                    </div>
-                    <h5 class="Hfive">Job responsibilities:</h5>
-                    <div class="car">
-                        -3 years + related working experience；<br>
-                        -Good communication and coordination skill;<br>
-                        -Innovative and critical thinking, sensitive information absorption capacity；<br>
-                        -With large luxury offline events, 4A advertising company planning experience is preferred.<br>
-                    </div>
-                </div>
-                <div class="col-xs-offset-1 col-xs-10 col-sm-4 col-sm-offset-0 position">
-                    <h4><img src="../assets/img/main/recreation-title.png" alt="" class="logoThis"></h4>
-                    <h4 class="magnify">Senior Coach</h4>
-                    <h5>Job responsibilities:</h5>
-                    <div class="car">
-                        -Delivery training program for various groups of clients;<br/>
-                        -Attend training sessions provided in house or external;<br/>
-                        -Mentoring of the coaches;<br/>
-                        -Provide in house trainings;<br/>
-                        -Designing of training programs and activities;<br/>
-                        -Attend to urgent work matters such as guides to prestige guests or recruitment.<br/>
-                    </div>
-                    <h5 class="Hfive">Job requirements:</h5>
-                    <div class="car">
-                        -3 years + working experience. 2 years + outdoor recreational activities background;<br>
-                        -Very good English skill；<br>-Passionate, sincere, honest, character, cheerful, love youth education;<br>-Active, active working attitude, careful earnest, have high sense of responsibility, <br>-good team spirit, by perseverance and patience.<br>
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 position">
+                        <h4><img src="../assets/img/main/live-title.png" alt="" class="logoThis"></h4>
+                        <h4 class="magnify">Marketing Manager</h4>
+                        <h5>Job responsibilities:</h5>
+                        <div class="car">
+                            -  Achieve Yearly Department Expectations;<br>
+                            -  Figure out market demands and look for new business opportunities and growth;<br>
+                            -  Responsible for marketing strategy design and arrange marketing activities;<br>
+                            -  Lead proposal planning, design and production for different clients;<br>
+                            -  Develop and maintain key media clients;<br>
+                            -  Department operation, team management and development;<br>
+                        </div>
+                        <h5 class="Hfive">Job responsibilities:</h5>
+                        <div class="car">
+                            -3 years + related working experience；<br>
+                            -Good communication and coordination skill;<br>
+                            -Innovative and critical thinking, sensitive information absorption capacity；<br>
+                            -With large luxury offline events, 4A advertising company planning experience is preferred.<br>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-5 position">
-                    <h4><img src="../assets/img/main/recreation-title.png" alt="" class="logoThis"></h4>
-                    <h4 class="magnify">Program Manager</h4>
-                    <h5>Job responsibilities:</h5>
-                    <div class="car">
-                        -Responsible for the day to day training;<br>
-                        -Effective regulation training program, <br>in a timely manner to manage personnel reflect the training courses for situation;<br>
-                        -Handling all kinds of problems in the process of teaching;<br>
-                        -Team sports curriculum practice, feedback, teamwork.<br>
+                <div class="newJob col-xs-10 col-xs-offset-1">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-6 col-sm-offset-0 position">
+                        <h4><img src="../assets/img/main/recreation-title.png" alt="" class="logoThis"></h4>
+                        <h4 class="magnify">Senior Coach</h4>
+                        <h5>Job responsibilities:</h5>
+                        <div class="car">
+                            -Delivery training program for various groups of clients;<br/>
+                            -Attend training sessions provided in house or external;<br/>
+                            -Mentoring of the coaches;<br/>
+                            -Provide in house trainings;<br/>
+                            -Designing of training programs and activities;<br/>
+                            -Attend to urgent work matters such as guides to prestige guests or recruitment.<br/>
+                        </div>
+                        <h5 class="Hfive">Job requirements:</h5>
+                        <div class="car">
+                            -3 years + working experience. 2 years + outdoor recreational activities background;<br>
+                            -Very good English skill；<br>-Passionate, sincere, honest, character, cheerful, love youth education;<br>-Active, active working attitude, careful earnest, have high sense of responsibility, <br>-good team spirit, by perseverance and patience.<br>
+                        </div>
                     </div>
-                    <h5 class="Hfive">Job requirements:</h5>
-                    <div class="car">
-                        -With high passion with this work<br/>
-                        -Fluent Chinese language expression, presentations,<br>
-                        and the corresponding expression ability, English spoken language standards;<br/>
-                        -Free time is more, love challenge;<br/>
-                        -Passionate, sincere, honest, character, cheerful, love youth education;<br/>
-                        -Active working attitude, careful earnest, have high sense of responsibility,<br>
-                        good team spirit, by perseverance and patience.<br/>
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 position">
+                        <h4><img src="../assets/img/main/recreation-title.png" alt="" class="logoThis"></h4>
+                        <h4 class="magnify">Program Manager</h4>
+                        <h5>Job responsibilities:</h5>
+                        <div class="car">
+                            -Responsible for the day to day training;<br>
+                            -Effective regulation training program, <br>in a timely manner to manage personnel reflect the training courses for situation;<br>
+                            -Handling all kinds of problems in the process of teaching;<br>
+                            -Team sports curriculum practice, feedback, teamwork.<br>
+                        </div>
+                        <h5 class="Hfive">Job requirements:</h5>
+                        <div class="car">
+                            -With high passion with this work<br/>
+                            -Fluent Chinese language expression, presentations,<br>
+                            and the corresponding expression ability, English spoken language standards;<br/>
+                            -Free time is more, love challenge;<br/>
+                            -Passionate, sincere, honest, character, cheerful, love youth education;<br/>
+                            -Active working attitude, careful earnest, have high sense of responsibility,<br>
+                            good team spirit, by perseverance and patience.<br/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -253,16 +257,22 @@
 <style lang="less">
     @import '../assets/style/common.less';
     @import '../assets/style/but';
-    .career-view{
+
+    .career-view {
         .info {
             .position {
                 margin-bottom: 5em;
             }
-            .newJob:after{
+            .newJob:after {
                 display: block;
                 clear: both;
-                content:'';
+                content: '';
                 visibility: hidden;
+            }
+            .newJob{
+                >div{
+                    padding: 0 20px;
+                }
             }
         }
 
@@ -315,7 +325,6 @@
             display: none;
         }
     }
-
 
     @media screen and (max-width: @max-width) {
         .info-view {
