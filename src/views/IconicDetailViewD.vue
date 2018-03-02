@@ -24,7 +24,7 @@
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
                 <div class="col-xs-12">
-                    <img src="../../static/iconic-detail-3/new4.jpg" alt="">
+                    <!--<img src="../../static/iconic-detail-3/new4.jpg" alt="">-->
                 </div>   <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>

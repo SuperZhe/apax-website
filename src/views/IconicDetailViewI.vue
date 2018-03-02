@@ -45,6 +45,14 @@
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
                 <div class="col-xs-12"><img src="../../static/iconic-detail-8/new4.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12"><img src="../../static/iconic-detail-8/new5.jpeg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix" v-if="isMobile"></div>
+                <div class="col-xs-12"><img src="../../static/iconic-detail-8/new6.jpeg" alt=""></div>
                 <!--<div class="s43 col-xs-5">More than a thousand of regional media and international guests gathered together to witness this Fashion Miracle.</div>-->
                 <!--<div class="s-one col-xs-5"><img src="../../static/iconic-detail-8/6.jpg" alt=""></div>-->
                 <!--<div class="s-two col-xs-offset-2 col-xs-5"><img src="../../static/iconic-detail-8/7.jpg" alt=""></div>-->

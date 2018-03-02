@@ -2,24 +2,19 @@
     <div class="dna-1 clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title">CORE ELEMENT 1<br>OUTDOOR SPORTS</div>
+            <div class="title">The World’s First Discovery Adventures Park</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
-                <img src="../../static/recreation/huwai1.jpg" alt="">
+                <img src="../../static/recreation/park.jpg" alt="">
                 <p>
-                    There needs no other reasons for outdoor lovers come to Discovery Adventures Park, “the country’s largest outdoor three-dimensional climbing wall” as one of the highlights
-                    will bring excitement among outdoor enthusiasts.<br>
-                    Discovery Adventures Park is also a must-to-go place for outdoor sports beginners. There is a famous saying in the outdoor sports field, “Strengthen your body, purify your soul”,
-                    this gives a perfect summary to answer the question why we should do outdoor exercise.
-                </p>
-                <img src="../../static/recreation/huwai2.jpg" alt="">
-                <p>
-                    Moreover, with the highly modernized urban life, we are surrounded by artificial electric waves and poor air quality. Humans are the creatures of nature and we should go back
-                    to the natural environment, to feel the nature’s magnetic energy. A wide selection of challenge programs available in Discovery Adventures Park: Such as the Climbing Wall,
-                    Zipline, Obstacle Course, Adventure Trekking, Timing Cross-country Race, Hot Air Balloon, Hiking and Wilderness Survival. Which one will you choose? Our professional coach
-                    would be there and assist you during every program, explain techniques patiently to ensure support and encourage you to overcome every “Extreme Challenge”.<br>
-                    I am sure that Hot air balloon experience will leave you unforgettable memories without fly to Turkey, you can take off on a hot air balloon which is the same as in Cappadocia
-                    from our theme park.
+                    The world's first Discovery Adventures Park, located in Moganshan, Deqing County, Huzhou City, Zhejiang Province, is currently the largest tourism resort complex in
+                    Moganshan. Discovery Adventures Park is an outdoor sports and adventure experience theme park that integrates true outdoor environment, state-of-the-art outdoor
+                    facilities, international safety standards, a complete curriculum system, and international professional coaches team, providing travelers throughout the world with globally
+                    premier outdoor survival training and exploration experience. Discovery Adventures Park follows the values of exploration, challenge, discovery and experience, to enable
+                    explorers feel and learn from the nature, challenge themselves, go beyond limits in any season, enjoy inner thoughts and a free world, share environmental-friendly lifestyle
+                    with friends and family, and experience and feel the inspiration and shock to the soul brought by breathtaking adventures.<br>
+                    Discovery Adventures Park offers a number of outdoor adventure facilities, such as Climbing Wall, Zip Line, Aerial Net, Ground Obstacle, Hot Air Balloon, Hiking, and Wild
+                    Survival, which can fully meet the challenge needs of domestic and foreign outdoor players, and bring the world's top outdoor adventure experience.
                 </p>
                 <div class="col-xs-12 recreationBack" @click="goBack()">
                     <div class="set_6_btn in blue">
@@ -39,7 +34,7 @@
 </template>
 <script>
     import Arrow from '../components/Arrow.vue';
-//    import { config } from '../assets/js/app/config';
+    //    import { config } from '../assets/js/app/config';
 
     export default {
         name: 'dna-1',
@@ -75,15 +70,15 @@
         .blue {
             margin-left: -20px;
         }
-            .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
-                border-color: #36bbfc !important;
-            }
-            .set_6_btn.blue:hover a {
-                color: #36bbfc;
-                font-size: 18px;
-                text-shadow: 0 0 2px #36bbfc,
-                0 0 10px #fff;
-            }
+        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
+            border-color: #36bbfc !important;
+        }
+        .set_6_btn.blue:hover a {
+            color: #36bbfc;
+            font-size: 18px;
+            text-shadow: 0 0 2px #36bbfc,
+            0 0 10px #fff;
+        }
         .list {
             margin-top: 7vh;
             .linkUs {

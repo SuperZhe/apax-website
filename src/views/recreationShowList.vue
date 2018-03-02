@@ -1,5 +1,5 @@
 <template>
-    <div class="recreation-detail-view clearfix">
+    <div class="recreation-show-view clearfix">
         <div class="subnav">
             <OurworkSubNav :links="link"></OurworkSubNav>
         </div>
@@ -7,44 +7,55 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <!--<div class="title col-xs-12">-->
-                <!--<img src="../assets/img/main/recreation-title.png" alt="">-->
-            <!--</div>-->
-            <div class="content col-xs-12">
-                <div class="col-xs-12 recreationOneImg">
-                    <img src="../../static/recreation/32.jpg" alt="">
-                    <div class="eyes col-xs-10">
-                        <img src="../../static/recreation/title.png" alt="">
-                       <p>
-                           Discovery Adventures Park is the Key IP project introduced and hatched by APAX Recreation. APAX Recreation brought Discovery
-                           IP to China, creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery Comes to
-                           Life. The first park is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an
-                           outdoor lifestyle approach and three main aims - ecotourism, outdoor sports, and education all in one. And from there, continue
-                           to launch more theme parks worldwide.
-                       </p>
-                        <div class="parkButton">
-                            <router-link to="park">
-                                The World’s First Discovery Adventures Park
+            <div>
+                <div class="title col-xs-12">
+                </div>
+                <div class="content col-xs-12">
+                    <div class="col-xs-12 recreationOneImg">
+                        <img src="../../static/recreation/show.jpg" alt="">
+                        <div class="col-xs-10 eyes ">
+                            <img src="../assets/img/main/recreation-title.png" alt="" class="eyesTitle">
+                            <p>
+                                APAX Recreation is committed to creating in-depth experience tourism destinations with international IP operations that set
+                                “Culture" "Sports" "Tourism" “Education" as the core with five pillars as the content - customized travel, content media, health
+                                data analysis, sport competition operations and outdoor e-commerce.
+                            </p>
+                            <ul class="col-xs-8 col-xs-offset-2">
+                                <li>CULTURE</li>
+                                <li>SPORT</li>
+                                <li>TRAVEL</li>
+                                <li>EDUCATION</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space clearfix"></div>
+                 <!--   <div class="col-xs-12 recreationText">
+                        <h4 class="title1">The World’s First Discovery Adventures Park</h4>
+                        <p>
+                            APAX Recreation introduced an international premium IP to China. Creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery
+                            Comes to Life. The first park location is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an outdoor lifestyle approach
+                            and three main ambition - ecotourism, outdoor sports, and education all in one. And from there, continue to launch more theme parks worldwide!
+                        </p>
+                    </div>-->
+                    <div class="space clearfix"></div>
+                    <div class="space clearfix"></div>
+                    <div class="space clearfix" v-if="isMobile"></div>
+                    <div class="col-xs-12 linkFrame">
+                        <div class="set_6_btn in blue">
+                            <router-link to="detail" class="link">
+                                <span>CURIOUS TO SEE MORE</span>
                             </router-link>
+                            <div class="corners top"></div>
+                            <div class="corners bottom"></div>
                         </div>
                     </div>
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix" v-if="isMobile"></div>
-                <div class="col-xs-12 linkFrame">
-                    <div class="set_6_btn in blue">
-                        <router-link to="list" class="link">
-                            <span>CURIOUS TO SEE MORE</span>
-                        </router-link>
-                        <div class="corners top"></div>
-                        <div class="corners bottom"></div>
-                    </div>
+                <div class="linkUs col-xs-12">
+                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
                 </div>
             </div>
-            <div class="linkUs col-xs-12">
-                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
-            </div>
+
+
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
             </div>
@@ -60,7 +71,7 @@
     import { bus } from '../assets/js/app/public';
 
     export default {
-        name: 'recreation-detail-view',
+        name: 'recreation-show-view',
         components: {OurworkSubNav, Arrow, Share},
         data() {
             return {
@@ -79,7 +90,7 @@
             if (this.IsPC()) {
                 this.isMobile = true;
             }
-            setTimeout(() => $('.recreation-detail-view').fadeIn(), 500);
+            setTimeout(() => $('.recreation-show-view').fadeIn(), 500);
         },
         methods: {
             IsPC: function () {
@@ -104,7 +115,7 @@
     @import '../assets/style/common.less';
     @import '../assets/style/but';
 
-    .recreation-detail-view {
+    .recreation-show-view {
         display: none;
         padding-bottom: 150px;
         .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
@@ -126,29 +137,26 @@
                 text-align: center;
                 color: #fff;
                 img{
-                    width: 360px;
-                    margin-bottom: 15vh;
-                }
-                p{
-                    margin-bottom: 3em;
-                }
-                div{
-                    margin-top: 1.5em;
-                }
-                .parkButton{
-                    /*width:30%;*/
+                    width:auto;
                     margin: 0 auto;
-                    a{
-                        border: 1px solid;
-                        color: #fff;
-                        padding: 15px 25px;
-                    }
                 }
-                .parkButton:hover a{
-                    color: #00b3ee;
-                    border-color: #00b3ee;
-                    transition: all 0.8s ease;
-                    cursor: pointer;
+                .eyesTitle{
+                    margin-bottom: 2em;
+                }
+                ul{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    li{
+                        list-style: none;
+                        float: left;
+                        height: 120px;
+                        width: 120px;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 120px;
+                        background-color: #229dd5;
+                    }
                 }
                 span {
                     text-align: center;
@@ -285,39 +293,6 @@
                     transition: all 0.3s ease-in-out;
                 }
             }
-            .hover {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                /*padding: 12px;*/
-                top: 0;
-                left: 0;
-                opacity: 0;
-                transition: all 0.3s ease-in-out;
-
-                .mask {
-                    background-color: rgba(0, 0, 0, 0.5);
-                    transition: all 0.3s ease-in-out;
-                    width: 100%;
-                    height: 100%;
-                    color: #fff;
-                    font-size: 12px;
-                    padding: 2em;
-                    position: relative;
-
-                    display: table;
-                }
-
-                .middle {
-                    display: table-cell;
-                    vertical-align: middle;
-                    text-align: center;
-
-                    img {
-                        cursor: pointer;
-                    }
-                }
-            }
             .recreationText {
                 /*text-align: center;*/
                 .title1 {
@@ -350,57 +325,34 @@
             text-align: center;
         }
 
-        .player-box {
-            position: fixed;
-            z-index: 20;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            top: 0;
-            display: none;
-
-            > div {
-                position: relative;
-                top: 50%;
-                left: 50%;
-                margin-top: -300px;
-                margin-left: -450px;
-                width: 900px;
-                height: 600px;
-                padding: 5px;
-                background-color: #fff;
-            }
-
-            object, #object {
-                width: 100%;
-                height: 100%;
-
-                video {
-                    width: 100%;
-                    height: 100%;
+    }
+    @media screen and (max-width: 1200px){
+        .recreation-show-view .recreationOneImg .eyes {
+            ul{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                li{
+                    list-style: none;
+                    float: left;
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 100px;
+                    background-color: #229dd5;
+                    font-size: 15px;
                 }
             }
-
-            .close {
-                position: absolute;
-                right: 10px;
-                top: 10px;
-                animation: kf-close-out 500ms ease;
-                cursor: pointer;
-
-                &:hover {
-                    animation: kf-close-in 500ms ease;
-                }
-            }
-
-            .tips {
-                position: absolute;
-                bottom: 20px;
-                left: 40px;
+            span {
+                text-align: center;
+                color: #fff;
+                font-size: 2.8em;
+                display: block;
+                line-height: 50px;
             }
         }
     }
-
     @media screen and (max-width: @max-width) {
         .recreation-detail-view {
 

@@ -21,10 +21,10 @@
         <div class="right" :class="{navWidth:showO == 1 || showO  == 2}">
             <div>
                 <router-link to="/ourwork/events/iconic" v-if="r1">
-                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1}" class="hover">signature events</span>
+                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1}" class="hover">Signature Events</span>
                 </router-link>
                 <router-link to="/ourwork/events/list" v-if="r1">
-                    <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover">more events</span>
+                    <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover">More Events</span>
                 </router-link>
                 <router-link to="/ourwork/live/rocks" v-if="r2"><span :class="{pitch:showO == 5,bottomAlignment:showO == 5}" class="hover">Fashion Rocks</span>
                 </router-link>

@@ -3,29 +3,6 @@
         <div class="info col-xs-offset-2 col-xs-8">
             <h4>SHOWREELS</h4>
         </div>
-
-        <!--<video class="col-xs-offset-1 col-xs-10" :src=video  controls-->
-        <!--x-webkit-airplay="true"-->
-        <!--webkit-playsinline="true"-->
-        <!--playsinline="true"-->
-        <!--autoplay="autoplay"-->
-        <!--x5-video-player-type="h5"-->
-        <!--x5-video-player-fullscreen="true"-->
-        <!--preload="auto" loop="true">-->
-
-        <!--</video>-->
-        <div class="col-xs-offset-1 col-xs-10">
-            <div class="content col-xs-12 col-sm-12">
-                <img src="../assets/img/main/logo.png" alt="" class="logoTitle">
-                <!-- <img src="../assets/img/main/video-bg.jpg" alt=""> -->
-                <img src="../../static/video-bg.jpg" alt="11">
-                <div class="hover">
-                    <div class="mask">
-                        <div class="middle"><img class="play" src="../assets/img/icon/play.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="col-xs-offset-1 col-xs-10">
             <div class="content col-xs-12 col-sm-12">
                 <img src="../assets/img/main/events-title.png" alt="" class="logoTitle">

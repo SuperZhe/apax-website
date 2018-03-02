@@ -6,12 +6,12 @@
                 <h3 class="shine">WE BRING A NEW VISION</h3>
                 <!--<br><br><br>-->
                 <p>
-                    APAX Recreation is committed to building international tourism destinations providing in-depth experience on<br>
-                    “culture promotion”, “environmental responsible tourism”, “outdoor activities” and “interactive education”.
+                    APAX Recreation is committed to creating in-depth experience tourism destinations and<br>
+                    international IP operations platform with an outdoor lifestyle approach.
                 </p>
                 <br>
                 <div class="set_6_btn in blue">
-                    <router-link to="recreation/detail" class="link">
+                    <router-link to="recreation/showlist" class="link">
                         <span>DISCOVER MORE</span>
                     </router-link>
                     <div class="corners top"></div>

@@ -72,8 +72,9 @@
                 </div>
             </div>
             <h3 class="title3 col-xs-12">CERTIFICATE</h3>
-            <div class="col-xs-8 col-xs-offset-2">
-                <img src="../../static/recreation/8.jpg" alt="" class="col-xs-12">
+            <div class=" col-xs-12 certificate">
+                <img src="../../static/recreation/DES.jpg" alt="" class="col-xs-6">
+                <img src="../../static/recreation/DCS.jpg" alt="" class="col-xs-6">
             </div>
             <p class="col-xs-10 col-xs-offset-1 certificaText">
                 Participates will get a DISCOVERY ADVENTURES PARK Certificate, a stamp when
@@ -113,10 +114,10 @@
 
     .safety {
         display: none;
-        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
-            border-color:#36bbfc !important ;
+        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
+            border-color: #36bbfc !important;
         }
-        .set_6_btn.blue:hover a{
+        .set_6_btn.blue:hover a {
             color: #36bbfc;
             font-size: 16px;
             text-shadow: 0 0 2px #36bbfc,
@@ -185,6 +186,14 @@
                 /*width: 100%;*/
                 /*}*/
             }
+            .certificate{
+                img:nth-child(1){
+                    padding-right: 25px;
+                }
+                img:nth-child(2){
+                    padding-left: 25px;
+                }
+            }
         }
     }
 
@@ -210,7 +219,7 @@
                     a {
                         font-size: 0.8em;
                         display: block;
-                        padding:0;
+                        padding: 0;
                         text-align: center;
                     }
 

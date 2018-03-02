@@ -29,16 +29,21 @@ import IconicDetailViewG from '@/views/IconicDetailViewG';
 import IconicDetailViewH from '@/views/IconicDetailViewH';
 import IconicDetailViewI from '@/views/IconicDetailViewI';
 import IconicDetailViewJ from '@/views/IconicDetailViewJ';
+import IconicDetailViewK from '@/views/IconicDetailViewK';
 import LiveView from '@/views/LiveView';
 import LiveInfoView from '@/views/LiveInfoView';
 import LiveNavView from '@/views/LiveNavView';
-import RocksView from '@/views/RocksView';
+import RocksView from '@/views/rocksViews';
+import RocksList from '@/views/RocksListView';
+import RocksDetail from '@/views/rocksDetail';
 import SifsView from '@/views/SifsView';
 import SifsListView from '@/views/SifsListView';
 import SifsDetailView from '@/views/SifsDetailView';
 import RecreationView from '@/views/RecreationView';
 import RecreationInfoView from '@/views/RecreationInfoView';
 import RecreationDetailView from '@/views/RecreationDetailView';
+import RecreationShowList from '@/views/recreationShowList';
+import recreationPark from '@/views/recreationPark';
 import recreationList from '@/views/recreationList';
 import recreationListViews from '@/views/recreationListViews';
 import dna1 from '@/views/dna-1';
@@ -50,6 +55,7 @@ import association from '@/views/association.vue';
 import fashionWeek from '@/views/FashionWeek.vue';
 import safety from '@/views/safetyViews.vue';
 import recreationMap from '@/views/recreationMap.vue';
+
 
 Vue.use(Router);
 
@@ -191,6 +197,11 @@ export default new Router({
                                     name: 'iconic-detail-j',
                                     component: IconicDetailViewJ,
                                 },
+                                {
+                                    path: 'detail-K',
+                                    name: 'iconic-detail-K',
+                                    component: IconicDetailViewK,
+                                },
                             ],
                         },
                     ],
@@ -209,11 +220,11 @@ export default new Router({
                             name: 'live-nav',
                             component: LiveNavView,
                         },
-                        {
+                       /* {
                             path: 'rocks',
                             name: 'live-rocks',
                             component: RocksView,
-                        },
+                        },*/
                         {
                             path: 'video',
                             name: 'live-video',
@@ -240,6 +251,23 @@ export default new Router({
                                 },
                             ],
                         },
+                        {
+                            path: 'rocks',
+                            name: 'live-rocks',
+                            component: RocksView,
+                            children: [
+                                {
+                                    path: '/',
+                                    name: 'rocks-list',
+                                    component: RocksList,
+                                },
+                                {
+                                    path: 'detail/:id',
+                                    name: 'rocks-detail-view',
+                                    component: RocksDetail,
+                                },
+                            ],
+                        },
                     ],
                 },
                 {
@@ -250,6 +278,16 @@ export default new Router({
                             path: '/',
                             name: 'recreation-info',
                             component: RecreationInfoView,
+                        },
+                        {
+                            path: 'showlist',
+                            name: 'recreation-show-view',
+                            component:RecreationShowList,
+                        },
+                        {
+                            path: 'park',
+                            name: 'recreation-park-view',
+                            component:recreationPark,
                         },
                         {
                             path: 'detail',

@@ -16,7 +16,7 @@
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
-                    <img src="../../static/iconic-detail/new1.jpg" alt="">
+                    <img src="../../static/iconic-detail/new3.jpg" alt="">
                     <!--<p>Hang Lung Properties was set to mark a milestone in its history with the transformation of its flagship Shanghai Plaza Plaza 66 on September 8, 2017 with a grand celebration - Home to Luxury. The star-studded celebration highlighted 66 Showcases, which showed numerous luxury brands unveiling their special or limited collections. The Grammy Award winning Singer - Alicia Keys performed her greatest hits during the splendid evening. </p>-->
                 </div>
                 <div class="col-xs-12">
@@ -30,7 +30,7 @@
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
-                <div class=" col-xs-12"><img src="../../static/iconic-detail/new3.jpg" alt=""></div>
+                <div class=" col-xs-12"><img src="../../static/iconic-detail/new1.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>

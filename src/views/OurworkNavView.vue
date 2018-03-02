@@ -64,9 +64,15 @@
 
 
     .ourwork-nav-view {
-        display: table;
-        width: 100%;
+        /*display: table;*/
+        /*width: 100%;*/
+        /*height: 100vh;*/
         height: 100vh;
+        padding-top: 95px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 95px;
         @keyframes initAn {
             0% {
                 opacity: 0;

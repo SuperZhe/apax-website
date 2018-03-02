@@ -2,23 +2,24 @@
     <div class="dna-3 clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title">DNA 3<br>Science Education</div>
+            <div class="title">CORE ELEMENT 3<br>SCIENCE EDUCATION</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/recreation/kepu1.jpg" alt="">
                 <p>
-                    Many of us might have watched the famous exploration science program Discovery Channel, this globally biggest science channel used to telling countless people knowledge
-                    in fields of wilderness, science and biology.<br>
-                    Speaking of Discovery, we must talk about the man who is standing on the top of food chains——Bear Grylls, who ate raw ox-heart, live earthworm and cross no-man’s land.
-                    Time and time again he challenging the limits of human wilderness survival and risk his life to show us survival knowledge and skills under severe environment conditions.
+                    Many of us might have watched the famous exploration science program - Discovery Channel, the world's biggest science channel tells stories and knowledge in wilderness,
+                    science, and biology.<br>
+                    Speaking of Discovery, we must talk about the man who is standing on the top of food chains—Bear Grylls, who ate raw ox-heart, live earthworm, and cross no-man’s land. Time
+                    and time again he challenging the limits of human wilderness survival and risk his life to show us survival knowledge and skills under severe environmental conditions.
                 </p>
                 <img src="../../static/recreation/kepu2.jpg" alt="">
                 <p>
-                    However, from the screen all the experience seems too far and limited, now comes something more exciting than the TV channel! At the Discover Adventures Park, you are
-                    able to learn new knowledge from your personal experience, our coaches will face to face share amazing stories with you.<br>
-                    If you are a father or mother, there is no better choices like take kids to spend holidays in Discovery Adventures Park, kids will have a lot of fun here and happy studying!
-                    Discovery Adventures Park would thoroughly implement the principle of delight education to let kids love and appreciate the nature, and improve learning and manipulative
-                    ability.
+                    However, from the screen, all the experience seems too far and limited. Now it comes something more exciting than the TV channel! At Discovery Adventures Park, you are able
+                    to learn knowledge from your personal experience, our coaches will share amazing stories with you and guide you to actually experience all that happens in Discovery
+                    Channel.<br>
+                    If you are a dad or mom, there are no better choices like take kids to spend holidays in Discovery Adventures Park, your kids will happily study here with a lot of fun! Discovery
+                    Adventures Park would thoroughly implement the principle of delight education to let kids love and appreciate the nature and improve learning abilities to become a
+                    life-long learner.
                 </p>
                 <div class="col-xs-12 recreationBack" @click="goBack()">
                     <div class="set_6_btn in blue">

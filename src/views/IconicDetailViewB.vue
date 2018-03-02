@@ -16,7 +16,7 @@
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
                 <div class="col-xs-12">
-                    <img src="../../static/iconic-detail-6/new1.png" alt="">
+                    <img src="../../static/iconic-detail-6/new1.jpeg" alt="">
                     <!--<p>-->
                         <!--Starbucks Coffee Company opened its very first international Starbucks Reserve Roastery (outside of Seattle) in Shanghai with a global live streaming on 9 platforms and incorporating Tmall Super Brand Day during its grand opening and unveiling event. An Immersive coffee experience was part of the journey celebration for the excited guests to explore and discover what they never knew about coffee.</p>-->
                 </div>
@@ -25,13 +25,13 @@
                     <p>
                         Starbucks Coffee Company opened its very first international Starbucks Reserve Roastery (outside of Seattle) in Shanghai with a global live streaming on 9 platforms and incorporating Tmall Super Brand Day during its grand opening and unveiling event. An Immersive coffee experience was part of the journey celebration for the excited guests to explore and discover what they never knew about coffee.</p>
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix" v-if="isMobile"></div>
-                <div class="col-xs-12">
-                    <img src="../../static/iconic-detail-6/new2.jpg" alt="">
-                    <!--<p>Showcases included amazing photography collection by Dan Holdsworth and Wild Constellations by Alexandre Joly, both were inspired by Vallée de Joux, where Audemars Piguet was founded. The film was taken by Chinese artist Chen Ran that tells the story between Audemars Piguet and its origin. </p>-->
-                </div>
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix"></div>-->
+                <!--<div class="space clearfix" v-if="isMobile"></div>-->
+                <!--<div class="col-xs-12">-->
+                    <!--&lt;!&ndash;<img src="../../static/iconic-detail-6/new2.jpg" alt="">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<p>Showcases included amazing photography collection by Dan Holdsworth and Wild Constellations by Alexandre Joly, both were inspired by Vallée de Joux, where Audemars Piguet was founded. The film was taken by Chinese artist Chen Ran that tells the story between Audemars Piguet and its origin. </p>&ndash;&gt;-->
+                <!--</div>-->
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>

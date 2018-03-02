@@ -2,20 +2,22 @@
     <div class="dna-2 clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title">DNA 2<br>Eco-tourism </div>
+            <div class="title">CORE ELEMENT 2<br>ECO-TOURISM </div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/recreation/shengtai2.jpg" alt="">
                 <p>
-                    Discovery Adventures Park as the first Discovery Channel theme park globally, one of our purposes is to introduce Eco-Tourism in the industry.
-                    What is Eco-Tourism? The biggest difference from traditional tourism industry is that Eco-Tourism developing on the premise of protecting environment, based on core principles of marking tourists enjoy the most original travel experience in the nature and maintaining sustainable development of the eco-environment.<br>
+                    Discovery Adventures Park as the World's first park came out of Discovery Channel, one of our purposes is to introduce Eco-Tourism in the industry.<br>
+                    What is Eco-Tourism? The biggest difference from traditional tourism industry is that Eco-Tourism developing on the premise of protecting the environment, based on core
+                    principles of marking tourists enjoy the most original travel experience in nature and maintaining sustainable development of the eco-environment.
                 </p>
                 <img src="../../static/recreation/shengtai1.jpeg" alt="">
                 <p>
-                    Moganshan ecosystem is a textbook model of domestic eco-tourism, it has great geographic advantage: surrounded by cloud-shrouded views and four distinct seasons of
+                    Moganshan ecosystem is a textbook model of domestic eco-tourism, it has a great geographic condition: surrounded by cloud-shrouded views and four distinct seasons of
                     nature climate which makes it celebrities’ most favorite spot over the last century. CNN names it as: “One of the Chinese Attractions That You Must Visit Besides the Great Wall”.
-                    The concept of Discovery Adventures Park and style of Moganshan have come together in a harmonious way, every program completely reflects “Eco-Tourism” mission. Guests
-                    can explore a better experience as well as taking programs outside of the park, which brightening up Moganhan’s long lasting title as “Hot Holiday Spot” even more remarkable.
+                    The concept of Discovery Adventures Park and style of Moganshan have come together in a harmonious way - every program completely reflects “Eco-Tourism” mission.<br>
+                    Guests can receive a better experience as they can do some out park adventures programs in an entirely natural environment, which brighten up Moganhan’s long-lasting title
+                    as “Hot Holiday Spot” even more remarkable.
                 </p>
                 <div class="col-xs-12 recreationBack" @click="goBack()">
                     <div class="set_6_btn in blue">

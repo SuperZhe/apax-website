@@ -60,9 +60,9 @@
                 this.canvas = true;
                 this.video = false;
 
-                if (!$.browser.mobile) {
-                    this.canvas3();
-                }
+//                if (!$.browser.mobile) {
+//                    this.canvas3();
+//                }
             });
 
             Bus.$on('canvas-close', () => {
@@ -89,9 +89,9 @@
                 $('.video>video')[0].play();
             })
 
-            if (this.canvas && !$.browser.mobile) {
-                this.canvas3();
-            }
+//            if (this.canvas && !$.browser.mobile) {
+//                this.canvas3();
+//            }
 
             if ($.browser.mobile) {
                 $('.bg b').remove();
@@ -109,7 +109,7 @@
 
         },
         methods: {
-            canvas1() {
+            /*canvas1() {
                 var c = document.getElementById("c");
                 var w = c.width = window.innerWidth,
                     h = c.height = window.innerHeight,
@@ -297,9 +297,9 @@
                     RAF(animate);
                 }
 
-            },
+            },*/
 
-            canvas3() {
+            /*canvas3() {
                 var self = this;
                 self.$(function () {
                     if (!window.ActiveXObject && !!document.createElement("canvas").getContext) {
@@ -510,7 +510,7 @@
                     }
                 });
 
-            }
+            }*/
         }
     }
 </script>

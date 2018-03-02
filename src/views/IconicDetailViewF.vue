@@ -34,7 +34,7 @@
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
                 <div class=" col-xs-12">
-                    <img src="../../static/iconic-detail-5/16.jpg" alt="">
+                    <!--<img src="../../static/iconic-detail-5/16.jpg" alt="">-->
                 </div>
             </div>
             <div class="title col-sm-9 col-xs-12">The Art of Transformation  </div>

@@ -22,24 +22,28 @@
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <!--<div class="space clearfix"></div>-->
-                <div class="col-xs-12"><img src="../../static/week/2.jpeg" alt=""></div>
+                <div class="col-xs-12"><img src="../../static/week/2.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <!--<div class="space clearfix"></div>-->
-                <div class="col-xs-12"><img src="../../static/week/3.jpeg" alt=""></div>
+                <div class="col-xs-12"><img src="../../static/week/3.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class=" col-xs-12"><img src="../../static/week/4.jpeg" alt=""></div>
+                <div class=" col-xs-12"><img src="../../static/week/4.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/week/5.jpeg" alt=""></div>
+                <div class="col-xs-12"><img src="../../static/week/5.jpg" alt=""></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
-                <div class="col-xs-12"><img src="../../static/week/6.jpeg" alt=""></div>
+                <div class="col-xs-12"><img src="../../static/week/6.jpg" alt=""></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="space clearfix"></div>
+                <div class="col-xs-12"><img src="../../static/week/7.jpg" alt=""></div>
             </div>
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback">BACK</a>
