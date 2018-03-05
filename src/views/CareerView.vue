@@ -37,7 +37,7 @@
                             College degree or above in art, good art skill, good understanding of creative concept；<br>
                             Strong learning ability, 2+ years working experience in the same industry；<br>
                             Good skill in CAD；Draw the suitable construction drawings according to 3D documents；<br>
-                            Relevant working experience in interior design or related experience, familiar with construction technology and size；<br>
+                            Relevant working experience in interior design or related experience,<br> familiar with construction technology and size；<br>
                             Proficient in 3D design, to design the proper 3D scene according to the creative concept；<br>
                             Basic operation ability for PHOTOSHOP and illustrator software；<br>
                             Be familiar with the site construction, guide and supervise project progress,<br> organize construction, be familiar with material and process structure is preferred;<br>
@@ -271,7 +271,7 @@
             }
             .newJob{
                 >div{
-                    padding: 0 20px;
+                    padding: 0 80px;
                 }
             }
         }
