@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-xs-12">
                     <p>
-                        To celebrate Giorgio Armani tenth anniversary in China, Mr. Giorgio Armani brought the five brand lines to Beijing, held a grand "One Night Only in Beijing” fashion show at 798 art district "New Tank”, being the first time that the five lines combined to be presented in one show. The night was brought to a climax when the 15 “Tribute to China” gowns that specially designed by Mr. Armani for this anniversary. The one and the only.
+                        To celebrate Giorgio Armani tenth anniversary in China, Mr. Giorgio Armani brought the five brand lines to Beijing, held a grand "One Night Only in Beijing” fashion show at 751 "New Tank”, being the first time that the five lines combined to be presented in one show. The night was brought to a climax when the 15 “Tribute to China” gowns that specially designed by Mr. Armani for this anniversary. The one and the only.
                     </p>
                 </div>
                 <div class="space clearfix"></div>

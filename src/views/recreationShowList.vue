@@ -43,7 +43,7 @@
                     <div class="col-xs-12 linkFrame">
                         <div class="set_6_btn in blue">
                             <router-link to="detail" class="link">
-                                <span>CURIOUS TO SEE MORE</span>
+                                <span>DISCOVER MORE</span>
                             </router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
