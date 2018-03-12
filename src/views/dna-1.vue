@@ -127,7 +127,7 @@
             .list{
 
                 .title {
-                    font-size: 2em !important;
+                    font-size: 1.4em !important;
                     margin-bottom: 2vh;
                 }
                 .title2 {

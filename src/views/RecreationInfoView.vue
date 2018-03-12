@@ -109,10 +109,10 @@
         }
 
         .recreationInfoImg{
-            -webkit-animation: initAn 0.6s linear  alternate;
-            -moz-animation: initAn 0.6s linear  alternate;
-            -o-animation: initAn 0.6s linear  alternate;
-            animation: initAn 0.6s linear  alternate;
+            -webkit-animation: initAn 0.6s linear  forwards;
+            -moz-animation: initAn 0.6s linear  forwards;
+            -o-animation: initAn 0.6s linear  forwards;
+            animation: initAn 0.6s linear  forwards;
         }
         .recreationContent{
             opacity: 0;

@@ -78,8 +78,25 @@
         }
 
     @media screen and (max-width: @max-width) {
-        .safety {
+        .recreation-map {
+            .linkUs {
+                text-align: center;
+                margin-top: 0.6rem;
+                a {
+                    font-size: 0.8em;
+                    display: block;
+                    padding: 0 !important;
+                    text-align: center;
+                }
+
+            }
+            .info{
+                .title3{
+                    font-size: 1.6em;
+                }
+            }
             .info-view {
+
                 .row {
                     margin-top: 2em !important;
                 }

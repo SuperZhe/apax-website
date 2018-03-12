@@ -72,9 +72,9 @@
                 </div>
             </div>
             <h3 class="title3 col-xs-12">CERTIFICATE</h3>
-            <div class=" col-xs-12 certificate">
-                <img src="../../static/recreation/DES.jpg" alt="" class="col-xs-6">
-                <img src="../../static/recreation/DCS.jpg" alt="" class="col-xs-6">
+            <div class=" col-xs-12 col-sm-12 certificate">
+                <img src="../../static/recreation/DES.jpg" alt="" class="col-xs-12 col-sm-6">
+                <img src="../../static/recreation/DCS.jpg" alt="" class="col-xs-12 col-sm-6">
             </div>
             <p class="col-xs-10 col-xs-offset-1 certificaText">
                 Participates will get a DISCOVERY ADVENTURES PARK Certificate, a stamp when
@@ -200,6 +200,17 @@
     @media screen and (max-width: @max-width) {
         .safety {
             .info {
+                .certificaText{
+                    font-size: 14px;
+                    margin-top: 1.2em;
+
+                }
+                .certificate{
+                    img{
+                        padding: 0 !important;
+                        margin-bottom: 0.4rem;
+                    }
+                }
                 h3 {
                     font-size: 1.6em;
                 }
@@ -223,6 +234,10 @@
                         text-align: center;
                     }
 
+                }
+                .linkFrame{
+                    margin-top: 1em;
+                    margin-bottom: 1em;
                 }
             }
         }

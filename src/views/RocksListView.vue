@@ -8,10 +8,10 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="col-xs-12 rocksTopLeft">
-                <div class="col-xs-7 rocksLeft">
+                <div class="col-xs-12 col-sm-7 rocksLeft">
                     <img src="../../static/rocks-detail/new.jpg" alt="">
                 </div>
-                <div class=" col-xs-5 rocksRight">
+                <div class=" col-xs-12 col-sm-5 rocksRight">
                     <span class="title1">BLEND FASHION WITH MUSIC</span>
                     By marketing the unification of entertainment and trends, Fashion Rocks offers China & Asia a 360-degree concept with infinite opportunities through fashion and music. An established IP weaving e-commerce, online & offline engagement and international broadcast distribution into a global platform reaching out to a multitude of consumers.
                 </div>
@@ -263,10 +263,19 @@ export default {
     .rocks-text{
         margin-top: 1.6em;
     }
+    .rocksRight{
+        padding: 0 !important;
+    }
+    .title{
+        margin-top: 1.8em;
+    }
     .info {
         padding-top: 2em;
     }
-
+    .item{
+        padding:0 !important;
+        margin-left: 0 !important;
+    }
     .title {
         font-size: 1.5em;
     }

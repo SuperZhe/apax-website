@@ -3,76 +3,76 @@
         <div class="nav1" @click="goBack()"></div>
         <router-link to="/ourwork" class="nav2"></router-link>
         <div class="pc">
-            <div class="nav3">
-                <div>
-                    <a href="http://www.facebook.com/APAXGROUP" target="_blank" @mouseover="hover(1)"
-                       @mouseout="mouseout(1)">
-                        <img src="../assets/img/icon/facebook_off.png" alt="" v-show="!on1">
-                        <img src="../assets/img/icon/facebook_on.png" alt="" v-show="on1">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://weibo.com/apaxgroupsh?refer_flag=1001030103" target="_blank" @mouseover="hover(2)"
-                       @mouseout="mouseout(2)">
-                        <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!on2">
-                        <img src="../assets/img/icon/weibo_on.png" alt="" v-show="on2">
-                    </a>
-                </div>
-                <div class="weixin1">
-                    <p @click="shareWX1" @mouseover="hover(3)"
-                       @mouseout="mouseout(3)">
-                        <img src="../assets/img/icon/weixin_off.png" alt="" v-show="!on3">
-                        <img src="../assets/img/icon/weixin_on.png" alt="" v-show="on3">
-                    </p>
-                    <div><img src="../assets/img/icon/erweima.jpg" class="erweima"></div>
-                </div>
-                <div>
-                    <a href="https://www.instagram.com/apaxgroup/" target="_blank" @mouseover="hover(4)"
-                       @mouseout="mouseout(4)">
-                        <img src="../assets/img/icon/instagram_off.png" alt="" v-show="!on4">
-                        <img src="../assets/img/icon/instagram_on.png" alt="" v-show="on4">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.linkedin.com/company/apax-group---shanghai/" target="_blank"
-                       @mouseover="hover(5)"
-                       @mouseout="mouseout(5)">
-                        <img src="../assets/img/icon/linked_off.png" alt="" v-show="!on5">
-                        <img src="../assets/img/icon/linked_on.png" alt="" v-show="on5">
-                    </a>
+                <div class="nav3">
+                    <div>
+                        <a href="http://www.facebook.com/APAXGROUP" target="_blank" @mouseover="hover(1)"
+                           @mouseout="mouseout(1)">
+                            <img src="../assets/img/icon/facebook_off.png" alt="" v-show="!on1">
+                            <img src="../assets/img/icon/facebook_on.png" alt="" v-show="on1">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://weibo.com/apaxgroupsh?refer_flag=1001030103" target="_blank" @mouseover="hover(2)"
+                           @mouseout="mouseout(2)">
+                            <img src="../assets/img/icon/weibo_off.png" alt="" v-show="!on2">
+                            <img src="../assets/img/icon/weibo_on.png" alt="" v-show="on2">
+                        </a>
+                    </div>
+                    <div class="weixin1">
+                        <p @click="shareWX1" @mouseover="hover(3)"
+                           @mouseout="mouseout(3)">
+                            <img src="../assets/img/icon/weixin_off.png" alt="" v-show="!on3">
+                            <img src="../assets/img/icon/weixin_on.png" alt="" v-show="on3">
+                        </p>
+                        <div><img src="../assets/img/icon/erweima.jpg" class="erweima"></div>
+                    </div>
+                    <div>
+                        <a href="https://www.instagram.com/apaxgroup/" target="_blank" @mouseover="hover(4)"
+                           @mouseout="mouseout(4)">
+                            <img src="../assets/img/icon/instagram_off.png" alt="" v-show="!on4">
+                            <img src="../assets/img/icon/instagram_on.png" alt="" v-show="on4">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.linkedin.com/company/apax-group---shanghai/" target="_blank"
+                           @mouseover="hover(5)"
+                           @mouseout="mouseout(5)">
+                            <img src="../assets/img/icon/linked_off.png" alt="" v-show="!on5">
+                            <img src="../assets/img/icon/linked_on.png" alt="" v-show="on5">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
         <div class="mobile">
-            <div class="nav3">
-                <div>
-                    <a href="http://www.facebook.com/APAXGROUP" target="_blank">
-                        <img src="../assets/img/icon/facebook_off.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://weibo.com/apaxgroupsh?refer_flag=1001030103" target="_blank">
-                        <img src="../assets/img/icon/weibo_off.png" alt="">
-                    </a>
-                </div>
-                <div class="weixin1">
-                    <p @click="shareWX1()">
-                        <img src="../assets/img/icon/weixin_off.png" alt="">
-                    </p>
-                    <div><img src="../assets/img/icon/erweima.jpg" class="erweima"></div>
-                </div>
-                <div>
-                    <a href="http://www.facebook.com/APAXGROUP" target="_blank">
-                        <img src="../assets/img/icon/instagram_off.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="http://www.facebook.com/APAXGROUP" target="_blank">
-                        <img src="../assets/img/icon/linked_off.png" alt="">
-                    </a>
+                <div class="nav3">
+                    <div>
+                        <a href="http://www.facebook.com/APAXGROUP" target="_blank">
+                            <img src="../assets/img/icon/facebook_off.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://weibo.com/apaxgroupsh?refer_flag=1001030103" target="_blank">
+                            <img src="../assets/img/icon/weibo_off.png" alt="">
+                        </a>
+                    </div>
+                    <div class="weixin1">
+                        <p @click="shareWX1()">
+                            <img src="../assets/img/icon/weixin_off.png" alt="">
+                        </p>
+                        <div><img src="../assets/img/icon/erweima.jpg" class="erweima"></div>
+                    </div>
+                    <div>
+                        <a href="http://www.facebook.com/APAXGROUP" target="_blank">
+                            <img src="../assets/img/icon/instagram_off.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="http://www.facebook.com/APAXGROUP" target="_blank">
+                            <img src="../assets/img/icon/linked_off.png" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
         <div class="nav-toggle" @click="goNav" v-show="toggle"></div>
         <div class="nav-close" @click="goBack" v-show="close"></div>
         <div class="nav"></div>
@@ -371,23 +371,6 @@
                 }
             }
         }
-        /*.weixin{*/
-        /*top: -12px;*/
-        /*position: absolute;*/
-        /*right: -20px;*/
-        /*div{*/
-        /*display: none;*/
-        /*position: absolute;*/
-        /*top: -195px;*/
-        /*left: -64px;*/
-        /*img{*/
-        /*width: 185px;*/
-        /*}*/
-        /*}*/
-        /*}*/
-        /*.weixin:hover{*/
-        /*color: #fff;*/
-        /*}*/
     }
 
     @media screen and (max-width: @max-width) {
@@ -400,8 +383,17 @@
                 .nav3 {
                     z-index: 999;
                     height: 0;
-                    bottom: 55px;
+                    /*bottom: 55px;*/
+                    left:50%;
+                    transform: translateX(-50%);
                 }
+            }
+            .language{
+                margin: 6vw 0;
+                text-align: center;
+                width:80%;
+                left:50%;
+                transform: translateX(-50%);
             }
         }
     }

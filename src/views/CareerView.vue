@@ -159,6 +159,56 @@
         <div class="mobile col-xs-12">
             <div class="col-xs-offset-2 col-xs-8">
                 <h4><img src="../assets/img/main/events-title.png" alt="" class="logoThis"></h4>
+                <h4 class="magnify">3D Designer</h4>
+                <h5>Job responsibilities:</h5>
+                <div class="car">
+                    According to customer requirements, analyze and plan the demand,<br>
+                    complete the 3D effect diagram and construction drawings；<br>
+                    Take Advantage of own background and knowledge to effectively control costs in design and production；<br>
+                    Good communication with supplier, to control the replay/reconstruction of the site effects；<br>
+                    Guide and supervise site construction progress.<br>
+                </div>
+                <h5 class="Hfive">Job requirements:</h5>
+                <div class="car">
+                    College degree or above in art, good art skill, good understanding of creative concept；<br>
+                    Strong learning ability, 2+ years working experience in the same industry；<br>
+                    Good skill in CAD；Draw the suitable construction drawings according to 3D documents；<br>
+                    Relevant working experience in interior design or related experience,<br> familiar with construction technology and size；<br>
+                    Proficient in 3D design, to design the proper 3D scene according to the creative concept；<br>
+                    Basic operation ability for PHOTOSHOP and illustrator software；<br>
+                    Be familiar with the site construction, guide and supervise project progress,<br> organize construction, be familiar with material and process structure is preferred;<br>
+                    Independent design for international brand activities or booth is preferred；<br>
+                    Relevant experience in 4A company or event PR company is preferred.<br>
+
+                </div>
+            </div>
+            <div class="col-xs-offset-2 col-xs-8">
+                <h4><img src="../assets/img/main/events-title.png" alt="" class="logoThis"></h4>
+                <h4 class="magnify">Senior Project Executive</h4>
+                <h5>Job responsibilities:</h5>
+                <div class="car">
+                    Maintain good communication with customers to ensure the events go smoothly；<br>
+                    Responsible for pre-activity purchasing, supplier contact and other preparatory work；<br>
+                    Understand and analyze customer requirements to achieve the required results；<br>
+                    Good cost management, supplier management and full support for the event projects；<br>
+                    Summarize the projects in time, organize and save the related documents and data.<br>
+                </div>
+                <h5 class="Hfive">Job responsibilities:</h5>
+                <div class="car">
+                    3+ years’ relevant project executive (in Online or offline advertising agencies is preferred)；<br>
+                    Project executive and customer service experience；<br>
+                    Strong communication skills in both Chinese and English；<br>
+                    Proficiency office software: word /excel/PowerPoint, etc.；<br>
+                    Ability to handle complex tasks independently；<br>
+                    Strong logical thinking ability and good language ability；<br>
+                    Good physical and hardworking spirit；<br>
+                    Good coordination and organizational skills, teamwork spirit；<br>
+                    Responsibility, work well under pressure.<br>
+
+                </div>
+            </div>
+            <div class="col-xs-offset-2 col-xs-8">
+                <h4><img src="../assets/img/main/events-title.png" alt="" class="logoThis"></h4>
                 <h4 class="magnify">Event Planner</h4>
                 <h5>Job responsibilities:</h5>
                 <div class="car">

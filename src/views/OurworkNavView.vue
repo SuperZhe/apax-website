@@ -92,28 +92,28 @@
         }
 
         .ourworEvents img {
-            -webkit-animation: initAn 0.6s linear  alternate;
-            -moz-animation: initAn 0.6s linear  alternate;
-            -o-animation: initAn 0.6s linear  alternate;
-            animation: initAn 0.6s linear  alternate;
+            -webkit-animation: initAn 0.6s linear forwards;
+            -moz-animation: initAn 0.6s linear  forwards;
+            -o-animation: initAn 0.6s linear  forwards;
+            animation: initAn 0.6s linear  forwards;
             /*animation-fill-mode:forwards;*/
         }
 
         .ourworkLive img {
-            -webkit-animation: initAn 0.6s linear  alternate;
-            -moz-animation: initAn 0.6s linear  alternate;
-            -o-animation: initAn 0.6s linear  alternate;
-            animation: initAn 0.6s linear  alternate;
+            -webkit-animation: initAn 0.6s linear  forwards;
+            -moz-animation: initAn 0.6s linear  forwards;
+            -o-animation: initAn 0.6s linear  forwards;
+            animation: initAn 0.6s linear  forwards;
             animation-delay: 0.7s;
             -moz-animation-delay: 0.7s;
             -webkit-animation-delay: 0.7s;
         }
 
         .ourworkRecreation img {
-            -webkit-animation: initAn 0.6s linear  alternate;
-            -moz-animation: initAn 0.6s linear  alternate;
-            -o-animation: initAn 0.6s linear  alternate;
-            animation: initAn 0.6s linear  alternate;
+            -webkit-animation: initAn 0.6s linear  forwards;
+            -moz-animation: initAn 0.6s linear  forwards;
+            -o-animation: initAn 0.6s linear  forwards;
+            animation: initAn 0.6s linear  forwards;
             animation-delay: 0.7s;
             -moz-animation-delay: 0.7s ;
             -webkit-animation-delay: 0.7s;
@@ -130,6 +130,7 @@
                     height: 24px;
                     -moz-transition: all 0.3s ease-in-out; /* for Firefox */
                     -o-transition: all 0.3s ease-in-out;
+                    -webkit-transition: all 0.3s ease-in-out;
                     transition: all 0.3s ease-in-out;
                 }
                 img:hover {
@@ -160,6 +161,7 @@
                     opacity: 0.3;
                     -moz-transition: all 0.3s ease-in-out ; /* for Firefox */
                     -o-transition: all 0.3s ease-in-out ;
+                    -webkit-transition: all 0.3s ease-in-out ;
                     transition: all 0.3s ease-in-out;
                 }
                 /*display: none;*/
@@ -182,6 +184,33 @@
                 span {
                     font-size: 24px !important;
                 }
+            }
+            .ourworEvents img {
+                -webkit-animation: initAn 0.8s linear forwards;
+                -moz-animation: initAn 0.8s linear  forwards;
+                -o-animation: initAn 0.8s linear  forwards;
+                animation: initAn 0.8s linear  forwards;
+                /*animation-fill-mode:forwards;*/
+            }
+
+            .ourworkLive img {
+                -webkit-animation: initAn 0.8s linear  forwards;
+                -moz-animation: initAn 0.8s linear  forwards;
+                -o-animation: initAn 0.8s linear  forwards;
+                animation: initAn 0.8s linear  forwards;
+                animation-delay: 0.9s;
+                -moz-animation-delay: 0.9s;
+                -webkit-animation-delay: 0.9s;
+            }
+
+            .ourworkRecreation img {
+                -webkit-animation: initAn 0.8s linear  forwards;
+                -moz-animation: initAn 0.8s linear  forwards;
+                -o-animation: initAn 0.8s linear  forwards;
+                animation: initAn 0.8s linear  forwards;
+                animation-delay: 0.9s;
+                -moz-animation-delay: 0.9s ;
+                -webkit-animation-delay: 0.9s;
             }
         }
     }

@@ -85,9 +85,23 @@
             })
         },
         mounted() {
-            $('#app').on('touchstart', function () {
-                $('.video>video')[0].play();
-            })
+//            $('#app').on('touchstart', function () {
+//                $('.video video')[0].play();
+//            })
+
+            document.addEventListener('DOMContentLoaded', function () {
+                function audioAutoPlay() {
+
+//                    let  video = document.getElementsByClassName('video')[0];
+//                    console.log(video);
+                    $('.video video')[0].play();
+                    document.addEventListener('WeixinJSBridgeReady', function () {
+                        $('.video video')[0].play();
+                    }, false);
+                }
+
+                audioAutoPlay();
+            });
 
 //            if (this.canvas && !$.browser.mobile) {
 //                this.canvas3();

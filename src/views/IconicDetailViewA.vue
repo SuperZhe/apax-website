@@ -228,6 +228,7 @@ export default {
 
 @media screen and (max-width: @max-width) {
 .iconic-detail-view {
+    .content{margin-top: 3em}
     .info {
         padding-top: 4em;
         .div1{

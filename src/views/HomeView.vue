@@ -39,7 +39,7 @@
             this.$bus.$emit('canvas-close');
         },
         mounted() {
-            setTimeout(() => this.judgeText = true, 900);
+            setTimeout(() => this.judgeText = true, 700);
             setTimeout(() => this.light = true, 700);
 
 
@@ -83,7 +83,7 @@
         }
         //闪光动画
         .shine {
-            line-height: normal !important;
+            /*line-height: normal !important;*/
             background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1, #fff)) 0 0 no-repeat;
             background: #222 -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1, #fff)) 0 0 no-repeat;
             background: #222 -o-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.1, #fff)) 0 0 no-repeat;
@@ -128,26 +128,12 @@
         }
 
         .titleHome {
-            -webkit-animation: rotateWordsSecond 0.6s linear alternate;
-            -moz-animation: rotateWordsSecond 0.6s linear alternate;
-            -o-animation: rotateWordsSecond 0.6s linear alternate;
-            animation: rotateWordsSecond 0.6s linear alternate;
+            -webkit-animation: rotateWordsSecond 0.6s linear ;
+            -moz-animation: rotateWordsSecond 0.6s linear ;
+            -o-animation: rotateWordsSecond 0.6s linear ;
+            animation: rotateWordsSecond 0.6s linear ;
         }
 
-        @-webkit-keyframes neon1 {
-            from {
-                text-shadow: 0 0 10px #fff,
-                0 0 20px #fff,
-                0 0 40px #fff,
-                0 0 60px #fff;
-            }
-            to {
-                text-shadow: 0 0 2px #fff,
-                0 0 4px #fff,
-                0 0 6px #fff,
-                0 0 8px #fff;
-            }
-        }
 
         @keyframes rotateWordsSecond {
             0% {
@@ -159,7 +145,7 @@
             }
 
             100% {
-                display: block;
+                /*display: block;*/
                 opacity: 1;
                 -webkit-transform: scale(1);
                 -moz-transform: scale(1);

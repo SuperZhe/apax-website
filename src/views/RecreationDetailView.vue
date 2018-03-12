@@ -7,43 +7,79 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <!--<div class="title col-xs-12">-->
-                <!--<img src="../assets/img/main/recreation-title.png" alt="">-->
-            <!--</div>-->
-            <div class="content col-xs-12">
-                <div class="col-xs-12 recreationOneImg">
-                    <img src="../../static/recreation/32.jpg" alt="">
-                    <div class="eyes col-xs-10">
-                        <img src="../../static/recreation/title.png" alt="">
-                       <p>
-                           Discovery Adventures Park is the Key IP project introduced and hatched by APAX Recreation. APAX Recreation brought Discovery
-                           IP to China, creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery Comes to
-                           Life. The first park is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an
-                           outdoor lifestyle approach and three main aims - ecotourism, outdoor sports, and education all in one. And from there, continue
-                           to launch more theme parks worldwide.
-                       </p>
-                        <div class="parkButton">
-                            <router-link to="park">
-                                The World’s First Discovery Adventures Park
+            <div class="pc">
+                <div class="content col-xs-12">
+                    <div class="col-xs-12 recreationOneImg">
+                        <img src="../../static/recreation/32.jpg" alt="">
+                        <div class="eyes col-xs-10">
+                            <img src="../../static/recreation/title.png" alt="">
+                            <p>
+                                Discovery Adventures Park is the Key IP project introduced and hatched by APAX Recreation. APAX Recreation brought Discovery
+                                IP to China, creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery Comes to
+                                Life. The first park is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an
+                                outdoor lifestyle approach and three main aims - ecotourism, outdoor sports, and education all in one. And from there, continue
+                                to launch more theme parks worldwide.
+                            </p>
+                            <div class="parkButton">
+                                <router-link to="park">
+                                    The World’s First Discovery Adventures Park
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space clearfix"></div>
+                    <div class="space clearfix"></div>
+                    <div class="space clearfix" v-if="isMobile"></div>
+                    <div class="col-xs-12 linkFrame">
+                        <div class="set_6_btn in blue">
+                            <router-link to="list" class="link">
+                                <span>DISCOVER MORE</span>
                             </router-link>
+                            <div class="corners top"></div>
+                            <div class="corners bottom"></div>
                         </div>
                     </div>
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix" v-if="isMobile"></div>
-                <div class="col-xs-12 linkFrame">
-                    <div class="set_6_btn in blue">
-                        <router-link to="list" class="link">
-                            <span>DISCOVER MORE</span>
-                        </router-link>
-                        <div class="corners top"></div>
-                        <div class="corners bottom"></div>
-                    </div>
+                <div class="linkUs col-xs-12">
+                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
                 </div>
             </div>
-            <div class="linkUs col-xs-12">
-                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+            <div class="mobile">
+                <div class="content col-xs-12">
+                    <div class="col-xs-12 recreationOneImg">
+                        <img src="../../static/recreation/mobile2.jpg" alt="">
+                        <div class="eyes col-xs-10 col-xs-offset-1">
+                            <img src="../../static/recreation/title.png" alt="" class="eyesTitle">
+                            <p>
+                                Discovery Adventures Park is the Key IP project introduced and hatched by APAX Recreation. APAX Recreation brought Discovery
+                                IP to China, creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery Comes to
+                                Life. The first park is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an
+                                outdoor lifestyle approach and three main aims - ecotourism, outdoor sports, and education all in one. And from there, continue
+                                to launch more theme parks worldwide.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space clearfix"></div>
+                    <div class="parkButton">
+                        <router-link to="park">
+                            The World’s First Discovery Adventures Park
+                        </router-link>
+                    </div>
+                    <div class="space clearfix"></div>
+                    <div class="space clearfix" v-if="isMobile"></div>
+                    <div class="col-xs-12 linkFrame">
+                        <div class="set_6_btn in blue">
+                            <router-link to="list" class="link">
+                                <span>DISCOVER MORE</span>
+                            </router-link>
+                            <div class="corners top"></div>
+                            <div class="corners bottom"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="linkUs col-xs-12">
+                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+                </div>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -107,361 +143,309 @@
     .recreation-detail-view {
         display: none;
         padding-bottom: 150px;
-        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
-            border-color:#36bbfc !important ;
+        .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
+            border-color: #36bbfc !important;
         }
-        .set_6_btn.blue:hover a{
+        .set_6_btn.blue:hover a {
             color: #36bbfc;
             font-size: 16px;
             text-shadow: 0 0 2px #36bbfc,
             0 0 10px #fff;
         }
-        .recreationOneImg {
-            position: relative;
-            .eyes {
-                position: absolute;
-                top: 10%;
-                left: 50%;
-                transform: translateX(-50%);
-                text-align: center;
-                color: #fff;
-                img{
-                    width: 360px;
-                    margin-bottom: 15vh;
-                }
-                p{
-                    margin-bottom: 3em;
-                }
-                div{
-                    margin-top: 1.5em;
-                }
-                .parkButton{
-                    /*width:30%;*/
-                    margin: 0 auto;
-                    a{
-                        border: 1px solid;
-                        color: #fff;
-                        padding: 15px 25px;
-                    }
-                }
-                .parkButton:hover a{
-                    color: #00b3ee;
-                    border-color: #00b3ee;
-                    transition: all 0.8s ease;
-                    cursor: pointer;
-                }
-                span {
-                    text-align: center;
-                    color: #fff;
-                    font-size: 2.8em;
-                    display: block;
-                    line-height: 50px;
-                }
-            }
-        }
-        .subnav {
-            padding-top: 80px;
-        }
-
-        .info {
-            padding-top: 9vh;
-        }
-
-        .title {
-            text-align: center;
-            padding: 0 5em;
-
-            p {
-                line-height: 1.8em;
-            }
-        }
-
-        .date {
-            text-align: right;
-
-            span {
+        .pc {
+            .recreationOneImg {
                 position: relative;
-                top: 2em;
-            }
-        }
-
-        .content {
-            margin: 5em 0;
-            position: relative;
-            .linkFrame {
-                text-align: center;
-            }
-
-            .space {
-                padding: 10px 0;
-            }
-            img {
-                width: 100%;
-            }
-            .discovery {
-                margin: 2vh 0;
-                text-align: center;
-                img {
-                    width: auto;
-                }
-            }
-            .text {
-                position: absolute;
-                top: 1vh;
-                left: 0;
-                /*top: 30px;*/
-                /*left: 20px;*/
-                width: 100%;
-                color: #fff;
-                div {
-                    margin: 20px 0 20px 20px;
-                    display: flex;
-                    align-items: center;
-                    .title {
-
-                        /*display: block;*/
-                        /*height: 30px;*/
-                        padding: 5px 20px;
-                        background-color: #00b3ee;
-                        border-top-left-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                        font-size: 1.8em;
-                        float: left;
-                    }
-                    span:nth-last-child(1) {
-                        font-size: 1.2em;
-                        margin-left: 20px;
-                        width: 60%;
-                        float: left;
-                    }
-                }
-                div:after {
-                    clear: both;
-                    display: block;
-                    visibility: hidden;
-                    content: '';
-                }
-            }
-            .text1 {
-                position: absolute;
-                bottom: 10vh;
-                left: 0;
-                /*top: 30px;*/
-                /*left: 20px;*/
-                width: 100%;
-                color: #fff;
-                div {
-                    margin: 20px 0 20px 20px;
-                    display: flex;
-                    align-items: center;
-                    .title {
-
-                        /*display: block;*/
-                        /*height: 30px;*/
-                        padding: 5px 20px;
-                        background-color: #00b3ee;
-                        border-top-left-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                        font-size: 1.8em;
-                        float: left;
-                    }
-                    span:nth-last-child(1) {
-                        font-size: 1.2em;
-                        margin-left: 20px;
-                        width: 60%;
-                        float: left;
-                    }
-                }
-                div:after {
-                    clear: both;
-                    display: block;
-                    visibility: hidden;
-                    content: '';
-                }
-            }
-            &:hover {
-                .hover {
-                    opacity: 1;
-                    transition: all 0.3s ease-in-out;
-                }
-            }
-            .hover {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                /*padding: 12px;*/
-                top: 0;
-                left: 0;
-                opacity: 0;
-                transition: all 0.3s ease-in-out;
-
-                .mask {
-                    background-color: rgba(0, 0, 0, 0.5);
-                    transition: all 0.3s ease-in-out;
-                    width: 100%;
-                    height: 100%;
-                    color: #fff;
-                    font-size: 12px;
-                    padding: 2em;
-                    position: relative;
-
-                    display: table;
-                }
-
-                .middle {
-                    display: table-cell;
-                    vertical-align: middle;
+                .eyes {
+                    position: absolute;
+                    top: 10%;
+                    left: 50%;
+                    transform: translateX(-50%);
                     text-align: center;
-
+                    color: #fff;
                     img {
+                        width: 360px;
+                        margin-bottom: 15vh;
+                    }
+                    p {
+                        margin-bottom: 3em;
+                    }
+                    div {
+                        margin-top: 1.5em;
+                    }
+                    .parkButton {
+                        /*width:30%;*/
+                        margin: 0 auto;
+                        a {
+                            border: 1px solid;
+                            color: #fff;
+                            padding: 15px 25px;
+                        }
+                    }
+                    .parkButton:hover a {
+                        color: #00b3ee;
+                        border-color: #00b3ee;
+                        transition: all 0.8s ease;
                         cursor: pointer;
                     }
+                    span {
+                        text-align: center;
+                        color: #fff;
+                        font-size: 2.8em;
+                        display: block;
+                        line-height: 50px;
+                    }
                 }
             }
-            .recreationText {
-                /*text-align: center;*/
-                .title1 {
-                    margin: 15px 0;
-                    font-size: 2em;
-                    font-weight: normal;
-                    /*text-align: justify;*/
-                    /*text-justify: distribute-all-lines;*/
-                    /*text-align-last: justify;*/
-                }
+            .subnav {
+                padding-top: 80px;
+            }
+
+            .info {
+                padding-top: 9vh;
+            }
+
+            .title {
+                text-align: center;
+                padding: 0 5em;
+
                 p {
-                    /*text-align: center;*/
-                }
-                p:nth-child(1) {
-                    font-size: 1.2em;
+                    line-height: 1.8em;
                 }
             }
-        }
-        .linkUs {
-            text-align: right;
-            a {
-                padding: 15px 20px;
-                border: 1px solid;
-            }
-            a:hover {
-                color: #00b3ee;
-            }
-        }
-        .share {
-            text-align: center;
-        }
-
-        .player-box {
-            position: fixed;
-            z-index: 20;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            top: 0;
-            display: none;
-
-            > div {
+            .content {
+                margin: 5em 0;
                 position: relative;
-                top: 50%;
-                left: 50%;
-                margin-top: -300px;
-                margin-left: -450px;
-                width: 900px;
-                height: 600px;
-                padding: 5px;
-                background-color: #fff;
-            }
-
-            object, #object {
-                width: 100%;
-                height: 100%;
-
-                video {
+                .linkFrame {
+                    text-align: center;
+                }
+                .space {
+                    padding: 10px 0;
+                }
+                img {
                     width: 100%;
-                    height: 100%;
                 }
-            }
+                .discovery {
+                    margin: 2vh 0;
+                    text-align: center;
+                    img {
+                        width: auto;
+                    }
+                }
+                .text {
+                    position: absolute;
+                    top: 1vh;
+                    left: 0;
+                    /*top: 30px;*/
+                    /*left: 20px;*/
+                    width: 100%;
+                    color: #fff;
+                    div {
+                        margin: 20px 0 20px 20px;
+                        display: flex;
+                        align-items: center;
+                        .title {
 
-            .close {
-                position: absolute;
-                right: 10px;
-                top: 10px;
-                animation: kf-close-out 500ms ease;
-                cursor: pointer;
+                            /*display: block;*/
+                            /*height: 30px;*/
+                            padding: 5px 20px;
+                            background-color: #00b3ee;
+                            border-top-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                            font-size: 1.8em;
+                            float: left;
+                        }
+                        span:nth-last-child(1) {
+                            font-size: 1.2em;
+                            margin-left: 20px;
+                            width: 60%;
+                            float: left;
+                        }
+                    }
+                    div:after {
+                        clear: both;
+                        display: block;
+                        visibility: hidden;
+                        content: '';
+                    }
+                }
+                .text1 {
+                    position: absolute;
+                    bottom: 10vh;
+                    left: 0;
+                    /*top: 30px;*/
+                    /*left: 20px;*/
+                    width: 100%;
+                    color: #fff;
+                    div {
+                        margin: 20px 0 20px 20px;
+                        display: flex;
+                        align-items: center;
+                        .title {
 
+                            /*display: block;*/
+                            /*height: 30px;*/
+                            padding: 5px 20px;
+                            background-color: #00b3ee;
+                            border-top-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                            font-size: 1.8em;
+                            float: left;
+                        }
+                        span:nth-last-child(1) {
+                            font-size: 1.2em;
+                            margin-left: 20px;
+                            width: 60%;
+                            float: left;
+                        }
+                    }
+                    div:after {
+                        clear: both;
+                        display: block;
+                        visibility: hidden;
+                        content: '';
+                    }
+                }
                 &:hover {
-                    animation: kf-close-in 500ms ease;
+                    .hover {
+                        opacity: 1;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+                .hover {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    /*padding: 12px;*/
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+
+                    .mask {
+                        background-color: rgba(0, 0, 0, 0.5);
+                        transition: all 0.3s ease-in-out;
+                        width: 100%;
+                        height: 100%;
+                        color: #fff;
+                        font-size: 12px;
+                        padding: 2em;
+                        position: relative;
+
+                        display: table;
+                    }
+
+                    .middle {
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: center;
+
+                        img {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .recreationText {
+                    /*text-align: center;*/
+                    .title1 {
+                        margin: 15px 0;
+                        font-size: 2em;
+                        font-weight: normal;
+                        /*text-align: justify;*/
+                        /*text-justify: distribute-all-lines;*/
+                        /*text-align-last: justify;*/
+                    }
+                    p {
+                        /*text-align: center;*/
+                    }
+                    p:nth-child(1) {
+                        font-size: 1.2em;
+                    }
+                }
+            }
+            .linkUs {
+                text-align: right;
+                a {
+                    padding: 15px 20px;
+                    border: 1px solid;
+                }
+                a:hover {
+                    color: #00b3ee;
                 }
             }
 
-            .tips {
-                position: absolute;
-                bottom: 20px;
-                left: 40px;
+            .share {
+                text-align: center;
+            }
+        }
+        .mobile {
+            display: none;
+            .recreationOneImg {
+                position: relative;
+                img {
+                    width: 100%;
+                    margin-top: 0.6rem;
+                }
+                .eyes {
+                    position: absolute;
+                    top: 5%;
+                    text-align: center;
+                    .eyesTitle {
+                        width: 50%;
+                    }
+                    p {
+                        color: #fff;
+                        font-size: 12px;
+                        margin-top: 0.2rem;
+                    }
+                }
+            }
+
+            .linkFrame {
+                text-align: center;
+                margin-top: 0.6rem;
+            }
+            .parkButton {
+                /*margin-top: -1.8rem;*/
+                position: relative;
+                top:-1.8rem;
+                text-align: center;
+                a {
+                    /*display: block;*/
+                    font-size: 12px;
+                    width: 90%;
+                    padding: 0.2rem 0.06rem;
+                    border: 1px solid #fff;
+                    color: #fff;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+            }
+            .linkUs {
+                text-align: center;
+                margin-top: 0.6rem;
+                a {
+                    display: block;
+                    font-size: 14px;
+                    padding: 0.2rem 0.04rem;
+                    border: 1px solid;
+                }
+
             }
         }
     }
 
     @media screen and (max-width: @max-width) {
         .recreation-detail-view {
-
+            .ourwork-sub-nav {
+                margin-top: 65px;
+            }
             .info {
-                padding-top: 2em;
-                .title {
-                    font-size: 2em !important;
-                    margin-bottom: 2vh;
+                /*padding-top: 2em;*/
+                .pc {
+                    display: none;
                 }
-                .title2 {
-                    font-size: 1.8em !important;
-                }
-                .title3 {
-                    font-size: 1.2em;
-                    font-weight: bold;
-                }
-                .list {
-                    margin-top: 20vh;
-                }
-                .text {
-                    margin-top: 4vh;
-                }
-                .awardsImg p {
-                    margin: 0;
-                }
-                .linkUs {
-                    a {
-                        font-size: 0.8em;
-                        display: block;
-                        padding: 10px 0;
-                        text-align: center;
-                    }
-
-                }
-            }
-
-            .title {
-                padding: 0 2em;
-
-                img {
-                    width: 100%;
-                }
-            }
-
-            .content {
-                margin: 3em 0;
-                .eyes {
-                    span{
-                        font-size: 0.6em;
-                        line-height: 2em;
-                    }
-                }
-                .recreationText{
-                    .title1{
-                        font-size: 1.6em;
-                    }
-                }
-
-                .hover {
-                    padding: 5px;
-                    opacity: 1;
+                .mobile {
+                    display: block;
                 }
             }
         }

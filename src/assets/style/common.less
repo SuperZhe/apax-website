@@ -7,7 +7,9 @@
     width:@width;
     height:@height;
 }
-
+*{
+    -webkit-backface-visibility: hidden;
+}
 // 设置坐标
 .coordinate(@top, @right, @bottom, @left) when (isnumber(@top)) {top: @top;}
 .coordinate(@top, @right, @bottom, @left) when (isnumber(@right)) {right: @right;}
