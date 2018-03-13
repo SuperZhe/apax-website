@@ -2,7 +2,7 @@
     <div class="recreation-list-view clearfix">
 
 
-        <div class="info col-xs-offset-1 col-xs-10">
+        <div class="info col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="content col-xs-12">
                 <div class="pc">
                     <div class="col-xs-12 navImg">
@@ -32,24 +32,23 @@
                     <div class="col-xs-12 navImg">
                         <img src="../../static/recreation/mobile3.jpg" alt="">
                     </div>
-
                 </div>
                 <div class="space clearfix"></div>
                 <div class="navText2">
                     <ul class="secondaryNav">
                         <li>
                             <router-link to="list/dna-1">
-                                <img src="../../static/recreation/btn-1.png" alt="" >
+                                <img src="../../static/recreation/btn-1.png" alt="" class="mobileDna">
                             </router-link>
                         </li>
                         <li>
                             <router-link to="list/dna-2">
-                                <img src="../../static/recreation/btn-3.png" alt="">
+                                <img src="../../static/recreation/btn-3.png" alt="" class="mobileDna">
                             </router-link>
                         </li>
                         <li>
                             <router-link to="list/dna-3">
-                                <img src="../../static/recreation/btn-2.png" alt="">
+                                <img src="../../static/recreation/btn-2.png" alt="" class="mobileDna">
                             </router-link>
                         </li>
                     </ul>
@@ -66,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="linkUs col-xs-12">
+            <div class="linkUs col-xs-10 col-xs-offset-1">
                 <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
@@ -144,6 +143,29 @@
             font-size: 16px;
             text-shadow: 0 0 2px #36bbfc,
                 /*0 0 4px #36bbfc,*/ /*0 0 10px #36bbfc,*/ /*0 0 20px #fff,*/ /*0 0 30px #fff,*/ 0 0 10px #fff;
+        }
+        //手机端动画
+        @keyframes breathe {
+            0% {
+                -webkit-transform: scale(0.8);
+                -moz-transform: scale(0.8);
+                -o-transform: scale(0.8);
+                transform: scale(0.8);
+            }
+
+            50% {
+                /*display: block;*/
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+            }
+            100%{
+                -webkit-transform: scale(0.8);
+                -moz-transform: scale(0.8);
+                -o-transform: scale(0.8);
+                transform: scale(0.8);
+            }
         }
         .subnav {
             padding-top: 80px;
@@ -256,7 +278,14 @@
                     }
                 }
             }
+            .mobileDna{
+                -webkit-animation: breathe 2s linear infinite;
+                -moz-animation: breathe 2s linear infinite;
+                -o-animation: breathe 2s linear infinite;
+                animation: breathe 2s linear infinite;
+            }
         }
+
         .linkUs {
             text-align: right;
             a {

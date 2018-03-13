@@ -1,6 +1,6 @@
 <template>
     <div class="info-view career-view clearfix">
-        <div class="info col-xs-offset-2 col-xs-8">
+        <div class="info col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <!--<h2>CAREER</h2>  -->
             <br>
             <h3>WE BELIEVE IN TALENTS</h3>

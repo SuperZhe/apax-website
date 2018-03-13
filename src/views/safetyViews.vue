@@ -3,14 +3,14 @@
         <div class="info col-xs-offset-1 col-xs-10">
             <br>
             <h3>SAFETY</h3>
-            <div class="col-xs-10 col-xs-offset-1 safetyLogo">
-                <div class="col-xs-12 col-sm-4 course">
+            <div class="col-xs-offset-0 col-xs-12 col-sm-10 col-sm-offset-1 safetyLogo">
+                <div class="col-xs-4 col-sm-4 course">
                     <img src="../../static/recreation/icon2.png" alt="" class="col-xs-10 col-xs-offset-1">
                 </div>
-                <div class="col-xs-12 col-sm-4 course">
+                <div class="col-xs-4 col-sm-4 course">
                     <img src="../../static/recreation/icon3.png" alt="" class="col-xs-10 col-xs-offset-1">
                 </div>
-                <div class="col-xs-12 col-sm-4 course">
+                <div class="col-xs-4 col-sm-4 course">
                     <img src="../../static/recreation/icon1.png" alt="" class="col-xs-10 col-xs-offset-1">
                 </div>
             </div>

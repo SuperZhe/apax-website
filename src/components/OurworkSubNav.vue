@@ -1,7 +1,7 @@
 <template>
-    <div class="ourwork-sub-nav col-xs-offset-1 col-xs-10 clearfix">
+    <div class="ourwork-sub-nav  col-xs-12 col-sm-10 col-sm-offset-1 clearfix">
         <div class="left">
-            <div>
+            <div class="mobileLeft">
                 <router-link to="/ourwork/live"><img src="../assets/img/main/live-title.png" alt="" class="live"
                                                      :class="{present:subnav1}"></router-link>
                 <router-link to="/ourwork/events"><img src="../assets/img/main/events-title.png" alt=""
@@ -19,7 +19,7 @@
             <!--<router-link to="/ourwork/live/rocks" v-if="l6"><span :class="{pitch:showO == 4}" >FASHTON ROCKS</span></router-link>-->
         </div>
         <div class="right" :class="{navWidth:showO == 1 || showO  == 2}">
-            <div>
+            <div class="mobileRight">
                 <router-link to="/ourwork/events/iconic" v-if="r1">
                     <span :class="{pitch:showO == 1,bottomAlignment:showO == 1}" class="hover">Signature Events</span>
                 </router-link>
@@ -100,7 +100,7 @@
     @import '../assets/style/common.less';
 
     .ourwork-sub-nav {
-
+            /*margin-top: 10vh;*/
         .hover:hover {
             color: #6D227B;
         }
@@ -233,6 +233,15 @@
 
             .left {
                 float: initial;
+                .mobileLeft{
+                    display: flex;
+                    justify-content: space-between;
+                    width:100%;
+                    padding: 0 0.3rem;
+                    img{
+                        height: 0.2rem;
+                    }
+                }
                 div {
                     height:auto;
                     a {
@@ -249,6 +258,13 @@
                 /*text-align: right;*/
                 float: initial;
                 width:auto;
+                .mobileRight{
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: flex-end;
+                    height:0.6rem;
+                    margin:0 0.8rem;
+                }
                 div{
                     display: block;
                     height:auto;
@@ -261,7 +277,7 @@
                         display: block;
                         margin: 0;
                         text-align: center;
-                        line-height: 30px;
+                        /*line-height: 30px;*/
                     }
                 }
             }

@@ -79,13 +79,13 @@
         <div class="language"><img src="../../static/music/music_on.png" alt="" v-show=show @click="playMusic()"><img
             @click="playMusic()" src="../../static/music/music_off.png" alt=""
             v-show=!show><span class="moreVideo"><router-link
-            to="/video">SHOWREELS</router-link></span><span>EN</span><span>中文</span></div>
+            to="/video">{{isChineseNow?'作品集':'SHOWREELS'}}</router-link></span><span @click="enButton()">EN</span><span @click="chButton()">中文</span></div>
         <audio :src="music" hidden="true" autoplay="autoplay" loop="loop" id="audio"></audio>
     </div>
 </template>
 <script>
     import music from '../../static/bg.mp3';
-    import { bus } from '../assets/js/app/public';
+    import { bus,isChinese } from '../assets/js/app/public';
 
     export default {
         name: 'main-nav',
@@ -101,12 +101,15 @@
                 on3: false,
                 on4: false,
                 on5: false,
-                qrTwo:false
+                qrTwo:false,
+                isChineseNow:isChinese.isChinese,
+                language:1
 
             };
         },
         created() {
             bus.$on('pause', (val) => {this.show = val;});
+
         },
         updated: function () {
             this.$nextTick(function () {
@@ -115,6 +118,8 @@
             });
         },
         mounted() {
+            //来确定跳转的
+            setInterval(()=>{bus.$emit('language',this.language)},100)
 //        var music = $('#audio');
 //        music.plya();
             //--创建页面监听，等待微信端页面加载完毕 触发音频播放
@@ -153,6 +158,20 @@
             }
         },
         methods: {
+            enButton:function () {
+                console.log('英语')
+                this.language = 2
+                isChinese.isChinese = false
+                this.isChineseNow = isChinese.isChinese
+                bus.$emit('language',this.language)
+            },
+            chButton:function () {
+                console.log('汉语')
+                this.language = 0
+                isChinese.isChinese = true;
+                this.isChineseNow = isChinese.isChinese
+                bus.$emit('language',this.language)
+            },
             goNav() {
                 this.$router.push('/nav');
                 this.toggle = !this.toggle;
@@ -247,11 +266,12 @@
     .main-nav {
         @padding-height: 34px;
         @padding-width: 20px;
+        z-index:-1;
         .moreVideo:hover a {
             color: #6D227B;
         }
         > div {
-            z-index: 10;
+            z-index: 100;
         }
 
         .nav1 {
@@ -276,6 +296,7 @@
             bottom: @padding-height;
             left: @padding-width;
             cursor: pointer;
+            z-index:100;
 
             &:hover {
                 background-position-x: -15px;
@@ -375,6 +396,9 @@
 
     @media screen and (max-width: @max-width) {
         .main-nav {
+            >div{
+                /*z-index:11;*/
+            }
             .pc {
                 display: none;
             }
@@ -386,6 +410,14 @@
                     /*bottom: 55px;*/
                     left:50%;
                     transform: translateX(-50%);
+                    >div>a>img{
+                        height:0.3rem;
+                    }
+                    .weixin1{
+                        >p>img{
+                            height:0.3rem;
+                        }
+                    }
                 }
             }
             .language{
@@ -394,6 +426,11 @@
                 width:80%;
                 left:50%;
                 transform: translateX(-50%);
+                z-index:20;
+                img{
+                    height:0.35rem;
+                    margin-bottom: -0.1rem;
+                }
             }
         }
     }

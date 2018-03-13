@@ -9,16 +9,17 @@
                     <img src="../../static/news/4.png" alt="">
                 </div>
                 <div class="col-sm-7 col-xs-12">
-                    <div class="col-xs-offset-1 col-xs-9 newstext">
+                    <div class="col-sm-offset-1 col-sm-9 newstext col-xs-12">
                         <div class="title3">APAX Group Won Two Trophies For Campaign Greater China Agency Of the Year !</div>
                         <p>Campaign Agency of the Year awards has recognized inspired leadership, management excellence,<br> outstanding business performance and overall achievements in advertising and communications industries. </p>
                         <p>APAX Group is honored to announce that we have won two trophies - one gold and one silver for Campaign Greater China Agency Of the Year.</p>
-
+                    <div class="mobileSet">
                         <div class="set_6_btn in blue">
                             <router-link to="awards/detail/1"><span>View Article</span></router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -129,6 +130,9 @@
             .title{
                 font-size: 2em !important;
                 margin-bottom: 2vh;
+            }
+            .mobileSet{
+                text-align: center;
             }
             .title2{
                 font-size: 1.8em !important;

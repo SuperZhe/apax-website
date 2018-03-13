@@ -1,6 +1,6 @@
 <template>
     <div class="live-nav-view clearfix">
-        <div class="nav col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
+        <div class="nav col-sm-offset-1 col-sm-10 col-xs-offset-0 col-xs-12">
 
             <div class="rocks clearfix col-sm-4">
                 <!--<div class="col-xs-offset-4 col-xs-4 logo"><img src="../assets/img/main/rocks.png" alt=""></div>-->

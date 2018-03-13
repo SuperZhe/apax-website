@@ -2,7 +2,7 @@
     <div class="info-view recreation-map clearfix">
         <div class="info col-xs-offset-1 col-xs-10">
             <h3 class="title3 col-xs-12">GLOBAL EXPANSION</h3>
-            <div class="col-xs-6 col-xs-offset-3">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6 ">
                 <img src="../../static/recreation/global.jpg" alt="" class="col-xs-12">
             </div>
             <div class="linkUs  col-xs-12">

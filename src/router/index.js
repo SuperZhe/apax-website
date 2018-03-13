@@ -55,7 +55,8 @@ import association from '@/views/association.vue';
 import fashionWeek from '@/views/FashionWeek.vue';
 import safety from '@/views/safetyViews.vue';
 import recreationMap from '@/views/recreationMap.vue';
-
+//中文版路由
+// import ChineseHome from '@/chineseViews/HomeView.vue'
 
 Vue.use(Router);
 
@@ -89,12 +90,16 @@ export default new Router({
             component: recreationMap,
         },
 
-
         {
             path: '/',
             name: 'home',
             component: HomeView,
         },
+       /* {
+            path: '/chineseHome',
+            name: 'chineseHome',
+            component: ChineseHome,
+        },*/
         {
             path: '/nav',
             name: 'nav',

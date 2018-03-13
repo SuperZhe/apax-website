@@ -1,26 +1,40 @@
 <template>
     <div class="nav-view">
         <div class="nav">
-            <router-link to="/">HOME</router-link>
-            <router-link to="/about">ABOUT US</router-link>
-            <router-link to="/news">NEWS</router-link>
-            <router-link to="/awards">AWARDS</router-link>
-            <router-link to="/clients">CLIENTS</router-link>
-            <router-link to="/partners">PARTNERS</router-link>
-            <router-link to="/association">ASSOCIATES</router-link>
-            <router-link to="/career">CAREER</router-link>
+            <router-link to="/">{{isch?'主页':'HOME'}}</router-link>
+            <router-link to="/about">{{isch?'关于APAX':'ABOUT US'}}</router-link>
+            <router-link to="/news">{{isch?'资讯':'NEWS'}}</router-link>
+            <router-link to="/awards">{{isch?'奖项':'AWARDS'}}</router-link>
+            <router-link to="/clients">{{isch?'客户':'CLIENTS'}}</router-link>
+            <router-link to="/partners">{{isch?'合作':'PARTNERS'}}</router-link>
+            <router-link to="/association">{{isch?'联合':'ASSOCIATES'}}</router-link>
+            <router-link to="/career">{{isch?'加入我们':'CAREER'}}</router-link>
         </div>
     </div>
 </template>
 
 <script>
+    import { bus,isChinese } from '../assets/js/app/public';
 export default {
     name : 'nav-view',
+    data(){
+        return{
+            isch:'',
+            global:isChinese.isChinese
+        }
+    },
     created(){
+        bus.$on('language',(val) => {this.global = val})
         this.$bus.$emit('canvas-close');
     },
+    watch:{
+        global:function () {
+            console.log(1)
+            this.isch = isChinese.isChinese
+        }
+    },
     mounted(){
-        //进入此页面爸蒙版去掉
+        //进入此页面蒙版去掉
         $('.video>div').removeClass('mask');
         setTimeout(()=> $('.nav-view a').fadeIn(), 500);
 

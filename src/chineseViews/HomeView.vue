@@ -1,21 +1,23 @@
 <template>
     <div class="info-view home-view clearfix">
-        <div class="info col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2 ">
-            <h2 :class="{shine:light,titleHome:!light}">{{isch?'创造风潮':'WE CREATE THE NEXT WAVE'}}</h2>
+        <div class="info col-xs-offset-2 col-xs-8">
+            <h2 :class="{shine:light,titleHome:!light}">创造风潮</h2>
             <div class="contentHome" :class="{text:judgeText}">
                 <p>
-                    Leading Experiential Marketing company in Asia Pacific.<br>
-                    We focus on interpreting the brand’s DNA, providing innovative and valuable commercial solutions, through multi channels and marketing platforms.
+                    亚太地区最领先的体验式营销集团。我们致力于创新诠释品牌DNA，整合所有媒介渠道与全方位营销平台，提供集革新创意与商业价值于一体的市场营销解决方案。
                 </p>
                 <p>
-                    APAX Group presents you with multi cultural platform: EVENTS / LIVE / RECREATION with partnerships throughout the world and outstanding strength of global resources bringing you unique experiences and cooperation opportunities.<br>We are committed to translate the best local cultures and original contents onto the international stage. We nurture, We bring forth.
+                    川力企划由EVENTS、 LIVE、 RECREATION三大跨文化平台组成。我们的合作伙伴遍及海内外，
+                    凭借全球业内顶级资源与优势经验，我们带来具有世界级水准的杰出营销体验以及国际合作机会。
+                    同时，我们也致力于将最优秀的本土文化和原创内容推向国际化的舞台。
+                    引进来，走出去。
                 </p>
 
                 <div class="set_6_btn in blue">
                     <router-link to="/ourwork" class="more">
                         <!--<img src="../assets/img/main/more.png" alt="">-->
                         <!--<img src="../assets/img/main/jiantou.png" alt="">-->
-                        VIEW DETAILS
+                        揭秘APAX
                     </router-link>
                     <div class="corners top"></div>
                     <div class="corners bottom"></div>
@@ -27,27 +29,21 @@
 </template>
 
 <script>
-    import { bus,isChinese } from '../assets/js/app/public';
+    import { bus } from '../assets/js/app/public';
     export default {
-        name: 'home-view',
+        name: 'chineseHome',
         data() {
             return {
                 light: false,
                 judgeText: false,
-                isch:'',
-                global:''
+                isChinese:true
             };
         },
-        watch:{
-            global:function () {
-                this.isch = isChinese.isChinese
-            }
-        },
         created() {
-            bus.$on('language',(val) => {this.global = val})
             this.$bus.$emit('canvas-close');
         },
         mounted() {
+            bus.$emit('isChinese',this.isChinese);
             setTimeout(() => this.judgeText = true, 700);
             setTimeout(() => this.light = true, 700);
 
@@ -99,7 +95,7 @@
             -webkit-background-size: 100px;
             color: rgba(141, 141, 141, 0.2);
             -webkit-background-clip: text;
-            /*width: 70%;*/
+            width: 50%;
             /*margin: 0 auto;*/
             margin-left: auto;
             margin-right: auto;

@@ -208,7 +208,8 @@
                 }
             }
             .logoTitle {
-                width: 180px;
+                /*width: 180px;*/
+                height: 24px;
                 margin-bottom: 1em;
             }
             img:nth-child(2) {
@@ -269,7 +270,9 @@
             text-align: center;
         }
     }
-
+    .logoTitle{
+        height: 24px;
+    }
     .player-box {
         background-color: red;
         /*margin: 5em 0;*/

@@ -6,8 +6,8 @@
 
         <Arrow></Arrow>
 
-        <div class="info col-xs-offset-1 col-xs-10">
-            <div class="pc">
+        <div class="info  col-xs-12 col-sm-10 col-sm-offset-1">
+            <div class="pc ">
                 <div class="title col-xs-12">
                 </div>
                 <div class="content col-xs-12">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="linkUs col-xs-12">
+                <div class="linkUs col-xs-10 col-xs-offset-1">
                     <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
                 </div>
             </div>
@@ -205,13 +205,12 @@
                     }
                 }
             }
+        }
             .subnav {
                 padding-top: 80px;
             }
 
-            .info {
-                padding-top: 9vh;
-            }
+
 
             .date {
                 text-align: right;
@@ -353,7 +352,6 @@
             .share {
                 text-align: center;
             }
-        }
         .mobile {
             display: none;
             .recreationOneImg {
@@ -381,12 +379,12 @@
                             margin-bottom: 0.5rem;
                             list-style: none;
                             float: left;
-                            width: 1.5rem;
-                            height: 1.5rem;
+                            width: 1.8rem;
+                            height: 1.8rem;
                             font-size: 12px;
                             background-color: #229dd5;
                             text-align: center;
-                            line-height: 1.5rem;
+                            line-height: 1.8rem;
                             color: #fff;
                             border-radius: 50%;
                         }
@@ -445,6 +443,7 @@
 
     @media screen and (max-width: @max-width) {
         .recreation-show-view {
+            .recreationOneImg img{margin-top: 0 !important}
             .pc {
                 display: none;
             }
@@ -452,7 +451,7 @@
                 display: block;
             }
             .ourwork-sub-nav {
-                margin-top: 65px;
+                /*margin-top: 65px;*/
             }
             .content{
                 margin-top: 0;

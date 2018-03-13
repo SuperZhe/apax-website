@@ -1,6 +1,6 @@
 <template>
     <div class="info-view recreation-info-view clearfix">
-        <div class="info recreation col-xs-offset-2 col-xs-8">
+        <div class="info recreation col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <img src="../assets/img/main/recreation-title.png" alt="" class="recreationInfoImg">
             <div class="recreationContent" :class="{text:isrecreation}">
                 <h3 class="shine">WE BRING A NEW VISION</h3>
@@ -153,9 +153,10 @@
 
     @media screen and (max-width: @max-width) {
         .recreation-info-view {
-            margin-top: 3em;
-            height: auto;
-            display: block !important;
+            /*margin-top: 3em;*/
+            /*height: auto;*/
+            /*display: block !important;*/
+            padding-top: 2.4rem;
             img {
                 height: 24px;
             }

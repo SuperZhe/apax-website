@@ -1,6 +1,6 @@
 <template>
     <div class="info-view live-info-view clearfix">
-        <div class="info live col-xs-offset-2 col-xs-8">
+        <div class="info live col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <img src="../assets/img/main/live-title.png" alt="" class="liveInfoImg">
             <div class="liveContent" :class="{text:isText2}">
                 <h3 class="shine">BRING EMOTIONS TO LIFE</h3>
@@ -150,9 +150,10 @@ export default {
 }
 @media screen and (max-width: @max-width) {
 .live-info-view  {
-    margin-top: 3em;
-    height:auto;
-    display: block !important;
+    padding-top: 2.4rem;
+    /*margin-top: 3em;*/
+    /*height:auto;*/
+    /*display: block !important;*/
     h3{
         font-size: 1.5em;
     }

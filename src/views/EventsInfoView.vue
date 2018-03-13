@@ -1,6 +1,6 @@
 <template>
     <div class="info-view events-info-view clearfix">
-        <div class="info events col-xs-offset-2 col-xs-8">
+        <div class="info events col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <img src="../assets/img/main/events-title.png" alt="" class="eventsInfoImg">
             <div class="eventsContent" :class="{text:iseventsText}">
                 <h3 class="shine">STORYTELLING IS OUR JOB</h3>
@@ -153,10 +153,11 @@ export default {
 
 @media screen and (max-width: @max-width) {
     .events-info-view  {
-    margin-top: 3em;
-        height:auto;
-        display: block !important;
-    h3{
+    /*margin-top: 3em;*/
+        /*height:auto;*/
+        /*display: block !important;*/
+        padding-top: 2.4rem;
+        h3{
         font-size: 1.5em;
     }
     img{

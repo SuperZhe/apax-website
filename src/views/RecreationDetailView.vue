@@ -6,7 +6,7 @@
 
         <Arrow></Arrow>
 
-        <div class="info col-xs-offset-1 col-xs-10">
+        <div class="info col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="pc">
                 <div class="content col-xs-12">
                     <div class="col-xs-12 recreationOneImg">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="linkUs col-xs-12">
+                <div class="linkUs col-xs-10 col-xs-offset-1">
                     <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
                 </div>
             </div>
@@ -196,13 +196,8 @@
                     }
                 }
             }
-            .subnav {
-                padding-top: 80px;
-            }
 
-            .info {
-                padding-top: 9vh;
-            }
+
 
             .title {
                 text-align: center;
@@ -377,6 +372,9 @@
                 text-align: center;
             }
         }
+        .subnav {
+            padding-top: 80px;
+        }
         .mobile {
             display: none;
             .recreationOneImg {
@@ -437,7 +435,14 @@
     @media screen and (max-width: @max-width) {
         .recreation-detail-view {
             .ourwork-sub-nav {
-                margin-top: 65px;
+                /*margin-top: 65px;*/
+            }
+            .recreationOneImg {
+                position: relative;
+                img {
+                    width: 100%;
+                    margin-top: 0rem !important;
+                }
             }
             .info {
                 /*padding-top: 2em;*/
