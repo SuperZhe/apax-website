@@ -3,17 +3,22 @@
         <div class="info live col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <img src="../assets/img/main/live-title.png" alt="" class="liveInfoImg">
             <div class="liveContent" :class="{text:isText2}">
-                <h3 class="shine">BRING EMOTIONS TO LIFE</h3>
+                <h3 class="shine">{{isch?'BRING EMOTIONS TO LIFE':'让娱乐绽放生活\n'}}</h3>
                 <!--<br><br><br>-->
-                <p>We continually strive to bring you unprecedented platforms, owned or licensed but always uniquely APAX Live.<br>
+                <p v-if="isch">We continually strive to bring you unprecedented platforms, owned or licensed but always uniquely APAX Live.<br>
                     By exploiting our expertise in creative thinking, exceptional production and exponential marketing, <br>APAX Live brings you the best in music, fashion, and entertainment.
-                     </p>
+                </p>
+                <p v-if="!isch">
+                    通过我们的创新思维、杰出的制作和体验营销方面的专业知识，<br>
+                    APAX Live为您带来音乐、时尚和娱乐为一体的最佳体验。<br>
+                    为您开启国际优质IP，带来独特的平台 - APAX Live。<br>
+                </p>
                 <br>
 
                 <div class="set_6_btn in blue">
                     <router-link to="live/nav" class="link">
                         <!--<img src="../assets/img/main/more.png" alt="">-->
-                        <span>CURIOUS TO SEE MORE</span>
+                        <span>{{isch?'CURIOUS TO SEE MORE':'遇见精彩'}}</span>
                     </router-link>
                     <div class="corners top"></div>
                     <div class="corners bottom"></div>
@@ -24,14 +29,17 @@
 </template>
 
 <script>
+    import { bus } from '../assets/js/app/public';
 export default {
     name : 'live-info-view',
     data(){
         return{
-            isText2:false
+            isText2:false,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-close');
     },
     mounted(){

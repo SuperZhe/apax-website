@@ -2,20 +2,22 @@
     <div class="news-list-view clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title">APAX NEWS<br>
-                THE LATEST FROM THE WORLD OF APAX</div>
+            <div class="title">{{isch?'APAX NEWS THE LATEST FROM THE WORLD OF APAX':'APAX最新资讯'}}<br>
+                </div>
             <div class="content">
                 <div class="col-sm-5 contentNews col-xs-12" >
                     <img src="../../static/news/4.png" alt="">
                 </div>
                 <div class="col-sm-7 col-xs-12">
                     <div class="col-sm-offset-1 col-sm-9 newstext col-xs-12">
-                        <div class="title3">APAX Group Won Two Trophies For Campaign Greater China Agency Of the Year !</div>
-                        <p>Campaign Agency of the Year awards has recognized inspired leadership, management excellence,<br> outstanding business performance and overall achievements in advertising and communications industries. </p>
-                        <p>APAX Group is honored to announce that we have won two trophies - one gold and one silver for Campaign Greater China Agency Of the Year.</p>
+                        <div class="title3">{{isch?'APAX Group Won Two Trophies For Campaign Greater China Agency Of the Year!':'APAX斩获Campaign AOY两座重磅奖杯！'}}</div>
+                        <p v-if="isch">Campaign Agency of the Year awards has recognized inspired leadership, management excellence,<br> outstanding business performance and overall achievements in advertising and communications industries. </p>
+                        <p v-if="!isch">Campaign AOY奖项在营销行业内占据了举足轻重的地位，以表彰亚太地区年度拥有杰出成就的代理商，认可其在领域内的领导力，卓越的管理及突出的商业表现。 </p>
+                        <p  v-if="isch">APAX Group is honored to announce that we have won two trophies - one gold and one silver for Campaign Greater China Agency Of the Year.</p>
+                        <p  v-if="!isch">APAX Group很荣幸向大家宣布，我们获得了 Campaign大中华区2017年度代理商的两项重磅大奖，以一金一银两座奖杯的好成绩成为超级赢家！</p>
                     <div class="mobileSet">
                         <div class="set_6_btn in blue">
-                            <router-link to="awards/detail/1"><span>View Article</span></router-link>
+                            <router-link to="awards/detail/1"><span>{{isch?'View Article':'阅读详情'}}</span></router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
                         </div>
@@ -30,24 +32,26 @@
 <script>
 
     import Arrow from '../components/Arrow.vue';
-    import {config} from  '../assets/js/app/config'
+
+    import { bus,isChinese } from '../assets/js/app/public';
     export default {
         name : 'news-list-view',
         components : { Arrow },
         data(){
             return {
                 items : [],
-                config:config
+                isch:''
             }
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
             this.items = [];
-            this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
+            /*this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
                 this.items = response.data.result.content;
             }, (error) => {
                 console.log(error)
-            });
+            });*/
         },
         updated(){
             let sr = this.$sr({ reset: true, delay: 300 });
@@ -128,7 +132,7 @@
     @media screen and (max-width: @max-width) {
         .news-list-view {
             .title{
-                font-size: 2em !important;
+                font-size: 1.6em !important;
                 margin-bottom: 2vh;
             }
             .mobileSet{

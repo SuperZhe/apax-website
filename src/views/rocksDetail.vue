@@ -48,7 +48,7 @@
     import AContent from '@/components/AContent.vue';
     import Share from '@/components/Share.vue';
     import Arrow from '@/components/Arrow.vue';
-    import config from '@js-app/config';
+//    import config from '@js-app/config';
     import { bus } from '../assets/js/app/public';
 
     export default {
@@ -88,7 +88,7 @@
         mounted() {
             this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
                 //console.log(response.data.result);
-                this.info.title = response.data.result.enTitle;
+                this.isch?this.info.title = response.data.result.enTitle:this.info.title = response.data.result.title
                 this.info.content = response.data.result.enHtml;
                 this.info.date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
                 // this.info.content = `

@@ -100,6 +100,7 @@ export default {
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
         //console.log(this.$route.params)
         this.$axios.get('http://jsonplaceholder.typicode.com/photos/' + this.$route.params.id).then((response) => {

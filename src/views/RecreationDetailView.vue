@@ -13,16 +13,21 @@
                         <img src="../../static/recreation/32.jpg" alt="">
                         <div class="eyes col-xs-10">
                             <img src="../../static/recreation/title.png" alt="">
-                            <p>
+                            <p v-if="isch">
                                 Discovery Adventures Park is the Key IP project introduced and hatched by APAX Recreation. APAX Recreation brought Discovery
                                 IP to China, creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery Comes to
                                 Life. The first park is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an
                                 outdoor lifestyle approach and three main aims - ecotourism, outdoor sports, and education all in one. And from there, continue
                                 to launch more theme parks worldwide.
                             </p>
+                            <p v-if="!isch">
+                                Discovery Adventures Park 探索极限主题公园是 APAX Recreation 引入并孵化的 IP 项目。
+                                APAX Recreation 引入国际优质探索品牌IP，创造了全球首个Discovery探索极限主题公园，，带您踏上独一无二的旅程，让“Discovery探索”的內涵与精神成为真实的体验，Discovery Comes to Life (探索成真)，赋予Discovery 全新’LBE' 概念 ，打造国际旅游目的地，集“生态旅游，户外运动，科普教育” 为一体的主题公园，并由此逐步进驻世界各地。
+                            </p>
                             <div class="parkButton">
                                 <router-link to="park">
-                                    The World’s First Discovery Adventures Park
+                                    {{isch?'The World’s First Discovery Adventures Park':'全球首个Discovery探索极限主题公园'}}
+
                                 </router-link>
                             </div>
                         </div>
@@ -33,7 +38,7 @@
                     <div class="col-xs-12 linkFrame">
                         <div class="set_6_btn in blue">
                             <router-link to="list" class="link">
-                                <span>DISCOVER MORE</span>
+                                <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
                             </router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
@@ -41,7 +46,7 @@
                     </div>
                 </div>
                 <div class="linkUs col-xs-12">
-                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
                 </div>
             </div>
             <div class="mobile">
@@ -50,19 +55,23 @@
                         <img src="../../static/recreation/mobile2.jpg" alt="">
                         <div class="eyes col-xs-10 col-xs-offset-1">
                             <img src="../../static/recreation/title.png" alt="" class="eyesTitle">
-                            <p>
+                            <p v-if="isch">
                                 Discovery Adventures Park is the Key IP project introduced and hatched by APAX Recreation. APAX Recreation brought Discovery
                                 IP to China, creating the world's first Discovery Adventures Park and giving Discovery a new 'LBE' concept - Discovery Comes to
                                 Life. The first park is in Moganshan, Zhejiang China. APAX Recreation brings the content and spirit of Discovery to life with an
                                 outdoor lifestyle approach and three main aims - ecotourism, outdoor sports, and education all in one. And from there, continue
                                 to launch more theme parks worldwide.
                             </p>
+                            <p v-if="!isch">
+                                Discovery Adventures Park 探索极限主题公园是 APAX Recreation 引入并孵化的 IP 项目。
+                                APAX Recreation 引入国际优质探索品牌IP，创造了全球首个Discovery探索极限主题公园，，带您踏上独一无二的旅程，让“Discovery探索”的內涵与精神成为真实的体验，Discovery Comes to Life (探索成真)，赋予Discovery 全新’LBE' 概念 ，打造国际旅游目的地，集“生态旅游，户外运动，科普教育” 为一体的主题公园，并由此逐步进驻世界各地。
+                            </p>
                         </div>
                     </div>
                     <div class="space clearfix"></div>
                     <div class="parkButton">
                         <router-link to="park">
-                            The World’s First Discovery Adventures Park
+                            {{isch?'The World’s First Discovery Adventures Park':'全球首个Discovery探索极限主题公园'}}
                         </router-link>
                     </div>
                     <div class="space clearfix"></div>
@@ -70,7 +79,7 @@
                     <div class="col-xs-12 linkFrame">
                         <div class="set_6_btn in blue">
                             <router-link to="list" class="link">
-                                <span>DISCOVER MORE</span>
+                                <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
                             </router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
@@ -78,7 +87,7 @@
                     </div>
                 </div>
                 <div class="linkUs col-xs-10 col-xs-offset-1">
-                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
                 </div>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
@@ -102,9 +111,11 @@
             return {
                 link: 'recreation',
                 isMobile: false,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {

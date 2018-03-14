@@ -8,10 +8,10 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12" >
-                <span class="title col-sm-8 col-md-8 col-xs-12">Huawei Global Product Launch Barcelona</span>
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Huawei Global Product Launch Barcelona':'华为2017全球新品发布会'}}</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
-                <span class="date col-sm-4 col-md-4 col-xs-12">Barcelona, Spain,China</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'Barcelona, Spain,China':'西班牙，巴塞罗那，中国'}}</span>
             </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -23,8 +23,11 @@
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-4/new1.jpg" alt="">-->
-                    <p>
+                    <p v-if="isch">
                         Huawei dominated the news during the World Mobile Congress 2017 in Barcelona when they launched their new products (the P10 and smart watch) to a worldwide audience - the W Product 2017 at world Press Conference. The semi-circular door was a diamond cutting surface that formed as a natural crack for a metaphor of the breakthrough in innovation and the modern art attraction. Social media was a buzz with tens of thousands of articles and reviews that helped drive sales to an all-time high.
+                    </p>
+                    <p v-if="!isch">
+                        华为W系列2017新品发布会发布盛典在巴塞罗那意大利馆举行，发布了全新的华为P10手机及智能手表。为配合华为给人们带来的科技形象，以及华为W系列绝妙的设计感，场馆外观以钻石的切割为灵感打造，入口处幻彩的钻石裂痕成为了一道通向活动现场的探索之门。此次发布会创造了很高的社交媒体价值，广受好评。
                     </p>
                 </div>
                 <div class="space clearfix"></div>
@@ -92,10 +95,12 @@ export default {
             showO:1,
             isMobile:false,
             pageNext:true,
-            pagePrev:true
+            pagePrev:true,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
     },
     mounted(){

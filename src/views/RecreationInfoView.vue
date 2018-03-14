@@ -3,16 +3,20 @@
         <div class="info recreation col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <img src="../assets/img/main/recreation-title.png" alt="" class="recreationInfoImg">
             <div class="recreationContent" :class="{text:isrecreation}">
-                <h3 class="shine">WE BRING A NEW VISION</h3>
+                <h3 class="shine">{{isch?'WE BRING A NEW VISION':'我们开拓新的视野'}}</h3>
                 <!--<br><br><br>-->
-                <p>
+                <p v-if="isch">
                     APAX Recreation is committed to creating in-depth experience tourism destinations and<br>
                     international IP operations platform with an outdoor lifestyle approach.
+                </p>
+                <p v-if="!isch">
+                    APAX Recreation 引入国际IP，运营及孵化深度体验式国际旅游目的地，给予户外生活方式新定义。
                 </p>
                 <br>
                 <div class="set_6_btn in blue">
                     <router-link to="recreation/showlist" class="link">
-                        <span>DISCOVER MORE</span>
+                        <!--<span>DISCOVER MORE</span>-->
+                        <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
                     </router-link>
                     <div class="corners top"></div>
                     <div class="corners bottom"></div>
@@ -24,14 +28,17 @@
 </template>
 
 <script>
+    import {bus} from  '../assets/js/app/public'
     export default {
         name: 'recreation-info-view',
         data(){
             return{
-                isrecreation:false
+                isrecreation:false,
+                isch:''
             }
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-close');
         },
         mounted() {

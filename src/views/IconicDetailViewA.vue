@@ -8,10 +8,10 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12" >
-                <span class="title col-sm-8 col-md-8 col-xs-12">Fendi on the Wall</span>
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Fendi on the Wall':'FENDI芬迪长城秀'}}</span>
             <!--</div>-->
             <!--<div class="date col-sm-3 col-xs-12">-->
-                <span class="date col-sm-4 col-md-4 col-xs-12"> The Great Wall, Beijing, China</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?' The Great Wall, Beijing, China':'中国，北京，长城\n'}}</span>
             </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -22,7 +22,9 @@
                 <!--<div class="space clearfix"></div>-->
                 <div class="col-xs-12 contentText">
                     <!--<img src="../../static/iconic-detail-1/1.jpg" alt="">-->
-                    <p>A monumental event in fashion history was when Fendi literally had 88 models parade their spring summer collection along 88 meters of the Great Wall of china against a double-f projection onto the neighboring mountains.</p>
+                    <p v-if="isch">A monumental event in fashion history was when Fendi literally had 88 models parade their spring summer collection along 88 meters of the Great Wall of china against a double-f projection onto the neighboring mountains.</p>
+                    <p v-if="!isch">APAX Group和拥有精湛工艺的意大利高级时装品牌FENDI芬迪与时尚界大师卡尔·拉格斐，一同征服了世界七大奇迹之一的中国万里长城。长城历史上首次上演时装秀，在时尚史上写下空前一笔。居庸关长城烽火台两侧升起芬迪双F标志旗帜。 日落时分，模特沿着长城上搭建的T台缓步走下，展示了共88套华美造型。
+                    </p>
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
@@ -88,10 +90,12 @@ export default {
             info : {},
             showO:1,
             isMobile:false,
-            pageNext:true
+            pageNext:true,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
     },
     mounted(){

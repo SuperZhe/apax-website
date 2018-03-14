@@ -21,16 +21,16 @@
         <div class="right" :class="{navWidth:showO == 1 || showO  == 2}">
             <div class="mobileRight">
                 <router-link to="/ourwork/events/iconic" v-if="r1">
-                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1}" class="hover">Signature Events</span>
+                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1}" class="hover">{{isch?'Signature Events':'经典案例'}}</span>
                 </router-link>
                 <router-link to="/ourwork/events/list" v-if="r1">
-                    <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover">More Events</span>
+                    <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover">{{isch?'More Events':'更多作品'}}</span>
                 </router-link>
                 <router-link to="/ourwork/live/rocks" v-if="r2"><span :class="{pitch:showO == 5,bottomAlignment:showO == 5}" class="hover">Fashion Rocks</span>
                 </router-link>
 
                 <router-link to="/ourwork/live/week" v-if="r2"><span :class="{pitch:showO == 6,fashionNav:showO == 6}"
-                                                                     class="hover">Shanghai Fashion Week</span></router-link>
+                                                                     class="hover">{{isch?'Shanghai Fashion Week':'上海时装周'}}</span></router-link>
                 <router-link to="/ourwork/live/sifs" v-if="r2"><span :class="{pitch:showO == 4,bottomAlignment:showO == 4}">SIFS</span>
                 </router-link>
 
@@ -57,10 +57,12 @@
                 r2: false,
                 r3: false,
                 showO: '',
+                isch:''
             };
         },
         props: ['links'],
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             switch (this.links) {
                 case 'recreation' :
                     this.subnav2 = true;
@@ -147,6 +149,7 @@
         .left {
             float: left;
             position: relative;
+            z-index:2;
             > div {
                 margin-top: -2px;
                 height: 20px;
@@ -176,9 +179,11 @@
 
         }
         .right {
+            position: relative;
             float: right;
             font-size: 0;
             width: 320px;
+            z-index:2;
             > div {
                 height: 20px;
                 display: flex;

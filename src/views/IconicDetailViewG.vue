@@ -8,10 +8,10 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12" >
-                <span class="title col-sm-8 col-md-8 col-xs-12">Plaza 66 Home to Luxury Celebration Party</span>
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Plaza 66 Home to Luxury Celebration Party':'恒隆广场 Home To Luxury 盛装派对'}}</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
-                <span class="date col-sm-4 col-md-4 col-xs-12">Plaza 66, Shanghai,China</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'Plaza 66, Shanghai,China':'中国，上海'}}</span>
             </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -21,7 +21,9 @@
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail/new1.jpg" alt="">-->
-                    <p>Hang Lung Properties was set to mark a milestone in its history with the transformation of its flagship Shanghai Plaza Plaza 66 on September 8, 2017 with a grand celebration - Home to Luxury. The star-studded celebration highlighted 66 Showcases, which showed numerous luxury brands unveiling their special or limited collections. The Grammy Award winning Singer - Alicia Keys performed her greatest hits during the splendid evening. </p>
+                    <p v-if="isch">Hang Lung Properties was set to mark a milestone in its history with the transformation of its flagship Shanghai Plaza Plaza 66 on September 8, 2017 with a grand celebration - Home to Luxury. The star-studded celebration highlighted 66 Showcases, which showed numerous luxury brands unveiling their special or limited collections. The Grammy Award winning Singer - Alicia Keys performed her greatest hits during the splendid evening. </p>
+                    <p v-if="!isch">上海的高端时髦地标，被评为“中国商业发展最成功的项目之一”的Plaza 66恒隆广场，为了庆祝其全新升级举行了豪华派对Home To Luxury盛典。在为数以千计的VIP贵宾带来专属体验的同时，参与到这场全明星派对的也包括高层领导、商务合作伙伴以及海内外知名媒体。“66璀灿汇展”云集世界顶级时尚品牌，呈现惊艳全球的视觉盛宴，捕捉臻品风尚。国际巨星Alicia Keys 应邀亲临现场，为贵宾们呈现了她最有代表性的作品。
+                    </p>
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
@@ -72,10 +74,12 @@ export default {
             showO:1,
             isMobile:false,
             pageNext:true,
-            pagePrev:true
+            pagePrev:true,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
     },
     mounted(){

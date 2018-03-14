@@ -6,9 +6,13 @@
                 <!--<div class="col-xs-offset-4 col-xs-4 logo"><img src="../assets/img/main/rocks.png" alt=""></div>-->
                 <div class="logo"><img src="../assets/img/main/rocks.png" alt=""></div>
                 <div class="col-sm-8 col-sm-offset-2 col-xs-offset-1 col-xs-10">
-                    <p>
+                    <p v-if="isch">
                         The only place where we bring together the world’s top fashion brands and world’s leading music artists for a union of catwalk and concert.<br>
                         Founded in 2003, in association with the Prince’s trust by Prince Charles, APAX Live is the exclusive licensee for Asia and will continue to stage the most exciting show this side of the globe.
+                    </p>
+                    <p v-if="!isch">
+                        世界顶级时尚品牌和世界顶尖的音乐艺术家聚集，打造时装和音乐为一体的盛宴。
+                        Fashion Rocks成立于2003年，与Prince’s Trust 合作， APAX Live拥有Fashion Rocks亚洲唯一的特许经营权，将继续把呈现最激动人心的音乐与时尚结合的全新体验。
                     </p>
                 </div>
             </div>
@@ -16,7 +20,7 @@
                 <div class="set_6_btn in blue">
                     <router-link to="rocks" class="more more-1">
                             <span class="btn">
-                            VIEW DETAILS
+                            {{isch?'VIEW DETAILS':'了解更多'}}
                         </span>
                     </router-link>
                     <div class="corners top"></div>
@@ -29,9 +33,12 @@
                     <img src="../assets/img/main/fashion.png" alt="" class="fashionWeek">
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 col-xs-offset-1 col-xs-10">
-                    <p>
+                    <p v-if="isch">
                         As the strategic partner and leading events agency of Shanghai Fashion Week, APAX Group continuously assisted in enhancing the credibility and standards of Shanghai Fashion Week,
                         including consultancy, the management of the event and building the best truss-less tentage.
+                    </p>
+                    <p v-if="!isch">
+                        作为上海时装周的长期战略合作伙伴和主要合作机构，APAX 集团持续协助提升上海时装周的水平及公信力，提供咨询、活动管理以及搭建支持。
                     </p>
                 </div>
             </div>
@@ -39,7 +46,7 @@
                 <div class="set_6_btn in blue">
                     <router-link to="week" class="more more-1">
                                 <span class="btn">
-                                    VIEW DETAILS
+                                    {{isch?'VIEW DETAILS':'了解更多'}}
                                 </span>
                     </router-link>
                     <div class="corners top"></div>
@@ -52,10 +59,13 @@
                     <img src="../assets/img/main/sife.png" alt="" class="sifslogo">
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 col-xs-offset-1 col-xs-10">
-                    <p>
+                    <p v-if="isch">
                         From 2014, APAX Live became the sole presenter of Shanghai International Fashion Showcase, the international platform under Shanghai Fashion Week official calendar,
                         <br>
                         we started catering an alternative program by introducing world-renowned fashion brands to the China market and marrying brands on crossover collections.
+                    </p>
+                    <p v-if="!isch">
+                        2014年，APAX LIVE 作为上海时装周唯一的国际品牌发布官方平台，通过引入世界知名时装品牌来到中国市场以及为其提供商业机遇而不断提升优化我们的平台。
                     </p>
 
                 </div>
@@ -65,7 +75,7 @@
                 <div class="set_6_btn in blue">
                     <router-link to="sifs" class="more">
                                 <span class="btn">
-                                    VIEW DETAILS
+                                   {{isch?'VIEW DETAILS':'了解更多'}}
                                 </span>
                     </router-link>
                     <div class="corners top"></div>
@@ -77,12 +87,20 @@
 </template>
 
 <script>
+    import { bus } from '../assets/js/app/public';
     export default {
         name: 'live-nav-view',
+        data(){
+            return{
+                isch:''
+            }
+        },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-close');
         },
         mounted() {
+
             setTimeout(() => this.$('.live-nav-view').fadeIn(), 500);
             setTimeout(() => this.$('.live-nav-view').css({'display': 'flex'}), 500);
         },

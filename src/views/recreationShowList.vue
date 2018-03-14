@@ -15,16 +15,19 @@
                         <img src="../../static/recreation/show.jpg" alt="">
                         <div class="col-xs-10 eyes ">
                             <img src="../assets/img/main/recreation-title.png" alt="" class="eyesTitle">
-                            <p>
+                            <p v-if="isch">
                                 APAX Recreation is committed to creating in-depth experience tourism destinations with international IP operations that set
                                 “Culture" "Sports" "Tourism" “Education" as the core with five pillars as the content - customized travel, content media, health
                                 data analysis, sport competition operations and outdoor e-commerce.
                             </p>
+                            <p v-if="!isch">
+                                APAX Recreation 致力于打造以 “文化”“体育”“旅游”“教育”为核心，以内容生产，大数据分析，赛事运营以及电商介入等为一体的深度体验国际旅游目的地IP运营以及孵化为核心的平台。
+                            </p>
                             <ul class="col-xs-8 col-xs-offset-2">
-                                <li>CULTURE</li>
-                                <li>SPORT</li>
-                                <li>TRAVEL</li>
-                                <li>EDUCATION</li>
+                                <li>{{isch?'CULTURE':'文化'}}</li>
+                                <li>{{isch?'SPORT':'体育'}}</li>
+                                <li>{{isch?'TRAVEL':'旅游'}}</li>
+                                <li>{{isch?'EDUCATION':'教育'}}</li>
                             </ul>
                         </div>
                     </div>
@@ -35,7 +38,8 @@
                     <div class="col-xs-12 linkFrame">
                         <div class="set_6_btn in blue">
                             <router-link to="detail" class="link">
-                                <span>DISCOVER MORE</span>
+                                <!--<span>DISCOVER MORE</span>-->
+                                <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
                             </router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
@@ -43,7 +47,8 @@
                     </div>
                 </div>
                 <div class="linkUs col-xs-12">
-                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">
+                        {{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
                 </div>
             </div>
             <div class="mobile">
@@ -54,16 +59,19 @@
                         <img src="../../static/recreation/mobile1.jpg" alt="">
                         <div class="col-xs-offset-1 col-xs-10 eyes ">
                             <img src="../assets/img/main/recreation-title.png" alt="" class="eyesTitle">
-                            <p>
+                            <p v-if="isch">
                                 APAX Recreation is committed to creating in-depth experience tourism destinations with international IP operations that set
                                 “Culture" "Sports" "Tourism" “Education" as the core with five pillars as the content - customized travel, content media, health
                                 data analysis, sport competition operations and outdoor e-commerce.
                             </p>
+                            <p v-if="!isch">
+                                APAX Recreation 致力于打造以 “文化”“体育”“旅游”“教育”为核心，以内容生产，大数据分析，赛事运营以及电商介入等为一体的深度体验国际旅游目的地IP运营以及孵化为核心的平台。
+                            </p>
                             <ul class="col-xs-10 col-xs-offset-1">
-                                <li>CULTURE</li>
-                                <li>SPORT</li>
-                                <li>TRAVEL</li>
-                                <li>EDUCATION</li>
+                                <li>{{isch?'CULTURE':'文化'}}</li>
+                                <li>{{isch?'SPORT':'体育'}}</li>
+                                <li>{{isch?'TRAVEL':'旅游'}}</li>
+                                <li>{{isch?'EDUCATION':'教育'}}</li>
                             </ul>
                         </div>
                     </div>
@@ -74,7 +82,7 @@
                     <div class="col-xs-12 linkFrame">
                         <div class="set_6_btn in blue">
                             <router-link to="detail" class="link">
-                                <span>DISCOVER MORE</span>
+                                <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
                             </router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
@@ -82,7 +90,7 @@
                     </div>
                 </div>
                 <div class="linkUs col-xs-10 col-xs-offset-1">
-                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+                    <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
                 </div>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
@@ -106,9 +114,11 @@
             return {
                 link: 'recreation',
                 isMobile: false,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {

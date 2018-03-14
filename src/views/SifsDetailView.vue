@@ -10,7 +10,8 @@
             <div class="title col-sm-12 col-xs-12">{{ info.title }}</div>
             <!--<div class="date col-sm-2 col-xs-12"></div>-->
             <div class="content col-xs-12">
-                <AContent :content="info.content"></AContent>
+                <AContent :content="info.content1" v-if="isch"></AContent>
+                <AContent :content="info.content2" v-if="!isch"></AContent>
             </div>
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback">BACK</a>
@@ -48,7 +49,7 @@
     import AContent from '@/components/AContent.vue';
     import Share from '@/components/Share.vue';
     import Arrow from '@/components/Arrow.vue';
-    import config from '@js-app/config';
+
     import { bus } from '../assets/js/app/public';
 
     export default {
@@ -60,16 +61,19 @@
                 info: {
                     title: '1',
                     date: null,
-                    content: '2',
+                    content1: '2',
+                    content2: '2',
                 },
                 showO: 4,
                 prevId: 0,
                 nextId: 0,
                 pageNext: true,
                 pagePrev: true,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             //console.log(this.$route.params)
             // this.$axios.get('http://jsonplaceholder.typicode.com/photos/' + this.$route.params.id).then((response) => {
             //     this.info = response.data;
@@ -89,7 +93,8 @@
             this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
                 //console.log(response.data.result);
                 this.info.title = response.data.result.enTitle;
-                this.info.content = response.data.result.enHtml;
+                this.info.content1 = response.data.result.enHtml
+                this.info.content2 = response.data.result.html;
                 this.info.date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
                 // this.info.content = `
                 //     大量内容

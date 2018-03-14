@@ -10,10 +10,10 @@
             <!--<div class="title col-sm-7 col-xs-12" >Max Mara MONOPOLIS!</div>-->
             <!--<div class="date col-sm-5 col-xs-12"><span>Shanghai Exhibition Center, Shanghai, China</span></div>-->
             <div class="div1 col-xs-12" >
-                <span class="title col-sm-7 col-md-8 col-xs-12">Max Mara MONOPOLIS!</span>
+                <span class="title col-sm-7 col-md-8 col-xs-12">{{isch?'Max Mara MONOPOLIS!':'Max Mara MONOPOLIS! 奇异都市'}}</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
-                <span class="date col-sm-5 col-md-4 col-xs-12">Shanghai Exhibition Center, Shanghai, China</span>
+                <span class="date col-sm-5 col-md-4 col-xs-12">{{isch?'Shanghai Exhibition Center, Shanghai, China':'中国，上海，上海展览中心'}}</span>
             </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -23,7 +23,9 @@
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-8/new1.jpg" alt="">-->
-                    <p>Luxury brand Max Mara unveiled its pre-fall 2017 collection series as well as an exclusive, see-now-buy-now Capsule Collection in collaboration with Chinese artist Liu Wei at Shanghai Exhibition Center. Liu Wei’s sculptures and paintings became the installation background, interpreting the modernization of this future city - MONOPOLIS - an “Interesting”, “brutal” and “unsettling” space.</p>
+                    <p v-if="ishc">Luxury brand Max Mara unveiled its pre-fall 2017 collection series as well as an exclusive, see-now-buy-now Capsule Collection in collaboration with Chinese artist Liu Wei at Shanghai Exhibition Center. Liu Wei’s sculptures and paintings became the installation background, interpreting the modernization of this future city - MONOPOLIS - an “Interesting”, “brutal” and “unsettling” space.</p>
+                    <p v-if="!isch">Max Mara 携手中国艺术家刘韡，在上海展览中心带来以“MONOPOLIS!奇异都市”为主题的 Max Mara 2017早秋发布。刘韡和品牌对未来城市的乌托邦构想化作现实。创意秀场以刘韡的雕塑和画作为装置背景，打造出一座有趣，原始，充满骚动的奇异都市。这不不仅是Max Mara在上海的首秀，也是该系列的全球首发。同时，品牌还首次尝试了即看即买的模式。
+                    </p>
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
@@ -93,10 +95,12 @@ export default {
             showO:1,
             isMobile:false,
             pageNext:true,
-            pagePrev:true
+            pagePrev:true,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
     },
     mounted(){

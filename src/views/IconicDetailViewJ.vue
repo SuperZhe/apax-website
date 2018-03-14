@@ -8,10 +8,10 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12">
-                <span class="title col-sm-8 col-md-8 col-xs-12">Under Armour Stephen Curry Asian Tour</span>
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Under Armour Stephen Curry Asian Tour':'Under Armour 史蒂芬•库里开启“见高下”2017亚洲行'}}</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
-                <span class="date col-sm-4 col-md-4 col-xs-12">Taimiao, Beijing, China</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'Taimiao, Beijing, China':'中国，北京/杭州/成都'}}</span>
             </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -22,8 +22,10 @@
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-9/new1.jpg" alt="">-->
-                    <p>
-                        For the third straight year, Stephen Curry went on the 2017 Asian tour powered by Under Armour beginning from the Imperial Ancestral Temple of Beijing. Within this beautiful landmark building, Under Armour kicked off the evening with a musical fashion show that combined modern chic with urban sensibility, bringing the audience a brand-new style and sports experience.</p>
+                    <p v-if="isch">For the third straight year, Stephen Curry went on the 2017 Asian tour powered by Under Armour beginning from the Imperial Ancestral Temple of Beijing. Within this beautiful landmark building, Under Armour kicked off the evening with a musical fashion show that combined modern chic with urban sensibility, bringing the audience a brand-new style and sports experience.</p>
+                    <p v-if="!isch">
+                        Under Armour 携手史蒂芬•库里开启“见高下”2017亚洲行，于太庙进行了北京首站的发布会与见面会。夜幕降临之际，全场结合现代与古韵、运动与潮流的时尚大秀拉开精彩⼀夜的序幕。史蒂芬•库⾥手捧NBA奖杯，作为蝉联两届联盟最有价值球员（MVP）的他来到帝都，在高涨的气氛和粉丝的包围中亮相。到场的球迷与嘉宾与库里近距离接触，感受库里的篮球魅⼒。
+                    </p>
                 </div>
                 <!--<div class="space clearfix"></div>-->
                 <!--<div class="space clearfix"></div>-->
@@ -92,9 +94,11 @@
                 isMobile: false,
                 pageNext: true,
                 pagePrev: true,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {

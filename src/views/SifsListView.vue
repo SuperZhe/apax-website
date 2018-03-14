@@ -7,16 +7,19 @@
         <Arrow></Arrow>
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-10 col-xs-12">A GLOBAL BRIDGE</div>
+            <div class="title col-sm-10 col-xs-12">{{isch?'A GLOBAL BRIDGE':'国际桥梁\n'}}</div>
             <div class="sub-title col-xs-12">
-                <p>
+                <p v-if="isch">
                     APAX Live successfully enhanced the global influence of Shanghai Fashion Week by introducing events and shows of top international fashion brands through Shanghai International Fashion Showcase or SIFS in short.
                     SIFS also serves as bridge between global designers & brands with China’s fast growing fashion industry; marrying brands and crossover collaborations and delivering unique events exclusive to China including the recent Ports flash mob fashion catwalk, 3.1 Phillip Lim’s floral installation as well as a thought provoking forum featuring CFDA’s president,Steven Kolb.
+                </p>
+                <p v-if="!isch">
+                    APAX通过上海国际品牌发布（简称SIFS），成功地提升了上海时装周的全球影响力。在中国快速增长的时尚产业中，SIFS也充当了全球设计师与品牌之间的桥梁。促成品牌和跨界合作，并针对中国市场设计独一无二的体验。
                 </p>
             </div>
             <div class="listItems">
                 <div class="item col-sm-4 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
-                    <img alt="" :src="config.host + item.conver">
+                    <img alt="" :src="item.conver">
                     <div class="hover">
                         <div class="mask">
                             <h2>{{ item.enTitle }}</h2>
@@ -31,7 +34,6 @@
 </template>
 
 <script>
-    import config from '@js-app/config';
     import OurworkSubNav from '@/components/OurworkSubNav.vue';
     import Arrow from '@/components/Arrow.vue';
     import { bus } from '../assets/js/app/public';
@@ -43,11 +45,12 @@
             return {
                 link: 'sifs',
                 items: [],
-                config,
                 showO: 4,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             // this.$axios.get('http://jsonplaceholder.typicode.com/photos?albumId=1').then((response) => {
             //     this.items = response.data;
             //     this.items.splice(11, this.items.length);

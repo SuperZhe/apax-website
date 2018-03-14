@@ -8,10 +8,10 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12" >
-                <span class="title col-sm-8 col-md-8 col-xs-12">STAR WARS: The Force Awakens</span>
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'STAR WARS: The Force Awakens':'星球大战：原力觉醒'}}</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
-                <span class="date col-sm-4 col-md-4 col-xs-12">The Great Wall, Beijing, China</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'The Great Wall, Beijing, China':'中国，北京，长城'}}</span>
             </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -21,7 +21,8 @@
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-7/new1.jpg" alt="">-->
-                    <p>Nothing could match Disney’s bold and starkly eye-popping stunt – flying an army of storm troopers in, to line up on the Great Wall of China when Star Wars: “The Force Awakens” was released into the world. The 500 figures stood menacingly motionless in formation on the steps below one of the famous guard towers at night, as giant billboards flashed with the message “The Force Awakens”.</p>
+                    <p v-if="isch">Nothing could match Disney’s bold and starkly eye-popping stunt – flying an army of storm troopers in, to line up on the Great Wall of China when Star Wars: “The Force Awakens” was released into the world. The 500 figures stood menacingly motionless in formation on the steps below one of the famous guard towers at night, as giant billboards flashed with the message “The Force Awakens”.</p>
+                    <p v-if="!isch">《星球大战》“长城之巅 原力觉醒”盛大宣传活动在居庸关长城完美上演。数百位铁杆星战迷与媒体亲临现场，体验了气势磅礴的史诗级震撼。500个暴风兵在长城上伫立，占据了整段长城台阶，声势浩大。而居庸关长城的四个烽火台顶，随着“原”，“力”，“觉“，”醒”四个大字的依次点亮，搭配着酷炫的灯光、经典的原声音乐，迎来了整场活动的最高潮。</p>
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
@@ -60,7 +61,8 @@
                 <Share></Share>
             </div>
             <div class="col-xs-3 pagingOne">
-                <router-link to="detail-g"><div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
+                <router-link to="detail-g">
+                    <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
                     <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev">
                     <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev">
                 </div></router-link>
@@ -89,10 +91,12 @@ export default {
             showO:1,
             isMobile:false,
             pageNext:true,
-            pagePrev:true
+            pagePrev:true,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
     },
     mounted(){
@@ -157,7 +161,10 @@ export default {
     /*display: flex;*/
     /*justify-content: space-around;*/
     /*align-items: center;*/
-    display: inline-block;
+    div{
+        display: inline-block;
+    }
+
 }
     .subnav {
         padding-top: 80px;

@@ -119,7 +119,7 @@
         },
         mounted() {
             //来确定跳转的
-            setInterval(()=>{bus.$emit('language',this.language)},100)
+            setInterval(()=>{bus.$emit('language',this.language)},50)
 //        var music = $('#audio');
 //        music.plya();
             //--创建页面监听，等待微信端页面加载完毕 触发音频播放

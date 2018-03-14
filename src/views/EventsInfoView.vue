@@ -3,15 +3,21 @@
         <div class="info events col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <img src="../assets/img/main/events-title.png" alt="" class="eventsInfoImg">
             <div class="eventsContent" :class="{text:iseventsText}">
-                <h3 class="shine">STORYTELLING IS OUR JOB</h3>
-                <p>
+                <h3 class="shine">{{isch?'STORYTELLING IS OUR JOB':'用创意叙说故事'}}</h3>
+                <p v-if="isch">
                     We develop and deliver a wide range of services covering fashion and premium events.<br>
                     With partnerships throughout the world and outstanding strength of global network<br>
-                    bringing you unique brand experiences, creation of content and cooperation opportunities.</p>
+                    bringing you unique brand experiences, creation of content and cooperation opportunities.
+                </p>
+                <p v-if="!isch">
+                    我们提供全方位的服务，涵盖时尚与各类高端品牌活动推广体验。<br>
+                    拥有世界各地的合作伙伴和全球资源网络，
+                    为您带来独特的品牌体验、创造性内容营销及多种合作机会。
+                </p>
 
                 <div class="set_6_btn in blue">
                     <router-link to="/ourwork/events/iconic" class="link">
-                        <span>READY FOR THE JOURNEY</span>
+                        <span>{{isch?'READY FOR THE JOURNEY':'开启旅程'}}</span>
                     </router-link>
                     <div class="corners top"></div>
                     <div class="corners bottom"></div>
@@ -22,14 +28,17 @@
 </template>
 
 <script>
+    import { bus } from '../assets/js/app/public';
 export default {
     name : 'events-info-view',
     data(){
         return{
             iseventsText:false,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-close');
     },
     mounted(){

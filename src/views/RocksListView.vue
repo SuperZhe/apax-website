@@ -12,13 +12,16 @@
                     <img src="../../static/rocks-detail/new.jpg" alt="">
                 </div>
                 <div class=" col-xs-12 col-sm-5 rocksRight">
-                    <span class="title1">BLEND FASHION WITH MUSIC</span>
-                    By marketing the unification of entertainment and trends, Fashion Rocks offers China & Asia a 360-degree concept with infinite opportunities through fashion and music. An established IP weaving e-commerce, online & offline engagement and international broadcast distribution into a global platform reaching out to a multitude of consumers.
+                    <span class="title1">{{isch?'BLEND FASHION WITH MUSIC':'时尚与音乐融合'}}</span>
+                    <span v-if="isch">By marketing the unification of entertainment and trends, Fashion Rocks offers China & Asia a 360-degree concept with infinite opportunities through fashion and music. An established IP weaving e-commerce, online & offline engagement and international broadcast distribution into a global platform reaching out to a multitude of consumers.</span>
+                    <span v-if="!isch">通过对娱乐和潮流的整合营销，Fashion Rocks 以时尚和音乐为平台，提供了360度的营销概念，增加了无限机遇。同时着眼于成熟的IP，通过电子商务与国际媒介传播，不断创新和成长。</span>
                 </div>
                 <div class="space clearfix"></div>
-                <div class="title col-sm-10 col-xs-12" >SUPERSTARS x SUPERBRANDS x SUPERMODELS</div>
+                <div class="title col-sm-10 col-xs-12" >{{isch?'SUPERSTARS x SUPERBRANDS x SUPERMODELS':'国际巨星 X 知名品牌 X 超级模特'}}</div>
                 <div class="sub-title col-xs-12" >
-                    <p>Fashion Rocks showcases super A-listers with world-renowned fashion brands in a winning formula presented on stage and online throughout the world!
+                    <p v-if="isch">Fashion Rocks showcases super A-listers with world-renowned fashion brands in a winning formula presented on stage and online throughout the world!
+                    </p>
+                    <p v-if="!isch">Fashion Rocks 结合顶尖音乐人和 世界一线品牌，产生极具魅力的化学反应，用舞台震撼全球!
                     </p>
                 </div>
                 <div class="listItems col-xs-12">
@@ -26,7 +29,7 @@
                         <img alt="" :src="config.host + item.conver">
                         <div class="hover">
                             <div class="mask">
-                                <h2>{{ item.enTitle }}</h2>
+                                <h2>{{isch? item.title:item.enTitle }}</h2>
                                  <!--<router-link :to="{ name: 'rocks-detail', params: { id: item.id }}"><img src="../assets/img/main/more.png" alt=""></router-link>-->
                             </div>
                         </div>
@@ -65,10 +68,12 @@ export default {
             isMobile:false,
             config,
             showO:5,
-            items:[]
+            items:[],
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
         this.items = [];
         this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=Rocks&orderBy=seq:asc').then((response) => {

@@ -7,12 +7,15 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-10 col-xs-12">GLOBAL CONNECTIONS</div>
+            <div class="title col-sm-10 col-xs-12">{{isch?'GLOBAL CONNECTIONS':'与世界接轨'}}</div>
             <div class="sub-title col-xs-12">
-                <p>As the strategic partner and leading agency of
+                <p v-if="isch">As the strategic partner and leading agency of
                     Shanghai Fashion Week organizing committee,
                     APAX Group work closely together at raising the benchmark of Shanghai Fashion Week year after year.
                     Assisting Shanghai Fashion Week in developing into the world’s 5th top fashion week.
+                </p>
+                <p v-if="!isch">
+                    作为上海时装周的战略合作伙伴和主要合作机构，APAX Group 与上海时装周组委会紧密合作，共同提升上海时装周的标准与水平，协助上海时装周发展成为世界第五大时装周。
                 </p>
             </div>
             <div class="content col-xs-12">
@@ -69,6 +72,7 @@
                 link: 'rocks',
                 info: {},
                 showO: 6,
+                isch:''
             };
         },
         created() {
@@ -83,6 +87,7 @@
             // }, (error) => {
             //     console.log(error)
             // });
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {

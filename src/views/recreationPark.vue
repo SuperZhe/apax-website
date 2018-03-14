@@ -2,11 +2,11 @@
     <div class="dna-1 clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title">The World’s First Discovery Adventures Park</div>
+            <div class="title">{{isch?'The World’s First Discovery Adventures Park':'全球首个Discovery探索极限主题公园'}}</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/recreation/park.jpg" alt="">
-                <p>
+                <p v-if="isch">
                     The world's first Discovery Adventures Park, located in Moganshan, Deqing County, Huzhou City, Zhejiang Province, is currently the largest tourism resort complex in
                     Moganshan. Discovery Adventures Park is an outdoor sports and adventure experience theme park that integrates true outdoor environment, state-of-the-art outdoor
                     facilities, international safety standards, a complete curriculum system, and international professional coaches team, providing travelers throughout the world with globally
@@ -15,6 +15,9 @@
                     with friends and family, and experience and feel the inspiration and shock to the soul brought by breathtaking adventures.<br>
                     Discovery Adventures Park offers a number of outdoor adventure facilities, such as Climbing Wall, Zip Line, Aerial Net, Ground Obstacle, Hot Air Balloon, Hiking, and Wild
                     Survival, which can fully meet the challenge needs of domestic and foreign outdoor players, and bring the world's top outdoor adventure experience.
+                </p>
+                <p v-if="!isch">
+                    由 APAX Recreation 孵化创立与运营，Discovery 探索极限主题公园的创立给予探索旗下“LBE”全新概念- 探索成真。全球第一个探索极限主题基地坐落于浙江省湖州德清莫干山，是目前世界上最大的区域旅游度假综合体之一。Discovery 探索极限主题公园是以户外生活方式为主导的国际旅游目的地，围绕三个元素- 户外运动，生态旅游，科学教育。 Discovery Adventures Park 把 Discovery探索的理念从线上带到线下，融合了真实的户外环境，先进的户外设施，国际安全标准，完整的产品体系以及国际标准培训的教练，为全球旅行者与户外爱好者提供卓越的深度探索体验。Discovery探索极限主题公园遵循“体验、探索、挑战、发现”的价值观，提倡与鼓励人们探索世界，让探险者感受和向大自然学习，挑战极限，超越自我，发现自我，与朋友家人共同分享户外生活方式的深度体验，并感受到冒险带来灵魂的震撼。
                 </p>
                 <div class="col-xs-12 recreationBack" @click="goBack()">
                     <div class="set_6_btn in blue">
@@ -27,7 +30,7 @@
                 </div>
             </div>
             <div class="linkUs  col-xs-12">
-                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
             </div>
         </div>
     </div>
@@ -35,17 +38,19 @@
 <script>
     import Arrow from '../components/Arrow.vue';
     //    import { config } from '../assets/js/app/config';
-
+    import { bus } from '../assets/js/app/public';
     export default {
         name: 'dna-1',
         components: {Arrow},
         data() {
             return {
                 items: [],
+                isch:''
 //                config: config,
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         updated() {

@@ -2,66 +2,42 @@
     <div class="news-list-view clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title">APAX AWARDS</div>
+            <div class="title">{{isch?'APAX AWARDS':'APAX荣誉奖项\n'}}</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/news/0.jpg" alt="">
-                <p>Independent Agency of the Year <br> Experiential Marketing Agency of the Year <br> Best Creativity Event <br> Best Product Launch <br> Best Use of Venue <br> Entertainment IP Marketing <br> Best Vacation Product <br> Travel Destination <br> Business Model Innovation
+                <p v-if="isch">Independent Agency of the Year <br> Experiential Marketing Agency of the Year <br> Best Creativity Event <br> Best Product Launch <br> Best Use of Venue <br> Entertainment IP Marketing <br> Best Vacation Product <br> Travel Destination <br> Business Model Innovation
+                </p>
+                <p v-if="!isch">
+                     最佳独立公司<br>
+                     最佳创意活动<br>
+                     最佳场地使用<br>
+                     最佳体验式营销公司<br>
+                     娱乐IP营销大奖<br>
+                     最佳度假产品<br>
+                     最佳旅游目的地<br>
+                     商业模式创新奖<br>
+
                 </p>
             </div>
-            <!--<div class="content">-->
-                <!--<div class="col-sm-5 contentNews col-xs-12" >-->
-                    <!--<img src="../../static/news/4.png" alt="">-->
-                <!--</div>-->
-                <!--<div class="col-sm-7 col-xs-12">-->
-                    <!--<div class="col-xs-offset-1 col-xs-9 newstext">-->
-                        <!--<div class="title3">APAX Group Won Two Trophies For Campaign Greater China Agency Of the Year !</div>-->
-                        <!--<p>Campaign Agency of the Year awards has recognized inspired leadership, management excellence,<br> outstanding business performance and overall achievements in advertising and communications industries. </p>-->
-                        <!--<p>APAX Group is honored to announce that we have won two trophies - one gold and one silver for Campaign Greater China Agency Of the Year.</p>-->
-
-                        <!--<div class="set_6_btn in blue">-->
-                            <!--<router-link to="awards/detail/1"><span>View Article</span></router-link>-->
-                            <!--<div class="corners top"></div>-->
-                            <!--<div class="corners bottom"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="item col-sm-6 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">-->
-                <!--<img alt="" :src="'http://test.tron-m.com/'+item.conver">-->
-                <!--<div class="hover">-->
-                    <!--<div class="mask">-->
-                        <!--<h2>{{ item.enTitle }}</h2>-->
-                        <!--&lt;!&ndash; <router-link :to="{ name: 'news-detail', params: { id: item.id }}"><img src="../assets/img/main/more.png" alt=""></router-link> &ndash;&gt;-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!-- <div class="col-xs-6">4</div> -->
         </div>
     </div>
 </template>
 
 <script>
-
+    import { bus } from '../assets/js/app/public';
 import Arrow from '../components/Arrow.vue';
-import {config} from  '../assets/js/app/config'
 export default {
     name : 'news-list-view',
     components : { Arrow },
     data(){
         return {
             items : [],
-            config:config
+            isch:''
         }
     },
     created() {
-        // this.$axios.get('http://jsonplaceholder.typicode.com/photos?albumId=1').then((response) => {
-        //     this.items = response.data;
-        //     this.items.splice(11, this.items.length);
-        //     this.replaceImgSrc();
-        // }, (error) => {
-        //     console.log(error)
-        // });
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
         this.items = [];
         this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {

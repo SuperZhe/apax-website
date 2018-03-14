@@ -1,21 +1,28 @@
 <template>
     <div class="info-view recreation-map clearfix">
         <div class="info col-xs-offset-1 col-xs-10">
-            <h3 class="title3 col-xs-12">GLOBAL EXPANSION</h3>
+            <h3 class="title3 col-xs-12">{{isch?'GLOBAL EXPANSION':'国际布局'}}</h3>
             <div class="col-xs-12 col-sm-offset-3 col-sm-6 ">
                 <img src="../../static/recreation/global.jpg" alt="" class="col-xs-12">
             </div>
             <div class="linkUs  col-xs-12">
-                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import { bus } from '../assets/js/app/public';
     export default {
         name: 'recreationMap',
+        data(){
+            return{
+                isch:''
+            }
+        },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {

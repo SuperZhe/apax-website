@@ -58,15 +58,15 @@
                 <div class="col-xs-12 linkFrame">
                     <div class="set_6_btn in blue">
                         <router-link to="/safety" class="link">
-                            <span>DISCOVER MORE</span>
+                            <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
                         </router-link>
                         <div class="corners top"></div>
                         <div class="corners bottom"></div>
                     </div>
                 </div>
             </div>
-            <div class="linkUs col-xs-10 col-xs-offset-1">
-                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">Are you ready to take the adventure with us?</a>
+            <div class="linkUs col-xs-11 col-xs-offset-1">
+                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
                 <Share></Share>
@@ -89,9 +89,11 @@
             return {
                 link: 'recreation',
                 isMobile: false,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {

@@ -8,16 +8,19 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12">
-                <span class="title col-sm-8 col-md-8 col-xs-12">Giorgio Armani "One Night Only"</span>
-                <span class="date col-sm-4 col-md-4 col-xs-12">New Tank, Beijing, China</span>
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Giorgio Armani "One Night Only"':'阿玛尼“唯有今宵”'}}</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'New Tank, Beijing, China"':'中国，北京新罐'}}</span>
             </div>
             <div class="content col-xs-12">
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-k/1.jpg" alt="">
                 </div>
                 <div class="col-xs-12">
-                    <p>
+                    <p v-if="isch">
                         To celebrate Giorgio Armani tenth anniversary in China, Mr. Giorgio Armani brought the five brand lines to Beijing, held a grand "One Night Only in Beijing” fashion show at 751 "New Tank”, being the first time that the five lines combined to be presented in one show. The night was brought to a climax when the 15 “Tribute to China” gowns that specially designed by Mr. Armani for this anniversary. The one and the only.
+                    </p>
+                    <p v-if="!isch">
+                        为庆祝阿玛尼进入中国十周年，品牌创始人Giorgio Armani先生携旗下五个系列的重磅设计高调来京，举办盛大的“唯有今宵. 北京” 时装发布会，也是唯一一次集五个系列同时发布。北京新罐在APAX的打造和开发下，空前未有得成为了阿玛尼的独特环形秀场。15套阿玛尼先生特别设计的 “向中国致敬”系列高级定制礼服更是将当晚秀场推向高潮。
                     </p>
                 </div>
                 <div class="space clearfix"></div>
@@ -78,9 +81,11 @@
                 isMobile: false,
                 pageNext: true,
                 pagePrev: true,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {

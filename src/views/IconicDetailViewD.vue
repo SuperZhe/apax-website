@@ -7,14 +7,18 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >Burberry Hologram Fashion Show</div>
-            <div class="date col-sm-3 col-xs-12"><span>Beijing, China</span></div>
+            <div class="title col-sm-9 col-xs-12" >
+                {{isch?'Burberry Hologram Fashion Show':'Burberry博柏利全息投影时装秀'}}
+            </div>
+            <div class="date col-sm-3 col-xs-12"><span>{{isch?'Beijing, China':'中国，北京'}}</span></div>
             <div class="content col-xs-12">
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-3/new1.jpg" alt="">
                 </div>
             	<div class="col-xs-12">
-                    <p>To commemorate the opening of their flagship Beijing store, Burberry held a unique runway show that incorporated live music from Keane and featured a multi-senatorial virtual experience enhanced by holographic technology. The event was broadcast live all around the world at burberry.com and many other international fashion sites.</p></div>
+                    <p v-if="isch">To commemorate the opening of their flagship Beijing store, Burberry held a unique runway show that incorporated live music from Keane and featured a multi-senatorial virtual experience enhanced by holographic technology. The event was broadcast live all around the world at burberry.com and many other international fashion sites.</p></div>
+                    <p v-if="!isch">为了纪念其北京旗舰店开幕，Burberry博柏利使用全息投影技术，带来了一场史无前例的时装秀。首次将高科技引入时尚秀场，真实模特与全息人像交错展现服装，带来奇妙的观秀体验。同时这场秀也在全球各地的Burberry博柏利门店及官网同步直播，使全世界为之惊艳。
+                    </p>
                 <div class="space clearfix"></div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
@@ -38,6 +42,7 @@
                     <img src="../../static/iconic-detail-3/new5.jpg" alt="">
                 </div>
             </div>
+        <div class="col-xs-12">
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback">BACK</a>
             </div>
@@ -45,6 +50,7 @@
                 <Share></Share>
             </div>
             <div class="col-xs-3 pagingOne">
+
                 <router-link to="detail-c">
                     <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
                         <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev">
@@ -60,6 +66,7 @@
             </div>
         </div>
     </div>
+        </div>
 </template>
 
 <script>
@@ -78,10 +85,12 @@ export default {
             showO:1,
             isMobile:false,
             pageNext:true,
-            pagePrev:true
+            pagePrev:true,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
     },
     mounted(){

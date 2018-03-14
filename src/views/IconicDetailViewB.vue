@@ -8,10 +8,10 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12" >
-                <span class="title col-sm-8 col-md-8 col-xs-12">Starbucks Reserve Roastery Shanghai Grand Opening</span>
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Starbucks Reserve Roastery Shanghai Grand Opening':'星巴克臻选烘焙工坊开幕盛典'}}</span>
                 <!--</div>-->
                 <!--<div class="date col-sm-3 col-xs-12">-->
-                <span class="date col-sm-4 col-md-4 col-xs-12">Taikoo Hui, Shanghai, China</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'Taikoo Hui, Shanghai, China':'中国，上海'}}</span>
             </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -22,8 +22,11 @@
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-6/new1.png" alt="">-->
-                    <p>
-                        Starbucks Coffee Company opened its very first international Starbucks Reserve Roastery (outside of Seattle) in Shanghai with a global live streaming on 9 platforms and incorporating Tmall Super Brand Day during its grand opening and unveiling event. An Immersive coffee experience was part of the journey celebration for the excited guests to explore and discover what they never knew about coffee.</p>
+                    <p v-if="isch">Starbucks Coffee Company opened its very first international Starbucks Reserve Roastery (outside of Seattle) in Shanghai with a global live streaming on 9 platforms and incorporating Tmall Super Brand Day during its grand opening and unveiling event. An Immersive coffee experience was part of the journey celebration for the excited guests to explore and discover what they never knew about coffee.</p>
+                    <p v-if="!isch">
+                        星巴克海外首家，全球第二家且规模最大的臻选烘焙工坊正式登陆上海南京西路，盛大开幕。开幕盛典于九大平台全球同步直播，同时开启星巴克臻选天猫超级品牌日，线上线下席卷全球。把咖啡工厂搬入店堂，带来“从生豆到饮品”的全感官体验。即2014年首家星巴克臻选烘焙工坊在其故乡西雅图揭幕后，现在这段不凡的咖啡之旅也于上海正式开启。
+
+                    </p>
                 </div>
                 <!--<div class="space clearfix"></div>-->
                 <!--<div class="space clearfix"></div>-->
@@ -64,14 +67,20 @@
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback()">BACK</a>
             </div>
-            <div class="share col-xs-offset-1 col-xs-8">
+            <div class="share col-xs-offset-1 col-xs-7">
                 <Share></Share>
             </div>
-            <div class="col-xs-2 pagingOne" >
+            <div class="col-xs-3 pagingOne">
                 <router-link to="detail-j">
                     <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
                         <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev">
                         <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev">
+                    </div>
+                </router-link>
+                <router-link to="detail-k">
+                    <div  @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pageNext">
+                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pageNext">
                     </div>
                 </router-link>
             </div>
@@ -95,10 +104,13 @@
                 info: {},
                 showO: 1,
                 isMobile:false,
-                pagePrev:true
+                pageNext:true,
+                pagePrev:true,
+                isch:''
             };
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {
@@ -116,6 +128,12 @@
             },
             pagePrevOut:function () {
                 this.pagePrev = true;
+            },
+            pageNextOver:function () {
+                this.pageNext = false;
+            },
+            pageNextOut:function () {
+                this.pageNext = true;
             },
             goback:function (){
 //                this.$router.go('/ourwork/events/iconic');
@@ -151,7 +169,9 @@
                 padding-bottom: 6px;
             }
         }
-.pagingOne{text-align: right}
+.pagingOne{text-align: right;div{
+    display: inline-block;
+}}
         .subnav {
             padding-top: 80px;
         }

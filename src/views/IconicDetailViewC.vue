@@ -8,10 +8,12 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12" >
-            <span class="title col-sm-8 col-md-8 col-xs-12">Hennessy XO Exclusive Collection VI Worldwide Launch</span>
+            <span class="title col-sm-8 col-md-8 col-xs-12">
+                {{isch?'Hennessy XO Exclusive Collection VI Worldwide Launch':'轩尼诗XO 第六代珍藏版全球发售'}}
+                </span>
             <!--</div>-->
             <!--<div class="date col-sm-3 col-xs-12">-->
-            <span class="date col-sm-4 col-md-4 col-xs-12">Reed Flute Cave, Guilin, China</span>
+            <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'Reed Flute Cave, Guilin, China':'中国，桂林，芦笛岩'}}</span>
         </div>
             <div class="content col-xs-12">
                 <!-- <AContent :content="info.title"></AContent> -->
@@ -23,8 +25,12 @@
                 </div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-2/1.jpg" alt="">-->
-                    <p>
+                    <p v-if="isch">
                         Hennessy presented the 6th edition of the Hennessy Exclusive Collection; showcasing “The Power of Nature” in the Reed Flute Cave in Guilin. The stones interior of the cave became the natural setting, incorporated with specially designed projection effects to highlight the magnificent and dazzling essence of the new collector’s.
+                    </p>
+                    <p v-if="!isch">
+                        以岩石蕴藏的力量为灵感的轩尼诗X.O第六代珍藏版在雄奇瑰丽的桂林芦笛岩全球首发。天然岩洞作为布景，晚宴所在之地——芦笛岩“水晶宫”，“华灯”高垂于顶，“莲湖”波光莹莹。黄金之色犹如初升之日在黑暗中光华绽放，瑰宝般的轩尼诗X.O第六代珍藏版在岩石的簇拥下出现在眼前, 独具匠心的外在与百年原创的内涵交相辉映。
+
                     </p>
                 </div>
                 <div class="space clearfix"></div>
@@ -55,7 +61,6 @@
                     <Share></Share>
                 </div>
                 <div class="col-xs-3 pagingOne">
-
                     <router-link to="detail-a">
                         <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
                             <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev">
@@ -70,7 +75,6 @@
                     </router-link>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -91,10 +95,12 @@ export default {
             showO:1,
             isMobile:false,
             pageNext:true,
-            pagePrev:true
+            pagePrev:true,
+            isch:''
         }
     },
     created(){
+        bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
     },
     mounted(){
