@@ -10,7 +10,7 @@
                 <img alt="" :src="config.host + item.conver">
                 <div class="hover">
                     <div class="mask">
-                        <h2 class="h2">{{ item.enTitle }}</h2>
+                        <h2 class="h2">{{isch? item.enTitle:item.title }}</h2>
                         <!-- <router-link :to="{ name: 'events-detail', params: { id: item.id }}"><img src="../assets/img/main/more.png" alt=""></router-link> -->
                     </div>
                 </div>
@@ -35,11 +35,12 @@ export default {
             config,
             items : [],
             showO:2,
+            isch:''
         }
     },
     created() {
         this.$bus.$emit('canvas-open');
-
+        bus.$on('language',(val) => {this.isch = val})
         this.items = [];
         this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=seq:asc').then((response) => {
             this.items = response.data.result.content;
@@ -49,10 +50,11 @@ export default {
 
     },
     updated(){
-        let sr = this.$sr({ reset: true, delay: 0 });
-        sr.reveal('.item', { duration: 1000 });
+
     },
     mounted(){
+        let sr = this.$sr({ reset: true, delay: 0 });
+        sr.reveal('.item', { duration: 1000 });
         bus.$emit('change',this.showO);
     },
     methods: {

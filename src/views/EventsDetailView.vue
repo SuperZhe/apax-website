@@ -7,10 +7,11 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-12 col-xs-12">{{ info.title }}</div>
+            <div class="title col-sm-12 col-xs-12">{{isch?info.title1: info.title2 }}</div>
             <!--<div class="date col-sm-2 col-xs-12"><span>{{ info.date }}</span></div>-->
             <div class="content col-xs-12">
-                <AContent :content="info.content"></AContent>
+                <AContent :content="info.content1" v-if="isch"></AContent>
+                <AContent :content="info.content2" v-if="!isch"></AContent>
             </div>
             <div class="back col-xs-1">
                 <a href="javascript:;" @click="goback">BACK</a>
@@ -56,15 +57,18 @@
                 title: '',
                 config,
                 info: {
-                    title: '',
+                    title1: '',
+                    title2: '',
                     date: null,
-                    content: ''
+                    content1: '',
+                    content2: ''
                 },
                 prevId: 0,
                 nextId: 0,
                 showO: 2,
                 pageNext:true,
-                pagePrev:true
+                pagePrev:true,
+                isch:''
             }
         },
         beforeRouteUpdate (to, from, next) {
@@ -74,6 +78,7 @@
             next();
         },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.setBg();
             this.setPage();
         },
@@ -130,8 +135,10 @@
             loadDetail(id) {
                 this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + (id?id:this.$route.params.id)).then((response) => {
                     //console.log(response.data.result);
-                    this.info.title = response.data.result.enTitle;
-                    this.info.content = response.data.result.html;
+                    this.info.title1 = response.data.result.enTitle;
+                    this.info.title2 = response.data.result.title;
+                    this.info.content1 = response.data.result.enHtml
+                    this.info.content2 = response.data.result.html;
                     this.info.date = response.data.result.enAddr;
 //                        new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
                     window.scrollTo(0, 0);

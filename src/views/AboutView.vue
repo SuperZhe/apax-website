@@ -10,7 +10,8 @@
             <p v-if="!isch">APAX Group同时将超级国际IP带到中国，并创建特色IP项目，如引入Fashion Rocks, 与Discovery Channel 创建全球首个Discovery Adventures Park等。本着“引进来、走出去”的核心理念，引进国际资源的同时，将华人文化带到全世界，进行对接及整合。在未来，跨界、跨文化合作是集团的重要方向。
             </p>
         </div>
-        <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 aboutImg"><img src="../../static/map.png" alt=""></div>
+        <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 aboutImg" v-if="isch"><img src="../../static/map.png" alt=""></div>
+        <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 aboutImg" v-if="!isch"><img src="../../static/chineseMap.png" alt=""></div>
     </div>
 </template>
 

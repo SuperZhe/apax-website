@@ -19,7 +19,7 @@
             </div>
             <div class="listItems">
                 <div class="item col-sm-4 col-xs-12" v-for="item in items" :key="item.id" @click="goDetail(item.id)">
-                    <img alt="" :src="item.conver">
+                    <img alt="" :src="config.host + item.conver">
                     <div class="hover">
                         <div class="mask">
                             <h2>{{ item.enTitle }}</h2>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+    import config from '@js-app/config';
     import OurworkSubNav from '@/components/OurworkSubNav.vue';
     import Arrow from '@/components/Arrow.vue';
     import { bus } from '../assets/js/app/public';
@@ -45,6 +46,7 @@
             return {
                 link: 'sifs',
                 items: [],
+                config,
                 showO: 4,
                 isch:''
             };
@@ -67,11 +69,12 @@
             });
         },
         updated() {
-            let sr = this.$sr({reset: true, delay: 300});
-            sr.reveal('.item', {duration: 1000});
+
         },
         mounted() {
             bus.$emit('change', this.showO);
+            let sr = this.$sr({reset: true, delay: 300});
+            sr.reveal('.item', {duration: 1000});
         },
         methods: {
             replaceImgSrc() {

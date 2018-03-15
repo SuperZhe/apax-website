@@ -96,7 +96,7 @@ export default {
                 url : 'iconic/detail-a',
                 title : 'Fendi on the Wall',
                 imgSrc : 'http://test.tron-m.com/webapax/static/iconic/101.jpg',
-                chineseTitle:'FENDI 芬 迪 长 城 秀',
+                chineseTitle:'FENDI芬迪长城秀',
                 date : 'The Great Wall, Beijing, China - Oct. 19, 2007',
                 brief : 'Karl Lagerfeld and Fendi held a monumental fashion show - atop the Great Wall of China, no less - the first ever fashion show in history at the Great Wall.<br>The show was capped off with giant double-F logos projected onto neighboring mountains. "This is about positioning Fendi for the next 50 years," says Fendi CEO Michael Burke.'
             });
