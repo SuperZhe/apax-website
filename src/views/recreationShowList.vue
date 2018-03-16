@@ -39,7 +39,7 @@
                         <div class="set_6_btn in blue">
                             <router-link to="detail" class="link">
                                 <!--<span>DISCOVER MORE</span>-->
-                                <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
+                                <span>{{isch?'DISCOVER MORE':' 探索不凡'}}</span>
                             </router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>
@@ -82,7 +82,7 @@
                     <div class="col-xs-12 linkFrame">
                         <div class="set_6_btn in blue">
                             <router-link to="detail" class="link">
-                                <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
+                                <span>{{isch?'DISCOVER MORE':'探索不凡'}}</span>
                             </router-link>
                             <div class="corners top"></div>
                             <div class="corners bottom"></div>

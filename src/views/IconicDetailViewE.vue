@@ -27,7 +27,7 @@
                         Huawei dominated the news during the World Mobile Congress 2017 in Barcelona when they launched their new products (the P10 and smart watch) to a worldwide audience - the W Product 2017 at world Press Conference. The semi-circular door was a diamond cutting surface that formed as a natural crack for a metaphor of the breakthrough in innovation and the modern art attraction. Social media was a buzz with tens of thousands of articles and reviews that helped drive sales to an all-time high.
                     </p>
                     <p v-if="!isch">
-                        华为W系列2017新品发布会发布盛典在巴塞罗那意大利馆举行，发布了全新的华为P10手机及智能手表。为配合华为给人们带来的科技形象，以及华为W系列绝妙的设计感，场馆外观以钻石的切割为灵感打造，入口处幻彩的钻石裂痕成为了一道通向活动现场的探索之门。此次发布会创造了很高的社交媒体价值，广受好评。
+                        华为W系列2017新品发布会在巴塞罗那意大利馆举行，发布了全新的华为P10手机及智能手表。为配合华为给人们带来的科技形象，以及华为W系列绝妙的设计感，场馆外观以钻石的切割为灵感打造，入口处幻彩的钻石裂痕成为了一道通向活动现场的探索之门。此次发布会创造了很高的社交媒体价值，广受好评。
                     </p>
                 </div>
                 <div class="space clearfix"></div>

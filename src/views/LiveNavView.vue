@@ -65,7 +65,7 @@
                         we started catering an alternative program by introducing world-renowned fashion brands to the China market and marrying brands on crossover collections.
                     </p>
                     <p v-if="!isch">
-                        2014年，APAX LIVE 作为上海时装周唯一的国际品牌发布官方平台，通过引入世界知名时装品牌来到中国市场以及为其提供商业机遇而不断提升优化我们的平台。
+                        2014年，APAX Live 作为上海时装周唯一的国际品牌发布官方平台，通过引入世界知名时装品牌来到中国市场以及为其提供商业机遇而不断提升优化我们的平台。
                     </p>
 
                 </div>

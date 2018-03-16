@@ -18,10 +18,10 @@
             <!--&lt;!&ndash;<router-link to="/ourwork/live/rocks" v-if="l6"><img src="../assets/img/main/rocks-subnav.png" alt="" class="rocks"></router-link>&ndash;&gt;-->
             <!--<router-link to="/ourwork/live/rocks" v-if="l6"><span :class="{pitch:showO == 4}" >FASHTON ROCKS</span></router-link>-->
         </div>
-        <div class="right" :class="{navWidth:showO == 1 || showO  == 2}">
+        <div class="right" :class="{navWidth:showO == 1 || showO  == 2,chinese:!isch}">
             <div class="mobileRight">
                 <router-link to="/ourwork/events/iconic" v-if="r1">
-                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1}" class="hover">{{isch?'Signature Events':'经典案例'}}</span>
+                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1,chinese2:!isch}" class="hover">{{isch?'Signature Events':'经典案例'}}</span>
                 </router-link>
                 <router-link to="/ourwork/events/list" v-if="r1">
                     <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover">{{isch?'More Events':'更多作品'}}</span>
@@ -212,7 +212,12 @@
         .navWidth{
             width: 210px;
         }
-
+        .chinese{
+            width: 210px;
+            .chinese2{
+                margin-left: 50px !important;
+            }
+        }
         .recreation {
             position: relative;
             top: 1px;
@@ -270,6 +275,7 @@
                     height:0.6rem;
                     margin:0 0.8rem;
                 }
+
                 div{
                     display: block;
                     height:auto;

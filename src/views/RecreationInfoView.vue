@@ -16,7 +16,7 @@
                 <div class="set_6_btn in blue">
                     <router-link to="recreation/showlist" class="link">
                         <!--<span>DISCOVER MORE</span>-->
-                        <span>{{isch?'DISCOVER MORE':'遇见精彩'}}</span>
+                        <span>{{isch?'DISCOVER MORE':'探索不凡'}}</span>
                     </router-link>
                     <div class="corners top"></div>
                     <div class="corners bottom"></div>

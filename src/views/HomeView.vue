@@ -1,7 +1,7 @@
 <template>
     <div class="info-view home-view clearfix">
         <div class="info col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2 ">
-            <h2 :class="{shine:light,titleHome:!light}">{{isch?'创造风潮':'WE CREATE THE NEXT WAVE'}}</h2>
+            <h2 :class="{shine:light,titleHome:!light}">{{isch?'敢潮·敢创':'WE CREATE THE NEXT WAVE'}}</h2>
             <div class="contentHome" :class="{text:judgeText}">
                 <p v-if="!isch">
                     Leading Experiential Marketing company in Asia Pacific.<br>

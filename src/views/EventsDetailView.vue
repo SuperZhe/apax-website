@@ -117,6 +117,8 @@
                 this.$axios.get('http://test.tron-m.com/apax/news/navigation.do?id=' + (id?id:this.$route.params.id) + '&category=ourwork').then((response) => {
                     //console.log(response);
                     var data = response.data.result;
+                    console.log('上一页：'+data.prev.id)
+                    console.log('下一页'+data.next.id)
                     if (data.prev) {
 
                         this.prevId = data.prev.id;
