@@ -7,7 +7,7 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-12 col-xs-12">{{ info.title }}</div>
+            <div class="title col-sm-12 col-xs-12">{{isch?info.title1: info.title2 }}</div>
             <!--<div class="date col-sm-2 col-xs-12"></div>-->
             <div class="content col-xs-12">
                 <AContent :content="info.content1" v-if="isch"></AContent>
@@ -24,19 +24,19 @@
                 <!--src="../assets/img/icon/page-prev.png" alt="" @click="RefreshOnce"></router-link>-->
                 <!--<router-link :to="{ name : 'sifs-detail', params : { id : nextId } }" v-if="!nextId==0"><img-->
                 <!--src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce"></router-link>-->
-                <router-link :to="{ name : 'sifs-detail', params : { id : nextId } }" v-if="!nextId==0">
-                    <div @mouseover="pageNextOver()" @mouseout="pageNextOut()">
-                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pageNext" @click="RefreshOnce">
-                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pageNext" @click="RefreshOnce">
-                    </div>
-                    <!--<img src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce">-->
-                </router-link>
                 <router-link :to="{ name : 'sifs-detail', params : { id : prevId } }" v-if="!prevId==0">
                     <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
-                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pagePrev" @click="RefreshOnce">
-                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pagePrev" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev" @click="RefreshOnce">
                     </div>
                     <!--<img src="../assets/img/icon/page-prev.png" alt="" >-->
+                </router-link>
+                <router-link :to="{ name : 'sifs-detail', params : { id : nextId } }" v-if="!nextId==0">
+                    <div  @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pageNext" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pageNext" @click="RefreshOnce">
+                    </div>
+                    <!--<img src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce">-->
                 </router-link>
 
             </div>
@@ -86,23 +86,11 @@
             // }, (error) => {
             //     console.log(error)
             // });
+            this.loadDetail(this.$route.params.id);
             this.setPage();
             this.$bus.$emit('canvas-open');
         },
         mounted() {
-            this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
-                //console.log(response.data.result);
-                this.info.title = response.data.result.enTitle;
-                this.info.content1 = response.data.result.enHtml
-                this.info.content2 = response.data.result.html;
-                this.info.date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
-                // this.info.content = `
-                //     大量内容
-                // `
-                window.scrollTo(0, 0);
-            }, (error) => {
-                console.log(error);
-            });
 
             bus.$emit('change', this.showO);
         },
@@ -150,8 +138,11 @@
             loadDetail(id) {
                 this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + (id ? id : this.$route.params.id)).then((response) => {
                     console.log(response.data.result);
-                    this.info.title = response.data.result.enTitle;
-                    this.info.content = response.data.result.enHtml;
+                    this.info.title1 = response.data.result.enTitle;
+                    this.info.title2 = response.data.result.title;
+                    this.info.content1 = response.data.result.enHtml;
+                    this.info.content2 = response.data.result.html;
+                    this.info.date = response.data.result.enAddr;
                     window.scrollTo(0, 0);
                 }, (error) => {
                     console.log(error);
@@ -215,6 +206,11 @@
 
     @media screen and (max-width: @max-width) {
         .sifs-detail-view {
+            .acontent{
+                span{
+                    font-size: 13px !important;
+                }
+            }
             .info {
                 padding-top: 4em;
             }

@@ -3,7 +3,7 @@
         <div class="info col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
             <!--<h2>CAREER</h2>  -->
             <br>
-            <h3>{{isch?'WE BELIEVE IN TALENTS':'信任团队 我们卓尔不群\n'}}</h3>
+            <h3>{{isch?'WE BELIEVE IN TALENTS':'信任团队 我们卓尔不群'}}</h3>
 
             <p v-if="isch">We believe talent is at the center of everything we do.<br>
                 With the best talent in the industry, we promise our clients on the highest quality of planning, creative and execution.<br>
@@ -570,6 +570,11 @@
     }
 
     @media screen and (max-width: @max-width) {
+        .career-view{
+            h3{
+                font-size: 0.42rem;
+            }
+        }
         .info-view {
             .row {
                 margin-top: 2em !important;

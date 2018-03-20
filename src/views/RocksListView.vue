@@ -8,14 +8,28 @@
 
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="col-xs-12 rocksTopLeft">
-                <div class="col-xs-12 col-sm-7 rocksLeft">
-                    <img src="../../static/rocks-detail/new.jpg" alt="">
+                <div class="pc">
+                    <div class="col-xs-12 col-sm-7 rocksLeft">
+                        <img src="../../static/rocks-detail/new.jpg" alt="">
+                    </div>
+                    <div class=" col-xs-12 col-sm-5 rocksRight">
+                        <span class="title1">{{isch?'BLEND FASHION WITH MUSIC':'时尚与音乐融合'}}</span>
+                        <span v-if="isch">By marketing the unification of entertainment and trends, Fashion Rocks offers China & Asia a 360-degree concept with infinite opportunities through fashion and music. An established IP weaving e-commerce, online & offline engagement and international broadcast distribution into a global platform reaching out to a multitude of consumers.</span>
+                        <span v-if="!isch">通过对娱乐和潮流的整合营销，Fashion Rocks 以时尚和音乐为平台，提供了360度的营销概念，增加了无限机遇。同时着眼于成熟的IP，通过电子商务与国际媒介传播，不断创新和成长。</span>
+                    </div>
                 </div>
-                <div class=" col-xs-12 col-sm-5 rocksRight">
-                    <span class="title1">{{isch?'BLEND FASHION WITH MUSIC':'时尚与音乐融合'}}</span>
-                    <span v-if="isch">By marketing the unification of entertainment and trends, Fashion Rocks offers China & Asia a 360-degree concept with infinite opportunities through fashion and music. An established IP weaving e-commerce, online & offline engagement and international broadcast distribution into a global platform reaching out to a multitude of consumers.</span>
-                    <span v-if="!isch">通过对娱乐和潮流的整合营销，Fashion Rocks 以时尚和音乐为平台，提供了360度的营销概念，增加了无限机遇。同时着眼于成熟的IP，通过电子商务与国际媒介传播，不断创新和成长。</span>
+                <div class="mobile">
+                    <div class=" col-xs-12 col-sm-5 rocksRight">
+                        <span class="title1">{{isch?'BLEND FASHION WITH MUSIC':'时尚与音乐融合'}}</span>
+                        <span v-if="isch">By marketing the unification of entertainment and trends, Fashion Rocks offers China & Asia a 360-degree concept with infinite opportunities through fashion and music. An established IP weaving e-commerce, online & offline engagement and international broadcast distribution into a global platform reaching out to a multitude of consumers.</span>
+                        <span v-if="!isch">通过对娱乐和潮流的整合营销，Fashion Rocks 以时尚和音乐为平台，提供了360度的营销概念，增加了无限机遇。同时着眼于成熟的IP，通过电子商务与国际媒介传播，不断创新和成长。</span>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-7 rocksLeft">
+                        <img src="../../static/rocks-detail/new.jpg" alt="">
+                    </div>
                 </div>
+
                 <div class="space clearfix"></div>
                 <div class="title col-sm-10 col-xs-12" >{{isch?'SUPERSTARS x SUPERBRANDS x SUPERMODELS':'国际巨星 X 知名品牌 X 超级模特'}}</div>
                 <div class="sub-title col-xs-12" >
@@ -126,6 +140,9 @@ export default {
     padding-bottom: 150px;
     .rocksTopLeft{
         /*padding-right: 40px;*/
+        .mobile{
+            display: none;
+        }
         .rocksLeft{
             margin-bottom: 1em;
             img{
@@ -167,10 +184,10 @@ export default {
     }
 
     .title {
-        font-size: 1.6em;
+        font-size: 24px;
     }
     .title1{
-        font-size: 1.6em;
+        font-size: 2.2em;
         margin-bottom: 1.2em;
     }
 
@@ -265,24 +282,33 @@ export default {
 
 @media screen and (max-width: @max-width) {
 .rocks-list-view {
+    .pc{
+        display: none !important;
+    }
+    .mobile{
+        display: block !important;
+    }
     .rocks-text{
         margin-top: 1.6em;
     }
     .rocksRight{
+        font-size: 13px !important;
+        margin-bottom: 0.6rem !important;
         padding: 0 !important;
     }
     .title{
         margin-top: 1.8em;
+        font-size: 0.4rem;
     }
     .info {
-        padding-top: 2em;
+        padding-top: 1.04rem;
     }
     .item{
         padding:0 !important;
         margin-left: 0 !important;
     }
-    .title {
-        font-size: 1.5em;
+    .title1 {
+        font-size: 0.4rem;
     }
 
     .date {

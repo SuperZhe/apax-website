@@ -2,7 +2,7 @@
     <div class="info-view clients-list-view clearfix">
         <div class="info col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10">
 
-            <h4>CLIENTS</h4>
+            <h4>{{isch?'CLIENTS':'客户'}}</h4>
             <!--<div>-->
 
             <!--</div>-->
@@ -157,9 +157,16 @@
 </template>
 
 <script>
+    import { bus } from '../assets/js/app/public';
     export default {
         name: 'clients-view',
+        data(){
+            return{
+                isch:''
+            }
+        },
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-close');
         },
         mounted() {
@@ -216,7 +223,7 @@
                 > h4 {
                     /*margin-bottom: 3em;*/
                     margin-bottom: -5vh;
-                    font-size: 1.4em;
+                    font-size: 0.42rem;
                 }
                 > div {
                     height: auto !important;

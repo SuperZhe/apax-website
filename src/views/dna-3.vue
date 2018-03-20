@@ -1,9 +1,13 @@
 <template>
     <div class="dna-3 clearfix">
+        <div class="subnav">
+            <OurworkSubNav :links="link"></OurworkSubNav>
+        </div>
 
+        <Arrow></Arrow>
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title"  v-if="isch">CORE ELEMENT 3<br>SCIENCE EDUCATION </div>
-            <div class="title" v-if="!isch">元素3<br>科普教育</div>
+            <div class="title"  v-if="isch">CORE ELEMENT 3<br>Science Education </div>
+            <div class="title" v-if="!isch">元素 3<br>科普教育</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/recreation/kepu1.jpg" alt="">
@@ -50,12 +54,13 @@
     import { bus } from '../assets/js/app/public';
     import Arrow from '../components/Arrow.vue';
 //    import { config } from '../assets/js/app/config';
-
+    import OurworkSubNav from '@/components/OurworkSubNav.vue';
     export default {
         name: 'dna-3',
-        components: {Arrow},
+        components: {Arrow,OurworkSubNav},
         data() {
             return {
+                link: 'recreation',
                 items: [],
                 isch:''
 //                config: config,
@@ -138,7 +143,7 @@
     @media screen and (max-width: @max-width) {
         .dna-3 {
             .list{
-
+                margin-top: 0;
                 .title {
                     font-size: 1.4em !important;
                     margin-bottom: 2vh;

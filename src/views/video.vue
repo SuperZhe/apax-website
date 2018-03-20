@@ -77,13 +77,13 @@
     import { bus } from '../assets/js/app/public';
     import video1 from '../../static/APAXEvents480.mp4';
     import video3 from '../../static/APAX RECREATION_480.mp4';
-    import video2 from '../../static/Live v5.mp4';
+    import video2 from '../../static/LIVE_480.mp4';
     import events from '../assets/img/main/events-title.png';
     import live from '../assets/img/main/live-title.png';
     import recreation from '../assets/img/main/recreation-title.png';
-    import bg1 from '../../static/video-bg.jpg';
-    import bg2 from '../../static/video-bg.jpg';
-    import bg3 from '../../static/video-bg.jpg';
+    import bg1 from '../../static/video1.jpg';
+    import bg2 from '../../static/video3.jpg';
+    import bg3 from '../../static/video2.jpg';
 
     export default {
         name: 'Events-video',
@@ -118,28 +118,25 @@
         mounted() {
             bus.$emit('change', this.showO);
             bus.$emit('pause', this.pauseO);
-            /*$('.play').on('click', () => {
-             $('.videoAPAX').attr('src', video);
-             $('.player-box').show().find('video')[0].play();
-             });
-             $('.player-box .close').on('click', () => {
-             $('.player-box').hide();
-             $('.player-box').find('video')[0].pause();
-             });*/
             //视频结束控件
             let video = $('.mobileVideo');
             video.on('timeupdate', function () {
-
                 // 视频结束前执行
                 if (video[0].duration > 0 && video[0].currentTime > video[0].duration - 1.5) {
                     video[0].pause();
                 }
             });
             video.on('pause', function () {
-
-                $('.mobileVideoBg').hide();
+//                alert(1)
+//                $('.mobileVideoBg').hide();
+                $('.mobileVideoBg').css({zIndex:'-1'});
                 video[0].pause();
+
+
             });
+            video.on('play',function () {
+
+            })
         },
         methods: {
             playVideo: function (video) {
@@ -155,9 +152,10 @@
                 } else {
                     console.log('手机');
                     let _video = $('.mobileVideo');
-                    $('.mobileVideoBg').show();
                     _video.attr('src', video);
                     _video[0].play();
+                    $('.mobileVideoBg').css({zIndex:'999'});
+
                 }
 
             },
@@ -194,7 +192,7 @@
     /*height: 80vh;*/
     /*}*/
     .content {
-        margin-top: 4em;
+        margin-top: -6em;
         position: relative;
         margin-bottom: 4em;
         /*视频播放背景*/
@@ -270,9 +268,6 @@
             text-align: center;
         }
     }
-    .logoTitle{
-        height: 24px;
-    }
     .player-box {
         background-color: red;
         /*margin: 5em 0;*/
@@ -327,7 +322,8 @@
 
     //手机视频
     .mobileVideoBg {
-        display: none;
+        /*display: none;*/
+        z-index:-1;
         position: fixed;
         top: 0;
         left: 0;
@@ -343,6 +339,9 @@
     @media screen and (max-width: @max-width) {
         .content {
             margin-top: 0;
+            .logoTitle{
+                height: 16px !important;
+            }
         }
     }
 </style>

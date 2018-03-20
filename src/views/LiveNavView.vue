@@ -4,7 +4,7 @@
 
             <div class="rocks clearfix col-sm-4">
                 <!--<div class="col-xs-offset-4 col-xs-4 logo"><img src="../assets/img/main/rocks.png" alt=""></div>-->
-                <div class="logo"><img src="../assets/img/main/rocks.png" alt=""></div>
+                <div class="logo logoTop"><img src="../assets/img/main/rocks.png" alt=""></div>
                 <div class="col-sm-8 col-sm-offset-2 col-xs-offset-1 col-xs-10">
                     <p v-if="isch">
                         The only place where we bring together the world’s top fashion brands and world’s leading music artists for a union of catwalk and concert.<br>
@@ -82,6 +82,9 @@
                     <div class="corners bottom"></div>
                 </div>
             </div>
+            <div style="clear: both">
+
+            </div>
         </div>
     </div>
 </template>
@@ -124,7 +127,7 @@
         /*align-items: center;*/
         /*padding-bottom: 95px;*/
         padding-top: 26vh;
-        padding-bottom: 10vh;
+        padding-bottom: 28vh;
         .fashionWeekdiv{
             height: 92px;
             .fashionWeek{
@@ -211,7 +214,7 @@
             }
 
             .nav > div {
-                padding: 2em 0em;
+                /*padding: 2em 0em;*/
                 position: relative;
             }
 
@@ -221,9 +224,12 @@
             }
 
             .rocks {
-                .logo {
-                    padding-top: 3em;
+                .logoTop{
+                    margin-top: 3em;
                 }
+                /*.logo {*/
+                    /*!*padding-top: 3em;*!*/
+                /*}*/
             }
 
             .sifs {

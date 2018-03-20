@@ -123,9 +123,14 @@
 //        var music = $('#audio');
 //        music.plya();
             //--创建页面监听，等待微信端页面加载完毕 触发音频播放
+//            window.addEventListener('touchstart', function(){
+//                let audio = document.getElementById('audio');
+//                audio.load();
+//                audio.play();
+//            })
             document.addEventListener('DOMContentLoaded', function () {
                 function audioAutoPlay() {
-                    var audio = document.getElementById('audio');
+                    let audio = document.getElementById('audio');
                     audio.play();
                     document.addEventListener('WeixinJSBridgeReady', function () {
                         audio.play();
@@ -407,8 +412,8 @@
                 .nav3 {
                     z-index: 999;
                     height: 0;
-                    /*bottom: 55px;*/
-                    left:50%;
+                    bottom: 50px;
+                    left:52%;
                     transform: translateX(-50%);
                     >div>a>img{
                         height:0.3rem;
@@ -430,6 +435,9 @@
                 img{
                     height:0.35rem;
                     margin-bottom: -0.1rem;
+                }
+                span{
+                    font-size: 13px;
                 }
             }
         }

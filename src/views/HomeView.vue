@@ -11,12 +11,12 @@
                     亚太地区最领先的体验式营销集团。我们致力于创新诠释品牌DNA，整合所有媒介渠道与全方位营销平台，提供集革新创意与商业价值于一体的市场营销解决方案。
                 </p>
                 <p v-if="!isch">
-                    APAX Group presents you with multi cultural platform: EVENTS / LIVE / RECREATION with partnerships throughout the world and outstanding strength of global resources bringing you unique experiences and cooperation opportunities.<br>We are committed to translate the best local cultures and original contents onto the international stage. We nurture, We bring forth.
+                    APAX Group presents you with multi cultural platform: EVENTS / LIVE / RECREATION with partnerships throughout the world and outstanding strength of global resources bringing you unique experiences and cooperation opportunities.<br>We are committed to translate the best local cultures and original contents onto the international stage.<br> We nurture, We bring forth.
                 </p>
                 <p v-if="isch">
                     川力企划由EVENTS、 LIVE、 RECREATION三大跨文化平台组成。我们的合作伙伴遍及海内外，
                     凭借全球业内顶级资源与优势经验，我们带来具有世界级水准的杰出营销体验以及国际合作机会。
-                    同时，我们也致力于将最优秀的本土文化和原创内容推向国际化的舞台。
+                    同时，我们也致力于将最优秀的本土文化和原创内容推向国际化的舞台。<br>
                     引进来，走出去。
 
                 </p>

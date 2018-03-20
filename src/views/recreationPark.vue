@@ -1,6 +1,10 @@
 <template>
     <div class="dna-1 clearfix">
+        <div class="subnav">
+            <OurworkSubNav :links="link"></OurworkSubNav>
+        </div>
 
+        <Arrow></Arrow>
         <div class="list col-xs-offset-1 col-xs-10">
             <div class="title">{{isch?'The World’s First Discovery Adventures Park':'全球首个Discovery探索极限主题公园'}}</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
@@ -36,14 +40,16 @@
     </div>
 </template>
 <script>
+    import OurworkSubNav from '@/components/OurworkSubNav.vue';
     import Arrow from '../components/Arrow.vue';
     //    import { config } from '../assets/js/app/config';
     import { bus } from '../assets/js/app/public';
     export default {
         name: 'dna-1',
-        components: {Arrow},
+        components: {Arrow ,OurworkSubNav},
         data() {
             return {
+                link: 'recreation',
                 items: [],
                 isch:''
 //                config: config,
@@ -125,9 +131,9 @@
     @media screen and (max-width: @max-width) {
         .dna-1 {
             .list{
-
+                margin-top: 0;
                 .title {
-                    font-size: 2em !important;
+                    font-size: 1.6em !important;
                     margin-bottom: 2vh;
                 }
                 .title2 {
@@ -146,7 +152,7 @@
                 .awardsImg p{margin: 0;}
                 .linkUs {
                     a {
-                        font-size: 0.8em;
+                        font-size: 14px;
                         display: block;
                         padding:10px 0;
                         text-align: center;

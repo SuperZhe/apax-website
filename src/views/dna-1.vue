@@ -1,9 +1,13 @@
 <template>
     <div class="dna-1 clearfix">
+        <div class="subnav">
+            <OurworkSubNav :links="link"></OurworkSubNav>
+        </div>
 
+        <Arrow></Arrow>
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title" v-if="isch">CORE ELEMENT 1<br>OUTDOOR SPORTS</div>
-            <div class="title" v-if="!isch">元素1<br>户外运动</div>
+            <div class="title" v-if="isch">CORE ELEMENT 1<br>Outdoor Sports</div>
+            <div class="title" v-if="!isch">元素 1<br>户外运动</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
                 <img src="../../static/recreation/huwai1.jpg" alt="">
@@ -46,14 +50,16 @@
     </div>
 </template>
 <script>
+    import OurworkSubNav from '@/components/OurworkSubNav.vue';
     import Arrow from '../components/Arrow.vue';
 //    import { config } from '../assets/js/app/config';
     import { bus } from '../assets/js/app/public';
     export default {
         name: 'dna-1',
-        components: {Arrow},
+        components: {Arrow,OurworkSubNav},
         data() {
             return {
+                link: 'recreation',
                 items: [],
                 isch:''
 //                config: config,
@@ -135,7 +141,7 @@
     @media screen and (max-width: @max-width) {
         .dna-1 {
             .list{
-
+                margin-top: 0;
                 .title {
                     font-size: 1.4em !important;
                     margin-bottom: 2vh;

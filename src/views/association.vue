@@ -46,6 +46,7 @@
             /*margin-top: 16vh;*/
             h4{
                 margin-bottom: 2vh;
+                font-size: 0.42rem;
             }
         }
     }

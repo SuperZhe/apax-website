@@ -254,11 +254,11 @@
     @media screen and (max-width: @max-width) {
         .rocks-view {
             .info {
-                padding-top: 4em;
+                padding-top: 1.04rem;
             }
 
             .title {
-                font-size: 1.5em;
+                font-size:0.4rem;
             }
 
             .date {

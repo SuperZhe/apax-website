@@ -1,5 +1,10 @@
 <template>
     <div class="info-view recreation-map clearfix">
+        <div class="subnav">
+            <OurworkSubNav :links="link"></OurworkSubNav>
+        </div>
+
+        <Arrow></Arrow>
         <div class="info col-xs-offset-1 col-xs-10">
             <h3 class="title3 col-xs-12">{{isch?'GLOBAL EXPANSION':'国际布局'}}</h3>
             <div class="col-xs-12 col-sm-offset-3 col-sm-6 ">
@@ -13,11 +18,14 @@
 </template>
 
 <script>
+    import OurworkSubNav from '@/components/OurworkSubNav.vue';
     import { bus } from '../assets/js/app/public';
     export default {
         name: 'recreationMap',
+        components: {OurworkSubNav},
         data(){
             return{
+                link: 'recreation',
                 isch:''
             }
         },
@@ -36,6 +44,7 @@
     @import '../assets/style/but';
 
     .recreation-map {
+        padding-top: 80px;
         .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
             border-color:#36bbfc !important ;
         }
@@ -54,10 +63,11 @@
             h3 {
                 font-size: 2.2em;
                 margin-bottom: 8em;
+                /*margin-top: 3em;*/
             }
             .title3 {
-                /*margin-top: 3em;*/
-                margin-top: 0;
+                margin-top: 3em;
+                /*margin-top: 0;*/
                 margin-bottom: 1.5em;
             }
             .certificaText {
@@ -86,13 +96,14 @@
 
     @media screen and (max-width: @max-width) {
         .recreation-map {
+            padding-top: 0;
             .linkUs {
                 text-align: center;
                 margin-top: 0.6rem;
                 a {
-                    font-size: 0.8em;
+                    font-size: 14px;
                     display: block;
-                    padding: 0 !important;
+                    padding: 5px 10px !important;
                     text-align: center;
                 }
 
@@ -100,6 +111,7 @@
             .info{
                 .title3{
                     font-size: 1.6em;
+                    margin-top: 0rem;
                 }
             }
             .info-view {

@@ -20,11 +20,11 @@
         </div>
         <div class="right" :class="{navWidth:showO == 1 || showO  == 2,chinese:!isch}">
             <div class="mobileRight">
-                <router-link to="/ourwork/events/iconic" v-if="r1">
-                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1,chinese2:!isch}" class="hover">{{isch?'Signature Events':'经典案例'}}</span>
+                <router-link to="/ourwork/events/iconic" v-if="r1" :class="{chinese2:!isch}">
+                    <span :class="{pitch:showO == 1,bottomAlignment:showO == 1,}" class="hover eventsNav1">{{isch?'Signature Events':'经典案例'}}</span>
                 </router-link>
                 <router-link to="/ourwork/events/list" v-if="r1">
-                    <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover">{{isch?'More Events':'更多作品'}}</span>
+                    <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover eventsNav2">{{isch?'More Events':'更多作品'}}</span>
                 </router-link>
                 <router-link to="/ourwork/live/rocks" v-if="r2"><span :class="{pitch:showO == 5,bottomAlignment:showO == 5}" class="hover">Fashion Rocks</span>
                 </router-link>
@@ -240,14 +240,24 @@
     @media screen and (max-width: @max-width) {
         .ourwork-sub-nav {
             padding-top: 8vh;
-
+            .chinese{
+                width: 210px;
+                .chinese2{
+                    margin-left: 0px !important;
+                }
+            }
             .left {
                 float: initial;
                 .mobileLeft{
+                    .present {
+                        height: 14px !important;
+                        opacity: 1 !important;
+                    }
+
                     display: flex;
                     justify-content: space-between;
                     width:100%;
-                    padding: 0 0.3rem;
+                    padding: 0 0.6rem;
                     img{
                         height: 0.2rem;
                     }
@@ -274,6 +284,12 @@
                     align-items: flex-end;
                     height:0.6rem;
                     margin:0 0.8rem;
+                    .eventsNav1{
+                        margin-left: 0.6rem;
+                    }
+                    .eventsNav2{
+                        margin-right: 0.6rem;
+                    }
                 }
 
                 div{

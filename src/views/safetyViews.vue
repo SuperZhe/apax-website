@@ -1,7 +1,11 @@
 <template>
     <div class="info-view safety clearfix">
+        <div class="subnav">
+            <OurworkSubNav :links="link"></OurworkSubNav>
+        </div>
+
+        <Arrow></Arrow>
         <div class="info col-xs-offset-1 col-xs-10">
-            <br>
             <h3>{{isch?'SAFETY':'安全'}}</h3>
             <div class="col-xs-offset-0 col-xs-12 col-sm-10 col-sm-offset-1 safetyLogo">
                 <div class="col-xs-4 col-sm-4 course">
@@ -135,12 +139,15 @@
 </template>
 
 <script>
+    import OurworkSubNav from '@/components/OurworkSubNav.vue';
     import { bus } from '../assets/js/app/public';
     export default {
         name: 'safety-view',
+        components: {OurworkSubNav},
         data(){
             return{
-                isch:''
+                isch:'',
+                link: 'recreation',
             }
         },
         created() {
@@ -158,6 +165,7 @@
     @import '../assets/style/but';
 
     .safety {
+        padding-top: 80px;
         display: none;
         .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
             border-color: #36bbfc !important;
@@ -244,6 +252,7 @@
 
     @media screen and (max-width: @max-width) {
         .safety {
+            padding-top: 0px;
             .info {
                 .certificaText{
                     font-size: 14px;
@@ -273,9 +282,9 @@
                 }
                 .linkUs {
                     a {
-                        font-size: 0.8em;
+                        font-size: 14px;
                         display: block;
-                        padding: 0;
+                        padding: 5px 10px;
                         text-align: center;
                     }
 

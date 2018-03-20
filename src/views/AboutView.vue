@@ -75,26 +75,31 @@ export default {
         display: none;
     }
 @media screen and (max-width: @max-width) {
-    .info-view{
-        .row{
-            margin-top: 2em !important;
-        }
-        .info{
-            .div1{
-                margin-bottom: 2em;
+    .about-view{
+            .row{
+                margin-top: 2em !important;
             }
-        }
-        .mobile{
-            display: block;
-            margin-top: 2em;
-            div{
-                text-align: center;
-                margin-bottom: 2em;
+            .info{
+                .div1{
+                    margin-bottom: 2em;
+                }
+                h4{
+                    font-size: 0.42rem;
+                }
             }
-        }
-        .pc{
-            display: none;
-        }
+            .mobile{
+                display: block;
+                margin-top: 2em;
+                div{
+                    text-align: center;
+                    margin-bottom: 2em;
+                }
+            }
+            .pc{
+                display: none;
+            }
     }
+
+
 }
 </style>

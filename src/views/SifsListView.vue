@@ -168,10 +168,10 @@
     @media screen and (max-width: @max-width) {
         .sifs-list-view {
             .list {
-                margin-top: 4em;
+                margin-top: 1.04rem;
             }
             .title {
-                font-size: 2em;
+                font-size: 0.4rem;
             }
         }
     }

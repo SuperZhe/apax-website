@@ -1,6 +1,10 @@
 <template>
     <div class="recreation-list-view clearfix">
+        <div class="subnav">
+            <OurworkSubNav :links="link"></OurworkSubNav>
+        </div>
 
+        <Arrow></Arrow>
 
         <div class="info col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="content col-xs-12">
@@ -65,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="linkUs col-xs-11 col-xs-offset-1">
+            <div class="linkUs col-xs-10 col-xs-offset-1 col-sm-11">
                 <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
             </div>
             <div class="share col-xs-offset-1 col-xs-8">
@@ -174,7 +178,7 @@
         }
 
         .info {
-            margin-top: 9vh;
+            /*margin-top: 9vh;*/
         }
 
         .content {
@@ -306,10 +310,11 @@
     @media screen and (max-width: @max-width) {
         .recreation-list-view {
             .info {
-                padding-top: 5em;
+                padding-top: 0;
                 .linkUs {
+                    text-align: center;
                     a {
-                        font-size: 0.8em;
+                        font-size: 14px;
                         display: block;
                         padding: 10px 0;
                         text-align: center;
@@ -338,6 +343,7 @@
             }
             .content {
                 margin: 3em 0;
+                margin-top: 0;
             }
         }
     }

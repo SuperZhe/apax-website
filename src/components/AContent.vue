@@ -72,11 +72,11 @@ export default {
     // },
     updated(){
         // Changing the defaults
-        let sr = this.$sr({ reset: true, delay: 0, origin :'bottom', scale:1 });
-
-        // Customizing a reveal set
-        //sr.reveal('.foo', { duration: 200 });
-        sr.reveal('.acontent>p img', { duration: 1000 });
+//        let sr = this.$sr({ reset: true, delay: 0, origin :'bottom', scale:1 });
+//
+//        // Customizing a reveal set
+//        //sr.reveal('.foo', { duration: 200 });
+//        sr.reveal('.acontent>p img', { duration: 1000 });
     }
 }
 </script>

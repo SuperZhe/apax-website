@@ -61,6 +61,9 @@ export default {
         height:auto;
         .info{
             margin-top: 3em;
+            h4{
+                font-size: 0.42rem!important;
+            }
         }
     }
 

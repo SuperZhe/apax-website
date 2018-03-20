@@ -23,21 +23,20 @@
                 <!--src="../assets/img/icon/page-prev.png" alt="" @click="RefreshOnce"></router-link>-->
                 <!--<router-link :to="{ name : 'sifs-detail', params : { id : nextId } }" v-if="!nextId==0"><img-->
                 <!--src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce"></router-link>-->
-                <router-link :to="{ name : 'sifs-detail', params : { id : nextId } }" v-if="!nextId==0">
-                    <div @mouseover="pageNextOver()" @mouseout="pageNextOut()">
-                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pageNext" @click="RefreshOnce">
-                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pageNext" @click="RefreshOnce">
-                    </div>
-                    <!--<img src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce">-->
-                </router-link>
-                <router-link :to="{ name : 'sifs-detail', params : { id : prevId } }" v-if="!prevId==0">
+                <router-link :to="{ name : 'rocks-detail-view', params : { id : prevId } }" v-if="!prevId==0">
                     <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
-                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pagePrev" @click="RefreshOnce">
-                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pagePrev" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev" @click="RefreshOnce">
                     </div>
                     <!--<img src="../assets/img/icon/page-prev.png" alt="" >-->
                 </router-link>
-
+                <router-link :to="{ name : 'rocks-detail-view', params : { id : nextId } }" v-if="!nextId==0">
+                    <div @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pageNext" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pageNext" @click="RefreshOnce">
+                    </div>
+                    <!--<img src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce">-->
+                </router-link>
             </div>
         </div>
     </div>
@@ -86,19 +85,19 @@
             this.$bus.$emit('canvas-open');
         },
         mounted() {
-            this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
-                //console.log(response.data.result);
-                this.isch?this.info.title = response.data.result.enTitle:this.info.title = response.data.result.title
-                this.info.content = response.data.result.enHtml;
-                this.info.date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
-                // this.info.content = `
-                //     大量内容
-                // `
-                window.scrollTo(0, 0);
-            }, (error) => {
-                console.log(error);
-            });
-
+//            this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + this.$route.params.id).then((response) => {
+//                //console.log(response.data.result);
+//                this.isch?this.info.title = response.data.result.enTitle:this.info.title = response.data.result.title
+//                this.info.content = response.data.result.enHtml;
+//                this.info.date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
+//                // this.info.content = `
+//                //     大量内容
+//                // `
+//                window.scrollTo(0, 0);
+//            }, (error) => {
+//                console.log(error);
+//            });
+            this.loadDetail(this.$route.params.id);
             bus.$emit('change', this.showO);
         },
         watch: {

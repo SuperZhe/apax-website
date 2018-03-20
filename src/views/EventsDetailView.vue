@@ -20,19 +20,19 @@
                 <Share></Share>
             </div>
             <div class="col-xs-3 pagingOne">
-                <router-link :to="{ name : 'events-detail', params : { id : nextId } }" v-if="!nextId==0">
-                    <div  @mouseover="pageNextOver()" @mouseout="pageNextOut()">
-                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pageNext" @click="RefreshOnce">
-                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pageNext" @click="RefreshOnce">
-                    </div>
-                    <!--<img src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce">-->
-                </router-link>
                 <router-link :to="{ name : 'events-detail', params : { id : prevId } }" v-if="!prevId==0">
                     <div @mouseover="pagePrevOver()" @mouseout="pagePrevOut()">
-                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pagePrev" @click="RefreshOnce">
-                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pagePrev" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-prev.png" alt="" v-show="pagePrev" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-prev-on.png" alt="" v-show="!pagePrev" @click="RefreshOnce">
                     </div>
                     <!--<img src="../assets/img/icon/page-prev.png" alt="" >-->
+                </router-link>
+                <router-link :to="{ name : 'events-detail', params : { id : nextId } }" v-if="!nextId==0">
+                    <div  @mouseover="pageNextOver()" @mouseout="pageNextOut()">
+                        <img src="../assets/img/icon/page-next.png" alt="" v-show="pageNext" @click="RefreshOnce">
+                        <img src="../assets/img/icon/page-next-on.png" alt="" v-show="!pageNext" @click="RefreshOnce">
+                    </div>
+                    <!--<img src="../assets/img/icon/page-next.png" alt="" @click="RefreshOnce">-->
                 </router-link>
 
             </div>
@@ -71,16 +71,15 @@
                 isch:''
             }
         },
-        beforeRouteUpdate (to, from, next) {
+      /*  beforeRouteUpdate (to, from, next) {
             this.loadDetail(this.$route.params.id);
             this.setBg();
             this.setPage(this.$route.params.id);
             next();
-        },
+        },*/
         created() {
             bus.$on('language',(val) => {this.isch = val})
-            this.setBg();
-            this.setPage();
+
         },
         watch:{
             '$route' (to) {
@@ -90,6 +89,8 @@
             }
         },
         mounted() {
+            this.setBg();
+            this.setPage(this.$route.params.id);
             bus.$emit('change', this.showO);
             this.loadDetail();
         },
@@ -114,21 +115,22 @@
                 this.$bus.$emit('canvas-open');
             },
             setPage(id) {
-                this.$axios.get('http://test.tron-m.com/apax/news/navigation.do?id=' + (id?id:this.$route.params.id) + '&category=ourwork').then((response) => {
+                console.log(id)
+                this.$axios.get('http://test.tron-m.com/apax/news/navigation.do?id=' +id+ '&category=ourwork').then((response) => {
                     //console.log(response);
                     var data = response.data.result;
-                    console.log('上一页：'+data.prev.id)
-                    console.log('下一页'+data.next.id)
-                    if (data.prev) {
 
+                    if (data.prev) {
                         this.prevId = data.prev.id;
+                    } else {
+                        this.prevId = 0;
                     }
 
                     if (data.next) {
-
                         this.nextId = data.next.id;
+                    } else {
+                        this.nextId = 0;
                     }
-
                 }, (error) => {
                     console.log(error)
                 });
@@ -200,6 +202,11 @@
 
     @media screen and (max-width: @max-width) {
         .events-detail-view {
+            .acontent{
+                span{
+                    font-size: 13px !important;
+                }
+            }
             .content {
                 margin: 3em 0;
             }

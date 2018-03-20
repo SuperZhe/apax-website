@@ -90,7 +90,7 @@ export default {
             }
         }
         .title{
-            font-size: 2.2em;
+            font-size: 2em;
             margin-bottom: 2vh;
         }
         .title2{
@@ -126,7 +126,7 @@ export default {
 @media screen and (max-width: @max-width) {
 .news-list-view {
     .title{
-        font-size: 2em !important;
+        font-size: 0.42rem !important;
         margin-bottom: 2vh;
     }
     .title2{
