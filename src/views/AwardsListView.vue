@@ -86,7 +86,7 @@ export default {
             }
             p{
                 text-align: center;
-                font-size: 1.4em;
+                font-size: 0.34rem;
             }
         }
         .title{

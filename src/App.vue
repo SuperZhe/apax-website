@@ -97,9 +97,9 @@
             });
         },
         mounted() {
-//            $('#app').on('touchstart', function () {
-//                $('.video video')[0].play();
-//            })
+            document.addEventListener('touchstart', function () {
+                $('.video video')[0].play();
+            })
             window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', function () {
                 if (window.orientation === 180 || window.orientation === 0) {
                     $('.landscape').hide()

@@ -59,14 +59,14 @@
                 </div>
                 <div class="space clearfix"></div>
                 <div class="space clearfix" v-if="isMobile"></div>
-                <div class="col-xs-12 linkFrame">
-                    <div class="set_6_btn in blue">
-                        <router-link to="/safety" class="link">
-                            <span>{{isch?'DISCOVER MORE':'探索不凡'}}</span>
-                        </router-link>
-                        <div class="corners top"></div>
-                        <div class="corners bottom"></div>
-                    </div>
+            </div>
+            <div class="col-xs-12 linkFrame">
+                <div class="set_6_btn in blue">
+                    <router-link to="/safety" class="link">
+                        <span>{{isch?'DISCOVER MORE':'探索不凡'}}</span>
+                    </router-link>
+                    <div class="corners top"></div>
+                    <div class="corners bottom"></div>
                 </div>
             </div>
             <div class="linkUs col-xs-10 col-xs-offset-1 col-sm-11">
@@ -191,6 +191,7 @@
                         width: 100%;
                     }
                 }
+
                 //二级导航
                 .navText {
                     position: absolute;
@@ -230,9 +231,7 @@
                     }
                 }
             }
-            .linkFrame {
-                text-align: center;
-            }
+
             .mobile{
                 display: none;
                 .navImg {
@@ -242,10 +241,6 @@
                     }
                 }
                 //二级导航
-
-                .linkFrame {
-                    text-align: center;
-                }
                 .discovery {
                     margin: 2vh 0;
                     text-align: center;
@@ -257,7 +252,7 @@
             .navText2 {
                 display: none;
                 position: absolute;
-                bottom: 2.6rem;
+                bottom: 1.2rem;
                 left: 0%;
                 transform: translateY(-50%);
                 color: #fff;
@@ -291,9 +286,13 @@
                 animation: breathe 2s linear infinite;
             }
         }
+        .linkFrame {
+            text-align: center;
+        }
 
         .linkUs {
             text-align: right;
+            margin-top: 0.6rem;
             a {
                 padding: 15px 20px;
                 border: 1px solid;

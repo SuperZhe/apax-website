@@ -9,8 +9,8 @@
                     By exploiting our expertise in creative thinking, exceptional production and exponential marketing, <br>APAX Live brings you the best in music, fashion, and entertainment.
                 </p>
                 <p v-if="!isch">
-                    通过我们的创新思维、杰出的制作和体验营销方面的专业知识，
-                    为您带来音乐、时尚和娱乐为一体的最佳体验。<br>
+                    通过我们的创新思维、杰出制作和体验营销方面的专业知识，
+                    带来音乐、时尚和娱乐为一体的最佳体验。<br>
                     为您开启国际优质IP，带来独特的平台 - APAX Live。<br>
                 </p>
                 <br>

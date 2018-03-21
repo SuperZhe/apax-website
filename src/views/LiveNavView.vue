@@ -61,7 +61,6 @@
                 <div class="col-sm-8 col-sm-offset-2 col-xs-offset-1 col-xs-10">
                     <p v-if="isch">
                         From 2014, APAX Live became the sole presenter of Shanghai International Fashion Showcase, the international platform under Shanghai Fashion Week official calendar,
-                        <br>
                         we started catering an alternative program by introducing world-renowned fashion brands to the China market and marrying brands on crossover collections.
                     </p>
                     <p v-if="!isch">

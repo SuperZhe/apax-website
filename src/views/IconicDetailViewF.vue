@@ -24,6 +24,7 @@
                     <!--<p>-->
                     <!--“This is Tiffany” brand cultural exhibition took place in Phoenix International Media Center Beijing. The “This is Tiffany” brand cultural exhibition recalled the legendary history of Tiffany & Co. by recreating the journey through the five display areas.</p>-->
                 </div>
+                <!--<div class="space clearfix"></div>-->
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-5/new1.jpg" alt="">-->
                     <p v-if="isch">
@@ -54,8 +55,6 @@
                     <!--<p>-->
                     <!--Tiffany & Co. held a glorious exhibition titled “The Art of Transformation” which consisted of 200 stunning fine jewelry pieces, with the worldwide debut of 70 pieces of fine jewelry and the precious antique jewelry collection.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-5/new4.jpg" alt="">-->
                     <!--<img src="../../static/iconic-detail-5/8.jpg" alt="">-->
@@ -96,8 +95,6 @@
                     <!--<p>-->
                     <!--J & E Mansion was turned into a Tiffany Blue Temple for the Tiffany legendary yellow diamond ceremony. The beauty of the yellow diamond impressed the guests. Artist Tan Dun presented and performed the music that specially composed for the legendary diamond, together to create a Tiffany dream night.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-5/new8.jpg" alt="">-->
                     <p v-if="isch">
@@ -132,8 +129,6 @@
                     <!--<p>-->
                     <!--Beijing was filled with jewelry from the Tiffany 2011 collection and there were 400 guests dining under a transparent tent in front of the Taimiao and listening to Donna Summer live.</p>-->
                 </div>
-                <div class="space clearfix"></div>
-                <div class="space clearfix"></div>
                 <div class="col-xs-12">
                     <!--<img src="../../static/iconic-detail-5/new6.jpg" alt="">-->
                     <p v-if="isch">

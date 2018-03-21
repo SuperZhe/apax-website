@@ -89,7 +89,7 @@
         padding-top: 12vh;
         padding-bottom: 150px;
         .blue {
-            margin-left: -20px;
+            /*margin-left: -20px;*/
         }
             .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
                 border-color: #36bbfc !important;
@@ -146,20 +146,15 @@
                     font-size: 1.4em !important;
                     margin-bottom: 2vh;
                 }
-                .title2 {
-                    font-size: 1.8em !important;
-                }
-                .title3 {
-                    font-size: 1.2em;
-                    font-weight: bold;
-                }
                 .list {
                     margin-top: 20vh;
                 }
-                .text {
-                    margin-top: 4vh;
+                .awardsImg{
+                    p{margin: 0;}
+                    img{
+                        margin: 0.4rem 0;
+                    }
                 }
-                .awardsImg p{margin: 0;}
                 .linkUs {
                     a {
                         font-size: 0.8em;

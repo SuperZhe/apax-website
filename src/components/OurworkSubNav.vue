@@ -23,7 +23,7 @@
                 <router-link to="/ourwork/events/iconic" v-if="r1" :class="{chinese2:!isch}">
                     <span :class="{pitch:showO == 1,bottomAlignment:showO == 1,}" class="hover eventsNav1">{{isch?'Signature Events':'经典案例'}}</span>
                 </router-link>
-                <router-link to="/ourwork/events/list" v-if="r1">
+                <router-link to="/ourwork/events/list" v-if="r1" :class="{chinese3:!isch}">
                     <span :class="{pitch:showO == 2,bottomAlignment:showO == 2}" class="hover eventsNav2">{{isch?'More Events':'更多作品'}}</span>
                 </router-link>
                 <router-link to="/ourwork/live/rocks" v-if="r2"><span :class="{pitch:showO == 5,bottomAlignment:showO == 5}" class="hover">Fashion Rocks</span>
@@ -139,9 +139,9 @@
         }
 
         .pitch {
-            font-size: 15px !important;
+            font-size: 14px !important;
             color: #6D227B;
-            margin-top: 2px !important;
+            /*margin-top: 2px !important;*/
         }
     }
 
@@ -243,7 +243,10 @@
             .chinese{
                 width: 210px;
                 .chinese2{
-                    margin-left: 0px !important;
+                    margin-left: 0.6rem !important;
+                }
+                .chinese3{
+                    margin-right: 0.6rem !important;
                 }
             }
             .left {
@@ -278,6 +281,9 @@
                 /*text-align: right;*/
                 float: initial;
                 width:auto;
+                .bottomAlignment{
+                    margin-bottom: 0;
+                }
                 .mobileRight{
                     display: flex;
                     justify-content: space-around;

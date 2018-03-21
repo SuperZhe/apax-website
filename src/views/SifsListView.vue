@@ -14,7 +14,7 @@
                     SIFS also serves as bridge between global designers & brands with China’s fast growing fashion industry; marrying brands and crossover collaborations and delivering unique events exclusive to China including the recent Ports flash mob fashion catwalk, 3.1 Phillip Lim’s floral installation as well as a thought provoking forum featuring CFDA’s president,Steven Kolb.
                 </p>
                 <p v-if="!isch">
-                    APAX通过上海国际品牌发布（简称SIFS），成功地提升了上海时装周的全球影响力。在中国快速增长的时尚产业中，SIFS也充当了全球设计师与品牌之间的桥梁。促成品牌和跨界合作，并针对中国市场设计独一无二的体验。
+                    APAX通过上海时装周国际品牌发布（简称SIFS），成功地提升了上海时装周的全球影响力。在中国快速增长的时尚产业中，SIFS也充当了全球设计师与品牌之间的桥梁。促成品牌和跨界合作，并针对中国市场设计独一无二的体验。
                 </p>
             </div>
             <div class="listItems">

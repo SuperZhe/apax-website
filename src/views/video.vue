@@ -1,7 +1,7 @@
 <template>
     <div id="video" class="info-view">
         <div class="info col-xs-offset-2 col-xs-8">
-            <h4>SHOWREELS</h4>
+            <h4>{{isch?SHOWREELS:'作品集'}}</h4>
         </div>
         <div class="col-xs-offset-1 col-xs-10">
             <div class="content col-xs-12 col-sm-12">
@@ -109,10 +109,12 @@
                     },
                 ],
                 pauseO: false,
+                isch:''
             };
         },
         components: {OurworkSubNav},
         created() {
+            bus.$on('language',(val) => {this.isch = val})
             this.$bus.$emit('canvas-open');
         },
         mounted() {
@@ -198,6 +200,7 @@
         /*视频播放背景*/
         .videoList {
             padding: 0;
+            margin-bottom: 2rem;
             li {
                 list-style: none;
                 margin-top: 1.5rem;
@@ -341,6 +344,9 @@
             margin-top: 0;
             .logoTitle{
                 height: 16px !important;
+            }
+            .videoList {
+                margin-bottom: 2rem;
             }
         }
     }

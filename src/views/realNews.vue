@@ -2,7 +2,7 @@
     <div class="news-list-view clearfix">
 
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title" v-if="isch">APAX NEWS<br> THE LATEST FROM THE WORLD OF APAX<br>
+            <div class="title" v-if="isch">APAX NEWS<br> <span>THE LATEST FROM THE WORLD OF APAX</span><br>
                 </div>
             <div class="title" v-if="!isch">APAX最新资讯<br>
                 </div>
@@ -100,6 +100,9 @@
             .title{
                 font-size: 2em;
                 margin-bottom: 2em;
+                span{
+                    font-size: 0.38rem;
+                }
             }
             .title2{
                 font-size: 2.6em;
@@ -134,8 +137,11 @@
     @media screen and (max-width: @max-width) {
         .news-list-view {
             .title{
-                font-size: 0.42rem !important;
+                font-size: 0.46rem !important;
                 margin-bottom: 2vh;
+                span{
+                    font-size: 0.36rem !important;
+                }
             }
             .mobileSet{
                 text-align: center;

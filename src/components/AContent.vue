@@ -87,7 +87,7 @@ export default {
     img {
         width: 100%;
         margin-bottom: 0px;
-        margin-top: 55px;
+        margin-top: 1.02rem;
     }
     div,p {
         margin: 10px 0;
