@@ -95,7 +95,7 @@
             bus.$on('language', (val) => {this.isch = val;});
             this.$bus.$emit('canvas-open');
             this.items = [];
-            this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=Rocks&orderBy=seq:asc').then((response) => {
+            this.$axios.get(config.host+'/apax/news/list.do?page=1&rows=100&category=Rocks&orderBy=seq:asc').then((response) => {
                 this.items = response.data.result.content;
             }, (error) => {
                 console.log(error);

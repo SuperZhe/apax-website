@@ -11,8 +11,7 @@
             <!-- </keep-alive>
         </transition> -->
         </div>
-        <div class="footer clearfix"><a href="http://www.apaxgroup.com/" target="_blank">沪公网安备</a> <a
-            href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备17026112号-1</a></div>
+        <div class="footer clearfix"><a href="http://www.apaxgroup.com/" target="_blank">沪公网安备</a> <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备17026112号-1</a></div>
         <div class="bg" id="a" v-show="canvas">
             <div id="b">
                 <canvas id="c"></canvas>
@@ -20,13 +19,8 @@
         </div>
         <div class="video" v-show="video">
             <div class="mask">
-                <video :src="videoSrc" x-webkit-airplay="true"
-                       webkit-playsinline="true"
-                       playsinline="true"
-                       autoplay="autoplay"
-                       x5-video-player-type="h5"
-                       x5-video-player-fullscreen="true"
-                       preload="auto" loop="true"></video>
+                <video :src="videoSrc" muted x-webkit-airplay="true" webkit-playsinline="true" playsinline="true"
+                       autoplay="autoplay" x5-video-player-type="h5" x5-video-player-fullscreen="true" preload="auto" loop="true"></video>
             </div>
 
 
@@ -60,7 +54,7 @@
                 video: true,
                 loading: true,
                 videoSrc,
-                landscape:false
+                landscape: false,
             };
         },
         created() {
@@ -97,17 +91,74 @@
             });
         },
         mounted() {
+            //出入页面进行视频的播放
+            $('.video video')[0].play();
+            var hidden, visibilityChange;
+            if (typeof document.hidden !== 'undefined') { // Opera 12.10 and Firefox 18 and later support
+                hidden = 'hidden';
+                visibilityChange = 'visibilitychange';
+            } else if (typeof document.msHidden !== 'undefined') {
+                hidden = 'msHidden';
+                visibilityChange = 'msvisibilitychange';
+            } else if (typeof document.webkitHidden !== 'undefined') {
+                hidden = 'webkitHidden';
+                visibilityChange = 'webkitvisibilitychange';
+            }
+
+
+// 如果页面是隐藏状态，则暂停视频
+// 如果页面是展示状态，则播放视频
+            function handleVisibilityChange() {
+                if (document[hidden]) {
+                    $('.video video')[0].pause();
+                } else {
+                    console.log(2)
+                    if ($.browser.mobile) {
+//                        $('.bg b').remove();
+                        $('.video video').addClass('state-mobile');
+
+                        this.videoSrc = videoMobileSrc;
+                    }
+                    else {
+                        this.loading = false;
+                    }
+                }
+            }
+            document.addEventListener(visibilityChange, handleVisibilityChange, false);
+            //当页面获得焦点时
+            window.onfocus = function() {
+                $('.video video')[0].play();
+                if ($.browser.mobile) {
+//                    $('.video video').addClass('state-mobile');
+                    this.videoSrc = videoMobileSrc;
+                    $('.video video')[0].play();
+                }
+                else {
+                    this.loading = false;
+                }
+            }
             document.addEventListener('touchstart', function () {
                 $('.video video')[0].play();
-            })
+            });
+            //兼容Safari浏览器进入页面进行视频播放
+            document.addEventListener('click', function () {
+                $('.video video')[0].play();
+            });
+//            window.addEventListener('loadedmetadata',function () {
+//                console.log('鼠标移动视频播放')
+//                $('.video video')[0].play();
+//            })
+            //解决横屏问题
+
             window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', function () {
                 if (window.orientation === 180 || window.orientation === 0) {
-                    $('.landscape').hide()
+                    $('.landscape').hide();
                 }
                 if (window.orientation === 90 || window.orientation === -90) {
-                    $('.landscape').show()
+                    $('.landscape').show();
                 }
             }, false);
+            //兼容微信不能自动播放视频
             document.addEventListener('DOMContentLoaded', function () {
                 function audioAutoPlay() {
 //                    let  video = document.getElementsByClassName('video')[0];
@@ -556,35 +607,28 @@
 
 <style lang="less">
     @import './assets/style/apax.less';
-
     .back {
         a {
             border: 1px solid;
             padding: 4px 12px;
+            }
         }
-    }
-
     .back:hover a {
         border-color: #722182;
         color: #722182;
-    }
-
+        }
     p {
         line-height: 1.8em;
-    }
-
+        }
     * {
         box-sizing: border-box;
-    }
-
+        }
     img {
         border: 0;
-    }
-
+        }
     a {
         text-decoration: none;
-    }
-
+        }
     html, body {
         width: 100%;
         height: 100%;
@@ -600,13 +644,11 @@
         color: @main-color;
         //background-color:#000;
         //overflow:hidden;
-    }
-
+        }
     #app {
         height: 100%;
         position: relative;
-    }
-
+        }
     .header {
         text-align: center;
         position: absolute;
@@ -615,13 +657,11 @@
 
         img {
             margin-top: 40px;
+            }
         }
-    }
-
     .wrapper {
         min-height: 100%;
-    }
-
+        }
     .footer {
         text-align: center;
         margin-top: -54px;
@@ -633,11 +673,10 @@
         /*padding-bottom: 50px;*/
         a {
             color: #444;
-        }
+            }
         //margin-top: -30px;
         //display: none;
-    }
-
+        }
     .bg {
         position: fixed;
         top: 0;
@@ -653,9 +692,8 @@
             left: 0;
             width: 100%;
             height: 100%;
+            }
         }
-    }
-
     .video {
         position: fixed;
         top: 0;
@@ -670,7 +708,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -46%);
-        }
+            }
 
         .state-mobile {
             top: 0;
@@ -678,19 +716,18 @@
             width: 100%;
             height: 100%;
             transform: initial;
-        }
+            }
 
         .state1 {
             width: 100%;
             height: auto;
-        }
+            }
 
         .state2 {
             width: auto;
             height: 100%;
+            }
         }
-    }
-
     // ------------------------------------loading-----------------------------------------
     .loading {
         width: 100vw;
@@ -707,7 +744,7 @@
 
         .arrow {
             margin-top: 40vh;
-        }
+            }
 
         .progress {
             border-radius: 1.5px;
@@ -728,56 +765,54 @@
                 border-radius: 1.5px;
                 margin: 0 auto;
                 width: 0;
+                }
             }
         }
-    }
-
     .mask {
         background-color: #000;
         opacity: 0.7;
-    }
-
+        }
     .rootLogo {
         height: 50px;
-    }
-        .landscape {
-            display: none;
-            height: 100%;
-            width: 100%;
+        }
+    .landscape {
+        display: none;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, .9);
+        .fix {
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 999;
-            background-color: rgba(0, 0, 0, .9);
-            .fix {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            div {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
                 width: 100%;
-                height: 100%;
-                z-index: 99;
-                div {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 100%;
-                    text-align: center;
-                    img {
-                        height: 2.5rem;
-                        z-index: 1;
+                text-align: center;
+                img {
+                    height: 2.5rem;
+                    z-index: 1;
                     }
-                    h3 {
-                        margin-top: 0.1rem;
-                        z-index: 999;
-                        color: #fff;
+                h3 {
+                    margin-top: 0.1rem;
+                    z-index: 999;
+                    color: #fff;
                     }
                 }
             }
         }
     @media screen and (max-width: @max-width) {
-        .footer{
+        .footer {
             margin-top: -24px;
+            }
         }
-    }
 </style>

@@ -22,7 +22,7 @@
                             </p>
                             <p v-if="!isch">
                                 Discovery Adventures Park 探索极限主题公园是 APAX Recreation 引入并孵化的 IP 项目。
-                                APAX Recreation 引入国际优质探索品牌IP，创造了全球首个Discovery探索极限主题公园，，带您踏上独一无二的旅程，让“Discovery探索”的內涵与精神成为真实的体验，Discovery Comes to Life (探索成真)，赋予Discovery 全新’LBE' 概念 ，打造国际旅游目的地，集“生态旅游，户外运动，科普教育” 为一体的主题公园，并由此逐步进驻世界各地。
+                                APAX Recreation 引入国际优质探索品牌IP，创造了全球首个Discovery探索极限主题公园，带您踏上独一无二的旅程，让“Discovery探索”的內涵与精神成为真实的体验，Discovery Comes to Life (探索成真)，赋予Discovery 全新’LBE' 概念 ，打造国际旅游目的地，集“生态旅游，户外运动，科普教育” 为一体的主题公园，并由此逐步进驻世界各地。
                             </p>
                             <div class="parkButton">
                                 <router-link to="park">
@@ -64,7 +64,7 @@
                             </p>
                             <p v-if="!isch">
                                 Discovery Adventures Park 探索极限主题公园是 APAX Recreation 引入并孵化的 IP 项目。
-                                APAX Recreation 引入国际优质探索品牌IP，创造了全球首个Discovery探索极限主题公园，，带您踏上独一无二的旅程，让“Discovery探索”的內涵与精神成为真实的体验，Discovery Comes to Life (探索成真)，赋予Discovery 全新’LBE' 概念 ，打造国际旅游目的地，集“生态旅游，户外运动，科普教育” 为一体的主题公园，并由此逐步进驻世界各地。
+                                APAX Recreation 引入国际优质探索品牌IP，创造了全球首个Discovery探索极限主题公园，带您踏上独一无二的旅程，让“Discovery探索”的內涵与精神成为真实的体验，Discovery Comes to Life (探索成真)，赋予Discovery 全新’LBE' 概念 ，打造国际旅游目的地，集“生态旅游，户外运动，科普教育” 为一体的主题公园，并由此逐步进驻世界各地。
                             </p>
                         </div>
                     </div>

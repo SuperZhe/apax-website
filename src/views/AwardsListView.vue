@@ -40,11 +40,11 @@ export default {
         bus.$on('language',(val) => {this.isch = val})
         this.$bus.$emit('canvas-open');
         this.items = [];
-        this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
-            this.items = response.data.result.content;
-        }, (error) => {
-            console.log(error)
-        });
+//        this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=id:desc').then((response) => {
+//            this.items = response.data.result.content;
+//        }, (error) => {
+//            console.log(error)
+//        });
     },
     updated(){
             let sr = this.$sr({ reset: true, delay: 300 });
@@ -54,11 +54,11 @@ export default {
         setTimeout(()=> this.$('.news-list-view').fadeIn(), 500);
     },
     methods: {
-        replaceImgSrc(){
-            for (let i = 0; i < this.items.length; i++) {
-                this.items[i].thumbnailUrl = this.items[i].thumbnailUrl.replace('150', '640X360');
-            }
-        },
+//        replaceImgSrc(){
+//            for (let i = 0; i < this.items.length; i++) {
+//                this.items[i].thumbnailUrl = this.items[i].thumbnailUrl.replace('150', '640X360');
+//            }
+//        },
 
         goDetail(id){
             this.$router.push({ name: 'news-detail', params: { id: id }});
@@ -86,7 +86,7 @@ export default {
             }
             p{
                 text-align: center;
-                font-size: 0.34rem;
+                font-size: 0.3rem;
             }
         }
         .title{

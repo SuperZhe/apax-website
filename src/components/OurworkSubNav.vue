@@ -206,7 +206,7 @@
             }
             .bottomAlignment {
                 display: block;
-                margin-bottom: -3px;
+                /*margin-bottom: -3px;*/
             }
         }
         .navWidth{

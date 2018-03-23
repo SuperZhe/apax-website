@@ -47,7 +47,7 @@
     import AContent from '@/components/AContent.vue';
     import Share from '@/components/Share.vue';
     import Arrow from '@/components/Arrow.vue';
-//    import config from '@js-app/config';
+    import config from '@js-app/config';
     import { bus } from '../assets/js/app/public';
 
     export default {
@@ -61,6 +61,7 @@
                     date: null,
                     content: '2',
                 },
+                config,
                 showO: 5,
                 prevId: 0,
                 nextId: 0,
@@ -123,7 +124,8 @@
                 this.$router.go(-1);
             },
             setPage(id) {
-                this.$axios.get('http://test.tron-m.com/apax/news/navigation.do?id=' + (id ? id : this.$route.params.id) + '&category=Rocks').then((response) => {
+                this.$axios.get(config.host+'/apax/news/navigation.do?id=' + (id ? id : this.$route.params.id) +
+                '&category=Rocks').then((response) => {
                     var data = response.data.result;
                     if (data.prev) {
                         this.prevId = data.prev.id;
@@ -142,7 +144,7 @@
                 });
             },
             loadDetail(id) {
-                this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + (id ? id : this.$route.params.id)).then((response) => {
+                this.$axios.get(config.host+'/apax/news/get.do?id=' + (id ? id : this.$route.params.id)).then((response) => {
                     console.log(response.data.result);
                     this.info.title = response.data.result.enTitle;
                     this.info.content = response.data.result.enHtml;

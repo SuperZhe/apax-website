@@ -128,6 +128,24 @@
 //                audio.load();
 //                audio.play();
 //            })
+            $(window).one('mouseover', function(){
+                let audio = document.getElementById('audio');
+                if(me.show){
+                    audio.play();
+                }
+            })
+//            document.addEventListener('mouseover', function () {
+//                let audio = document.getElementById('audio');
+//                if(me.show){
+//                    audio.play();
+//                }
+//            });
+            document.addEventListener('click', function () {
+                let audio = document.getElementById('audio');
+                if(me.show){
+                    audio.play();
+                }
+            });
             document.addEventListener('DOMContentLoaded', function () {
                 function audioAutoPlay() {
                     let audio = document.getElementById('audio');

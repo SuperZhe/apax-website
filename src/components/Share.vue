@@ -21,6 +21,7 @@
 
 
 <script>
+    import config from '@js-app/config';
 export default {
     name : 'share',
     data(){
@@ -29,12 +30,13 @@ export default {
             off1:false,
             off2:false,
             off3:false,
+            config
         }
     },
     methods : {
         shareWX(){
             if (this.qr === '') {
-                this.$axios.get('http://test.tron-m.com/api/qr/json.do?text=' + encodeURIComponent(location.href)).then((response) => {
+                this.$axios.get(config.host+'/api/qr/json.do?text=' + encodeURIComponent(location.href)).then((response) => {
                     this.qr = 'data:img/png;base64,' + response.data.msg;
                     $('.weixin div').toggle();
                 }, (error) => {

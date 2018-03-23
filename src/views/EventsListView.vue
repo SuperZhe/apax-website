@@ -42,7 +42,8 @@ export default {
         this.$bus.$emit('canvas-open');
         bus.$on('language',(val) => {this.isch = val})
         this.items = [];
-        this.$axios.get('http://test.tron-m.com/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=seq:asc').then((response) => {
+        this.$axios.get(config.host+'/apax/news/list.do?page=1&rows=100&category=ourwork&orderBy=seq:asc').then((response) => {
+            console.log('图片请求成功');
             this.items = response.data.result.content;
         }, (error) => {
             console.log(error)
@@ -63,7 +64,6 @@ export default {
                 this.items[i].thumbnailUrl = this.items[i].thumbnailUrl.replace('150', '640X360');
             }
         },
-
         goDetail(id){
             this.$router.push({ name: 'events-detail', params: { id: id }});
         }

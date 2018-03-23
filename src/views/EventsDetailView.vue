@@ -116,7 +116,7 @@
             },
             setPage(id) {
                 console.log(id)
-                this.$axios.get('http://test.tron-m.com/apax/news/navigation.do?id=' +id+ '&category=ourwork').then((response) => {
+                this.$axios.get(config.host+'/apax/news/navigation.do?id=' +id+ '&category=ourwork').then((response) => {
                     //console.log(response);
                     var data = response.data.result;
 
@@ -137,13 +137,15 @@
             },
 
             loadDetail(id) {
-                this.$axios.get('http://test.tron-m.com/apax/news/get.do?id=' + (id?id:this.$route.params.id)).then((response) => {
+                this.$axios.get(config.host+'/apax/news/get.do?id=' + (id?id:this.$route.params.id)).then((response) => {
                     //console.log(response.data.result);
                     this.info.title1 = response.data.result.enTitle;
                     this.info.title2 = response.data.result.title;
                     this.info.content1 = response.data.result.enHtml
                     this.info.content2 = response.data.result.html;
                     this.info.date = response.data.result.enAddr;
+                    console.log('请求成功')
+                    console.log(this.info)
 //                        new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + (new Date().getDay() + 1);
                     window.scrollTo(0, 0);
                 }, (error) => {

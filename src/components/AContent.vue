@@ -62,14 +62,15 @@ export default {
             `
         }
     },
-    // mounted(){
-    //     // Changing the defaults
-    //     let sr = this.$sr({ reset: true, delay: 0, origin :'bottom', scale:1 });
+     mounted(){
 
-    //     // Customizing a reveal set
-    //     //sr.reveal('.foo', { duration: 200 });
-    //     sr.reveal('.acontent>p', { duration: 1000 });
-    // },
+         // Changing the defaults
+//         let sr = this.$sr({ reset: true, delay: 0, origin :'bottom', scale:1 });
+//
+//         // Customizing a reveal set
+//         //sr.reveal('.foo', { duration: 200 });
+//         sr.reveal('.acontent>p', { duration: 1000 });
+     },
     updated(){
         // Changing the defaults
 //        let sr = this.$sr({ reset: true, delay: 0, origin :'bottom', scale:1 });
