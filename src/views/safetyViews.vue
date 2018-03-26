@@ -4,7 +4,7 @@
             <OurworkSubNav :links="link"></OurworkSubNav>
         </div>
 
-        <Arrow></Arrow>
+        <!--<Arrow></Arrow>-->
         <div class="info col-xs-offset-1 col-xs-10">
             <h3>{{isch?'SAFETY':'安全'}}</h3>
             <div class="col-xs-offset-0 col-xs-12 col-sm-10 col-sm-offset-1 safetyLogo">
@@ -167,6 +167,9 @@
     .safety {
         padding-top: 80px;
         display: none;
+        .subnav{
+            padding-top: 0px;
+            }
         .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
             border-color: #36bbfc !important;
         }
@@ -177,6 +180,7 @@
             0 0 10px #fff;
         }
         .info {
+            margin-top: 1rem;
             h3 {
                 font-size: 2.2em;
                 margin-bottom: 3em;
@@ -253,7 +257,11 @@
     @media screen and (max-width: @max-width) {
         .safety {
             padding-top: 0px;
+            .subnav{
+                padding-top: 80px;
+                }
             .info {
+                margin-top: 0;
                 .certificaText{
                     font-size: 14px;
                     margin-top: 1.2em;
@@ -281,6 +289,7 @@
                     }
                 }
                 .linkUs {
+                    margin-top: 0.6rem;
                     a {
                         font-size: 14px;
                         display: block;

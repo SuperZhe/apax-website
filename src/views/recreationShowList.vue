@@ -77,7 +77,7 @@
                     </div>
                     <div class="space clearfix"></div>
                     <div class="space clearfix"></div>
-                    <div class="space clearfix"></div>
+                    <!--<div class="space clearfix"></div>-->
                     <div class="space clearfix" v-if="isMobile"></div>
                     <div class="col-xs-12 linkFrame">
                         <div class="set_6_btn in blue">
@@ -459,6 +459,9 @@
             }
             .mobile {
                 display: block;
+                .content{
+                    margin-bottom: 0;
+                    }
             }
             .ourwork-sub-nav {
                 /*margin-top: 65px;*/

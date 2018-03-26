@@ -115,7 +115,7 @@
                 this.$bus.$emit('canvas-open');
             },
             setPage(id) {
-                console.log(id)
+
                 this.$axios.get(config.host+'/apax/news/navigation.do?id=' +id+ '&category=ourwork').then((response) => {
                     //console.log(response);
                     var data = response.data.result;

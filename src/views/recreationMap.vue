@@ -45,6 +45,9 @@
 
     .recreation-map {
         padding-top: 80px;
+        .subnav{
+            padding-top: 0px;
+            }
         .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before{
             border-color:#36bbfc !important ;
         }
@@ -60,6 +63,7 @@
         }
         display: none;
         .info {
+
             h3 {
                 font-size: 2.2em;
                 margin-bottom: 8em;
@@ -97,6 +101,9 @@
     @media screen and (max-width: @max-width) {
         .recreation-map {
             padding-top: 0;
+            .subnav{
+                padding-top: 80px;
+                }
             .linkUs {
                 text-align: center;
                 margin-top: 0.6rem;
@@ -109,6 +116,7 @@
 
             }
             .info{
+                margin-top: 0;
                 .title3{
                     font-size: 1.6em;
                     margin-top: 0rem;

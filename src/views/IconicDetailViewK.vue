@@ -9,7 +9,7 @@
         <div class="info col-xs-offset-1 col-xs-10">
             <div class="div1 col-xs-12">
                 <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Giorgio Armani "One Night Only"':'阿玛尼“唯有今宵”'}}</span>
-                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'New Tank, Beijing, China"':'中国，北京新罐'}}</span>
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'New Tank, Beijing, China':'中国，北京新罐'}}</span>
             </div>
             <div class="content col-xs-12">
                 <div class="col-xs-12">

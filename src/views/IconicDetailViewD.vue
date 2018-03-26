@@ -7,10 +7,12 @@
         <Arrow></Arrow>
 
         <div class="info col-xs-offset-1 col-xs-10">
-            <div class="title col-sm-9 col-xs-12" >
-                {{isch?'Burberry Hologram Fashion Show':'Burberry博柏利全息投影时装秀'}}
+             <div class="div1 col-xs-12" >
+                <span class="title col-sm-8 col-md-8 col-xs-12">{{isch?'Burberry Hologram Fashion Show':'Burberry博柏利全息投影时装秀'}}</span>
+                 <!--</div>-->
+                 <!--<div class="date col-sm-3 col-xs-12">-->
+                <span class="date col-sm-4 col-md-4 col-xs-12">{{isch?'Beijing, China':'中国，北京'}}</span>
             </div>
-            <div class="date col-sm-3 col-xs-12"><span>{{isch?'Beijing, China':'中国，北京'}}</span></div>
             <div class="content col-xs-12">
                 <div class="col-xs-12">
                     <img src="../../static/iconic-detail-3/new1.jpg" alt="">
@@ -157,6 +159,13 @@ export default {
 
     .info {
         padding-top:7vh;
+        .div1{
+            display: flex;
+            align-items: flex-end;
+            span:nth-last-child(1){
+                padding-bottom: 6px;
+                }
+            }
     }
 
     .title {

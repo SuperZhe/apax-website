@@ -3,7 +3,6 @@
         <div class="info col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2">
 
             <!--<h2>PARTNERS</h2>-->
-            <br />
            <!-- <h4>{{isch?'CHAO GROUPS':'我要潮婚'}}</h4>
             <p v-if="isch">CHAO GROUPS has been a major breakthrough in “celebrity weddings". Upholding it's "life planning concept",<br>the agency retains "planning" expertise to help people prepare for life's most important four stages.<br> From single to fall in love; from the wedding day, to the marriage life.</p>
             <p v-if="!isch">
@@ -60,7 +59,7 @@ export default {
         /*display: block !important;*/
         /*height:auto;*/
         .info{
-            margin-top: 3em;
+            /*margin-top: 3em;*/
             h4{
                 font-size: 0.42rem!important;
             }

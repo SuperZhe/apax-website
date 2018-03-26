@@ -462,6 +462,9 @@
                 }
                 .mobile {
                     display: block;
+                    .content{
+                        margin-bottom: 0;
+                        }
                 }
             }
         }

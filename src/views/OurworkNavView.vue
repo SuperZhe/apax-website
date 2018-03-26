@@ -92,28 +92,28 @@
         }
 
         .ourworEvents img {
-            -webkit-animation: initAn 0.6s linear forwards;
-            -moz-animation: initAn 0.6s linear  forwards;
-            -o-animation: initAn 0.6s linear  forwards;
-            animation: initAn 0.6s linear  forwards;
+            -webkit-animation: initAn 0.6s linear ;
+            -moz-animation: initAn 0.6s linear ;
+            -o-animation: initAn 0.6s linear ;
+            animation: initAn 0.6s linear  ;
             /*animation-fill-mode:forwards;*/
         }
 
         .ourworkLive img {
-            -webkit-animation: initAn 0.6s linear  forwards;
-            -moz-animation: initAn 0.6s linear  forwards;
-            -o-animation: initAn 0.6s linear  forwards;
-            animation: initAn 0.6s linear  forwards;
+            -webkit-animation: initAn 0.6s linear ;
+            -moz-animation: initAn 0.6s linear ;
+            -o-animation: initAn 0.6s linear ;
+            animation: initAn 0.6s linear ;
             animation-delay: 0.7s;
             -moz-animation-delay: 0.7s;
             -webkit-animation-delay: 0.7s;
         }
 
         .ourworkRecreation img {
-            -webkit-animation: initAn 0.6s linear  forwards;
-            -moz-animation: initAn 0.6s linear  forwards;
-            -o-animation: initAn 0.6s linear  forwards;
-            animation: initAn 0.6s linear  forwards;
+            -webkit-animation: initAn 0.6s linear ;
+            -moz-animation: initAn 0.6s linear;
+            -o-animation: initAn 0.6s linear;
+            animation: initAn 0.6s linear;
             animation-delay: 0.7s;
             -moz-animation-delay: 0.7s ;
             -webkit-animation-delay: 0.7s;
@@ -155,10 +155,10 @@
                     opacity: 0;
                 }
                 .end{
-                    opacity: 1;
+                    opacity: 1 ;
                 }
                 .leave {
-                    opacity: 0.3;
+                    opacity: 0.3 ;
                     -moz-transition: all 0.3s ease-in-out ; /* for Firefox */
                     -o-transition: all 0.3s ease-in-out ;
                     -webkit-transition: all 0.3s ease-in-out ;

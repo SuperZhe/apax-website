@@ -1,5 +1,5 @@
 const config = {
-    host : 'http://test.tron-m.com'
+    host : 'http://120.77.43.139'
 };
 
 export default config;

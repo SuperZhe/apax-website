@@ -6,7 +6,7 @@
 
         <Arrow></Arrow>
         <div class="list col-xs-offset-1 col-xs-10">
-            <div class="title"  v-if="isch">CORE ELEMENT 3<br>Science Education </div>
+            <div class="title" v-if="isch">CORE ELEMENT 3<br>Science Education </div>
             <div class="title" v-if="!isch">元素 3<br>科普教育</div>
             <!--<div class="title2">The latest from the world of APAX</div>-->
             <div class="col-xs-12 awardsImg">
@@ -44,30 +44,31 @@
                     </div>
                 </div>
             </div>
-            <div class="linkUs col-xs-12">
-                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch?'Are you ready to take the adventure with us?':'你准备好和我们一起冒险了吗?'}}</a>
-            </div>
         </div>
+         <div class="linkUs col-xs-10 col-xs-offset-1 col-sm-10">
+                <a href="http://www.discoveryadventuresmoganshan.com/" target="_blank">{{isch ? 'Are you ready to take the adventure with us?' : '你准备好和我们一起冒险了吗?'}}</a>
+            </div>
     </div>
 </template>
 <script>
     import { bus } from '../assets/js/app/public';
     import Arrow from '../components/Arrow.vue';
-//    import { config } from '../assets/js/app/config';
+    //    import { config } from '../assets/js/app/config';
     import OurworkSubNav from '@/components/OurworkSubNav.vue';
+
     export default {
         name: 'dna-3',
-        components: {Arrow,OurworkSubNav},
+        components: {Arrow, OurworkSubNav},
         data() {
             return {
                 link: 'recreation',
                 items: [],
-                isch:''
+                isch: '',
 //                config: config,
             };
         },
         created() {
-            bus.$on('language',(val) => {this.isch = val})
+            bus.$on('language', (val) => {this.isch = val;});
             this.$bus.$emit('canvas-open');
         },
         updated() {
@@ -75,9 +76,9 @@
             sr.reveal('.item', {duration: 1000});
         },
         methods: {
-            goBack:function () {
+            goBack: function () {
                 this.$router.go(-1);
-            }
+            },
         },
     };
 </script>
@@ -85,88 +86,93 @@
 <style lang="less">
     @import '../assets/style/common.less';
     @import '../assets/style/but';
-
     .dna-3 {
         padding-top: 12vh;
         padding-bottom: 150px;
         .blue {
             /*margin-left: -20px;*/
-        }
+            }
+        .subnav {
+            padding-top: 0;
+            }
         .set_6_btn.blue:hover .corners:after, .set_6_btn.blue:hover .corners:before {
             border-color: #36bbfc !important;
-        }
+            }
         .set_6_btn.blue:hover a {
             color: #36bbfc;
             font-size: 18px;
             text-shadow: 0 0 2px #36bbfc,
             0 0 10px #fff;
-        }
-        .list {
-            margin-top: 7vh;
-            .linkUs {
-                text-align: right;
-                a {
-                    padding: 15px 20px;
-                    border: 1px solid;
+            }
+        .linkUs {
+            text-align: right;
+            a {
+                padding: 15px 20px;
+                border: 1px solid;
                 }
-                a:hover {
-                    color: #36bbfc;
+            a:hover {
+                color: #36bbfc;
                 }
             }
+        .list {
+            margin-top: 7vh;
+
             .awardsImg {
                 margin-bottom: 5em;
                 img {
                     width: 100%;
-                }
+                    }
                 p {
                     /*margin: 3em 0;*/
                     margin-bottom: 4em;
-                }
-                .recreationBack{
+                    }
+                .recreationBack {
                     font-size: 16px;
                     margin-top: 3em;
                     text-align: center;
                     cursor: pointer;
-                }
-                .recreationBack:hover{
+                    }
+                .recreationBack:hover {
                     color: #6D227B;
+                    }
                 }
-            }
             .title {
                 font-size: 2.2em;
                 margin-bottom: 2.6em;
+                }
             }
+
         }
-
-    }
-
     @media screen and (max-width: @max-width) {
         .dna-3 {
-            .list{
+            .list {
                 margin-top: 0;
                 .title {
                     font-size: 1.4em !important;
                     margin-bottom: 2vh;
-                }
+                    }
                 .title2 {
                     font-size: 1.8em !important;
-                }
-                .awardsImg{
-                    p{margin: 0;}
-                    img{
+                    }
+                .awardsImg {
+                    p {
+                        margin: 0;
+                        }
+                    img {
                         margin: 0.4rem 0;
+                        }
                     }
                 }
-                .linkUs {
-                    a {
-                        font-size: 0.8em;
-                        display: block;
-                        padding:10px 0;
-                        text-align: center;
+            .linkUs {
+                a {
+                    border: 1px solid;
+                    font-size: 14px;
+                    display: block;
+                    padding: 10px 0px !important;
+                    text-align: center;
                     }
 
                 }
             }
         }
-    }
 </style>

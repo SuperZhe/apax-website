@@ -11,7 +11,9 @@
             <!-- </keep-alive>
         </transition> -->
         </div>
-        <div class="footer clearfix"><a href="http://www.apaxgroup.com/" target="_blank">沪公网安备</a> <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备17026112号-1</a></div>
+        <div class="footer clearfix"><img
+            src="./assets/img/icon/beian.png" alt="" class="beian"><a href="http://www.apaxgroup.com/" target="_blank">沪公网安备</a> <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001763" target="_blank">沪ICP备17026112号-1</a></div>
         <div class="bg" id="a" v-show="canvas">
             <div id="b">
                 <canvas id="c"></canvas>
@@ -613,6 +615,10 @@
             padding: 4px 12px;
             }
         }
+    .beian{
+        margin-right: 5px;
+        height:15px;
+        }
     .back:hover a {
         border-color: #722182;
         color: #722182;
@@ -671,6 +677,9 @@
         width: 100%;
         /*padding-top: 50px;*/
         /*padding-bottom: 50px;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
         a {
             color: #444;
             }
