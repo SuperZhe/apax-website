@@ -457,7 +457,8 @@
                     margin-bottom: -0.1rem;
                 }
                 span{
-                    font-size: 13px;
+                    font-size: 0.26rem;
+                    -webkit-text-size-adjust:100%;
                 }
             }
         }
